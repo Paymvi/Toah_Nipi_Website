@@ -7,10 +7,10 @@ function Home() {
     <main className="page">
       <section className="home-hero">
         <div className="hero-content">
-          <p className="eyebrow">Welcome to Toah Nipi</p>
-          <h1>Header</h1>
+          <p className="eyebrow">Welcome to</p>
+          <h1>Toah Nipi</h1>
           <p>
-            This is temporary homepage content
+            Christian Retreat Center
           </p>
         </div>
       </section>

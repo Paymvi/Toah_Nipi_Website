@@ -17,6 +17,7 @@ body {
 .home-hero {
   min-height: 100vh;
   padding: 160px 24px 80px;
+  font-family: var(--font-cooper);
 
   display: flex;
   align-items: center;
@@ -27,12 +28,31 @@ body {
     linear-gradient(180deg, #8db3dc 0%, #719bc5 100%);
 }
 
+.home-hero {
+  min-height: 100vh;
+  padding: 160px 24px 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+    url("/Hero.jpeg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 
 
 .hero-content {
   max-width: 760px;
   text-align: center;
   color: #f7f1df;
+
+  transform: translateY(-33px);
 }
 
 .eyebrow {
@@ -40,20 +60,20 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.8rem;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .hero-content h1,
 .placeholder-page h1 {
   margin: 0;
-  font-size: clamp(3rem, 8vw, 6.5rem);
+  font-size: clamp(3rem, 8vw, 5.2rem);
   line-height: 0.95;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.0em;
 }
 
 .hero-content p {
   max-width: 600px;
-  margin: 24px auto 0;
+  margin: 10px auto 0;
   font-size: 1.15rem;
   line-height: 1.7;
 }
