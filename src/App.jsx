@@ -8,17 +8,21 @@ function Home() {
       <section className="home-hero">
         <div className="hero-content">
           <p className="eyebrow">Welcome to</p>
-          <h1>Toah Nipi</h1>
+          {/* <h1>Toah Nipi</h1> */}
+
+          <img
+            src="/toah-nipi-logo-2.png"
+            alt="Toah Nipi"
+            className="hero-logo"
+          />
+          
           <p>
             Experience lakeside lodging, meaningful events, and a peaceful place
             to reconnect with God, creation, and community.
           </p>
 
           <div className="hero-buttons">
-            <Link to="/lodging" className="primary-button">
-              Explore Lodging
-            </Link>
-            <Link to="/contact" className="secondary-button">
+            <Link to="/contact" className="primary-button">
               Plan a Visit
             </Link>
           </div>
@@ -35,7 +39,9 @@ function Home() {
 
           <p>
             Toah Nipi is designed to feel set apart from the noise of everyday
-            life. Whether guests are visiting for a retreat, family gathering,
+            life. 
+            <br/>
+            Whether guests are visiting for a retreat, family gathering,
             leadership event, or a weekend away, the goal is simple: create space
             for <span className="bold-text">rest, connection, and renewal</span>..
           </p>
@@ -44,7 +50,7 @@ function Home() {
 
       <section className="quick-links-section">
         <Link to="/lodging" className="feature-card">
-          <span>01</span>
+          {/* <span>01</span> */}
           <h3>Who we are</h3>
           <p>
             Toah Nipi serves as a gathering place for individuals and groups to reflect and experience the goodness of God amidst the beauty of His creation
@@ -54,7 +60,7 @@ function Home() {
         </Link>
 
         <Link to="/events" className="feature-card">
-          <span>02</span>
+          {/* <span>02</span> */}
           <h3>Where we are</h3>
           <p>
             Situated in the Monadnock Region of Southern New Hampshire
@@ -64,8 +70,8 @@ function Home() {
         </Link>
 
         <Link to="/partner" className="feature-card">
-          <span>03</span>
-          <h3>Partner</h3>
+          {/* <span>03</span> */}
+          <h3>Retreats & Programs</h3>
           <p>
             Learn how churches, ministries, businesses, and supporters can get
             involved.

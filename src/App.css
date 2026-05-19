@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
 }
 
-.home-hero {
+/* .home-hero {
   min-height: 100vh;
   padding: 160px 24px 80px;
   font-family: var(--font-cooper);
@@ -26,7 +26,7 @@ body {
   background:
     linear-gradient(rgba(90, 130, 175, 0.28), rgba(90, 130, 175, 0.28)),
     linear-gradient(180deg, #8db3dc 0%, #719bc5 100%);
-}
+} */
 
 .home-hero {
   min-height: 100vh;
@@ -43,6 +43,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  position: relative;
+  z-index: 1;
 }
 
 
@@ -68,7 +71,8 @@ body {
   margin: 0;
   font-size: clamp(3rem, 8vw, 5.1rem);
   line-height: 0.95;
-  letter-spacing: -0.0em;
+  letter-spacing: 0.01em;
+  
 }
 
 .hero-content p {
@@ -180,6 +184,7 @@ body {
   letter-spacing: 0.14em;
   font-size: 0.78rem;
   font-weight: 900;
+  font-family: var(--font-cooper);
 }
 
 .intro-grid {
@@ -196,9 +201,11 @@ body {
 .cta-section h2 {
   margin: 0;
   color: #343814;
-  font-size: clamp(2.2rem, 5vw, 3.7rem);
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
   line-height: 0.98;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.0em;
+  font-family: var(--font-cooper);
+  
 }
 
 .intro-grid p,
@@ -220,47 +227,111 @@ body {
 }
 
 .feature-card {
-  min-height: 320px;
-  padding: 42px;
-  background: #ebe4cc;
-  color: #343814;
+  min-height: 590px;
+  padding: 56px 42px;
+  color: #f7f1df;
   text-decoration: none;
 
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 
+  position: relative;
+  overflow: hidden;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   transition:
-    background-color 220ms ease,
-    transform 220ms ease;
+    transform 220ms ease,
+    color 220ms ease;
+}
+
+/* Card images */
+.feature-card:nth-child(1) {
+  background-image: url("/Dotham2.png");
+}
+
+.feature-card:nth-child(2) {
+  background-image: url("/Toah-Nipi-Map.png");
+}
+
+.feature-card:nth-child(3) {
+  background-image: url("/stairs.JPG");
+}
+
+/* Dark overlay */
+.feature-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(52, 56, 20, 0.42);
+  z-index: 0;
+  transition: background-color 220ms ease;
+}
+
+/* Bottom gradient */
+.feature-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 12, 4, 0.95) 0%,
+    rgba(10, 12, 4, 0.75) 32%,
+    rgba(10, 12, 4, 0.25) 68%,
+    rgba(10, 12, 4, 0.05) 100%
+  );
+  z-index: 0;
+}
+
+.feature-card span,
+.feature-card div,
+.feature-card h3,
+.feature-card p,
+.feature-card small {
+  position: relative;
+  z-index: 1;
 }
 
 .feature-card:hover {
-  background: #343814;
-  color: #f7f1df;
   transform: translateY(-4px);
 }
 
-.feature-card span {
-  margin-bottom: auto;
-  font-weight: 900;
-  color: #8a8f5a;
+.feature-card:hover::before {
+  background: rgba(52, 56, 20, 0.78);
 }
 
-.feature-card:hover span {
-  color: #d9d0a5;
+.feature-card span {
+  display: block;
+  margin-bottom: 28px;
+  font-weight: 900;
+  color: #ded8ba;
+  font-size: 1rem;
 }
 
 .feature-card h3 {
-  margin: 0 0 14px;
-  font-size: 2rem;
-  letter-spacing: -0.04em;
+  margin: 0 0 10px;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 
 .feature-card p {
   margin: 0;
-  max-width: 340px;
-  line-height: 1.7;
+  max-width: 420px;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: #f1ead2;
+}
+
+.feature-card small {
+  display: inline-block;
+  margin-top: 22px;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #f7f1df;
 }
 
 .experience-section {
@@ -440,3 +511,16 @@ body {
 
 /*  */
 
+
+.hero-logo {
+  display: block;
+  width: min(310px, 90vw);
+  height: auto;
+  margin: 0 auto 14px;
+}
+
+.hero-content p:not(.eyebrow) {
+  margin: 0 auto;
+  line-height: 1.35;
+  transform: translateY(-14px);
+}
