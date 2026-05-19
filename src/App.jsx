@@ -5,29 +5,32 @@ import { BrowserRouter, Routes, Route, useParams, Link } from "react-router-dom"
 function Home() {
   return (
     <main className="page">
-      <section className="home-hero">
-        <div className="hero-content">
-          <p className="eyebrow">Welcome to</p>
-          {/* <h1>Toah Nipi</h1> */}
+      <section className="hero-sticky-wrap">
+        <section className="home-hero">
+          <div className="hero-content">
+            <p className="eyebrow">Welcome to</p>
+            {/* <h1>Toah Nipi</h1> */}
 
-          <img
-            src="/toah-nipi-logo-2.png"
-            alt="Toah Nipi"
-            className="hero-logo"
-          />
-          
-          <p>
-            Experience lakeside lodging, meaningful events, and a peaceful place
-            to reconnect with God, creation, and community.
-          </p>
+            <img
+              src="/toah-nipi-logo-2.png"
+              alt="Toah Nipi"
+              className="hero-logo"
+            />
+            
+            <p>
+              Experience lakeside lodging, meaningful events, and a peaceful place
+              to reconnect with God, creation, and community.
+            </p>
 
-          <div className="hero-buttons">
-            <Link to="/contact" className="primary-button">
-              Plan a Visit
-            </Link>
+            <div className="hero-buttons">
+              <Link to="/contact" className="primary-button">
+                Plan a Visit
+              </Link>
+            </div>
           </div>
-        </div>
+        </section>
       </section>
+      
 
       <section className="intro-section">
         <div className="section-label">About the Camp</div>
