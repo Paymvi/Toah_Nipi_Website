@@ -112,6 +112,22 @@ function Home() {
         
       </section>
 
+      <section className="friends-cta-section">
+        <div className="friends-cta-overlay" />
+
+        <div className="friends-cta-content">
+          <h2>
+            Meet New and Old Friends at
+            <br />
+            Toah Nipi Christian Retreat Center
+          </h2>
+
+          <Link to="/contact" className="friends-cta-button">
+            Plan Your Stay
+          </Link>
+        </div>
+      </section>
+
       <section className="split-section">
         <div className="split-image split-image-one" />
 

@@ -536,7 +536,7 @@ body {
 
 .hero-logo {
   display: block;
-  width: min(310px, 90vw);
+  width: min(340px, 90vw);
   height: auto;
   margin: 0 auto 14px;
 }
@@ -716,7 +716,7 @@ body {
 }
 
 .events-header h2 {
-  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  font-size: clamp(2.3rem, 5vw, 3.4rem);
   line-height: 0.95;
   margin: 0;
   font-family: var(--font-cooper);
@@ -747,7 +747,7 @@ body {
 .event-card {
   flex: 0 0 320px;
   background: #fffaf0;
-  border-radius: 24px;
+  border-radius: 14px;
   overflow: hidden;
   scroll-snap-align: start;
   box-shadow: 0 18px 38px rgba(52, 56, 20, 0.14);
@@ -755,7 +755,10 @@ body {
   transition:
     transform 220ms ease,
     box-shadow 220ms ease;
+  padding: 16px 16px 34px;
 }
+
+
 
 .event-card:hover {
   transform: translateY(-6px);
@@ -786,6 +789,7 @@ body {
   line-height: 1.1;
   color: #343814;
   font-family: var(--font-cooper);
+  text-align: center;
 }
 
 .event-card-content p {
@@ -793,6 +797,7 @@ body {
   font-size: 1rem;
   line-height: 1.6;
   color: rgba(52, 56, 20, 0.78);
+  text-align: center;
 }
 
 .carousel-btn {
@@ -852,4 +857,95 @@ body {
     gap: 18px;
     padding-bottom: 18px;
   }
+}
+
+/* Snow bridge section */
+.friends-cta-section {
+  min-height: 430px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+}
+
+/* Blurry background image */
+.friends-cta-section::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+
+  background-image: url("/SnowBridge.jpg");
+  background-size: cover;
+  background-position: center 73%;
+  background-repeat: no-repeat;
+
+  filter: blur(0px);
+  transform: scale(1.03);
+  z-index: 0;
+}
+
+/* Transparent dark overlay */
+.friends-cta-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.friends-cta-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+
+  max-width: 1100px;
+}
+
+.friends-cta-content h2 {
+  margin: 0;
+  color: #f7f1df;
+  font-family: var(--font-cooper);
+  font-size: clamp(2.2rem, 5vw, 2.4rem);
+  line-height: 1.15;
+  font-weight: 400;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Plan your stay */
+.friends-cta-button {
+  min-width: 300px;
+  padding: 24px 46px;
+  border-radius: 14px;
+
+  background: #f0ecd2;
+  color: #343814;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.friends-cta-button:hover {
+  transform: translateY(-3px);
+  background: #fff9dd;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
 }
