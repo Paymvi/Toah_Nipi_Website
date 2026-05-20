@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useParams, Link } from "react-router-dom"
 import { useState } from "react";
 
 import QuickLinks from "./components/QuickLinks";
+import EventCarousel from "./components/EventCarousel";
 
 function Home() {
   const [openCard, setOpenCard] = useState(null);
@@ -101,6 +102,16 @@ function Home() {
         </div>
       </section>
 
+      <section className="events-preview-section">
+        <div className="events-header">
+          <p className="eyebrow">Events</p>
+          <h2>What's waiting for you</h2>
+        </div>
+
+        <EventCarousel />
+        
+      </section>
+
       <section className="split-section">
         <div className="split-image split-image-one" />
 
@@ -118,7 +129,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="events-preview-section">
+      {/* <section className="events-preview-section">
         <div className="events-header">
           <p className="eyebrow">Events</p>
           <h2>Gatherings that feel intentional.</h2>
@@ -149,7 +160,7 @@ function Home() {
             </p>
           </article>
         </div>
-      </section>
+      </section> */}
 
       <section className="cta-section">
         <p className="eyebrow">Ready to learn more?</p>
