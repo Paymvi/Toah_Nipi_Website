@@ -1,8 +1,12 @@
 import NavBar from "./components/NavBar";
 import "./App.css";
 import { BrowserRouter, Routes, Route, useParams, Link } from "react-router-dom";
+import { useState } from "react";
+
+import QuickLinks from "./components/QuickLinks";
 
 function Home() {
+  const [openCard, setOpenCard] = useState(null);
   return (
     <main className="page">
       <section className="hero-sticky-wrap">
@@ -36,51 +40,38 @@ function Home() {
         <div className="section-label">About the Camp</div>
 
         <div className="intro-grid">
-          <h2>Quiet mornings, 
-            <br/>meaningful conversations, 
-            <br/>and room to breathe.</h2>
+          <h2>
+            Quiet mornings.
+            <br />Meaningful conversations.
+            <br />Room to breathe.
+          </h2>
 
-          <p>
-            Toah Nipi is designed to feel set apart from the noise of everyday
-            life. 
-            <br/>
-            Whether guests are visiting for a retreat, family gathering,
-            leadership event, or a weekend away, the goal is simple: create space
-            for <span className="bold-text">rest, connection, and renewal</span>..
-          </p>
+          <div className="intro-copy">
+            <p>
+              Toah Nipi is designed to feel set apart from the noise of everyday
+              life.
+              <br />
+              Whether guests are visiting for a retreat, family gathering,
+              leadership event, or a weekend away, the goal is simple: create space
+              for <span className="bold-text">rest, connection, and renewal</span>.
+            </p>
+
+            <div className="intro-buttons">
+              <Link to="/lodging" className="intro-button intro-button-primary">
+                Accommodations
+              </Link>
+
+              <Link to="/events" className="intro-button intro-button-secondary">
+                Explore Activities
+              </Link>
+            </div>
+          </div>
         </div>
+        
+
       </section>
 
-      <section className="quick-links-section">
-        <Link to="/lodging" className="feature-card">
-          {/* <span>01</span> */}
-          <h3>Who we are</h3>
-          <p>
-            Toah Nipi serves as a gathering place for individuals and groups to reflect and experience the goodness of God amidst the beauty of His creation
-            {/* Comfortable spaces for groups, families, retreats, and overnight
-            stays. */}
-          </p>
-        </Link>
-
-        <Link to="/events" className="feature-card">
-          {/* <span>02</span> */}
-          <h3>Where we are</h3>
-          <p>
-            Situated in the Monadnock Region of Southern New Hampshire
-            {/* Host retreats, conferences, church gatherings, celebrations, and
-            seasonal events. */}
-          </p>
-        </Link>
-
-        <Link to="/partner" className="feature-card">
-          {/* <span>03</span> */}
-          <h3>Retreats & Programs</h3>
-          <p>
-            Learn how churches, ministries, businesses, and supporters can get
-            involved.
-          </p>
-        </Link>
-      </section>
+      <QuickLinks />
 
       <section className="experience-section">
         <div className="experience-copy">
