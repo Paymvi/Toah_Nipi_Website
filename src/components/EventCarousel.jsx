@@ -5,64 +5,77 @@ function EventCarousel() {
 
   const events = [
     {
+      title: "30 Acre Spring Fed Pond",
+      description:
+        "Join family-friendly programs designed for all ages to enjoy together.",
+      image: "/SunsetLake.jpg",
+    },
+    {
       title: "Woodland Hiking Trails",
       description:
         "Explore quiet trails surrounded by trees, fresh air, and peaceful views.",
-      image: "/hiking-trails.jpg",
+      image: "/Trails.jpeg",
     },
     {
       title: "Firepits & Fireplaces",
       description:
         "Gather around the fire for conversation, warmth, worship, and late-night laughs.",
-      image: "/firepit.jpg",
+      image: "/Fireplace.jpeg",
     },
     {
-      title: "Indoor Games",
+      title: "Sports Areas",
       description:
-        "Enjoy board games, group activities, and cozy indoor fun with friends.",
-      image: "/indoor-games.jpg",
+        "Basketball Court, volleyball court, large field. Suitable for tons of fun!",
+      image: "/Sports2.png",
     },
     {
       title: "Lake Activities",
       description:
         "Spend time near the water with relaxing views and outdoor adventure.",
-      image: "/lake-activities.jpg",
+      image: "/Canoe.jpeg",
     },
     {
-      title: "Group Retreats",
+      title: "Broomball",
       description:
         "Make space for reflection, connection, worship, and shared memories.",
-      image: "/group-retreats.jpg",
+      image: "/Broomball2.png",
     },
     {
-      title: "Cabin Stays",
+      title: "Tubing",
       description:
         "Rest in simple, peaceful cabins designed for comfort and connection.",
-      image: "/cabin-stays.jpg",
+      image: "/Tubing.webp",
     },
     {
-      title: "Outdoor Worship",
+      title: "Rock Climbing Wall",
       description:
         "Gather outside for meaningful worship in a quiet natural setting.",
-      image: "/outdoor-worship.jpg",
+      image: "RockClimbing.webp",
     },
+    
     {
-      title: "Family Programs",
-      description:
-        "Join family-friendly programs designed for all ages to enjoy together.",
-      image: "/family-programs.jpg",
-    },
-    {
-      title: "Quiet Reflection",
+      title: "Stone Prayer Garden",
       description:
         "Find space to slow down, pray, journal, and reconnect with God.",
-      image: "/quiet-reflection.jpg",
+      image: "/PrayerGarden3.png",
     },
     {
-      title: "Community Meals",
+      title: "Snowshoeing",
       description:
         "Share delicious meals and meaningful conversations around the table.",
-      image: "/community-meals.jpg",
+      image: "/Snow.png",
+    },
+    {
+      title: "Eating & Community",
+      description:
+        "Basketball Court, volleyball court, large field. Suitable for tons of fun!",
+      image: "/Eating.jpeg",
+    },
+    {
+      title: "Indoor Games",
+      description:
+        "Enjoy board games, group activities, and cozy indoor fun with friends.",
+      image: "/Uno.jpeg",
     },
   ];
 
