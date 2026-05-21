@@ -7,7 +7,7 @@ function EventCarousel() {
     {
       title: "30 Acre Spring Fed Pond",
       description:
-        "Join family-friendly programs designed for all ages to enjoy together.",
+        "Our pond has a mini beach and is a great place to cool off and relax.",
       image: "/SunsetLake.jpg",
     },
     {
@@ -20,7 +20,7 @@ function EventCarousel() {
       title: "Firepits & Fireplaces",
       description:
         "Gather around the fire for conversation, warmth, worship, and late-night laughs.",
-      image: "/Fireplace.jpeg",
+      image: "/Fireplace2.png",
     },
     {
       title: "Sports Areas",
@@ -35,15 +35,21 @@ function EventCarousel() {
       image: "/Canoe.jpeg",
     },
     {
+      title: "Eating & Community",
+      description:
+        "lmao",
+      image: "/Eating.jpeg",
+    },
+    {
       title: "Broomball",
       description:
-        "Make space for reflection, connection, worship, and shared memories.",
+        "During the winter out pond freezes over and is perfect for a game of broomball.",
       image: "/Broomball2.png",
     },
     {
       title: "Tubing",
       description:
-        "Rest in simple, peaceful cabins designed for comfort and connection.",
+        "We'll show you the best places at Toah nipi to go tubing and host races!",
       image: "/Tubing.webp",
     },
     {
@@ -57,19 +63,13 @@ function EventCarousel() {
       title: "Stone Prayer Garden",
       description:
         "Find space to slow down, pray, journal, and reconnect with God.",
-      image: "/PrayerGarden3.png",
+      image: "/PrayerGarden4-abi.png",
     },
     {
       title: "Snowshoeing",
       description:
-        "Share delicious meals and meaningful conversations around the table.",
+        "Explore nearby trails with snowshoes courtesy of toah nipi!",
       image: "/Snow.png",
-    },
-    {
-      title: "Eating & Community",
-      description:
-        "Basketball Court, volleyball court, large field. Suitable for tons of fun!",
-      image: "/Eating.jpeg",
     },
     {
       title: "Indoor Games",

@@ -49,9 +49,9 @@ function Home() {
 
           <div className="intro-copy">
             <p>
-              Toah Nipi is designed to feel set apart from the noise of everyday
-              life.
-              <br />
+              {/* Toah Nipi is designed to feel set apart from the noise of everyday
+              life. */}
+              {/* <br /> */}
               Whether guests are visiting for a retreat, family gathering,
               leadership event, or a weekend away, the goal is simple: create space
               for <span className="bold-text">rest, connection, and renewal</span>.
@@ -74,7 +74,7 @@ function Home() {
 
       <QuickLinks />
 
-      <section className="experience-section">
+      {/* <section className="experience-section">
         <div className="experience-copy">
           <p className="eyebrow">The Experience</p>
           <h2>Built around peace, community, and the outdoors.</h2>
@@ -100,7 +100,7 @@ function Home() {
             <p>A setting that encourages reflection, worship, and connection.</p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="events-preview-section">
         <div className="events-header">
@@ -110,22 +110,6 @@ function Home() {
 
         <EventCarousel />
         
-      </section>
-
-      <section className="friends-cta-section">
-        <div className="friends-cta-overlay" />
-
-        <div className="friends-cta-content">
-          <h2>
-            Meet New and Old Friends at
-            <br />
-            Toah Nipi Christian Retreat Center
-          </h2>
-
-          <Link to="/contact" className="friends-cta-button">
-            Plan Your Stay
-          </Link>
-        </div>
       </section>
 
       <section className="split-section">
@@ -141,6 +125,22 @@ function Home() {
 
           <Link to="/lodging" className="text-link">
             View lodging options →
+          </Link>
+        </div>
+      </section>
+
+      <section className="friends-cta-section">
+        <div className="friends-cta-content">
+          <p className="friends-cta-eyebrow">Ready to learn more?</p>
+
+          <h2>Start planning your visit.</h2>
+
+          <p className="friends-cta-text">
+            Meet old and new friends at Toah Nipi!
+          </p>
+
+          <Link to="/contact" className="friends-cta-button">
+            Plan Your Stay
           </Link>
         </div>
       </section>
@@ -178,7 +178,7 @@ function Home() {
         </div>
       </section> */}
 
-      <section className="cta-section">
+      {/* <section className="cta-section">
         <p className="eyebrow">Ready to learn more?</p>
         <h2>Start planning your visit.</h2>
         <p>
@@ -194,7 +194,7 @@ function Home() {
             Give
           </Link>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }

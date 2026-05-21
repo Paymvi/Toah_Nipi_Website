@@ -204,6 +204,7 @@ body {
   align-items: start;
 }
 
+/* Quiet Mornings */
 .intro-grid h2,
 .experience-copy h2,
 .split-content h2,
@@ -218,6 +219,7 @@ body {
   
 }
 
+/* Text next to "Quiet Mornings" */
 .intro-grid p,
 .experience-copy p,
 .split-content p,
@@ -226,7 +228,13 @@ body {
   margin: 0;
   color: #4e5430;
   font-size: 1.08rem;
-  line-height: 1.8;
+  line-height: 1.65;
+}
+.intro-copy p {
+  max-width: 560px;
+  font-size: clamp(1rem, 1.15vw, 1.18rem);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
 }
 
 .quick-links-section,
@@ -267,13 +275,21 @@ body {
     color 220ms ease;
 }
 
+.feature-card strong {
+  font-weight: 500;
+  color: inherit;
+  color: #fffdf9;
+}
+
+
 /* Card images */
 .feature-card:nth-child(1) {
   background-image: url("/Dotham2.png");
 }
 
 .feature-card:nth-child(2) {
-  background-image: url("/Toah-Nipi-Map.png");
+  background-image: url("/Toah-Nipi-Map-3.png");
+  background-position: center 30%;
 }
 
 .feature-card:nth-child(3) {
@@ -313,8 +329,15 @@ body {
 .feature-card small {
   position: relative;
   z-index: 1;
+}
+.feature-card h3 {
   font-family: var(--font-cooper);
-  letter-spacing: 0.01em;
+}
+
+.feature-card p,
+.feature-card-dropdown p,
+.feature-card-link {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 .feature-card:hover {
@@ -342,10 +365,11 @@ body {
 
 .feature-card p {
   margin: 0;
-  max-width: 420px;
-  font-size: 1.08rem;
+  max-width: 390px;
+  font-size: 0.98rem;
   line-height: 1.65;
-  color: #f1ead2;
+  color: rgba(247, 241, 223, 0.86);
+  letter-spacing: 0.01em;
 }
 
 .feature-card small {
@@ -355,6 +379,35 @@ body {
   font-weight: 900;
   color: #f7f1df;
 }
+
+
+/* Where we are */
+
+/* Remove the general dark overlay */
+.quick-links-section .feature-card:nth-child(2)::before {
+  background: transparent;
+}
+
+.quick-links-section .feature-card:nth-child(2)::after {
+  background: linear-gradient(
+    to top,
+    rgba(10, 12, 4, 0.9) 0%,
+    rgba(10, 12, 4, 0.62) 16%,
+    rgba(10, 12, 4, 0.22) 30%,
+    rgba(10, 12, 4, 0) 46%
+  );
+}
+
+/* Where we are card... milder normal overlay */
+.quick-links-section .feature-card:nth-child(2)::before {
+  background: rgba(52, 56, 20, 0.22);
+}
+
+/* Keep hover effect, but slightly softer than the other cards */
+.quick-links-section .feature-card:nth-child(2):hover::before {
+  background: rgba(52, 56, 20, 0.48);
+}
+
 
 .experience-section {
   padding: 120px clamp(24px, 7vw, 96px);
@@ -417,7 +470,7 @@ body {
 .split-image-one {
   background:
     linear-gradient(rgba(52, 56, 20, 0.18), rgba(52, 56, 20, 0.18)),
-    url("/camp-background.jpg");
+    url("/camp-background-2.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -755,7 +808,7 @@ body {
   transition:
     transform 220ms ease,
     box-shadow 220ms ease;
-  padding: 16px 16px 20px;
+  padding: 16px 16px 0px;
 }
 
 
@@ -767,7 +820,7 @@ body {
 
 .event-card-image {
   width: 100%;
-  height: 250px;
+  height: 290px;
   background: #d7d0b4;
   overflow: hidden;
 }
@@ -785,7 +838,7 @@ body {
 
 .event-card-content h3 {
   margin: 0 0 12px;
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   line-height: 1.1;
   color: #343814;
   font-family: var(--font-cooper);
@@ -794,7 +847,7 @@ body {
 
 .event-card-content p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: 1.6;
   color: rgba(52, 56, 20, 0.78);
   text-align: center;
@@ -858,10 +911,9 @@ body {
     padding-bottom: 18px;
   }
 }
-
-/* Snow bridge section */
+/* Snow bridge CTA section */
 .friends-cta-section {
-  min-height: 430px;
+  min-height: 300px;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -870,31 +922,32 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 80px 24px;
+
+  padding: 90px 24px;
 }
 
-/* Blurry background image */
+/* Background image */
 .friends-cta-section::before {
   content: "";
   position: absolute;
-  inset: -8px;
+  inset: 0;
 
   background-image: url("/SnowBridge.jpg");
   background-size: cover;
   background-position: center 73%;
   background-repeat: no-repeat;
 
-  filter: blur(0px);
-  transform: scale(1.03);
+  transform: scale(1.02);
   z-index: 0;
 }
 
-/* Transparent dark overlay */
+/* Dark overlay */
 .friends-cta-section::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.1);
+
+  background: rgba(20, 24, 12, 0.38);
   z-index: 1;
 }
 
@@ -905,26 +958,51 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
 
-  max-width: 1100px;
+  max-width: 900px;
 }
+
+/* Raedy to learn more */
+.friends-cta-eyebrow {
+  margin: 0 0 18px;
+
+  color: #f0ecd2;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
 
 .friends-cta-content h2 {
   margin: 0;
+
   color: #f7f1df;
   font-family: var(--font-cooper);
-  font-size: clamp(2.2rem, 5vw, 2.4rem);
-  line-height: 1.15;
+  font-size: clamp(2.5rem, 6vw, 3.8rem);
+  line-height: 0.95;
   font-weight: 400;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  letter-spacing: -0.04em;
+
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.38);
+}
+
+.friends-cta-text {
+  max-width: 560px;
+  margin: 22px 0 34px;
+
+  color: rgba(247, 241, 223, 0.92);
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.6;
+
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
 }
 
 /* Plan your stay */
 .friends-cta-button {
-  min-width: 300px;
-  padding: 24px 46px;
-  border-radius: 14px;
+  min-width: 220px;
+  padding: 16px 30px;
+  border-radius: 999px;
 
   background: #f0ecd2;
   color: #343814;
@@ -932,7 +1010,8 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.9rem;
 
   display: inline-flex;
   justify-content: center;
