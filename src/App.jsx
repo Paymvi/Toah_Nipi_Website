@@ -195,6 +195,117 @@ function Home() {
           </Link>
         </div>
       </section> */}
+
+      <section className="newsletter-section">
+        <div className="newsletter-copy">
+          <p className="newsletter-eyebrow">Newsletter</p>
+
+          <h2>Stay connected with Toah Nipi.</h2>
+
+          <p>
+            Sign up to receive occasional updates, stories, events, and announcements
+            from Toah Nipi Christian Retreat Center.
+          </p>
+
+          <div className="newsletter-archive-links">
+            <a
+              href="https://view.flodesk.com/emails/680bc7fbffcd011540d83bf1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View our Spring 2025 Newsletter
+            </a>
+
+            <span aria-hidden="true">•</span>
+
+            <a
+              href="https://view.flodesk.com/emails/672a82f4bb0d98073d2e4074"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View our Fall 2024 Newsletter
+            </a>
+          </div>
+        </div>
+
+        <form className="newsletter-form">
+          <div className="newsletter-form-row">
+            <label>
+              First name
+              <input type="text" name="firstName" />
+            </label>
+
+            <label>
+              Last name
+              <input type="text" name="lastName" />
+            </label>
+          </div>
+
+          <label>
+            Email address
+            <input type="email" name="email" />
+          </label>
+
+          <button type="submit">Subscribe</button>
+        </form>
+      </section>
+
+      <section className="site-footer-section">
+        <div className="footer-logo-area">
+          <img
+            src="/toah-nipi-logo-2.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-1"
+          />
+
+          <p>
+            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
+          </p>
+
+          <img
+            src="/Secondary-Logo.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-2"
+          />
+
+        </div>
+
+        <div className="footer-contact-grid">
+          <div className="footer-contact-card">
+            <p className="footer-label">Physical Address</p>
+            <p>
+              49 Fellowship Circle
+              <br />
+              Rindge, NH 03461
+            </p>
+          </div>
+
+          <div className="footer-contact-card">
+            <p className="footer-label">Mailing Address</p>
+            <p>
+              252 Old Ashburnham Road
+              <br />
+              Rindge, NH 03461
+            </p>
+          </div>
+
+          <div className="footer-contact-card">
+            <p className="footer-label">Phone</p>
+            <p>
+              <a href="tel:16038995464">(603) 899-5464</a>
+            </p>
+          </div>
+
+          <div className="footer-contact-card">
+            <p className="footer-label">Email</p>
+            <p>
+              <a href="mailto:info@toahnipi.org">contactus@toahnipi.org</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+
     </main>
   );
 }
