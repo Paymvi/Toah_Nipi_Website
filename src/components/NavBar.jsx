@@ -1,16 +1,62 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./NavBar.css";
+import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
 const navItems = [
-  { label: "Lodging", path: "/lodging" },
-  { label: "Events", path: "/events" },
-  { label: "Partner", path: "/partner" },
-  { label: "Our Story", path: "/our-story" },
-  { label: "Blog", path: "/blog" },
-  { label: "Contact", path: "/contact" },
+  {
+    label: "Lodging",
+    path: "/lodging",
+    dropdown: [
+      { label: "Cabins", path: "/lodging/cabins" },
+      { label: "Retreat Houses", path: "/lodging/retreat-houses" },
+      { label: "Group Lodging", path: "/lodging/group-lodging" },
+    ],
+  },
+  {
+    label: "Events",
+    path: "/events",
+    dropdown: [
+      { label: "Upcoming Events", path: "/events/upcoming" },
+      { label: "Family Camp", path: "/events/family-camp" },
+      { label: "Volunteer Weekends", path: "/events/volunteer-weekends" },
+    ],
+  },
+  {
+    label: "Partner",
+    path: "/partner",
+    dropdown: [
+      { label: "Ways to Give", path: "/partner/ways-to-give" },
+      { label: "Volunteer", path: "/partner/volunteer" },
+      { label: "Pray With Us", path: "/partner/pray" },
+    ],
+  },
+  {
+    label: "Our Story",
+    path: "/our-story",
+    dropdown: [
+      { label: "History", path: "/our-story/history" },
+      { label: "Mission", path: "/our-story/mission" },
+      { label: "Staff", path: "/our-story/staff" },
+    ],
+  },
+  {
+    label: "Blog",
+    path: "/blog",
+    dropdown: [
+      { label: "Latest Posts", path: "/blog" },
+      { label: "Newsletters", path: "/blog/newsletters" },
+    ],
+  },
+  {
+    label: "Contact",
+    path: "/contact",
+    dropdown: [
+      { label: "Contact Us", path: "/contact" },
+      { label: "Directions", path: "/contact/directions" },
+    ],
+  },
 ];
-
 export default function NavBar() {
   const [bgOpacity, setBgOpacity] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -69,32 +115,59 @@ export default function NavBar() {
                 {item.label}
               </NavLink>
 
-              <div className="dropdown">
-                <Link to={`${item.path}/1`} onClick={() => setMenuOpen(false)}>
-                  1
-                </Link>
-                <Link to={`${item.path}/2`} onClick={() => setMenuOpen(false)}>
-                  2
-                </Link>
-                <Link to={`${item.path}/3`} onClick={() => setMenuOpen(false)}>
-                  3
-                </Link>
-              </div>
+              {item.dropdown && item.dropdown.length > 0 && (
+                <div className="dropdown">
+                  {item.dropdown.map((dropdownItem) => (
+                    <Link
+                      key={dropdownItem.path}
+                      to={dropdownItem.path}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {dropdownItem.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
             </li>
           ))}
         </ul>
       </nav>
 
       <div className="nav-actions">
-        <a href="#" className="social-link" aria-label="Instagram">
-          ◎
-        </a>
-        <a href="#" className="social-link" aria-label="Facebook">
-          f
-        </a>
-        <a href="#" className="social-link" aria-label="LinkedIn">
-          in
-        </a>
+        <div className="social-links">
+          <a
+            href="https://www.instagram.com/"
+            className="social-link"
+            aria-label="Instagram"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaInstagram />
+          </a>
+
+          <a
+            href="https://www.facebook.com/"
+            className="social-link"
+            aria-label="Facebook"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaFacebookF />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/"
+            className="social-link"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaLinkedinIn />
+          </a>
+
+          
+        </div>
 
         <Link to="/give" className="give-link">
           GIVE

@@ -1320,3 +1320,51 @@ html,
 body {
   background: #343814;
 }
+
+
+
+
+/**/
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #f4f0dc;
+  text-decoration: none;
+
+  line-height: 1;
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.social-link svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Facebook looks naturally skinny, so this helps it match the others */
+.social-link[aria-label="Facebook"] svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* LinkedIn usually looks a little heavy, so slightly smaller */
+.social-link[aria-label="LinkedIn"] svg {
+  width: 20px;
+  height: 20px;
+}
+
+.social-link:hover {
+  opacity: 0.75;
+  transform: translateY(-1px);
+}

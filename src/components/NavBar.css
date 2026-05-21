@@ -7,7 +7,7 @@
   z-index: 1000;
 
   display: grid;
-  grid-template-columns: 180px 1fr 260px;
+  grid-template-columns: 260px 1fr 260px;
   align-items: center;
 
   padding: 0 clamp(24px, 5vw, 72px);
@@ -57,7 +57,7 @@
   position: relative;
   color: #f5f0d7;
   text-decoration: none;
-  font-size: 1.08rem;
+  font-size: 1.04rem;
   font-weight: 600;
   letter-spacing: -0.02em;
   transition:
@@ -92,29 +92,29 @@
 
 .dropdown {
   position: absolute;
-  top: 86px;
+  top: 92px;
   left: 50%;
 
   min-width: 140px;
-  padding: 10px;
+  padding: 8px 0;
 
   display: grid;
-  gap: 6px;
 
-  background: rgba(52, 56, 20, 0.97);
-  border: 1px solid rgba(245, 240, 215, 0.22);
-  border-radius: 6px;
-  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.22);
+  background: #f8f3df;
+  border: 1px solid rgba(52, 56, 20, 0.14);
+  border-top: 4px solid #8b5e34;
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 
-  transform: translate(-50%, 8px);
+  transform: translate(-50%, -10px);
   transition:
-    opacity 200ms ease,
-    transform 200ms ease,
-    visibility 200ms ease;
+    opacity 180ms ease,
+    transform 180ms ease,
+    visibility 180ms ease;
 }
 
 .nav-item:hover .dropdown,
@@ -126,14 +126,19 @@
 }
 
 .dropdown a {
-  color: #f5f0d7;
+  color: #343814;
   text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 13px 18px;
+
+  font-size: 0.98rem;
   font-weight: 600;
+  line-height: 1.2;
+
+  border-radius: 0;
   transition:
-    background-color 180ms ease,
-    transform 180ms ease;
+    background-color 160ms ease,
+    color 160ms ease,
+    padding-left 160ms ease;
 }
 
 .dropdown a:hover {
@@ -145,7 +150,7 @@
   justify-self: end;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
 }
 
 .social-link {
@@ -172,7 +177,7 @@
   font-size: 1.05rem;
   font-weight: 600;
   padding: 12px 4px;
-  margin-left: 10px;
+  margin-left:22px;
 }
 
 .give-link::after {
@@ -181,7 +186,7 @@
   left: 50%;
   bottom: 0;
 
-  width: 100px;
+  width: 72px;
   height: 3px;
 
   background: #f5f0d7;
