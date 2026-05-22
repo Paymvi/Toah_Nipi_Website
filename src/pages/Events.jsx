@@ -144,7 +144,7 @@ export default function Events() {
       <section className="custom-gathering-section">
         <div className="custom-gathering-inner">
           <div className="custom-gathering-copy">
-            <p className="custom-gathering-eyebrow">Custom Gatherings</p>
+            <p className="custom-gathering-eyebrow">For groups!</p>
 
             <h2><span className="highlight-text">Customize</span> the stay around your group</h2>
 
@@ -177,7 +177,7 @@ export default function Events() {
 
             <div className="custom-gathering-item-image-wrap">
               <img
-                src="/Hebron-Front.jpeg"
+                src="/camp-background-2.jpg"
                 alt="Toah Nipi lodging and meeting space"
                 className="custom-gathering-item-image"
               />
@@ -232,6 +232,77 @@ export default function Events() {
       </div>
       </section>
 
+
+
+
+      <section className="personal-retreat-section">
+        <div className="personal-retreat-inner">
+          <div className="personal-retreat-image-card">
+            <img
+              src="/Personal-Retreats.webp"
+              alt="A quiet indoor retreat space at Toah Nipi"
+              className="personal-retreat-image"
+            />
+
+            <div className="personal-retreat-image-note">
+              <span>Quiet space</span>
+              <p>For solitude, reflection, and rest.</p>
+            </div>
+          </div>
+
+          <div className="personal-retreat-copy">
+            <p className="personal-retreat-eyebrow">For individuals or small groups!</p>
+
+            <h2>Personal Retreats</h2>
+
+            <p>
+              Toah Nipi offers Rustic Cottages for personal and small group retreats,
+              creating space for solitude, prayer, reflection, and unhurried time away.
+            </p>
+
+            <div className="personal-retreat-detail-list">
+              <article className="personal-retreat-detail">
+                <span>01</span>
+                <div>
+                  <h3>Simple cottage stays</h3>
+                  <p>
+                    Stay apart from the busyness of the main camp in a quieter,
+                    more personal setting.
+                  </p>
+                </div>
+              </article>
+
+              <article className="personal-retreat-detail">
+                <span>02</span>
+                <div>
+                  <h3>Meals your way</h3>
+                  <p>
+                    Prepare your own meals or connect with the camp meal schedule
+                    when available.
+                  </p>
+                </div>
+              </article>
+
+              <article className="personal-retreat-detail">
+                <span>03</span>
+                <div>
+                  <h3>Seasonal availability</h3>
+                  <p>
+                    Retreat options vary by season, so reach out and we’ll help you
+                    find what works.
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <a href="/contact" className="personal-retreat-button">
+              Inquire Now <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
       <section className="site-footer-section">
         <div className="footer-logo-area">
           <img
@@ -250,11 +321,9 @@ export default function Events() {
             className="footer-logo-2"
           />
 
-          
+        </div>
 
-      </div>
-
-      <Footer />
+        <Footer />
 
       </section>
 

@@ -9,6 +9,7 @@ import EventCarousel from "./components/EventCarousel";
 import Home from "./pages/Home";
 import Lodging from "./pages/Lodging";
 import Events from "./pages/Events";
+import Partner from "./pages/Partner";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -51,7 +52,7 @@ export default function App() {
           element={<PlaceholderPage title="Events" />}
         />
 
-        <Route path="/partner" element={<PlaceholderPage title="Partner" />} />
+        <Route path="/partner" element={<Partner />} />
         <Route
           path="/partner/:section"
           element={<PlaceholderPage title="Partner" />}

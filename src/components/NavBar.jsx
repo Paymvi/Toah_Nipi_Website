@@ -16,14 +16,16 @@ const navItems = [
     ],
   },
   {
-    label: "Events",
-    path: "/events",
-    dropdown: [
-      { label: "Upcoming Events", path: "/events/upcoming" },
-      { label: "Family Camp", path: "/events/family-camp" },
-      { label: "Volunteer Weekends", path: "/events/volunteer-weekends" },
-    ],
-  },
+  label: "Events",
+  path: "/events",
+  dropdown: [
+    { label: "Family Camp", path: "/events#family-camp" },
+    { label: "Activities", path: "/events#activities" },
+    { label: "Thanksgiving House Party", path: "/events#thanksgiving" },
+    { label: "Custom Gatherings", path: "/events#custom-gatherings" },
+    { label: "Personal Retreats", path: "/events#personal-retreats" },
+  ],
+},
   {
     label: "Partner",
     path: "/partner",
