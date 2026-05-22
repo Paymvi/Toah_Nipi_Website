@@ -439,7 +439,7 @@ const lodgingBuildings = [
       "For those seeking prayerful solitude and reflection in the midst of God's beautiful creation, Toah Nipi offers several independent rustic cottages that fit 3–8 overnight guests. We will gladly assist you in choosing one of these unique housing spots tailored to your specific needs.",
     images: [
       {
-        src: "/AFrame.webp",
+        src: "/Ajalon.png",
         alt: "Exterior view of a rustic cottage at Toah Nipi",
       },
       {

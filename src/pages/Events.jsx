@@ -1,3 +1,6 @@
+import EventCarousel from "../components/EventCarousel2";
+
+
 const familyCampWeeks = [
   {
     title: "Family Camp: Week 1",
@@ -100,6 +103,17 @@ export default function Events() {
           </div>
         </div>
       </section>
+
+        
+        <section className="events-preview-section">
+          <div className="events-header">
+            <p className="eyebrow">Events</p>
+            <h2>What's waiting for you</h2>
+          </div>
+
+          <EventCarousel />
+        </section>
+
     </main>
   );
 }
