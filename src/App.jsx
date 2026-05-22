@@ -8,6 +8,7 @@ import EventCarousel from "./components/EventCarousel";
 
 import Home from "./pages/Home";
 import Lodging from "./pages/Lodging";
+import Events from "./pages/Events";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -44,7 +45,7 @@ export default function App() {
           element={<PlaceholderPage title="Lodging" />}
         />
 
-        <Route path="/events" element={<PlaceholderPage title="Events" />} />
+        <Route path="/events" element={<Events />} />
         <Route
           path="/events/:section"
           element={<PlaceholderPage title="Events" />}
