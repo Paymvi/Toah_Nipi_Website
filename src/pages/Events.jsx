@@ -1,4 +1,29 @@
+const familyCampWeeks = [
+  {
+    title: "Family Camp: Week 1",
+    date: "June 28th - July 3rd",
+    href: "#",
+  },
+  {
+    title: "Family Camp: Week 2",
+    date: "July 5th - July 10th",
+    href: "#",
+  },
+];
 
+const prices = [
+  "Adult 17+ — $515",
+  "Youth 3-17 — $375",
+  "Infant 12-36 months — $185",
+  "Newborn 0-12 months — $0",
+];
+
+const discounts = [
+  "InterVarsity Staff — 20%",
+  "Full-time Ministry — 15%",
+  "First-time Family — 10%",
+  "Referred a Family — 10%",
+];
 
 export default function Events() {
   return (
@@ -10,72 +35,66 @@ export default function Events() {
             alt="Family camp by the lake"
             className="family-camp-image"
           />
+
+          {/* Optional image label */}
+          {/* <div className="family-camp-image-label">
+            <span>Summer 2026</span>
+          </div> */}
         </div>
 
         <div className="family-camp-content">
           <div className="family-camp-inner">
             <p className="events-eyebrow">Events</p>
+
             <h1>Family Camp</h1>
 
             <div className="family-camp-description">
               <p>
-                Join us this Summer for Family Camp. Enjoy a full program
-                designed for your family and hosted by the Toah Nipi staff.
+                Join us this summer for a full family camp program hosted by
+                the Toah Nipi staff.
               </p>
 
               <p>
-                Gather with family and friends to enjoy time in God’s beautiful
-                creation as we adventure, worship, and commune together.
+                Gather with family and friends for worship, adventure, rest,
+                and meaningful time together in God’s beautiful creation.
               </p>
             </div>
 
-            <div className="family-camp-details">
-              <div className="family-camp-weeks">
-                <article className="camp-week-card">
+            <div className="family-camp-week-grid">
+              {familyCampWeeks.map((week) => (
+                <article className="camp-week-card" key={week.title}>
                   <div>
-                    <h2>Family Camp Week 1</h2>
-                    <p>June 28th - July 3rd</p>
+                    <p className="camp-week-label">Available Week</p>
+                    <h2>{week.title}</h2>
+                    <p className="camp-week-date">{week.date}</p>
                   </div>
 
-                  <a href="#" className="camp-register-button">
+                  <a href={week.href} className="camp-register-button">
                     Register
                   </a>
                 </article>
+              ))}
+            </div>
 
-                <article className="camp-week-card">
-                  <div>
-                    <h2>Family Camp Week 2</h2>
-                    <p>July 5th - July 10th</p>
-                  </div>
+            <div className="family-camp-info-grid">
+              <aside className="pricing-block">
+                <h2>Family Camp Prices</h2>
 
-                  <a href="#" className="camp-register-button">
-                    Register
-                  </a>
-                </article>
-              </div>
+                <ul>
+                  {prices.map((price) => (
+                    <li key={price}>{price}</li>
+                  ))}
+                </ul>
+              </aside>
 
-              <aside className="family-camp-pricing">
-                <div className="pricing-block">
-                  <h2>Family Camp Prices</h2>
+              <aside className="pricing-block pricing-block-muted">
+                <h2>Discounts</h2>
 
-                  <ul>
-                    <li>Adult (17+) - $515</li>
-                    <li>Youth (3-17) - $375</li>
-                    <li>Infant (12-36 months) - $185</li>
-                    <li>Newborn (0-12 months) - $0</li>
-                  </ul>
-                </div>
-
-                <div className="pricing-block">
-                  <h2>Discounts</h2>
-
-                  <ul>
-                    <li>InterVarsity Staff - 20%</li>
-                    <li>Full-time Ministry - 15%</li>
-                    <li>First-time Family - 10%</li>
-                    <li>Referred a Family - 10%</li>
-                  </ul>
-                </div>
+                <ul>
+                  {discounts.map((discount) => (
+                    <li key={discount}>{discount}</li>
+                  ))}
+                </ul>
               </aside>
             </div>
           </div>
