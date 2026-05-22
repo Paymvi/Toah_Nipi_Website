@@ -105,14 +105,97 @@ export default function Events() {
       </section>
 
         
-        <section className="events-preview-section">
-          <div className="events-header">
-            <p className="eyebrow">Events</p>
-            <h2>What's waiting for you</h2>
+      <section className="events-preview-section">
+        <div className="events-header">
+          <p className="eyebrow">Events</p>
+          <h2>What's waiting for you</h2>
+        </div>
+
+        <EventCarousel />
+      </section>
+
+      <section className="thanksgiving-section">
+        <div className="thanksgiving-image-wrap">
+          <img
+            src="/TN-Thankgiving-Clear.png"
+            alt="Guests gathered around tables during Thanksgiving House Party"
+            className="thanksgiving-image"
+          />
+        </div>
+
+        <div className="thanksgiving-content">
+          <div className="thanksgiving-inner">
+            <h2>Thanksgiving House Party</h2>
+
+            <p>
+              We welcome you to join us for our cozy International Student
+              Thanksgiving House Party, where we gather together with families
+              from all traditions and languages to celebrate.
+            </p>
+
+            <a href="/contact" className="thanksgiving-link">
+              Inquire Now <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="custom-gathering-section">
+        <div className="custom-gathering-inner">
+          <div className="custom-gathering-copy">
+            <p className="custom-gathering-eyebrow">Custom Gatherings</p>
+
+            <h2>Shape the stay around your group</h2>
+
+            <p>
+              Not every retreat follows the same rhythm. Whether you are planning a
+              church weekend, student retreat, family gathering, leadership event, or
+              day visit, our team can help you think through lodging, meals, meeting
+              spaces, and time outdoors.
+            </p>
+
+            <a href="/contact" className="custom-gathering-button">
+              Start Planning <span>→</span>
+            </a>
           </div>
 
-          <EventCarousel />
-        </section>
+          <div className="custom-gathering-list">
+            <article className="custom-gathering-item">
+              <span>01</span>
+              <div>
+                <h3>Choose your spaces</h3>
+                <p>
+                  Find lodging, meeting rooms, and gathering areas that fit the size
+                  and feel of your group.
+                </p>
+              </div>
+            </article>
+
+            <article className="custom-gathering-item">
+              <span>02</span>
+              <div>
+                <h3>Build your rhythm</h3>
+                <p>
+                  Make room for sessions, shared meals, worship, quiet time,
+                  conversation, and rest.
+                </p>
+              </div>
+            </article>
+
+            <article className="custom-gathering-item">
+              <span>03</span>
+              <div>
+                <h3>Add time outdoors</h3>
+                <p>
+                  Include trails, lakefront space, firepits, recreation, and simple
+                  time away from the noise.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
 
     </main>
   );
