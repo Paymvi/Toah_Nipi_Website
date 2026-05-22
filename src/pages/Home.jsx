@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import QuickLinks from "../components/QuickLinks";
 import EventCarousel from "../components/EventCarousel";
+import Footer from "../components/Footer";
 
 
 export default function Home() {
@@ -270,39 +271,9 @@ export default function Home() {
 
         </div>
 
-        <div className="footer-contact-grid">
-          <div className="footer-contact-card">
-            <p className="footer-label">Physical Address</p>
-            <p>
-              49 Fellowship Circle
-              <br />
-              Rindge, NH 03461
-            </p>
-          </div>
+        
+        <Footer />
 
-          <div className="footer-contact-card">
-            <p className="footer-label">Mailing Address</p>
-            <p>
-              252 Old Ashburnham Road
-              <br />
-              Rindge, NH 03461
-            </p>
-          </div>
-
-          <div className="footer-contact-card">
-            <p className="footer-label">Phone</p>
-            <p>
-              <a href="tel:16038995464">(603) 899-5464</a>
-            </p>
-          </div>
-
-          <div className="footer-contact-card">
-            <p className="footer-label">Email</p>
-            <p>
-              <a href="mailto:info@toahnipi.org">contactus@toahnipi.org</a>
-            </p>
-          </div>
-        </div>
       </section>
 
 

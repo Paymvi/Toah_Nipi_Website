@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const lodgingBuildings = [
   {
@@ -430,6 +432,88 @@ const lodgingBuildings = [
       },
     ],
   },
+  {
+    id: "rustic-cottages",
+    title: "The Rustic Cottages",
+    description:
+      "For those seeking prayerful solitude and reflection in the midst of God's beautiful creation, Toah Nipi offers several independent rustic cottages that fit 3–8 overnight guests. We will gladly assist you in choosing one of these unique housing spots tailored to your specific needs.",
+    images: [
+      {
+        src: "/AFrame.webp",
+        alt: "Exterior view of a rustic cottage at Toah Nipi",
+      },
+      {
+        src: "/Bezer.webp",
+        alt: "Second rustic cottage at Toah Nipi",
+      },
+      {
+        src: "/Capurnum.webp",
+        alt: "Rustic cottage surrounded by trees",
+      },
+    ],
+    accordionItems: [
+      {
+        id: "layout",
+        title: "Layout",
+        content: (
+          <>
+            <p>
+              The rustic cottages are independent lodging spaces set apart from
+              the larger lodge buildings, offering a quieter and more private stay.
+            </p>
+
+            <p>
+              Each cottage has its own unique layout, making them a good fit for
+              individuals, couples, families, or small groups looking for a
+              simple retreat setting.
+            </p>
+
+            <a href="#" className="lodging-link">
+              View the floor plan
+            </a>
+          </>
+        ),
+      },
+      {
+        id: "guests",
+        title: "Number of Guests",
+        content: (
+          <>
+            <p>The rustic cottages can host 3–8 overnight guests, depending on the cottage.</p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>3–8</span>
+                <p>Overnight guests per cottage</p>
+              </div>
+
+              <div>
+                <span>Several</span>
+                <p>Independent cottage options available</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+      {
+        id: "features",
+        title: "Features",
+        content: (
+          <>
+            <p>
+              These cottages are ideal for guests seeking a quieter, more
+              reflective stay surrounded by the natural beauty of Toah Nipi.
+            </p>
+
+            <p>
+              They are especially well-suited for prayer, solitude, family stays,
+              small retreats, and guests who want a more private lodging option.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
 
 
 ];
@@ -451,7 +535,7 @@ function LodgeSection({ building }) {
   };
 
   return (
-    <section className="lodge-feature-section">
+    <section className="lodge-feature-section" id={building.id}>
       <div className="lodge-gallery">
         <div className="lodge-main-image-wrap">
           <img
@@ -543,6 +627,22 @@ function LodgeSection({ building }) {
 }
 
 export default function Lodging() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const sectionId = location.hash.replace("#", "");
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  }, [location]);
+
   return (
     <main className="lodging-page">
       <section className="lodging-intro">
@@ -557,6 +657,58 @@ export default function Lodging() {
       {lodgingBuildings.map((building) => (
         <LodgeSection building={building} key={building.id} />
       ))}
+
+
+      <section className="lake-section">
+        <div className="lake-content">
+          {/* <p className="lake-eyebrow">Ready to learn more?</p> */}
+
+          <div className="lake-heading-box">
+            <div className="lake-heading-inner">
+              <p className="lake-eyebrow">Ready to learn more?</p>
+
+              <h2>We love hosting student groups, orgs, churches, and families.</h2>
+            </div>
+          </div>
+
+          <p className="lake-text">
+            We are committed to accommodating the <span className="bold-text">unique tastes</span> and <span className="bold-text">special requests</span> of each group.
+          </p>
+
+          <Link to="/contact" className="lake-button">
+            Connect with us
+          </Link>
+        </div>
+      </section> 
+
+
+      <section className="site-footer-section">
+        <div className="footer-logo-area">
+          <img
+            src="/toah-nipi-logo-2.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-1"
+          />
+
+          <p>
+            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
+          </p>
+
+          <img
+            src="/Secondary-Logo.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-2"
+          />
+
+        </div>
+
+        
+        <Footer />
+
+      </section>
+      
+
+
     </main>
   );
 }

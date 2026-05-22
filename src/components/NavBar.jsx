@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 
@@ -8,9 +8,11 @@ const navItems = [
     label: "Lodging",
     path: "/lodging",
     dropdown: [
-      { label: "Cabins", path: "/lodging/cabins" },
-      { label: "Retreat Houses", path: "/lodging/retreat-houses" },
-      { label: "Group Lodging", path: "/lodging/group-lodging" },
+      { label: "Hebron", path: "/lodging#hebron" },
+      { label: "Bethel", path: "/lodging#bethel" },
+      { label: "Dothan", path: "/lodging#dothan" },
+      { label: "Guest House", path: "/lodging#guest-house" },
+      { label: "Rustic Cottages", path: "/lodging#rustic-cottages" },
     ],
   },
   {
@@ -57,11 +59,20 @@ const navItems = [
     ],
   },
 ];
+
 export default function NavBar() {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
+
   const [bgOpacity, setBgOpacity] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
+    if (!isHomePage) {
+      setBgOpacity(1);
+      return;
+    }
+
     const handleScroll = () => {
       const opacity = Math.min(window.scrollY / 160, 1);
       setBgOpacity(opacity);
@@ -72,7 +83,7 @@ export default function NavBar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   const isScrolled = bgOpacity > 0.15;
 
@@ -166,7 +177,7 @@ export default function NavBar() {
             <FaLinkedinIn />
           </a>
 
-          
+
         </div>
 
         <Link to="/give" className="give-link">
