@@ -160,9 +160,12 @@ export default function Events() {
             </a>
           </div>
 
-          <div className="custom-gathering-list">
-            <article className="custom-gathering-item">
+          
+        <div className="custom-gathering-list">
+          <article className="custom-gathering-item">
+            <div className="custom-gathering-item-content">
               <span>01</span>
+
               <div>
                 <h3>Choose your spaces</h3>
                 <p>
@@ -170,10 +173,21 @@ export default function Events() {
                   and feel of your group.
                 </p>
               </div>
-            </article>
+            </div>
 
-            <article className="custom-gathering-item">
+            <div className="custom-gathering-item-image-wrap">
+              <img
+                src="/Hebron-Front.jpeg"
+                alt="Toah Nipi lodging and meeting space"
+                className="custom-gathering-item-image"
+              />
+            </div>
+          </article>
+
+          <article className="custom-gathering-item">
+            <div className="custom-gathering-item-content">
               <span>02</span>
+
               <div>
                 <h3>Build your rhythm</h3>
                 <p>
@@ -181,10 +195,21 @@ export default function Events() {
                   conversation, and rest.
                 </p>
               </div>
-            </article>
+            </div>
 
-            <article className="custom-gathering-item">
+            <div className="custom-gathering-item-image-wrap">
+              <img
+                src="/TN-Thankgiving-Clear.png"
+                alt="Guests sharing a meal at Toah Nipi"
+                className="custom-gathering-item-image"
+              />
+            </div>
+          </article>
+
+          <article className="custom-gathering-item">
+            <div className="custom-gathering-item-content">
               <span>03</span>
+
               <div>
                 <h3>Add time outdoors</h3>
                 <p>
@@ -192,8 +217,18 @@ export default function Events() {
                   time away from the noise.
                 </p>
               </div>
-            </article>
-          </div>
+            </div>
+
+            <div className="custom-gathering-item-image-wrap">
+              <img
+                src="/Lake-Fall.webp"
+                alt="Lake and outdoor space at Toah Nipi"
+                className="custom-gathering-item-image"
+              />
+            </div>
+          </article>
+        </div>
+          
         </div>
       </section>
 
