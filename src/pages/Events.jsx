@@ -1,5 +1,5 @@
 import EventCarousel from "../components/EventCarousel2";
-
+import Footer from "../components/Footer";
 
 const familyCampWeeks = [
   {
@@ -125,7 +125,7 @@ export default function Events() {
 
         <div className="thanksgiving-content">
           <div className="thanksgiving-inner">
-            <h2>Thanksgiving House Party</h2>
+            <h2><span className="highlight-text">Thanksgiving</span> House Party</h2>
 
             <p>
               We welcome you to join us for our cozy International Student
@@ -146,13 +146,13 @@ export default function Events() {
           <div className="custom-gathering-copy">
             <p className="custom-gathering-eyebrow">Custom Gatherings</p>
 
-            <h2>Shape the stay around your group</h2>
+            <h2><span className="highlight-text">Customize</span> the stay around your group</h2>
 
             <p>
               Not every retreat follows the same rhythm. Whether you are planning a
               church weekend, student retreat, family gathering, leadership event, or
-              day visit, our team can help you think through lodging, meals, meeting
-              spaces, and time outdoors.
+              day visit, <span className="bold-text">our team can help you think through lodging, meals, meeting
+              spaces, and time outdoors.</span>
             </p>
 
             <a href="/contact" className="custom-gathering-button">
@@ -229,7 +229,33 @@ export default function Events() {
           </article>
         </div>
           
-        </div>
+      </div>
+      </section>
+
+      <section className="site-footer-section">
+        <div className="footer-logo-area">
+          <img
+            src="/toah-nipi-logo-2.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-1"
+          />
+
+          <p>
+            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
+          </p>
+
+          <img
+            src="/Secondary-Logo.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-2"
+          />
+
+          
+
+      </div>
+
+      <Footer />
+
       </section>
 
     </main>
