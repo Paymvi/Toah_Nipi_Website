@@ -5,6 +5,7 @@ const giveUrl =
 
 const partnerWays = [
   {
+    id: "ways-to-give",
     number: "01",
     title: "Make a Gift",
     text: "Support the facilities, programs, and ministry work that help guests encounter rest, renewal, and deeper connection with God.",
@@ -12,6 +13,7 @@ const partnerWays = [
     href: giveUrl,
   },
   {
+    id: "volunteer",
     number: "02",
     title: "Serve With Us",
     text: "Use your time, skills, and hands-on help to care for the grounds, improve spaces, and bless the guests who come here.",
@@ -19,6 +21,7 @@ const partnerWays = [
     href: "/events",
   },
   {
+    id: "pray",
     number: "03",
     title: "Pray",
     text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
@@ -111,9 +114,9 @@ function Partner() {
 
       <div style={{ height: "80px" }} />
 
-      <section className="partner-ways-grid">
+      <section className="partner-ways-grid" id="partner-ways">
         {partnerWays.map((way) => (
-          <article className="partner-way-card" key={way.title}>
+          <article className="partner-way-card" id={way.id} key={way.title}>
             <span>{way.number}</span>
             <h3>{way.title}</h3>
             <p>{way.text}</p>

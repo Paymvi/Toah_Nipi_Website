@@ -4718,3 +4718,14 @@ body {
     linear-gradient(rgba(52, 56, 20, 0.06), rgba(52, 56, 20, 0.06)),
     #ded8ba;
 }
+
+
+#partner-ways,
+#ways-to-give,
+#volunteer,
+#pray {
+  scroll-margin-top: 125px;
+}
+.partner-way-card {
+  scroll-margin-top: 125px;
+}

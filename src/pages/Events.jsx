@@ -31,7 +31,7 @@ const discounts = [
 export default function Events() {
   return (
     <main className="events-page">
-      <section className="family-camp-section">
+      <section className="family-camp-section" id="family-camp">
         <div className="family-camp-image-wrap">
           <img
             src="/Family-Camp.webp"
@@ -105,7 +105,7 @@ export default function Events() {
       </section>
 
         
-      <section className="events-preview-section">
+      <section className="events-preview-section" id="activities">
         <div className="events-header">
           <p className="eyebrow">Events</p>
           <h2>What's waiting for you</h2>
@@ -114,7 +114,7 @@ export default function Events() {
         <EventCarousel />
       </section>
 
-      <section className="thanksgiving-section">
+      <section className="thanksgiving-section" id="thanksgiving">
         <div className="thanksgiving-image-wrap">
           <img
             src="/TN-Thankgiving-Clear.png"
@@ -141,7 +141,7 @@ export default function Events() {
       </section>
 
 
-      <section className="custom-gathering-section">
+      <section className="custom-gathering-section" id="custom-gatherings">
         <div className="custom-gathering-inner">
           <div className="custom-gathering-copy">
             <p className="custom-gathering-eyebrow">For groups!</p>
@@ -235,7 +235,7 @@ export default function Events() {
 
 
 
-      <section className="personal-retreat-section">
+      <section className="personal-retreat-section" id="personal-retreats">
         <div className="personal-retreat-inner">
           <div className="personal-retreat-image-card">
             <img
