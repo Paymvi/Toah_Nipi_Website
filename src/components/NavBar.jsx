@@ -46,11 +46,12 @@ const navItems = [
     ],
   },
   {
-    label: "Blog",
-    path: "/blog",
+    label: "Donors",
+    path: "/donors",
     dropdown: [
-      { label: "Latest Posts", path: "/blog" },
-      { label: "Newsletters", path: "/blog/newsletters" },
+      { label: "Project Impact", path: "/donors#project-impact" },
+      { label: "Donor Wall", path: "/donors#donor-wall" },
+      { label: "Recognition Notes", path: "/donors#recognition-notes" },
     ],
   },
   {

@@ -11,6 +11,8 @@ import Lodging from "./pages/Lodging";
 import Events from "./pages/Events";
 import Partner from "./pages/Partner";
 import OurStory from "./pages/OurStory";
+import Donors from "./pages/Donors";
+
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -65,10 +67,10 @@ export default function App() {
           element={<PlaceholderPage title="Our Story" />}
         />
 
-        <Route path="/blog" element={<PlaceholderPage title="Blog" />} />
+        <Route path="/donors" element={<Donors />} />
         <Route
-          path="/blog/:section"
-          element={<PlaceholderPage title="Blog" />}
+          path="/donors/:section"
+          element={<PlaceholderPage title="Donors" />}
         />
 
         <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
