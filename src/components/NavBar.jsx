@@ -39,9 +39,10 @@ const navItems = [
     label: "Our Story",
     path: "/our-story",
     dropdown: [
-      { label: "History", path: "/our-story/history" },
-      { label: "Mission", path: "/our-story/mission" },
-      { label: "Staff", path: "/our-story/staff" },
+      { label: "History", path: "/our-story#history" },
+      { label: "Core Values", path: "/our-story#core-values" },
+      { label: "Statement of Faith", path: "/our-story#statement-of-faith" },
+      { label: "Our Team", path: "/our-story#our-team" },
     ],
   },
   {
@@ -88,6 +89,25 @@ export default function NavBar() {
   }, [isHomePage]);
 
   const isScrolled = bgOpacity > 0.15;
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const sectionId = location.hash.replace("#", "");
+
+    const timeout = setTimeout(() => {
+      const section = document.getElementById(sectionId);
+
+      if (section) {
+        section.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 80);
+
+    return () => clearTimeout(timeout);
+  }, [location]);
 
   return (
     <header

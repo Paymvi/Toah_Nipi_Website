@@ -46,15 +46,15 @@ const featureSections = [
     linkText: "Share our mission",
     href: "/contact",
   },
-  {
-    eyebrow: "Prayer",
-    title: "Pray with us for renewal.",
-    text: "We believe prayer is a vital part of the ministry. Pray for our guests, staff, volunteers, facilities, and for the gospel to continue shaping lives across New England.",
-    image: "/PrayerGarden4-abi.png",
-    imageAlt: "Stone prayer garden at Toah Nipi",
-    linkText: "Send a prayer request",
-    href: "mailto:contactus@toahnipi.org?subject=Prayer",
-  },
+  // {
+  //   eyebrow: "Prayer",
+  //   title: "Pray with us for renewal.",
+  //   text: "We believe prayer is a vital part of the ministry. Pray for our guests, staff, volunteers, facilities, and for the gospel to continue shaping lives across New England.",
+  //   image: "/PrayerGarden4-abi.png",
+  //   imageAlt: "Stone prayer garden at Toah Nipi",
+  //   linkText: "Send a prayer request",
+  //   href: "mailto:contactus@toahnipi.org?subject=Prayer",
+  // },
 ];
 
 function Partner() {
@@ -89,7 +89,7 @@ function Partner() {
         </div>
       </section>
 
-      <section className="partner-intro" id="partner-ways">
+      {/* <section className="partner-intro" id="partner-ways">
         <div className="partner-intro-copy">
           <p className="partner-eyebrow">Join the Mission</p>
 
@@ -107,7 +107,9 @@ function Partner() {
             reflect, reconnect, and grow.
           </p>
         </div>
-      </section>
+      </section> */}
+
+      <div style={{ height: "80px" }} />
 
       <section className="partner-ways-grid">
         {partnerWays.map((way) => (

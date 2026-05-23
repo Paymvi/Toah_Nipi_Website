@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import Lodging from "./pages/Lodging";
 import Events from "./pages/Events";
 import Partner from "./pages/Partner";
+import OurStory from "./pages/OurStory";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -58,10 +59,7 @@ export default function App() {
           element={<PlaceholderPage title="Partner" />}
         />
 
-        <Route
-          path="/our-story"
-          element={<PlaceholderPage title="Our Story" />}
-        />
+        <Route path="/our-story" element={<OurStory />} />
         <Route
           path="/our-story/:section"
           element={<PlaceholderPage title="Our Story" />}
