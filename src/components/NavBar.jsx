@@ -58,8 +58,8 @@ const navItems = [
     label: "Contact",
     path: "/contact",
     dropdown: [
-      { label: "Contact Us", path: "/contact" },
-      { label: "Directions", path: "/contact/directions" },
+      { label: "Contact Us", path: "/contact#contact-form" },
+      { label: "Directions", path: "/contact#directions" },
     ],
   },
 ];

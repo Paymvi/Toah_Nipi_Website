@@ -12,7 +12,7 @@ import Events from "./pages/Events";
 import Partner from "./pages/Partner";
 import OurStory from "./pages/OurStory";
 import Donors from "./pages/Donors";
-
+import Contact from "./pages/Contact";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -73,7 +73,7 @@ export default function App() {
           element={<PlaceholderPage title="Donors" />}
         />
 
-        <Route path="/contact" element={<PlaceholderPage title="Contact" />} />
+        <Route path="/contact" element={<Contact />} />
         <Route
           path="/contact/:section"
           element={<PlaceholderPage title="Contact" />}
