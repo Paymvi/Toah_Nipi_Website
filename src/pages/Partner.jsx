@@ -212,7 +212,9 @@ function Partner() {
         </p>
       </section>
 
-      <EventCarousel3 />
+      <section id="giving-projects" className="partner-giving-projects">
+        <EventCarousel3 />
+      </section>
 
       <section className="partner-feature-stack">
         {featureSections.map((section, index) => (

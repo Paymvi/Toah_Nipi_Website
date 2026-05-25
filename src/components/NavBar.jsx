@@ -30,9 +30,10 @@ const navItems = [
     label: "Help Support",
     path: "/partner",
     dropdown: [
-      { label: "Make a Gift", path: "/partner#ways-to-give" },
-      { label: "Serve With Us", path: "/partner#volunteer" },
-      { label: "Pray", path: "/partner#pray" },
+      { label: "Make a Gift", path: "/partner#giving-projects" },
+      { label: "Serve With Us", path: "/partner#serve-with-us" },
+      { label: "Pray", path: "/partner#pray-with-us" },
+      { label: "Spread the Word", path: "/partner#spread-the-word" },
     ],
   },
   {
