@@ -38,42 +38,97 @@ const partnerWays = [
     href: "#spread-the-word",
   },
 ];
-
 const featureSections = [
   {
-    eyebrow: "Serve with Us",
-    title: "Volunteer",
-    text: "Join us in seeking revival for New England through prayer. Pray for the gospel to be proclaimed and for Toah Nipi to continue to play a vital role in advancing God's kingdom on earth. As you pray for those who do not follow Jesus and for Toah Nipi, we invite you to share your prayer requests with us so we may have the privilege to pray for you as well. ",
+    id: "serve-with-us",
+    eyebrow: "Serve",
+    title: "Volunteer with us.",
+    text: (
+      <>
+        <span className="bold-text">Volunteers play a vital role</span> in our
+        ministry, and we are grateful. We have openings <span className="bold-text">year-round</span>{" "}
+        for people willing to volunteer their time and talents!{" "}
+        <br />
+        <span className="bold-text">Room and board are provided.</span>
+      </>
+    ),
+    secondText: (
+      <>
+        Check out our <span className="bold-text">volunteer needs</span> below
+        or <span className="bold-text">share your unique skills</span> with us!
+      </>
+    ),
+    needs: [
+      "Trail Work",
+      "Wood Splitting",
+      "Building Beautification",
+      "Landscaping / Gardening",
+      "Hosting",
+    ],
+    highlightTitle: "Volunteer Weekend",
+    highlightText: (
+      <>
+        {/* Take part in <span className="bold-text">Volunteer Weekend</span> at
+        Toah Nipi! We cover <span className="bold-text">room and board</span>{" "}
+        while you invest in Toah Nipi through trail clearing, gardening, wood
+        splitting, and more. */}
+      </>
+    ),
     image: "/May-2024-Volunteer.jpg",
-    imageAlt: "Toah Nipi sign",
+    imageAlt: "Volunteers serving at Toah Nipi",
     imagePosition: "40% center",
     imageZoom: 1.08,
-    linkText: "Share our mission",
+    linkText: "Contact Us",
     href: "/contact",
   },
   {
+    id: "pray-with-us",
     eyebrow: "Pray",
     title: "Pray",
-    text: "Join us in seeking revival for New England through prayer. Pray for the gospel to be proclaimed and for Toah Nipi to continue to play a vital role in advancing God's kingdom on earth. As you pray for those who do not follow Jesus and for Toah Nipi, we invite you to share your prayer requests with us so we may have the privilege to pray for you as well. ",
+    text: (
+      <>
+        Join us in seeking{" "}
+        <span className="bold-text">revival for New England</span> through
+        prayer. Pray for{" "}
+        <span className="bold-text">the gospel to be proclaimed</span> and for
+        Toah Nipi to continue to play a vital role in advancing God's kingdom on
+        earth. 
+        <br /><br />
+        As you pray for those who do not follow Jesus and for Toah Nipi,
+        we invite you to{" "}
+        <span className="bold-text">share your prayer requests</span> with us so
+        we may have the privilege to pray for you as well.
+      </>
+    ),
     image: "/May-2025-PrayerGarden.jpg",
-    imageAlt: "Toah Nipi sign",
+    imageAlt: "Prayer garden at Toah Nipi",
     imagePosition: "40% center",
     imageZoom: 1.08,
-    linkText: "Share our mission",
-    href: "/contact",
+    linkText: "Request Prayer",
+    href: "mailto:contactus@toahnipi.org?subject=Prayer Request",
   },
   {
+    id: "spread-the-word",
     eyebrow: "Advocacy",
     title: "Spread the word about Toah Nipi.",
-    text: "One of the simplest ways to partner with us is to tell others. Invite churches, families, students, and friends to experience Toah Nipi as a place to gather, rest, and reconnect with God.",
+    text: (
+      <>
+        One of the simplest ways to partner with us is to{" "}
+        <span className="bold-text">tell others</span>. Invite{" "}
+        <span className="bold-text">
+          churches, families, students, and friends
+        </span>{" "}
+        to experience Toah Nipi as a place to gather, rest, and reconnect with
+        God.
+      </>
+    ),
     image: "/Oct-2024-Fire.jpg",
-    imageAlt: "Toah Nipi sign",
+    imageAlt: "People gathered around a fire at Toah Nipi",
     imagePosition: "10% center",
     imageZoom: 1.23,
     linkText: "Share our mission",
     href: "/contact",
   },
-
 ];
 
 function Partner() {
@@ -162,6 +217,7 @@ function Partner() {
       <section className="partner-feature-stack">
         {featureSections.map((section, index) => (
           <article
+            id={section.id}
             className={`partner-feature ${
               index % 2 === 1 ? "partner-feature-reverse" : ""
             }`}
@@ -171,7 +227,7 @@ function Partner() {
               <img
                 src={section.image}
                 alt={section.imageAlt}
-                style={{ 
+                style={{
                   objectPosition: section.imagePosition || "center center",
                   transform: `scale(${section.imageZoom || 1})`,
                 }}
@@ -181,13 +237,38 @@ function Partner() {
             <div className="partner-feature-copy">
               <p className="partner-eyebrow">{section.eyebrow}</p>
               <h2>{section.title}</h2>
+
               <p>{section.text}</p>
+
+              {section.secondText && <p>{section.secondText}</p>}
+
+              {section.needs && (
+                <div className="volunteer-needs-wrap">
+                  <p className="volunteer-needs-label">Current Volunteer Needs</p>
+
+                  <div className="volunteer-needs-grid">
+                    {section.needs.map((need) => (
+                      <span key={need}>{need}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {section.highlightTitle && (
+                <div className="volunteer-weekend-card">
+                  <span>Featured Opportunity</span>
+                  <h3>{section.highlightTitle}</h3>
+                  <p>{section.highlightText}</p>
+                </div>
+              )}
 
               <a
                 href={section.href}
                 target={section.href.startsWith("http") ? "_blank" : undefined}
                 rel="noreferrer"
-                className="partner-text-link"
+                className={`partner-text-link ${
+                  section.id === "serve-with-us" ? "volunteer-text-link" : ""
+                }`}
               >
                 {section.linkText} <span aria-hidden="true">→</span>
               </a>

@@ -3426,13 +3426,14 @@ body {
   font-weight: 400;
 }
 
+/* Volunteer / Pray / Spread paragraph text */
 .partner-feature-copy p:not(.partner-eyebrow) {
   max-width: 580px;
   margin: 26px 0 0;
 
   color: rgba(58, 59, 31, 0.88);
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
-  line-height: 1.72;
+  font-size: clamp(0.98rem, 1.2vw, 1.0rem);
+  line-height: 1.66;
 }
 
 .partner-text-link {
@@ -3654,7 +3655,7 @@ body {
 }
 
 .partner-final-card {
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   text-align: center;
 }
@@ -3681,6 +3682,140 @@ body {
 
 .partner-final-actions {
   justify-content: center;
+}
+
+.partner-feature {
+  scroll-margin-top: 130px;
+}
+
+.volunteer-needs-wrap {
+  margin-top: 30px;
+  padding: 26px;
+  border: 1px solid rgba(60, 61, 31, 0.14);
+  border-radius: 18px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(247, 241, 223, 0.82),
+      rgba(255, 252, 232, 0.52)
+    );
+  box-shadow: 0 18px 42px rgba(49, 51, 25, 0.08);
+}
+
+.volunteer-needs-label {
+  margin: 0 0 16px !important;
+  color: rgba(60, 61, 31, 0.62) !important;
+  font-size: 0.72rem !important;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.volunteer-needs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.volunteer-needs-grid span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 9px 14px;
+
+  border: 1px solid rgba(60, 61, 31, 0.16);
+  border-radius: 999px;
+
+  background: rgba(52, 56, 20, 0.08);
+  color: #343814;
+
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.volunteer-weekend-card {
+  position: relative;
+  overflow: hidden;
+
+  margin-top: 26px;
+  padding: 28px 30px;
+
+  border-radius: 20px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(52, 56, 20, 0.98),
+      rgba(82, 88, 39, 0.94)
+    );
+  color: #f7f1df;
+
+  box-shadow: 0 22px 48px rgba(49, 51, 25, 0.18);
+}
+
+.volunteer-weekend-card::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+
+  background: rgba(247, 241, 223, 0.12);
+}
+
+.volunteer-weekend-card span {
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: #ded8ba;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
+.volunteer-weekend-card h3 {
+  position: relative;
+  margin: 0;
+
+  color: #f7f1df;
+  font-family: var(--font-cooper);
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  line-height: 0.95;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.volunteer-weekend-card p {
+  position: relative;
+  max-width: 520px;
+  margin: 16px 0 0 !important;
+
+  color: rgba(247, 241, 223, 0.84) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.65 !important;
+}
+
+.volunteer-text-link {
+  margin-top: 28px;
+  padding: 13px 22px;
+
+  border-radius: 999px;
+  background: #343814;
+  color: #f7f1df;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.volunteer-text-link:hover {
+  color: #f7f1df;
+  background: #4b5220;
+  transform: translateX(0) translateY(-2px);
 }
 
 /* RESPONSIVE */
