@@ -27,7 +27,7 @@ const navItems = [
   ],
 },
   {
-    label: "Partner",
+    label: "Help Support",
     path: "/partner",
     dropdown: [
       { label: "Make a Gift", path: "/partner#ways-to-give" },

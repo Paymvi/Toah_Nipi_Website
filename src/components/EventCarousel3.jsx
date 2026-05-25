@@ -9,28 +9,28 @@ function EventCarousel3() {
       title: "Christmas Light Walk",
       description:
         "A fully lighted Christmas walk through snowy New England woods, with scenes depicting the story of Jesus’ birth and the hope of creating a meaningful local tradition for generations to come.",
-      image: "/ChristmasWalk.jpg",
+      image: "/Hebron-Night-Lights.png",
     },
     {
       label: "Trails",
       title: "Woodland Trail Around the Pond",
       description:
         "Help transform the current woodland trails into well-maintained, easy-to-navigate pathways for peaceful walks around the pond.",
-      image: "/Trails.jpeg",
+      image: "/May-2025-Lake+Nature-2.jpg",
     },
     {
       label: "Gathering Space",
       title: "Outdoor Amphitheatre",
       description:
         "Support a new outdoor amphitheatre between the office and the pond, creating a cost-effective space for conferences, meetings, worship, and teaching in a beautiful natural setting.",
-      image: "/OutdoorAmphitheatre.jpg",
+      image: "/Outdoor-Theatre.png",
     },
     {
       label: "Rest & Reflection",
       title: "Trex Swings",
       description:
         "Help place durable Trex swings throughout Toah Nipi as an invitation to pause, connect with friends, and enjoy the beauty of creation.",
-      image: "/TrexSwings.jpg",
+      image: "/Trex-Swings.jpg",
     },
     {
       label: "Ongoing Support",
@@ -55,7 +55,8 @@ function EventCarousel3() {
       <div className="partner-projects-header">
         <div>
           <p className="partner-eyebrow">Projects & Priorities</p>
-          <h2>Support the next chapter of Toah Nipi.</h2>
+          {/* <h2>Support the next chapter of Toah Nipi.</h2> */}
+          <h2>Make a Gift</h2>
         </div>
 
         <p>

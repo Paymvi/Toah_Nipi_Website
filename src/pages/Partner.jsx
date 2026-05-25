@@ -8,56 +8,72 @@ const partnerWays = [
     id: "ways-to-give",
     number: "01",
     title: "Make a Gift",
-    text: "Support the facilities, programs, and ministry work that help guests encounter rest, renewal, and deeper connection with God.",
+    // text: "Support the facilities, programs, and ministry work that help guests encounter rest, renewal, and deeper connection with God.",
     linkText: "Give today",
-    href: giveUrl,
+    href: "#giving-projects",
   },
   {
     id: "volunteer",
     number: "02",
     title: "Serve With Us",
-    text: "Use your time, skills, and hands-on help to care for the grounds, improve spaces, and bless the guests who come here.",
+    // text: "Use your time, skills, and hands-on help to care for the grounds, improve spaces, and bless the guests who come here.",
+    // text: "Volunteers play a vital role in our ministry. Join a Volunteer weekend or our year-round openings!",
     linkText: "Volunteer",
-    href: "/events",
+    href: "#serve-with-us",
   },
   {
     id: "pray",
     number: "03",
     title: "Pray",
-    text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
+    // text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
     linkText: "Send a prayer request",
-    href: "mailto:contactus@toahnipi.org?subject=Prayer",
+    href: "#pray-with-us",
+  },
+    {
+    id: "spread-word",
+    number: "04",
+    title: "Spread the Word",
+    // text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
+    linkText: "Send a prayer request",
+    href: "#spread-the-word",
   },
 ];
 
 const featureSections = [
   {
-    eyebrow: "Giving",
-    title: "Help make the next chapter possible.",
-    text: "Toah Nipi’s ministry depends on generous partners who believe in creating places of rest, worship, and community. Your giving helps us improve spaces, expand programs, and care well for every guest who arrives on the property.",
-    image: "/Canoe.jpeg",
-    imageAlt: "Canoes resting near the water at Toah Nipi",
-    linkText: "Make a Gift",
-    href: giveUrl,
+    eyebrow: "Serve with Us",
+    title: "Volunteer",
+    text: "Join us in seeking revival for New England through prayer. Pray for the gospel to be proclaimed and for Toah Nipi to continue to play a vital role in advancing God's kingdom on earth. As you pray for those who do not follow Jesus and for Toah Nipi, we invite you to share your prayer requests with us so we may have the privilege to pray for you as well. ",
+    image: "/May-2024-Volunteer.jpg",
+    imageAlt: "Toah Nipi sign",
+    imagePosition: "40% center",
+    imageZoom: 1.08,
+    linkText: "Share our mission",
+    href: "/contact",
+  },
+  {
+    eyebrow: "Pray",
+    title: "Pray",
+    text: "Join us in seeking revival for New England through prayer. Pray for the gospel to be proclaimed and for Toah Nipi to continue to play a vital role in advancing God's kingdom on earth. As you pray for those who do not follow Jesus and for Toah Nipi, we invite you to share your prayer requests with us so we may have the privilege to pray for you as well. ",
+    image: "/May-2025-PrayerGarden.jpg",
+    imageAlt: "Toah Nipi sign",
+    imagePosition: "40% center",
+    imageZoom: 1.08,
+    linkText: "Share our mission",
+    href: "/contact",
   },
   {
     eyebrow: "Advocacy",
     title: "Spread the word about Toah Nipi.",
     text: "One of the simplest ways to partner with us is to tell others. Invite churches, families, students, and friends to experience Toah Nipi as a place to gather, rest, and reconnect with God.",
-    image: "/sign.jpg",
+    image: "/Oct-2024-Fire.jpg",
     imageAlt: "Toah Nipi sign",
+    imagePosition: "10% center",
+    imageZoom: 1.23,
     linkText: "Share our mission",
     href: "/contact",
   },
-  // {
-  //   eyebrow: "Prayer",
-  //   title: "Pray with us for renewal.",
-  //   text: "We believe prayer is a vital part of the ministry. Pray for our guests, staff, volunteers, facilities, and for the gospel to continue shaping lives across New England.",
-  //   image: "/PrayerGarden4-abi.png",
-  //   imageAlt: "Stone prayer garden at Toah Nipi",
-  //   linkText: "Send a prayer request",
-  //   href: "mailto:contactus@toahnipi.org?subject=Prayer",
-  // },
+
 ];
 
 function Partner() {
@@ -141,6 +157,8 @@ function Partner() {
         </p>
       </section>
 
+      <EventCarousel3 />
+
       <section className="partner-feature-stack">
         {featureSections.map((section, index) => (
           <article
@@ -150,7 +168,14 @@ function Partner() {
             key={section.title}
           >
             <div className="partner-feature-image-wrap">
-              <img src={section.image} alt={section.imageAlt} />
+              <img
+                src={section.image}
+                alt={section.imageAlt}
+                style={{ 
+                  objectPosition: section.imagePosition || "center center",
+                  transform: `scale(${section.imageZoom || 1})`,
+                }}
+              />
             </div>
 
             <div className="partner-feature-copy">
@@ -171,7 +196,7 @@ function Partner() {
         ))}
       </section>
 
-      <EventCarousel3 />
+      
 
       <section className="partner-final-cta">
         <div className="partner-final-card">

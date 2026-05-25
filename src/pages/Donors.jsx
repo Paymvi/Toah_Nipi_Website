@@ -7,7 +7,7 @@ const projectImpacts = [
     title: "Christmas Light Walk",
     category: "Future Experience",
     status: "In Development",
-    image: "/SnowBridge.jpg",
+    image: "/Hebron-Night-Lights.png",
     description:
       "A fully lighted Christmas walk experience designed to become a meaningful local tradition, sharing the story of Jesus’ birth through outdoor scenes, lights, and Scripture.",
     donorNote:
@@ -23,7 +23,7 @@ const projectImpacts = [
     title: "Woodland Trail Around the Pond",
     category: "Land Stewardship",
     status: "In Progress",
-    image: "/Lake-Fall.webp",
+    image: "/May-2025-Lake+Nature-2.jpg",
     description:
       "Improvements to the woodland trails around the pond will create peaceful, accessible pathways for prayer, reflection, walking, and time outdoors.",
     donorNote:
@@ -39,11 +39,27 @@ const projectImpacts = [
     title: "Outdoor Amphitheatre",
     category: "Gathering Space",
     status: "Planned",
-    image: "/camp-background-2.jpg",
+    image: "/Outdoor-Theatre.png",
     description:
       "A new outdoor amphitheatre near the pond will provide a flexible space for worship, teaching, camp gatherings, concerts, and group events.",
     donorNote:
       "Donor support is helping create a space where future guests can gather, worship, and make lasting memories.",
+    fundedBy: [
+      "Add donor name",
+      "Add donor name",
+      "Anonymous Donor",
+    ],
+  },
+  {
+    id: "trex-swings",
+    title: "Trex Swings",
+    category: "Outdoor Seating",
+    status: "Planned",
+    image: "/Trex-Swings.jpg",
+    description:
+      "New Trex swings will create a peaceful place for guests to sit, rest, and enjoy the beauty of Toah Nipi’s outdoor spaces. These durable swings will offer a welcoming spot for conversation, reflection, and quiet moments near camp.",
+    donorNote:
+      "Donor support is helping provide long-lasting outdoor seating where guests can slow down, connect with others, and enjoy God’s creation.",
     fundedBy: [
       "Add donor name",
       "Add donor name",
