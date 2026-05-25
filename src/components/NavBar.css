@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 108px;
+  height: 82px;
   z-index: 1000;
 
   display: grid;
@@ -30,7 +30,7 @@
 }
 
 .nav-logo img {
-  height: 78px;
+  height: 58px;
   width: auto;
   display: block;
 }
@@ -50,7 +50,7 @@
 
 .nav-item {
   position: relative;
-  padding: 42px 0;
+  padding: 29px 0;
 }
 
 .nav-link {
@@ -92,7 +92,7 @@
 
 .dropdown {
   position: absolute;
-  top: 92px;
+  top: 72px;
   left: 50%;
 
   min-width: 140px;
