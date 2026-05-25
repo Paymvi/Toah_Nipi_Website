@@ -132,16 +132,18 @@ function getInitials(name) {
     .slice(0, 2);
 }
 
-function TeamCard({ person }) {
+function TeamCard({ person, showPhoto = true }) {
   return (
-    <article className="team-member-card">
-      <div className="team-member-photo">
-        {person.image ? (
-          <img src={person.image} alt={person.name} />
-        ) : (
-          <span>{getInitials(person.name)}</span>
-        )}
-      </div>
+    <article className={`team-member-card ${!showPhoto ? "team-member-card-no-photo" : ""}`}>
+      {showPhoto && (
+        <div className="team-member-photo">
+          {person.image ? (
+            <img src={person.image} alt={person.name} />
+          ) : (
+            <span>{getInitials(person.name)}</span>
+          )}
+        </div>
+      )}
 
       <div className="team-member-content">
         <p className="team-member-role">{person.role}</p>
@@ -157,7 +159,7 @@ function TeamCard({ person }) {
   );
 }
 
-function TeamGroup({ title, subtitle, people }) {
+function TeamGroup({ title, subtitle, people, showPhotos = true }) {
   return (
     <div className="our-team-group">
       <div className="our-team-board-heading">
@@ -167,7 +169,11 @@ function TeamGroup({ title, subtitle, people }) {
 
       <div className="our-team-grid">
         {people.map((person) => (
-          <TeamCard person={person} key={`${title}-${person.name}-${person.role}`} />
+          <TeamCard
+            person={person}
+            showPhoto={showPhotos}
+            key={`${title}-${person.name}-${person.role}`}
+          />
         ))}
       </div>
     </div>
@@ -195,6 +201,7 @@ export default function OurTeam() {
           title="Board of Trustees"
           subtitle="2024–2026"
           people={trustees}
+          showPhotos={false}
         />
 
         <TeamGroup

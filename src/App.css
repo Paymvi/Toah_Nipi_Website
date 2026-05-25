@@ -4776,7 +4776,7 @@ body {
   position: relative;
   overflow: hidden;
 
-  min-height: 430px;
+  min-height: 240px;
 
   border: 1px solid rgba(60, 61, 31, 0.14);
   border-radius: 18px;
@@ -4901,6 +4901,8 @@ body {
   font-size: 0.82rem !important;
   font-weight: 700;
 }
+
+
 
 /* Tablet */
 @media (max-width: 1100px) {
