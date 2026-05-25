@@ -46,14 +46,25 @@ body {
 
   background:
     linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-    url("/Hero.jpeg");
+    url("/camp-background-2.jpg");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
+.hero-title-strip {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
 
+  padding: 24px 24px;
+  background: rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(2px);
+
+  /* display: flex; */
+  justify-content: center;
+}
 
 .hero-content {
   max-width: 760px;
@@ -470,7 +481,7 @@ body {
 .split-image-one {
   background:
     linear-gradient(rgba(52, 56, 20, 0.18), rgba(52, 56, 20, 0.18)),
-    url("/camp-background-2.jpg");
+    url("/Hero4.png");
   background-size: cover;
   background-position: center;
 }
@@ -5617,7 +5628,7 @@ body {
 
   color: #f7f1df;
   font-family: var(--font-cooper);
-  font-size: clamp(3.4rem, 7.4vw, 6rem);
+  font-size: clamp(3rem, 7.4vw, 4.6em);
   line-height: 0.88;
   letter-spacing: -0.055em;
   font-weight: 400;
@@ -5634,7 +5645,7 @@ body {
   margin: 28px 0 0;
 
   color: rgba(247, 241, 223, 0.92);
-  font-size: clamp(1rem, 1.35vw, 1.2rem);
+  font-size: clamp(1rem, 1.35vw, 1.1rem);
   line-height: 1.68;
 
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
