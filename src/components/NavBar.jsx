@@ -16,24 +16,14 @@ const navItems = [
     ],
   },
   {
-  label: "Events",
-  path: "/events",
-  dropdown: [
-    { label: "Family Camp", path: "/events#family-camp" },
-    { label: "Activities", path: "/events#activities" },
-    { label: "Thanksgiving House Party", path: "/events#thanksgiving" },
-    { label: "Custom Gatherings", path: "/events#custom-gatherings" },
-    { label: "Personal Retreats", path: "/events#personal-retreats" },
-  ],
-},
-  {
-    label: "Help Support",
-    path: "/partner",
+    label: "Events",
+    path: "/events",
     dropdown: [
-      { label: "Make a Gift", path: "/partner#giving-projects" },
-      { label: "Serve With Us", path: "/partner#serve-with-us" },
-      { label: "Pray", path: "/partner#pray-with-us" },
-      { label: "Spread the Word", path: "/partner#spread-the-word" },
+      { label: "Family Camp", path: "/events#family-camp" },
+      { label: "Activities", path: "/events#activities" },
+      { label: "Thanksgiving House Party", path: "/events#thanksgiving" },
+      { label: "Custom Gatherings", path: "/events#custom-gatherings" },
+      { label: "Personal Retreats", path: "/events#personal-retreats" },
     ],
   },
   {
@@ -46,6 +36,17 @@ const navItems = [
       { label: "Our Team", path: "/our-story#our-team" },
     ],
   },
+  {
+    label: "Help Support",
+    path: "/partner",
+    dropdown: [
+      { label: "Make a Gift", path: "/partner#giving-projects" },
+      { label: "Serve With Us", path: "/partner#serve-with-us" },
+      { label: "Pray", path: "/partner#pray-with-us" },
+      { label: "Spread the Word", path: "/partner#spread-the-word" },
+    ],
+  },
+
   {
     label: "Donors",
     path: "/donors",

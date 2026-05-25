@@ -1,4 +1,5 @@
 import EventCarousel3 from "../components/EventCarousel3";
+import Footer from "../components/Footer";
 
 const giveUrl =
   "https://cwngui.campwise.com/Apps/OnlineGuestDonations/Index.html?AppID=MKQ4U6RZOHHSNINZSCJV3VSRQQ3QHB&LocCde=CA0000";
@@ -132,6 +133,23 @@ const featureSections = [
 ];
 
 function Partner() {
+  const handleCardClick = (event, href) => {
+    if (!href.startsWith("#")) return;
+
+    event.preventDefault();
+
+    const section = document.querySelector(href);
+
+    if (section) {
+      section.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      window.history.pushState(null, "", href);
+    }
+  };
+
   return (
     <main className="partner-page">
       <section className="partner-hero">
@@ -187,15 +205,22 @@ function Partner() {
 
       <section className="partner-ways-grid" id="partner-ways">
         {partnerWays.map((way) => (
-          <article className="partner-way-card" id={way.id} key={way.title}>
+          <a
+            className="partner-way-card"
+            id={way.id}
+            key={way.title}
+            href={way.href}
+            onClick={(event) => handleCardClick(event, way.href)}
+          >
             <span>{way.number}</span>
             <h3>{way.title}</h3>
-            <p>{way.text}</p>
 
-            <a href={way.href} target={way.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
-              {way.linkText} <span aria-hidden="true">→</span>
-            </a>
-          </article>
+            {way.text && <p>{way.text}</p>}
+
+            <div className="partner-card-link">
+              {way.linkText} →
+            </div>
+          </a>
         ))}
       </section>
 
@@ -281,7 +306,7 @@ function Partner() {
 
       
 
-      <section className="partner-final-cta">
+      {/* <section className="partner-final-cta">
         <div className="partner-final-card">
           <p className="partner-eyebrow partner-eyebrow-light">Ready to Partner?</p>
 
@@ -302,7 +327,30 @@ function Partner() {
             </a>
           </div>
         </div>
+      </section> */}
+
+      <section className="site-footer-section">
+        <div className="footer-logo-area">
+          <img
+            src="/toah-nipi-logo-2.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-1"
+          />
+
+          <p>
+            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
+          </p>
+
+          <img
+            src="/Secondary-Logo.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-2"
+          />
+
+        </div>
+        <Footer />      
       </section>
+
     </main>
   );
 }

@@ -239,15 +239,15 @@ export default function Events() {
         <div className="personal-retreat-inner">
           <div className="personal-retreat-image-card">
             <img
-              src="/Personal-Retreats.webp"
+              src="/Field-Sunset.jpg"
               alt="A quiet indoor retreat space at Toah Nipi"
               className="personal-retreat-image"
             />
 
-            <div className="personal-retreat-image-note">
+            {/* <div className="personal-retreat-image-note">
               <span>Quiet space</span>
               <p>For solitude, reflection, and rest.</p>
-            </div>
+            </div> */}
           </div>
 
           <div className="personal-retreat-copy">

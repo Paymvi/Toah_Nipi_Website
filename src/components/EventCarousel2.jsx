@@ -113,7 +113,8 @@ function EventCarousel2() {
             </div>
 
             <div className="event-card-content">
-              <h3>{event.title}</h3>
+              {/* <h3>{event.title}</h3> */}
+              <br/>
             </div>
           </article>
         ))}
