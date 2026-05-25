@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Footer from "../components/Footer";
 
 const projectImpacts = [
   {
@@ -134,17 +135,21 @@ export default function Donors() {
           <p className="donors-eyebrow">Donor Impact</p>
 
           <h2>
-            Your generosity becomes trails walked, spaces renewed, meals shared,
-            and stories remembered.
+            <span className="highlight-text">It becomes...</span>
+            <br/>trails walked, 
+            <br/>spaces renewed, 
+            <br/>meals shared,
+            <br/>and stories remembered.
           </h2>
         </div>
 
         <div className="donors-intro-text">
           <p>
-            Toah Nipi is deeply grateful for the individuals, families, churches,
-            and partners who give toward the care and future of this place. From
-            practical improvements to major vision projects, donor generosity
-            helps make ministry possible.
+            Toah Nipi is <span className="bold-text">deeply grateful</span> for the individuals, families, churches,
+            and partners who give toward the care and future of this place. 
+            <br/>
+            From practical improvements to major vision projects, donor generosity
+             <span className="bold-text"> helps make ministry possible.</span>
           </p>
 
           <div className="donors-stat-grid">
@@ -334,6 +339,34 @@ export default function Donors() {
           </p>
         </div>
       </section>
+
+
+      <section className="site-footer-section">
+        <div className="footer-logo-area">
+          <img
+            src="/toah-nipi-logo-2.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-1"
+          />
+
+          <p>
+            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
+          </p>
+
+          <img
+            src="/Secondary-Logo.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-2"
+          />
+
+        </div>
+
+        
+        <Footer />
+
+      </section>
+
+
     </main>
   );
 }
