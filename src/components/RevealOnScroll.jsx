@@ -1,13 +1,16 @@
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export default function RevealOnScroll() {
+  const location = useLocation();
+
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
     const revealElements = document.querySelectorAll(
-      ".reveal-up, .reveal-image, .reveal-group > *"
+      ".reveal-up, .reveal-image, .reveal-group"
     );
 
     if (prefersReducedMotion) {
@@ -16,6 +19,10 @@ export default function RevealOnScroll() {
       });
       return;
     }
+
+    revealElements.forEach((element) => {
+      element.classList.remove("is-visible");
+    });
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -27,17 +34,25 @@ export default function RevealOnScroll() {
         });
       },
       {
-        threshold: 0.02,
-        rootMargin: "0px 0px -80px 0px",
+        threshold: 0.05,
+        rootMargin: "0px 0px -60px 0px",
       }
     );
 
     revealElements.forEach((element) => {
       observer.observe(element);
+
+      // Only reveal immediately if it is already ACTUALLY on screen
+      const rect = element.getBoundingClientRect();
+
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        element.classList.add("is-visible");
+        observer.unobserve(element);
+      }
     });
 
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   return null;
 }
