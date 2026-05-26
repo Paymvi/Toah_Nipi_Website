@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
+import Footer from "../components/Footer";
+
 
 const retreatTypes = [
   "Church Retreat",
@@ -82,7 +85,7 @@ ${formData.message}
         <div className="contact-info-column">
           <div className="contact-info-heading">
             <p className="contact-eyebrow">Toah Nipi Christian Retreat Center</p>
-            <h2>We’re here to help you plan.</h2>
+            <h2>Here to help you plan!</h2>
             <p>
               Send us a note with your group details and desired dates. Someone
               from the Toah Nipi team will follow up with you.
@@ -90,44 +93,53 @@ ${formData.message}
           </div>
 
           <div className="contact-card-grid">
-            <article className="contact-info-card">
-              <span>01</span>
-              <div>
-                <h3>Physical Address</h3>
-                <p>
-                  49 Fellowship Circle
-                  <br />
-                  Rindge, NH 03461
-                </p>
-              </div>
-            </article>
+          <article className="contact-info-card">
+            <span className="contact-info-icon" aria-hidden="true">
+              <FaMapMarkerAlt />
+            </span>
 
-            <article className="contact-info-card">
-              <span>02</span>
-              <div>
-                <h3>Mailing Address</h3>
-                <p>
-                  252 Old Ashburnham Road
-                  <br />
-                  Rindge, NH 03461
-                </p>
-              </div>
-            </article>
+            <div>
+              <h3>Physical Address</h3>
+              <p>
+                49 Fellowship Circle
+                <br />
+                Rindge, NH 03461
+              </p>
+            </div>
+          </article>
 
-            <article className="contact-info-card contact-info-card-wide">
-              <span>03</span>
-              <div>
-                <h3>Contact</h3>
+          <article className="contact-info-card">
+            <span className="contact-info-icon" aria-hidden="true">
+              <FaRegEnvelope />
+            </span>
 
-                <div className="contact-link-row">
-                  <a href="tel:16038995464">603-899-5464</a>
-                  <a href="mailto:contactus@toahnipi.org">
-                    contactus@toahnipi.org
-                  </a>
-                </div>
+            <div>
+              <h3>Mailing Address</h3>
+              <p>
+                252 Old Ashburnham Road
+                <br />
+                Rindge, NH 03461
+              </p>
+            </div>
+          </article>
+
+          <article className="contact-info-card contact-info-card-wide">
+            <span className="contact-info-icon" aria-hidden="true">
+              <FaPhoneAlt />
+            </span>
+
+            <div>
+              <h3>Contact</h3>
+
+              <div className="contact-link-row">
+                <a href="tel:16038995464">603-899-5464</a>
+                <a href="mailto:contactus@toahnipi.org">
+                  contactus@toahnipi.org
+                </a>
               </div>
-            </article>
-          </div>
+            </div>
+          </article>
+        </div>
 
           <div className="contact-image-card">
             <img
@@ -165,7 +177,7 @@ ${formData.message}
             </label>
 
             <label>
-              Group Size
+              Group Size (estimate)
               <input
                 type="number"
                 name="groupSize"
@@ -292,6 +304,31 @@ ${formData.message}
             Open in Google Maps <span>→</span>
           </a>
         </div>
+      </section>
+
+      <section className="site-footer-section">
+        <div className="footer-logo-area">
+          <img
+            src="/toah-nipi-logo-2.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-1"
+          />
+
+          <p>
+            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
+          </p>
+
+          <img
+            src="/Secondary-Logo.png"
+            alt="Toah Nipi Christian Retreat Center"
+            className="footer-logo-2"
+          />
+
+        </div>
+
+        
+        <Footer />
+
       </section>
     </main>
   );

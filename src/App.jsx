@@ -13,7 +13,9 @@ import Partner from "./pages/Partner";
 import OurStory from "./pages/OurStory";
 import Donors from "./pages/Donors";
 import Contact from "./pages/Contact";
+
 import ScrollToTop from "./components/ScrollToTop";
+import RevealOnScroll from "./components/RevealOnScroll";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -40,6 +42,7 @@ export default function App() {
   return (
     
     <BrowserRouter>
+      <RevealOnScroll />
       <ScrollToTop />
       <NavBar />
 

@@ -36,7 +36,7 @@ const quickLinkCards = [
         <strong>rest, reconnect,</strong> and enjoy the outdoors.
       </>
     ),
-    link: "/contact",
+    link: "/contact#directions",
   },
   {
     title: "Retreats & Programs",

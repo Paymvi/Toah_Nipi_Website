@@ -14,7 +14,7 @@ const lodgingBuildings = [
         alt: "Exterior view of Hebron Lodge",
       },
       {
-        src: "/Hebron-Front.jpeg",
+        src: "/May-2025-Hebron.jpg",
         alt: "Front exterior view of Hebron Lodge",
       },
       {

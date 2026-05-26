@@ -14,7 +14,8 @@ export default function Home() {
       <section className="hero-sticky-wrap">
         <section className="home-hero">
             <div className="hero-content">
-              <div className="hero-title-strip">
+              
+              <div className="hero-title-strip reveal-group">
               <p className="eyebrow">Welcome to</p>
               {/* <h1>Toah Nipi</h1> */}
 
@@ -45,7 +46,7 @@ export default function Home() {
       <section className="intro-section">
         <div className="section-label">About the Camp</div>
 
-        <div className="intro-grid">
+        <div className="intro-grid reveal-group">
           <h2>
             Quiet mornings.
             <br />Meaningful conversations.
@@ -108,7 +109,7 @@ export default function Home() {
       </section> */}
 
       <section className="events-preview-section">
-        <div className="events-header">
+        <div className="events-header reveal-group">
           <p className="eyebrow">Events</p>
           <h2>What's waiting for you</h2>
         </div>
@@ -120,7 +121,7 @@ export default function Home() {
       <section className="split-section">
         <div className="split-image split-image-one" />
 
-        <div className="split-content">
+        <div className="split-content reveal-group">
           <p className="eyebrow">Lodging</p>
           <h2>Stay for a night, a weekend, or a full retreat.</h2>
           <p>
@@ -202,7 +203,7 @@ export default function Home() {
       </section> */}
 
       <section className="newsletter-section">
-        <div className="newsletter-copy">
+        <div className="newsletter-copy reveal-group">
           <p className="newsletter-eyebrow">Newsletter</p>
 
           <h2>Stay connected with Toah Nipi.</h2>
