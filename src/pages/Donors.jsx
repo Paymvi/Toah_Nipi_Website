@@ -129,7 +129,7 @@ export default function Donors() {
       <section className="donors-hero">
         <div className="donors-hero-overlay" />
 
-        <div className="donors-hero-content">
+        <div className="donors-hero-content reveal-group">
           <p className="donors-eyebrow donors-eyebrow-light">With Gratitude</p>
 
           <h1>
@@ -146,8 +146,8 @@ export default function Donors() {
         </div>
       </section>
 
-      <section className="donors-intro-section">
-        <div className="donors-intro-copy">
+      <section className="donors-intro-section reveal-group">
+        <div className="donors-intro-copy ">
           <p className="donors-eyebrow">Donor Impact</p>
 
           <h2>
@@ -179,7 +179,7 @@ export default function Donors() {
         </div>
       </section>
 
-      <section className="donors-project-section" id="project-impact">
+      <section className="donors-project-section reveal-group" id="project-impact">
         <div className="donors-project-header">
           <div>
             <p className="donors-eyebrow">Projects Made Possible</p>
@@ -246,9 +246,9 @@ export default function Donors() {
         </div>
       </section>
 
-      <section className="donor-wall-section" id="donor-wall">
-        <div className="donor-wall-header">
-          <p className="donors-eyebrow">Donor Wall</p>
+      <section className="donor-wall-section reveal-group" id="donor-wall">
+        <div className="donor-wall-header ">
+          <p className="donors-eyebrow ">Donor Wall</p>
           <h2>With thanks to our supporters.</h2>
           <p>
             This recognition wall can be updated as new donors, churches,
@@ -274,7 +274,7 @@ export default function Donors() {
         </div>
       </section>
 
-      <section className="donors-story-band">
+      <section className="donors-story-band reveal-group">
         <div>
           <p className="donors-eyebrow donors-eyebrow-light">A Continuing Story</p>
           <h2>Every project is more than a project.</h2>
@@ -295,7 +295,7 @@ export default function Donors() {
           />
         </div>
 
-        <div className="donors-recognition-copy">
+        <div className="donors-recognition-copy reveal-group">
           <p className="donors-eyebrow">Recognition Notes</p>
 
           <h2>Want to honor a donor, family, church, or loved one?</h2>
@@ -343,7 +343,7 @@ export default function Donors() {
       </section>
 
       <section className="donors-final-cta">
-        <div className="donors-final-card">
+        <div className="donors-final-card reveal-group">
           <p className="donors-eyebrow donors-eyebrow-light">Thank You</p>
 
           <h2>To every donor, partner, and friend, thank you.</h2>

@@ -14,7 +14,7 @@ const faithItems = [
 export default function StatementOfFaith() {
   return (
     <section className="statement-faith-section" id="statement-of-faith">
-      <div className="statement-faith-inner">
+      <div className="statement-faith-inner reveal-group">
         <div className="statement-faith-copy">
           <p className="statement-faith-eyebrow">What We Believe</p>
 

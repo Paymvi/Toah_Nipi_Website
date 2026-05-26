@@ -75,7 +75,7 @@ export default function StoryTimeline() {
 
   return (
     <section className="story-timeline-section" id="history">
-      <div className="story-timeline-header">
+      <div className="story-timeline-header reveal-group">
         <p className="story-timeline-eyebrow">The Toah Nipi Story</p>
 
         <h2>

@@ -28,7 +28,7 @@ export default function CoreValues() {
 
   return (
     <section className="core-values-section" id="core-values">
-      <div className="core-values-inner">
+      <div className="core-values-inner reveal-group">
         <h2>Our Core Values</h2>
 
         <div className="core-values-accordion">

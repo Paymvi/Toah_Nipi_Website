@@ -155,8 +155,8 @@ function Partner() {
       <section className="partner-hero">
         <div className="partner-hero-overlay" />
 
-        <div className="partner-hero-content">
-          <p className="partner-eyebrow partner-eyebrow-light">Partner With Us</p>
+        <div className="partner-hero-content reveal-group">
+          <p className="partner-eyebrow partner-eyebrow-light ">Partner With Us</p>
 
           <h1>
             Help shape the future of{" "}
@@ -203,7 +203,7 @@ function Partner() {
 
       <div style={{ height: "80px" }} />
 
-      <section className="partner-ways-grid" id="partner-ways">
+      <section className="partner-ways-grid reveal-group" id="partner-ways">
         {partnerWays.map((way) => (
           <a
             className="partner-way-card"
@@ -261,7 +261,7 @@ function Partner() {
               />
             </div>
 
-            <div className="partner-feature-copy">
+            <div className="partner-feature-copy reveal-group">
               <p className="partner-eyebrow">{section.eyebrow}</p>
               <h2>{section.title}</h2>
 
@@ -270,7 +270,7 @@ function Partner() {
               {section.secondText && <p>{section.secondText}</p>}
 
               {section.needs && (
-                <div className="volunteer-needs-wrap">
+                <div className="volunteer-needs-wrap ">
                   <p className="volunteer-needs-label">Current Volunteer Needs</p>
 
                   <div className="volunteer-needs-grid">

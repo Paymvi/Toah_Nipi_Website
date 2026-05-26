@@ -536,7 +536,7 @@ function LodgeSection({ building }) {
 
   return (
     <section className="lodge-feature-section" id={building.id}>
-      <div className="lodge-gallery">
+      <div className="lodge-gallery reveal-image">
         <div className="lodge-main-image-wrap">
           <img
             src={building.images[activeImage].src}
@@ -645,7 +645,7 @@ export default function Lodging() {
 
   return (
     <main className="lodging-page">
-      <section className="lodging-intro">
+      <section className="lodging-intro reveal-group">
         <p className="lodging-eyebrow">Lodging</p>
         <h1>Stay at Toah Nipi</h1>
         <p>

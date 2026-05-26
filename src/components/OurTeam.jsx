@@ -183,7 +183,7 @@ function TeamGroup({ title, subtitle, people, showPhotos = true }) {
 export default function OurTeam() {
   return (
     <section className="our-team-section" id="our-team">
-      <div className="our-team-inner">
+      <div className="our-team-inner reveal-group">
         <div className="our-team-header">
           <div>
             <p className="our-team-eyebrow">Our Team</p>

@@ -65,7 +65,7 @@ ${formData.message}
       <section className="contact-hero">
         <div className="contact-hero-overlay" />
 
-        <div className="contact-hero-content">
+        <div className="contact-hero-content reveal-group">
           <p className="contact-eyebrow contact-eyebrow-light">Contact Us</p>
 
           <h1>
@@ -82,7 +82,7 @@ ${formData.message}
       </section>
 
       <section className="contact-main-section" id="contact-form">
-        <div className="contact-info-column">
+        <div className="contact-info-column reveal-group">
           <div className="contact-info-heading">
             <p className="contact-eyebrow">Toah Nipi Christian Retreat Center</p>
             <h2>Here to help you plan!</h2>
@@ -158,7 +158,7 @@ ${formData.message}
           </div>
         </div>
 
-        <form className="contact-form-card" onSubmit={handleSubmit}>
+        <form className="contact-form-card reveal-group" onSubmit={handleSubmit}>
           <div className="contact-form-header">
             <p className="contact-eyebrow">Retreat Inquiry</p>
             <h2>Send us a message</h2>

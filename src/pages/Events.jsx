@@ -46,7 +46,7 @@ export default function Events() {
         </div>
 
         <div className="family-camp-content">
-          <div className="family-camp-inner">
+          <div className="family-camp-inner reveal-group">
             <p className="events-eyebrow">Events</p>
 
             <h1>Family Camp</h1>
@@ -106,7 +106,7 @@ export default function Events() {
 
         
       <section className="events-preview-section" id="activities">
-        <div className="events-header">
+        <div className="events-header reveal-group">
           <p className="eyebrow">Events</p>
           <h2>What's waiting for you</h2>
         </div>
@@ -124,7 +124,7 @@ export default function Events() {
         </div>
 
         <div className="thanksgiving-content">
-          <div className="thanksgiving-inner">
+          <div className="thanksgiving-inner reveal-group">
             <h2><span className="highlight-text">Thanksgiving</span> House Party</h2>
 
             <p>
@@ -142,8 +142,8 @@ export default function Events() {
 
 
       <section className="custom-gathering-section" id="custom-gatherings">
-        <div className="custom-gathering-inner">
-          <div className="custom-gathering-copy">
+        <div className="custom-gathering-inner reveal-group">
+          <div className="custom-gathering-copy ">
             <p className="custom-gathering-eyebrow">For groups!</p>
 
             <h2><span className="highlight-text">Customize</span> the stay around your group</h2>
@@ -236,7 +236,7 @@ export default function Events() {
 
 
       <section className="personal-retreat-section" id="personal-retreats">
-        <div className="personal-retreat-inner">
+        <div className="personal-retreat-inner reveal-group">
           <div className="personal-retreat-image-card">
             <img
               src="/Field-Sunset.jpg"

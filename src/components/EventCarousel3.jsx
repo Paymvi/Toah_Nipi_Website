@@ -51,7 +51,7 @@ function EventCarousel3() {
   };
 
   return (
-    <section className="partner-projects-section" id="partner-projects">
+    <section className="partner-projects-section reveal-group" id="partner-projects">
       <div className="partner-projects-header">
         <div>
           <p className="partner-eyebrow">Projects & Priorities</p>
