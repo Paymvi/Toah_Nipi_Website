@@ -4,80 +4,79 @@ function EventCarousel() {
   const carouselRef = useRef(null);
 
   const events = [
-    {
-      title: "30 Acre Spring Fed Pond",
-      description:
-        "Our pond has a mini beach and is a great place to cool off and relax.",
-      image: "/SunsetLake.jpg",
-    },
-    {
-      title: "Woodland Hiking Trails",
-      description:
-        "Explore quiet trails surrounded by trees, fresh air, and peaceful views.",
-      image: "/Trails.jpeg",
-    },
-    {
-      title: "Firepits & Fireplaces",
-      description:
-        "Gather around the fire for conversation, warmth, worship, and late-night laughs.",
-      image: "/Fireplace2.png",
-    },
-    {
-      title: "Sports Areas",
-      description:
-        "Basketball Court, volleyball court, large field. Suitable for tons of fun!",
-      image: "/Sports2.png",
-    },
-    {
-      title: "Lake Activities",
-      description:
-        "Spend time near the water with relaxing views and outdoor adventure.",
-      image: "/Canoe.jpeg",
-    },
-    {
-      title: "Eating & Community",
-      description:
-        "lmao",
-      image: "/Eating.jpeg",
-    },
-    {
-      title: "Broomball",
-      description:
-        "During the winter out pond freezes over and is perfect for a game of broomball.",
-      image: "/Broomball2.png",
-    },
-    {
-      title: "Tubing",
-      description:
-        "We'll show you the best places at Toah nipi to go tubing and host races!",
-      image: "/Tubing.webp",
-    },
-    {
-      title: "Rock Climbing Wall",
-      description:
-        "Gather outside for meaningful worship in a quiet natural setting.",
-      image: "RockClimbing.webp",
-    },
-    
-    {
-      title: "Stone Prayer Garden",
-      description:
-        "Find space to slow down, pray, journal, and reconnect with God.",
-      image: "/PrayerGarden4-abi.png",
-    },
-    {
-      title: "Snowshoeing",
-      description:
-        "Explore nearby trails with snowshoes courtesy of toah nipi!",
-      image: "/Snow.png",
-    },
-    {
-      title: "Indoor Games",
-      description:
-        "Enjoy board games, group activities, and cozy indoor fun with friends.",
-      image: "/Uno.jpeg",
-    },
-  ];
+  {
+    title: "30 Acre Spring Fed Pond",
+    description:
+      "Our pond has a mini beach and is a great place to cool off and relax.",
+    image: "/SunsetLake.jpg",
+  },
+  {
+    title: "Woodland Hiking Trails",
+    description:
+      "Explore quiet trails surrounded by trees, fresh air, and peaceful views.",
+    image: "/Trails.jpeg",
+  },
+  {
+    title: "Firepits & Fireplaces",
+    description:
+      "Gather around the fire for conversation, warmth, worship, and late-night laughs.",
+    image: "/Fireplace2.png",
+  },
+  {
+    title: "Sports Areas",
+    description:
+      "Basketball Court, volleyball court, large field. Suitable for tons of fun!",
+    image: "/Sports2.png",
+  },
+  {
+    title: "Lake Activities",
+    description:
+      "Spend time near the water with relaxing views and outdoor adventure.",
+    image: "/Canoe.jpeg",
+  },
+  {
+    title: "Eating & Community",
+    description:
+      "Share meals, conversations, and time together around the table.",
+    image: "/Eating.jpeg",
+  },
+  {
+    title: "Stone Prayer Garden",
+    description:
+      "Find space to slow down, pray, journal, and reconnect with God.",
+    image: "/May-2025-PrayerGarden.jpg",
+  },
+  {
+    title: "Broomball",
+    description:
+      "During the winter, our pond freezes over and becomes the perfect place for a fun game of broomball.",
+    image: "/Broomball2.png",
+  },
+  {
+    title: "Tubing",
+    description:
+      "Enjoy snowy tubing hills, friendly races, and plenty of winter fun around camp.",
+    image: "/Tubing.webp",
+  },
+  {
+    title: "Rock Climbing Wall",
+    description:
+      "Challenge yourself, build confidence, and enjoy a fun climb.",
+    image: "/RockClimbing.webp",
+  },
+  {
+    title: "Snowshoeing",
+    description:
+      "Explore winter trails with snowshoes available courtesy of Toah Nipi.",
+    image: "/Snow.png",
+  },
+  {
+    title: "Indoor Games",
+    description:
+      "Enjoy board games, group activities, and cozy indoor fun with friends.",
+    image: "/Uno.jpeg",
+  },
+];
 
   const scrollCarousel = (direction) => {
     if (!carouselRef.current) return;

@@ -205,7 +205,7 @@ export default function NavBar() {
 
         </div>
 
-        <Link to="/give" className="give-link">
+        <Link to="/partner#giving-projects" className="give-link">
           GIVE
         </Link>
       </div>
