@@ -6704,3 +6704,119 @@ html {
     transition: none;
   }
 }
+
+
+
+
+
+/* JOIN OUR TEAM */
+
+.contact-join-team-section {
+  position: relative;
+  z-index: 2;
+
+  padding: 105px clamp(24px, 7vw, 96px);
+  background:
+    radial-gradient(circle at top left, rgba(255, 249, 215, 0.38), transparent 34%),
+    #d8dccb;
+
+  color: #343814;
+}
+
+.contact-join-team-inner {
+  max-width: 1580px;
+  margin: 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-join-team-inner h2 {
+  max-width: 1320px;
+  margin: 0;
+
+  color: #343814;
+  font-family: var(--font-cooper);
+  font-size: clamp(2.7rem, 4.6vw, 4.15rem);
+  line-height: 1.13;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+}
+
+.contact-join-team-button {
+  margin-top: 76px;
+
+  width: min(570px, 100%);
+  min-height: 144px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #343814;
+  color: #f7f1df;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 1rem;
+  font-weight: 800;
+
+  box-shadow: 0 18px 42px rgba(52, 56, 20, 0.16);
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.contact-join-team-button:hover {
+  transform: translateY(-3px);
+  background: #4b5220;
+  box-shadow: 0 24px 52px rgba(52, 56, 20, 0.22);
+}
+
+.contact-join-team-inner h2 {
+  max-width: 980px;
+  margin: 0 auto;
+
+  color: #343814;
+  font-family: var(--font-cooper);
+  font-size: clamp(1.9rem, 3vw, 2.85rem);
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+  font-weight: 400;
+  text-align: left;
+}
+
+.contact-join-team-button {
+  margin-top: 56px;
+
+  width: min(430px, 100%);
+  min-height: 86px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #343814;
+  color: #f7f1df;
+
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.86rem;
+  font-weight: 700;
+
+  box-shadow: 0 14px 34px rgba(52, 56, 20, 0.14);
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}

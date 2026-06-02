@@ -283,6 +283,24 @@ ${formData.message}
         </form>
       </section>
 
+      <section className="contact-join-team-section" id="join-our-team">
+        <div className="contact-join-team-inner reveal-group">
+          <h2>
+            Interested in joining our team at Toah Nipi? We rely on Summer
+            crew, volunteers, full-time and part-time employees to serve guests
+            year-round. Download, fill out, and email us your application below!
+          </h2>
+
+          <a
+            href="https://static1.squarespace.com/static/655e2edd0f7abd1c10a73d3b/t/667af7bbcee58e137d601f55/1719334843850/RTC+Application+Blank+%281%29.pdf"
+            download
+            className="contact-join-team-button"
+          >
+            Join Our Team
+          </a>
+        </div>
+      </section>
+
       <section className="contact-directions-section" id="directions">
         <div className="contact-directions-card">
           <p className="contact-eyebrow contact-eyebrow-light">Directions</p>
