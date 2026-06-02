@@ -173,7 +173,7 @@ export default function NavBar() {
       <div className="nav-actions">
         <div className="social-links">
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/toah_nipi/"
             className="social-link"
             aria-label="Instagram"
             target="_blank"
@@ -183,7 +183,7 @@ export default function NavBar() {
           </a>
 
           <a
-            href="https://www.facebook.com/"
+            href="https://www.facebook.com/ToahNipiRetreatCenter/"
             className="social-link"
             aria-label="Facebook"
             target="_blank"
@@ -193,7 +193,7 @@ export default function NavBar() {
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/company/91656401/"
             className="social-link"
             aria-label="LinkedIn"
             target="_blank"
@@ -205,7 +205,7 @@ export default function NavBar() {
 
         </div>
 
-        <Link to="/partner#giving-projects" className="give-link">
+        <Link to="https://cwngui.campwise.com/Apps/OnlineGuestDonations/Index.html?AppID=MKQ4U6RZOHHSNINZSCJV3VSRQQ3QHB&LocCde=CA0000" className="give-link">
           GIVE
         </Link>
       </div>
