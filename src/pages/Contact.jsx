@@ -285,19 +285,42 @@ ${formData.message}
 
       <section className="contact-join-team-section" id="join-our-team">
         <div className="contact-join-team-inner reveal-group">
-          <h2>
-            Interested in joining our team at Toah Nipi? We rely on Summer
-            crew, volunteers, full-time and part-time employees to serve guests
-            year-round. Download, fill out, and email us your application below!
-          </h2>
+          <div className="contact-join-team-copy">
+            <p className="contact-join-team-eyebrow">Serve with us</p>
 
-          <a
-            href="https://static1.squarespace.com/static/655e2edd0f7abd1c10a73d3b/t/667af7bbcee58e137d601f55/1719334843850/RTC+Application+Blank+%281%29.pdf"
-            download
-            className="contact-join-team-button"
-          >
-            Join Our Team
-          </a>
+            <h2>Interested in joining our team?</h2>
+
+            <p className="contact-join-team-text">
+              Toah Nipi relies on summer crew, volunteers, full-time staff, and
+              part-time employees to help serve guests year-round.
+            </p>
+
+            <div className="contact-join-team-tags" aria-label="Ways to serve">
+              <span>Summer crew</span>
+              <span>Volunteers</span>
+              <span>Full-time</span>
+              <span>Part-time</span>
+            </div>
+          </div>
+
+          <div className="contact-join-team-card">
+            <p className="contact-join-team-card-label">Application</p>
+
+            <h3>Ready to take the next step?</h3>
+
+            <p>
+              Download the application, fill it out, and email it back to our team!
+            </p>
+
+            <a
+              href="https://static1.squarespace.com/static/655e2edd0f7abd1c10a73d3b/t/667af7bbcee58e137d601f55/1719334843850/RTC+Application+Blank+%281%29.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="contact-join-team-button"
+            >
+              Download Application <span>→</span>
+            </a>
+          </div>
         </div>
       </section>
 

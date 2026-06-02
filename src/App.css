@@ -6707,8 +6707,6 @@ html {
 
 
 
-
-
 /* JOIN OUR TEAM */
 
 .contact-join-team-section {
@@ -6716,56 +6714,157 @@ html {
   z-index: 2;
 
   padding: 105px clamp(24px, 7vw, 96px);
+
   background:
-    radial-gradient(circle at top left, rgba(255, 249, 215, 0.38), transparent 34%),
-    #d8dccb;
+    radial-gradient(circle at top left, rgba(255, 249, 215, 0.46), transparent 34%),
+    #d9deca;
 
   color: #343814;
 }
 
 .contact-join-team-inner {
-  max-width: 1580px;
+  max-width: 1220px;
   margin: 0 auto;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.75fr);
+  gap: clamp(36px, 6vw, 86px);
   align-items: center;
 }
 
-.contact-join-team-inner h2 {
-  max-width: 1320px;
+.contact-join-team-copy {
+  max-width: 720px;
+}
+
+.contact-join-team-eyebrow {
+  margin: 0 0 20px;
+
+  color: rgba(60, 61, 31, 0.66);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.contact-join-team-copy h2 {
   margin: 0;
 
-  color: #343814;
+  color: #343518;
   font-family: var(--font-cooper);
-  font-size: clamp(2.7rem, 4.6vw, 4.15rem);
-  line-height: 1.13;
+  font-size: clamp(2.65rem, 5vw, 4rem);
+  line-height: 0.92;
   letter-spacing: -0.045em;
   font-weight: 400;
 }
 
-.contact-join-team-button {
-  margin-top: 76px;
+.contact-join-team-text {
+  max-width: 610px;
+  margin: 26px 0 0;
 
-  width: min(570px, 100%);
-  min-height: 144px;
+  color: rgba(58, 59, 31, 0.86);
+  font-size: clamp(1rem, 1.2vw, 1.08rem);
+  line-height: 1.72;
+}
+
+.contact-join-team-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-top: 32px;
+}
+
+.contact-join-team-tags span {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 38px;
+  padding: 9px 14px;
+
+  border: 1px solid rgba(60, 61, 31, 0.15);
+  border-radius: 999px;
+
+  background: rgba(247, 242, 216, 0.52);
+  color: rgba(52, 56, 20, 0.78);
+
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.contact-join-team-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: clamp(28px, 4vw, 40px);
+
+  border: 1px solid rgba(60, 61, 31, 0.14);
+  border-radius: 18px;
+
+  background: rgba(247, 242, 216, 0.72);
+  box-shadow: 0 22px 52px rgba(49, 51, 25, 0.1);
+}
+
+.contact-join-team-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  height: 4px;
+
+  border-radius: 999px;
+  background: rgba(61, 62, 32, 0.24);
+}
+
+.contact-join-team-card-label {
+  margin: 0 0 18px;
+
+  color: rgba(60, 61, 31, 0.62);
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-size: 0.68rem;
+  font-weight: 800;
+}
+
+.contact-join-team-card h3 {
+  margin: 0;
+
+  color: #37381b;
+  font-family: var(--font-cooper);
+  font-size: clamp(1.7rem, 2.4vw, 2.15rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  font-weight: 400;
+}
+
+.contact-join-team-card p:not(.contact-join-team-card-label) {
+  margin: 18px 0 0;
+
+  color: rgba(66, 67, 35, 0.82);
+  font-size: 0.98rem;
+  line-height: 1.62;
+}
+
+.contact-join-team-button {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 30px;
 
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 9px;
 
-  border-radius: 12px;
+  border-radius: 999px;
 
   background: #343814;
   color: #f7f1df;
 
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
-  font-size: 1rem;
+  letter-spacing: 0.06em;
+  font-size: 0.82rem;
   font-weight: 800;
-
-  box-shadow: 0 18px 42px rgba(52, 56, 20, 0.16);
 
   transition:
     transform 180ms ease,
@@ -6774,49 +6873,12 @@ html {
 }
 
 .contact-join-team-button:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   background: #4b5220;
-  box-shadow: 0 24px 52px rgba(52, 56, 20, 0.22);
+  box-shadow: 0 16px 34px rgba(52, 56, 20, 0.2);
 }
 
-.contact-join-team-inner h2 {
-  max-width: 980px;
-  margin: 0 auto;
-
-  color: #343814;
-  font-family: var(--font-cooper);
-  font-size: clamp(1.9rem, 3vw, 2.85rem);
-  line-height: 1.22;
-  letter-spacing: -0.025em;
-  font-weight: 400;
-  text-align: left;
-}
-
-.contact-join-team-button {
-  margin-top: 56px;
-
-  width: min(430px, 100%);
-  min-height: 86px;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 12px;
-
-  background: #343814;
-  color: #f7f1df;
-
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-size: 0.86rem;
-  font-weight: 700;
-
-  box-shadow: 0 14px 34px rgba(52, 56, 20, 0.14);
-
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
+.contact-join-team-button span {
+  font-size: 1rem;
+  line-height: 1;
 }
