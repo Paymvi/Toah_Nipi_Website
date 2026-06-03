@@ -108,6 +108,31 @@ export default function Home() {
         </div>
       </section> */}
 
+      <section className="contact-directions-section" id="directions">
+        <div className="contact-directions-card">
+          <p className="contact-eyebrow contact-eyebrow-light">Directions</p>
+
+          <h2>Find us in Rindge, New Hampshire.</h2>
+
+          <p>
+            Toah Nipi Christian Retreat Center is located at 
+            <br/>{" "}
+            <span className="bold-text">49 Fellowship Circle in Rindge, NH</span>. 
+            <br/>Guests can use the{" "}
+            physical address for GPS directions.
+          </p>
+
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=49+Fellowship+Circle+Rindge+NH+03461"
+            target="_blank"
+            rel="noreferrer"
+            className="contact-directions-button"
+          >
+            Open in Google Maps <span>→</span>
+          </a>
+        </div>
+      </section>
+
       <section className="events-preview-section">
         <div className="events-header reveal-group">
           <p className="eyebrow">Events</p>

@@ -23,7 +23,7 @@ const quickLinkCards = [
     link: "/our-story",
   },
   {
-    title: "Where we are",
+    title: "Our Values",
     shortText: (
       <>
         Situated in the <strong>Monadnock Region</strong> of Southern New Hampshire.
@@ -38,6 +38,22 @@ const quickLinkCards = [
     ),
     link: "/contact#directions",
   },
+  // {
+  //   title: "Where we are",
+  //   shortText: (
+  //     <>
+  //       Situated in the <strong>Monadnock Region</strong> of Southern New Hampshire.
+  //     </>
+  //   ),
+  //   longText: (
+  //     <>
+  //       Surrounded by <strong>Mt. Watatic, Mt. Monadnock, scenic trails,</strong>{" "}
+  //       and a <strong>quiet lake</strong>, Toah Nipi offers a beautiful setting to{" "}
+  //       <strong>rest, reconnect,</strong> and enjoy the outdoors.
+  //     </>
+  //   ),
+  //   link: "/contact#directions",
+  // },
   {
     title: "Retreats & Programs",
     shortText: (
