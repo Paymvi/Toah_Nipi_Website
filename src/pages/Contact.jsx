@@ -324,25 +324,27 @@ ${formData.message}
         </div>
       </section>
 
-      <section className="contact-directions-section" id="directions">
-        <div className="contact-directions-card">
-          <p className="contact-eyebrow contact-eyebrow-light">Directions</p>
+      <section className="contact-directions-hero" id="directions">
+        <div className="contact-directions-content reveal-group">
+          <p className="contact-directions-eyebrow">Directions</p>
 
           <h2>Find us in Rindge, New Hampshire.</h2>
 
-          <p>
-            Toah Nipi Christian Retreat Center is located at 49 Fellowship
-            Circle in Rindge, NH. Guests can use the physical address for GPS
-            directions.
+          <p className="contact-directions-copy">
+            Toah Nipi Christian Retreat Center is located at
+            <br />
+            <strong>49 Fellowship Circle in Rindge, NH.</strong>
+            <br />
+            Guests can use the physical address for GPS directions.
           </p>
 
           <a
-            href="https://www.google.com/maps/search/?api=1&query=49+Fellowship+Circle+Rindge+NH+03461"
+            className="contact-directions-button"
+            href="https://www.google.com/maps/search/?api=1&query=49%20Fellowship%20Circle%20Rindge%20NH"
             target="_blank"
             rel="noreferrer"
-            className="contact-directions-button"
           >
-            Open in Google Maps <span>→</span>
+            Open in Google Maps <span aria-hidden="true">→</span>
           </a>
         </div>
       </section>
