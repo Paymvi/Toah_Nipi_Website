@@ -26,17 +26,19 @@ const quickLinkCards = [
     title: "Our Values",
     shortText: (
       <>
-        Situated in the <strong>Monadnock Region</strong> of Southern New Hampshire.
+        Our core values are rooted in our <strong>Christian faith</strong> and our
+        desire to serve guests with the love of Christ.
       </>
     ),
     longText: (
       <>
-        Surrounded by <strong>Mt. Watatic, Mt. Monadnock, scenic trails,</strong>{" "}
-        and a <strong>quiet lake</strong>, Toah Nipi offers a beautiful setting to{" "}
-        <strong>rest, reconnect,</strong> and enjoy the outdoors.
+        Toah Nipi is shaped by <strong>Christ-centered values</strong> that guide
+        how we welcome guests, care for creation, pursue growth, and create space
+        for people to encounter <strong>God, community,</strong> and{" "}
+        <strong>renewal</strong>.
       </>
     ),
-    link: "/contact#directions",
+    link: "/our-story#core-values",
   },
   // {
   //   title: "Where we are",

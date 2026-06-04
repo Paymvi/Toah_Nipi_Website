@@ -7995,8 +7995,8 @@ html {
   padding: 8rem 1.5rem;
   background-image:
     linear-gradient(
-      rgba(12, 15, 8, 0.62),
-      rgba(12, 15, 8, 0.62)
+      rgba(12, 15, 8, 0.5),
+      rgba(12, 15, 8, 0.5)
     ),
     url("/camp-background-2.jpg");
   background-size: cover;
