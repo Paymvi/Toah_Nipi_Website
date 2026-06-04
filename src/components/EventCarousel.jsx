@@ -74,7 +74,7 @@ function EventCarousel() {
     title: "Indoor Games",
     description:
       "Enjoy board games, group activities, and cozy indoor fun with friends.",
-    image: "/Uno.jpeg",
+    image: "/Jun-2026-Fuzball.jpg",
   },
 ];
 

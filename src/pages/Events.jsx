@@ -5,12 +5,12 @@ const familyCampWeeks = [
   {
     title: "Family Camp: Week 1",
     date: "June 28th - July 3rd",
-    href: "#",
+    href: "https://forms.toahnipi.org/r/A7KVOz",
   },
   {
     title: "Family Camp: Week 2",
     date: "July 5th - July 10th",
-    href: "#",
+    href: "https://forms.toahnipi.org/r/OD4DBa",
   },
 ];
 
