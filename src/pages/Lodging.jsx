@@ -652,6 +652,14 @@ export default function Lodging() {
           Comfortable lodging spaces for retreats, families, churches, and
           groups gathering together in a peaceful camp setting.
         </p>
+
+        <a
+          href="/Paper-Map.png"
+          download="Toah-Nipi-Camp-Map.png"
+          className="lodging-map-button"
+        >
+          Download Camp Map
+        </a>
       </section>
 
       {lodgingBuildings.map((building) => (

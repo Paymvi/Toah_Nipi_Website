@@ -8100,3 +8100,41 @@ html {
   font-size: 1.05rem;
   transform: translateY(-1px);
 }
+
+
+
+
+
+.lodging-map-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 22px;
+  padding: 13px 24px;
+
+  border-radius: 999px;
+  background: #3c3d1f;
+  color: #f5f0d7;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.lodging-map-button:hover {
+  transform: translateY(-2px);
+  background: #2f3018;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.24);
+}
+
+.lodging-map-button:active {
+  transform: translateY(0);
+}
