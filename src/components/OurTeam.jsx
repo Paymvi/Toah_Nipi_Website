@@ -65,6 +65,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Abby-Stroven.webp",
+    photoPosition: "center 22%",
   },
   {
     name: "Greg Hodgson",
@@ -72,6 +73,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Greg-Hodgson.webp",
+    photoPosition: "center 24%",
   },
   {
     name: "Elisha Hodgson",
@@ -79,6 +81,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Elisha-Hodgson.webp",
+    photoPosition: "center 22%",
   },
   {
     name: "Arianne Miller",
@@ -86,6 +89,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Arianne-Miller.webp",
+    photoPosition: "center 70%",
   },
   {
     name: "Elizabeth Brown",
@@ -93,6 +97,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Elizabeth-Brown.webp",
+    photoPosition: "center 8%",
   },
   {
     name: "Mindy Niemela",
@@ -100,6 +105,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Mindy-Niemela.webp",
+    photoPosition: "center 17%",
   },
   {
     name: "Crystal Baldwin",
@@ -107,6 +113,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Crystal-Baldwin.webp",
+    photoPosition: "center 5%",
   },
   {
     name: "Bill Burt",
@@ -114,6 +121,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Bill-Burt.webp",
+    photoPosition: "center 10%",
   },
   {
     name: "Aahnix Bathurst",
@@ -121,6 +129,7 @@ const staff = [
     detail: "",
     location: "",
     image: "/Staff/Staff-Aahnix-Bathurst.webp",
+    photoPosition: "center 4%",
   },
 ];
 
@@ -138,7 +147,13 @@ function TeamCard({ person, showPhoto = true }) {
       {showPhoto && (
         <div className="team-member-photo">
           {person.image ? (
-            <img src={person.image} alt={person.name} />
+            <img
+              src={person.image}
+              alt={person.name}
+              style={{
+                objectPosition: person.photoPosition || "center center",
+              }}
+            />
           ) : (
             <span>{getInitials(person.name)}</span>
           )}
