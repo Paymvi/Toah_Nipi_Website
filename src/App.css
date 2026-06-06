@@ -4824,7 +4824,7 @@ html {
   color: rgba(247, 241, 223, 0.88);
   font-size: clamp(1.05rem, 1.7vw, 1.1rem);
   line-height: 1.58;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 /* Adds a little polish when the row is open */

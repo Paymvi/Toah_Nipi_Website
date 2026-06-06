@@ -27,7 +27,7 @@ const partnerWays = [
     number: "03",
     title: "Pray",
     // text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
-    linkText: "Send a prayer request",
+    linkText: "Pray with us",
     href: "#pray-with-us",
   },
     {
@@ -35,7 +35,7 @@ const partnerWays = [
     number: "04",
     title: "Spread the Word",
     // text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
-    linkText: "Send a prayer request",
+    linkText: "Share Toah Nipi",
     href: "#spread-the-word",
   },
 ];

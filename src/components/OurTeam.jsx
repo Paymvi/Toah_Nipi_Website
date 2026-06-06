@@ -206,9 +206,8 @@ export default function OurTeam() {
           </div>
 
           <p>
-            Introducing our team at Toah Nipi Christian Retreat Center. Though
-            the organization is new, the faces will remain familiar. We’re here
-            to help and support you as you plan and enjoy your retreat.
+            Introducing our team at Toah Nipi Christian Retreat Center. We’re here
+            to help and support you as you plan and enjoy your retreat!
           </p>
         </div>
 
