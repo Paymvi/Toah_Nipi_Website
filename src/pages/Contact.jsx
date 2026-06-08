@@ -85,7 +85,7 @@ ${formData.message}
         <div className="contact-info-column reveal-group">
           <div className="contact-info-heading">
             <p className="contact-eyebrow">Toah Nipi Christian Retreat Center</p>
-            <h2>Here to help you plan!</h2>
+            <h2>Here to help you plan</h2>
             <p>
               Send us a note with your group details and desired dates. Someone
               from the Toah Nipi team will follow up with you.
@@ -309,7 +309,7 @@ ${formData.message}
             <h3>Ready to take the next step?</h3>
 
             <p>
-              Download the application, fill it out, and email it back to our team!
+              Download the application, fill it out, and email it back to our team
             </p>
 
             <a

@@ -1,5 +1,6 @@
 import EventCarousel3 from "../components/EventCarousel3";
 import Footer from "../components/Footer";
+import { FiGift, FiTool, FiHeart, FiShare2 } from "react-icons/fi";
 
 const giveUrl =
   "https://cwngui.campwise.com/Apps/OnlineGuestDonations/Index.html?AppID=MKQ4U6RZOHHSNINZSCJV3VSRQQ3QHB&LocCde=CA0000";
@@ -9,36 +10,48 @@ const partnerWays = [
     id: "ways-to-give",
     number: "01",
     title: "Make a Gift",
-    // text: "Support the facilities, programs, and ministry work that help guests encounter rest, renewal, and deeper connection with God.",
+    kicker: "Give Financially",
+    text: "Support projects, scholarships, facilities, and the ministry work happening at Toah Nipi.",
     linkText: "Give today",
     href: "#giving-projects",
+    icon: FiGift,
+    tone: "gift",
   },
   {
     id: "volunteer",
     number: "02",
     title: "Serve With Us",
-    // text: "Use your time, skills, and hands-on help to care for the grounds, improve spaces, and bless the guests who come here.",
-    // text: "Volunteers play a vital role in our ministry. Join a Volunteer weekend or our year-round openings!",
+    kicker: "Hands-On Help",
+    text: "Use your time, skills, and energy to care for the grounds and bless guests throughout the year.",
     linkText: "Volunteer",
     href: "#serve-with-us",
+    icon: FiTool,
+    tone: "serve",
   },
   {
     id: "pray",
     number: "03",
     title: "Pray",
-    // text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
+    kicker: "Spiritual Support",
+    text: "Pray with us for revival, guests, staff, churches, families, and the work God is doing here.",
     linkText: "Pray with us",
     href: "#pray-with-us",
+    icon: FiHeart,
+    tone: "pray",
   },
-    {
+  {
     id: "spread-word",
     number: "04",
     title: "Spread the Word",
-    // text: "Join us in praying for Toah Nipi, our guests, our staff, and the work God is doing through this place.",
+    kicker: "Share the Mission",
+    text: "Invite churches, families, students, and friends to experience Toah Nipi for themselves.",
     linkText: "Share Toah Nipi",
     href: "#spread-the-word",
+    icon: FiShare2,
+    tone: "share",
   },
 ];
+
 const featureSections = [
   {
     id: "serve-with-us",
@@ -204,24 +217,36 @@ function Partner() {
       <div style={{ height: "80px" }} />
 
       <section className="partner-ways-grid reveal-group" id="partner-ways">
-        {partnerWays.map((way) => (
-          <a
-            className="partner-way-card"
-            id={way.id}
-            key={way.title}
-            href={way.href}
-            onClick={(event) => handleCardClick(event, way.href)}
-          >
-            <span>{way.number}</span>
-            <h3>{way.title}</h3>
+        {partnerWays.map((way) => {
+          const Icon = way.icon;
 
-            {way.text && <p>{way.text}</p>}
+          return (
+            <a
+              className={`partner-way-card partner-way-card-${way.tone}`}
+              id={way.id}
+              key={way.title}
+              href={way.href}
+              onClick={(event) => handleCardClick(event, way.href)}
+            >
+              <div className="partner-way-logo-panel" aria-hidden="true">
+                <span className="partner-way-number">{way.number}</span>
+                <Icon className="partner-way-icon" />
+              </div>
 
-            <div className="partner-card-link">
-              {way.linkText} →
-            </div>
-          </a>
-        ))}
+              <div className="partner-way-content">
+                <p className="partner-way-kicker">{way.kicker}</p>
+
+                <h3>{way.title}</h3>
+
+                <p>{way.text}</p>
+
+                <div className="partner-card-link">
+                  {way.linkText} <span aria-hidden="true">→</span>
+                </div>
+              </div>
+            </a>
+          );
+        })}
       </section>
 
       <section className="partner-impact-band">
