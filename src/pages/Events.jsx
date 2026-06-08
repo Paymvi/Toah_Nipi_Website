@@ -175,7 +175,7 @@ export default function Events() {
       <section className="custom-gathering-section" id="custom-gatherings">
         <div className="custom-gathering-inner reveal-group">
           <div className="custom-gathering-copy ">
-            <p className="custom-gathering-eyebrow">For groups!</p>
+            <p className="custom-gathering-eyebrow">For groups</p>
 
             <h2><span className="highlight-text">Customize</span> the stay around your group</h2>
 
@@ -282,7 +282,7 @@ export default function Events() {
           </div>
 
           <div className="personal-retreat-copy">
-            <p className="personal-retreat-eyebrow">For individuals or small groups!</p>
+            <p className="personal-retreat-eyebrow">For individuals or small groups</p>
 
             <h2>Personal Retreats</h2>
 

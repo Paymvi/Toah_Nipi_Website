@@ -12,7 +12,7 @@ const projectImpacts = [
     description:
       "A fully lighted Christmas walk experience designed to become a meaningful local tradition, sharing the story of Jesus’ birth through outdoor scenes, lights, and Scripture.",
     donorNote:
-      "Made possible through the generosity of donors who believe in creating beautiful, Christ-centered experiences for families and the surrounding community.",
+      "Add description here",
     fundedBy: [
       "Add donor name",
       "Add donor name",
@@ -228,10 +228,10 @@ export default function Donors() {
 
               <p>{selectedProject.description}</p>
 
-              <div className="donors-project-note">
+              {/* <div className="donors-project-note">
                 <span>Why it matters</span>
                 <p>{selectedProject.donorNote}</p>
-              </div>
+              </div> */}
 
               <div className="donors-funded-by">
                 <span>Supported by</span>
