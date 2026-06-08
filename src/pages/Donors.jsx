@@ -104,6 +104,42 @@ const donorGroups = [
   },
 ];
 
+const partnerGroups = [
+  {
+    title: "Ministry Partners",
+    description:
+      "Organizations whose mission and relationship with Toah Nipi help strengthen retreat, discipleship, stewardship, and Christian community.",
+    names: [
+      "A Rocha",
+      "InterVarsity",
+      "Sattler University",
+      "Add partner organization",
+    ],
+  },
+  {
+    title: "Returning Retreat Groups",
+    description:
+      "Churches, ministries, schools, and communities that continue to gather at Toah Nipi year after year.",
+    names: [
+      "Antioch Church",
+      "Local schools",
+      "Local churches",
+      "Add annual group",
+    ],
+  },
+  {
+    title: "Community Affiliations",
+    description:
+      "Local and regional organizations connected to Toah Nipi through ongoing relationships, events, service, and shared hospitality.",
+    names: [
+      "Add organization name",
+      "Add organization name",
+      "Add organization name",
+      "Add organization name",
+    ],
+  },
+];
+
 const impactStats = [
   {
     number: "03",
@@ -265,6 +301,40 @@ export default function Donors() {
               </div>
 
               <div className="donor-name-list">
+                {group.names.map((name, index) => (
+                  <span key={`${group.title}-${name}-${index}`}>{name}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="partner-affiliations-section reveal-group"
+        id="partner-affiliations"
+      >
+        <div className="partner-affiliations-header">
+          <p className="donors-eyebrow">Partnerships & Returning Groups</p>
+
+          <h2>Grateful for the organizations who continue to gather with us.</h2>
+
+          <p>
+            Toah Nipi is blessed by ministry partners, churches, schools, and
+            organizations who return year after year for retreat, renewal, training,
+            worship, and community.
+          </p>
+        </div>
+
+        <div className="partner-affiliations-grid">
+          {partnerGroups.map((group) => (
+            <article className="partner-affiliation-card" key={group.title}>
+              <div className="partner-affiliation-card-header">
+                <h3>{group.title}</h3>
+                <p>{group.description}</p>
+              </div>
+
+              <div className="partner-name-list">
                 {group.names.map((name, index) => (
                   <span key={`${group.title}-${name}-${index}`}>{name}</span>
                 ))}
