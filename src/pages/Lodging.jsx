@@ -645,21 +645,29 @@ export default function Lodging() {
 
   return (
     <main className="lodging-page">
-      <section className="lodging-intro reveal-group">
-        <p className="lodging-eyebrow">Lodging</p>
-        <h1>Stay at Toah Nipi</h1>
-        <p>
-          Comfortable lodging spaces for retreats, families, churches, and
-          groups gathering together in a peaceful camp setting.
-        </p>
+      <section className="lodging-hero">
+        <div className="lodging-hero-overlay" />
 
-        <a
-          href="/Paper-Map.png"
-          download="Toah-Nipi-Camp-Map.png"
-          className="lodging-map-button"
-        >
-          Download Camp Map
-        </a>
+        <div className="lodging-hero-content reveal-group">
+          <p className="lodging-eyebrow lodging-eyebrow-light">Lodging</p>
+
+          <h1>
+            Stay at <span>Toah Nipi.</span>
+          </h1>
+
+          <p>
+            Comfortable lodging spaces for retreats, families, churches, and
+            groups gathering together in a peaceful camp setting.
+          </p>
+
+          <a
+            href="/Paper-Map.png"
+            download="Toah-Nipi-Camp-Map.png"
+            className="lodging-map-button"
+          >
+            Download Camp Map
+          </a>
+        </div>
       </section>
 
       {lodgingBuildings.map((building) => (
