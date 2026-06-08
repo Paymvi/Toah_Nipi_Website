@@ -4,7 +4,7 @@ export const partnerGroups = [
     title: "Ministry Partners",
     description:
       "Organizations whose mission and relationship with Toah Nipi help strengthen retreat, discipleship, stewardship, and Christian community.",
-    image: "/May-2025-Lake+Nature-2.jpg",
+    image: "/Apr-2026-Crowd.jpg",
     organizations: [
       {
         name: "A Rocha",
@@ -41,7 +41,7 @@ export const partnerGroups = [
     title: "Returning Retreat Groups",
     description:
       "Churches, ministries, schools, and communities that continue to gather at Toah Nipi year after year.",
-    image: "/Dothan-Porch.webp",
+    image: "/Apr-2026-Circle-2.jpg",
     organizations: [
       {
         name: "Antioch Church",
@@ -78,7 +78,7 @@ export const partnerGroups = [
     title: "Community Affiliations",
     description:
       "Local and regional organizations connected to Toah Nipi through ongoing relationships, events, service, and shared hospitality.",
-    image: "/SnowBridge.jpg",
+    image: "/Volunteering.png",
     organizations: [
       {
         name: "Add organization name",
