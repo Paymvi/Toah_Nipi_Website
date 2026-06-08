@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
+import LodgingComparison from "../components/LodgingComparison";
 
 const lodgingBuildings = [
   {
@@ -669,6 +670,8 @@ export default function Lodging() {
           </a>
         </div>
       </section>
+
+      <LodgingComparison />
 
       {lodgingBuildings.map((building) => (
         <LodgeSection building={building} key={building.id} />
