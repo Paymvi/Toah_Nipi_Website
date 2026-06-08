@@ -31,6 +31,37 @@ const discounts = [
 export default function Events() {
   return (
     <main className="events-page">
+      <section className="events-hero">
+        <div className="events-hero-overlay" />
+
+        <div className="events-hero-content reveal-group">
+          <p className="events-hero-eyebrow">Events & Retreats</p>
+
+          <h1>
+            Gather, rest, and reconnect at <span>Toah Nipi.</span>
+          </h1>
+
+          <p>
+            From Family Camp and Thanksgiving House Party to custom retreats and
+            personal getaways, Toah Nipi offers space for groups, families, and
+            individuals to slow down and be renewed.
+          </p>
+
+          <div className="events-hero-actions">
+            <a href="#family-camp" className="events-hero-button">
+              View Family Camp
+            </a>
+
+            <a
+              href="#custom-gatherings"
+              className="events-hero-button events-hero-button-secondary"
+            >
+              Plan a Retreat
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section className="family-camp-section" id="family-camp">
         <div className="family-camp-image-wrap">
           <img
@@ -47,7 +78,7 @@ export default function Events() {
 
         <div className="family-camp-content">
           <div className="family-camp-inner reveal-group">
-            <p className="events-eyebrow">Events</p>
+            <p className="events-eyebrow">Summer</p>
 
             <h1>Family Camp</h1>
 
