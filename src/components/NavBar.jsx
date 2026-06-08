@@ -57,6 +57,15 @@ const navItems = [
     ],
   },
   {
+    label: "Partners",
+    path: "/partners",
+    dropdown: [
+      { label: "Ministry Partners", path: "/partners#ministry-partners" },
+      { label: "Returning Groups", path: "/partners#returning-retreat-groups" },
+      { label: "Community Affiliations", path: "/partners#community-affiliations" },
+    ],
+  },
+  {
     label: "Contact",
     path: "/contact",
     dropdown: [

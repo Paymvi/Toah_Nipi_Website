@@ -1,6 +1,6 @@
 import NavBar from "./components/NavBar";
 import "./App.css";
-import { BrowserRouter, Routes, Route, useParams, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { useState } from "react";
 
 import QuickLinks from "./components/QuickLinks";
@@ -16,6 +16,8 @@ import Contact from "./pages/Contact";
 
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
+
+import Partners from "./pages/Partners";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -78,6 +80,8 @@ export default function App() {
           path="/donors/:section"
           element={<PlaceholderPage title="Donors" />}
         />
+
+        <Route path="/partners" element={<Partners />} />
 
         <Route path="/contact" element={<Contact />} />
         <Route

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Footer from "../components/Footer";
+import { partnerGroups, getInitials } from "../data/partnerGroups";
 
 const projectImpacts = [
   {
@@ -104,78 +105,6 @@ const donorGroups = [
   },
 ];
 
-const partnerGroups = [
-  {
-    title: "Ministry Partners",
-    description:
-      "Organizations whose mission and relationship with Toah Nipi help strengthen retreat, discipleship, stewardship, and Christian community.",
-    organizations: [
-      {
-        name: "A Rocha",
-        logo: "/partner-logos/A-Rocha-2.png",
-      },
-      {
-        name: "InterVarsity Christian Fellowship",
-        logo: "/partner-logos/InterVarsity.webp",
-      },
-      {
-        name: "Sattler University",
-        logo: "/partner-logos/Sattler.png",
-      },
-      {
-        name: "Add partner organization",
-        logo: null,
-      },
-    ],
-  },
-  {
-    title: "Returning Retreat Groups",
-    description:
-      "Churches, ministries, schools, and communities that continue to gather at Toah Nipi year after year.",
-    organizations: [
-      {
-        name: "Antioch Church",
-        logo: "/partner-logos/Antioch-Church-2.png",
-      },
-      {
-        name: "Local schools",
-        logo: null,
-      },
-      {
-        name: "Local churches",
-        logo: null,
-      },
-      {
-        name: "Add annual group",
-        logo: null,
-      },
-    ],
-  },
-  {
-    title: "Community Affiliations",
-    description:
-      "Local and regional organizations connected to Toah Nipi through ongoing relationships, events, service, and shared hospitality.",
-    organizations: [
-      {
-        name: "Add organization name",
-        logo: null,
-      },
-      {
-        name: "Add organization name",
-        logo: null,
-      },
-      {
-        name: "Add organization name",
-        logo: null,
-      },
-      {
-        name: "Add organization name",
-        logo: null,
-      },
-    ],
-  },
-];
-
 
 const impactStats = [
   {
@@ -192,14 +121,6 @@ const impactStats = [
   },
 ];
 
-function getInitials(name) {
-  return name
-    .split(" ")
-    .map((word) => word[0])
-    .join("")
-    .slice(0, 2)
-    .toUpperCase();
-}
 
 export default function Donors() {
   const [activeProject, setActiveProject] = useState(0);
