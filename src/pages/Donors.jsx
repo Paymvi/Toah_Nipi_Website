@@ -109,36 +109,73 @@ const partnerGroups = [
     title: "Ministry Partners",
     description:
       "Organizations whose mission and relationship with Toah Nipi help strengthen retreat, discipleship, stewardship, and Christian community.",
-    names: [
-      "A Rocha",
-      "InterVarsity",
-      "Sattler University",
-      "Add partner organization",
+    organizations: [
+      {
+        name: "A Rocha",
+        logo: "/partner-logos/A-Rocha-2.png",
+      },
+      {
+        name: "InterVarsity Christian Fellowship",
+        logo: "/partner-logos/InterVarsity.webp",
+      },
+      {
+        name: "Sattler University",
+        logo: "/partner-logos/Sattler.png",
+      },
+      {
+        name: "Add partner organization",
+        logo: null,
+      },
     ],
   },
   {
     title: "Returning Retreat Groups",
     description:
       "Churches, ministries, schools, and communities that continue to gather at Toah Nipi year after year.",
-    names: [
-      "Antioch Church",
-      "Local schools",
-      "Local churches",
-      "Add annual group",
+    organizations: [
+      {
+        name: "Antioch Church",
+        logo: "/partner-logos/Antioch-Church-2.png",
+      },
+      {
+        name: "Local schools",
+        logo: null,
+      },
+      {
+        name: "Local churches",
+        logo: null,
+      },
+      {
+        name: "Add annual group",
+        logo: null,
+      },
     ],
   },
   {
     title: "Community Affiliations",
     description:
       "Local and regional organizations connected to Toah Nipi through ongoing relationships, events, service, and shared hospitality.",
-    names: [
-      "Add organization name",
-      "Add organization name",
-      "Add organization name",
-      "Add organization name",
+    organizations: [
+      {
+        name: "Add organization name",
+        logo: null,
+      },
+      {
+        name: "Add organization name",
+        logo: null,
+      },
+      {
+        name: "Add organization name",
+        logo: null,
+      },
+      {
+        name: "Add organization name",
+        logo: null,
+      },
     ],
   },
 ];
+
 
 const impactStats = [
   {
@@ -154,6 +191,15 @@ const impactStats = [
     label: "Stories still unfolding",
   },
 ];
+
+function getInitials(name) {
+  return name
+    .split(" ")
+    .map((word) => word[0])
+    .join("")
+    .slice(0, 2)
+    .toUpperCase();
+}
 
 export default function Donors() {
   const [activeProject, setActiveProject] = useState(0);
@@ -335,8 +381,21 @@ export default function Donors() {
               </div>
 
               <div className="partner-name-list">
-                {group.names.map((name, index) => (
-                  <span key={`${group.title}-${name}-${index}`}>{name}</span>
+                {group.organizations.map((organization, index) => (
+                  <div
+                    className="partner-org-chip"
+                    key={`${group.title}-${organization.name}-${index}`}
+                  >
+                    <div className="partner-org-logo">
+                      {organization.logo ? (
+                        <img src={organization.logo} alt={`${organization.name} logo`} />
+                      ) : (
+                        <strong>{getInitials(organization.name)}</strong>
+                      )}
+                    </div>
+
+                    <p>{organization.name}</p>
+                  </div>
                 ))}
               </div>
             </article>
