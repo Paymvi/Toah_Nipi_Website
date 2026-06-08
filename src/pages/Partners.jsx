@@ -1,6 +1,12 @@
 import Footer from "../components/Footer";
 import { partnerGroups, getInitials } from "../data/partnerGroups";
 
+const partnerGroupEyebrows = {
+  "ministry-partners": "Shared Mission",
+  "returning-retreat-groups": "Year After Year",
+  "community-affiliations": "Local Connections",
+};
+
 export default function Partners() {
   return (
     <main className="partners-page">
@@ -8,19 +14,16 @@ export default function Partners() {
         <div className="partners-hero-overlay" />
 
         <div className="partners-hero-content reveal-group">
-          <p className="donors-eyebrow donors-eyebrow-light">
-            Partnerships
-          </p>
+          <p className="donors-eyebrow donors-eyebrow-light">Partnerships</p>
 
           <h1>
-            Ministry partners, returning groups, and friends of{" "}
-            <span>Toah Nipi.</span>
+            Partners and friends of <span>Toah Nipi.</span>
           </h1>
 
           <p>
-            Toah Nipi is shaped not only by the land and facilities, but by the
-            churches, ministries, schools, organizations, and communities who
-            gather here, serve here, and help carry the mission forward.
+            Toah Nipi is shaped by the churches, ministries, schools,
+            organizations, and communities who gather here, serve here, and help
+            carry the mission forward.
           </p>
         </div>
       </section>
@@ -29,17 +32,14 @@ export default function Partners() {
         <div className="partners-intro-copy">
           <p className="donors-eyebrow">Shared Mission</p>
 
-          <h2>
-            Relationships that help make this place more than a retreat center.
-          </h2>
+          <h2>The relationships behind the retreat.</h2>
         </div>
 
         <div className="partners-intro-text">
           <p>
-            These organizations and groups represent ongoing relationships,
-            shared values, returning retreat communities, and local connections.
-            This page gives Toah Nipi space to tell those stories with logos,
-            photos, descriptions, and links.
+            These partners and returning groups represent ongoing relationships,
+            shared values, local connections, and communities who continue to
+            make Toah Nipi part of their story.
           </p>
         </div>
       </section>
@@ -58,9 +58,15 @@ export default function Partners() {
             </div>
 
             <div className="partners-feature-copy">
-              <p className="donors-eyebrow">{group.title}</p>
+              <p className="donors-eyebrow">
+                {partnerGroupEyebrows[group.id] || "Partners"}
+              </p>
 
-              <h2>{group.description}</h2>
+              <h2>{group.title}</h2>
+
+              <p className="partners-feature-description">
+                {group.description}
+              </p>
 
               <div className="partners-logo-grid">
                 {group.organizations.map((organization, orgIndex) => (
@@ -102,7 +108,7 @@ export default function Partners() {
             A Place for Gathering
           </p>
 
-          <h2>Every returning group adds to the story of Toah Nipi.</h2>
+          <h2>Every group adds to the story.</h2>
         </div>
 
         <p>
