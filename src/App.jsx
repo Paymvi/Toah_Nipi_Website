@@ -24,7 +24,7 @@ import "./styles/components.css";
 import "./styles/home.css";
 import "./styles/lodging.css";
 import "./styles/events.css";
-// import "./styles/partner.css";
+import "./styles/partner.css";
 // import "./styles/partners.css";
 // import "./styles/our-story.css";
 // import "./styles/donors.css";
