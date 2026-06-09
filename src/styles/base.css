@@ -1,0 +1,164 @@
+/* =========================================================
+   BASE.CSS
+   Global reset, theme tokens, and site-wide defaults only.
+========================================================= */
+
+/* -----------------------------
+   Design tokens
+----------------------------- */
+
+:root {
+  /* Colors */
+  --tn-green: #343814;
+  --tn-green-dark: #252b10;
+  --tn-green-soft: #4e5430;
+
+  --tn-paper: #f7f1df;
+  --tn-paper-soft: #e8e5cf;
+  --tn-cream: #f0ecd2;
+  --tn-gold-muted: #7c6f3d;
+
+  --tn-text: #343518;
+  --tn-text-deep: #252916;
+  --tn-text-soft: rgba(58, 59, 31, 0.84);
+
+  --tn-light-text: #f7f1df;
+  --tn-light-muted: #ded8ba;
+
+  /* Layout */
+  --tn-max-width: 1220px;
+  --tn-wide-width: 1440px;
+  --tn-section-x: clamp(24px, 7vw, 96px);
+  --tn-section-y: clamp(80px, 8vw, 110px);
+
+  /* Shape */
+  --tn-radius-sm: 10px;
+  --tn-radius-md: 16px;
+  --tn-radius-lg: 22px;
+  --tn-radius-xl: 28px;
+  --tn-radius-pill: 999px;
+
+  /* Shadows */
+  --tn-shadow-soft: 0 18px 45px rgba(49, 51, 25, 0.08);
+  --tn-shadow-card: 0 24px 60px rgba(49, 51, 25, 0.12);
+  --tn-shadow-dark: 0 24px 60px rgba(0, 0, 0, 0.25);
+
+  /* Typography */
+  --tn-font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --tn-font-display: var(--font-cooper);
+}
+
+/* -----------------------------
+   Reset / document defaults
+----------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--tn-paper-soft);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+
+  font-family: var(--tn-font-body);
+  background: var(--tn-paper-soft);
+  color: var(--tn-text);
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* -----------------------------
+   Media defaults
+----------------------------- */
+
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* -----------------------------
+   Form/button defaults
+----------------------------- */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+}
+
+/* -----------------------------
+   Link defaults
+----------------------------- */
+
+a {
+  color: inherit;
+}
+
+/* -----------------------------
+   Page shell
+----------------------------- */
+
+.page {
+  min-height: 100vh;
+}
+
+/* -----------------------------
+   Accessibility
+----------------------------- */
+
+:focus-visible {
+  outline: 3px solid rgba(124, 111, 61, 0.65);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: rgba(124, 111, 61, 0.28);
+  color: var(--tn-text-deep);
+}
+
+/* -----------------------------
+   Reduced motion
+----------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+}

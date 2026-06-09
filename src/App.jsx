@@ -1,5 +1,5 @@
 import NavBar from "./components/NavBar";
-import "./App.css";
+
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import { useState } from "react";
 
@@ -18,6 +18,20 @@ import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
 
 import Partners from "./pages/Partners";
+
+import "./styles/base.css";
+// import "./styles/components.css";
+// import "./styles/home.css";
+// import "./styles/lodging.css";
+// import "./styles/events.css";
+// import "./styles/partner.css";
+// import "./styles/partners.css";
+// import "./styles/our-story.css";
+// import "./styles/donors.css";
+// import "./styles/contact.css";
+// import "./styles/footer.css";
+// import "./styles/animations.css";
+import "./App.css";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
