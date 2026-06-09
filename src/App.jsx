@@ -20,8 +20,8 @@ import RevealOnScroll from "./components/RevealOnScroll";
 import Partners from "./pages/Partners";
 
 import "./styles/base.css";
-// import "./styles/components.css";
-// import "./styles/home.css";
+import "./styles/components.css";
+import "./styles/home.css";
 // import "./styles/lodging.css";
 // import "./styles/events.css";
 // import "./styles/partner.css";
