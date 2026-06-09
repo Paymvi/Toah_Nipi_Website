@@ -365,6 +365,24 @@
   line-height: 1.7;
 }
 
+/* =========================================================
+   Shared eyebrow styling used by the Partners hero
+========================================================= */
+
+.partners-page .donors-eyebrow {
+  margin: 0 0 18px;
+
+  color: rgba(60, 61, 31, 0.66);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.partners-page .donors-eyebrow-light {
+  color: #ded8ba;
+}
+
 /* Final CTA */
 
 .partners-final-section {
