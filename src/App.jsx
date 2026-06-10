@@ -1,10 +1,6 @@
 import NavBar from "./components/NavBar";
 
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
-import { useState } from "react";
-
-import QuickLinks from "./components/QuickLinks";
-import EventCarousel from "./components/EventCarousel";
 
 import Home from "./pages/Home";
 import Lodging from "./pages/Lodging";

@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 
 import QuickLinks from "../components/QuickLinks";
 import EventCarousel from "../components/EventCarousel";
-import Footer from "../components/Footer";
 import SiteFooter from "../components/SiteFooter";
 
 
 export default function Home() {
-  const [openCard, setOpenCard] = useState(null);
 
   return (
     <main className="page">
@@ -156,8 +154,8 @@ export default function Home() {
           <p className="eyebrow">Lodging</p>
           <h2>Stay for a night, a weekend, or a full retreat.</h2>
           <p>
-            Create a section here that previews cabins, rooms, retreat housing,
-            or whatever lodging options the camp offers.
+            From larger retreat lodges to quieter cottage stays, Toah Nipi offers
+            flexible lodging for churches, families, student groups, and personal retreats.
           </p>
 
           <Link to="/lodging" className="text-link">
