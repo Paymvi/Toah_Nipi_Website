@@ -30,7 +30,7 @@ import "./styles/our-story.css";
 import "./styles/donors.css";
 import "./styles/contact.css";
 import "./styles/footer.css";
-// import "./styles/animations.css";
+import "./styles/animations.css";
 import "./App.css";
 
 function PlaceholderPage({ title }) {
