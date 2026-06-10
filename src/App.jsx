@@ -28,7 +28,7 @@ import "./styles/partner.css";
 import "./styles/partners.css";
 import "./styles/our-story.css";
 import "./styles/donors.css";
-// import "./styles/contact.css";
+import "./styles/contact.css";
 // import "./styles/footer.css";
 // import "./styles/animations.css";
 import "./App.css";
