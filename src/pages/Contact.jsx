@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
-import Footer from "../components/Footer";
+import SiteFooter from "../components/SiteFooter";
 
 
 const retreatTypes = [
@@ -349,30 +349,8 @@ ${formData.message}
         </div>
       </section>
 
-      <section className="site-footer-section">
-        <div className="footer-logo-area">
-          <img
-            src="/toah-nipi-logo-2.png"
-            alt="Toah Nipi Christian Retreat Center"
-            className="footer-logo-1"
-          />
+      <SiteFooter/>
 
-          <p>
-            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
-          </p>
-
-          <img
-            src="/Secondary-Logo.png"
-            alt="Toah Nipi Christian Retreat Center"
-            className="footer-logo-2"
-          />
-
-        </div>
-
-        
-        <Footer />
-
-      </section>
     </main>
   );
 }

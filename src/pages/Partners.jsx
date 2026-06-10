@@ -1,5 +1,6 @@
 import Footer from "../components/Footer";
 import { partnerGroups, getInitials } from "../data/partnerGroups";
+import SiteFooter from "../components/SiteFooter";
 
 const partnerGroupEyebrows = {
   "ministry-partners": "Shared Mission",
@@ -136,25 +137,8 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="site-footer-section">
-        <div className="footer-logo-area">
-          <img
-            src="/toah-nipi-logo-2.png"
-            alt="Toah Nipi Christian Retreat Center"
-            className="footer-logo-1"
-          />
+      <SiteFooter/>
 
-          <p></p>
-
-          <img
-            src="/Secondary-Logo.png"
-            alt="Toah Nipi Christian Retreat Center"
-            className="footer-logo-2"
-          />
-        </div>
-
-        <Footer />
-      </section>
     </main>
   );
 }

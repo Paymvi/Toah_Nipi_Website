@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Footer from "../components/Footer";
 import { partnerGroups, getInitials } from "../data/partnerGroups";
+import SiteFooter from "../components/SiteFooter";
 
 const projectImpacts = [
   {
@@ -406,32 +406,7 @@ export default function Donors() {
         </div>
       </section>
 
-
-      <section className="site-footer-section">
-        <div className="footer-logo-area">
-          <img
-            src="/toah-nipi-logo-2.png"
-            alt="Toah Nipi Christian Retreat Center"
-            className="footer-logo-1"
-          />
-
-          <p>
-            {/* A peaceful Christian retreat center for rest, connection, and renewal. */}
-          </p>
-
-          <img
-            src="/Secondary-Logo.png"
-            alt="Toah Nipi Christian Retreat Center"
-            className="footer-logo-2"
-          />
-
-        </div>
-
-        
-        <Footer />
-
-      </section>
-
+      <SiteFooter/>
 
     </main>
   );
