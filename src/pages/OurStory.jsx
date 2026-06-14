@@ -3,6 +3,8 @@ import StatementOfFaith from "../components/StatementOfFaith";
 import CoreValues from "../components/CoreValues";
 import OurTeam from "../components/OurTeam";
 import SiteFooter from "../components/SiteFooter";
+import { FaHistory } from "react-icons/fa";
+import { LuWaypoints } from "react-icons/lu";
 
 export default function OurStory() {
   return (

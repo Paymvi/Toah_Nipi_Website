@@ -1,4 +1,7 @@
 import { useRef } from "react";
+import { FaHistory } from "react-icons/fa";
+import { FaRegCompass } from "react-icons/fa";
+// import { LuWaypoints } from "react-icons/lu";
 
 const timelineItems = [
   {
@@ -91,7 +94,11 @@ export default function StoryTimeline() {
         </p>
       </div> */}
       <div className="story-timeline-heading reveal-group">
-        <p>Our Timeline</p>
+        <p>
+          <FaRegCompass  className="story-timeline-heading-icon" aria-hidden="true" />
+          Our Timeline
+        </p>
+
         <span>The Toah Nipi Story</span>
       </div>
 
