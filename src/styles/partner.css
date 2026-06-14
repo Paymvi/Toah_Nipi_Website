@@ -1,12 +1,14 @@
-/* Partner Page */
+/* =========================================================
+   PARTNER.CSS
+   (Support)
+========================================================= */
+
 .partner-page {
   min-height: 100vh;
   background: #e8e5cf;
   color: #3c3d1f;
   overflow: hidden;
 }
-
-
 
 .partner-way-card {
   color: inherit;

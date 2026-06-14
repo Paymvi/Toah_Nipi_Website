@@ -59,6 +59,9 @@ const navItems = [
     label: "Partners",
     path: "/partners",
     dropdown: [
+      { label: "Projects Made Possible", path: "/partners#project-impact" },
+      { label: "Partner Recognition", path: "/partners#donor-wall" },
+      { label: "Recognition Notes", path: "/partners#recognition-notes" },
       { label: "Ministry Partners", path: "/partners#ministry-partners" },
       { label: "Returning Groups", path: "/partners#returning-retreat-groups" },
       { label: "Community Affiliations", path: "/partners#community-affiliations" },
