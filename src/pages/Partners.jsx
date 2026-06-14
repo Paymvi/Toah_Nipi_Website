@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { partnerGroups, getInitials } from "../data/partnerGroups";
 import SiteFooter from "../components/SiteFooter";
+import SEO from "../components/SEO";
 
 const partnerGroupEyebrows = {
   "ministry-partners": "Shared Mission",
@@ -116,6 +117,12 @@ export default function Partners() {
 
   return (
     <main className="partners-page">
+
+      <SEO
+        title="Partners and Friends"
+        description="Meet the ministry partners, returning retreat groups, community affiliations, and supporters connected to Toah Nipi Christian Retreat Center."
+        path="/partners"
+      />
       <section className="partners-hero">
         <div className="partners-hero-overlay" />
 

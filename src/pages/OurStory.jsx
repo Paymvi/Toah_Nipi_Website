@@ -5,10 +5,17 @@ import OurTeam from "../components/OurTeam";
 import SiteFooter from "../components/SiteFooter";
 import { FaHistory } from "react-icons/fa";
 import { LuWaypoints } from "react-icons/lu";
+import SEO from "../components/SEO";
 
 export default function OurStory() {
   return (
     <main className="our-story-page">
+
+      <SEO
+        title="Our Story, Values, and Statement of Faith"
+        description="Learn the story, core values, team, and statement of faith behind Toah Nipi Christian Retreat Center in Rindge, New Hampshire."
+        path="/our-story"
+      />
 
       <section
         className="our-story-hero"

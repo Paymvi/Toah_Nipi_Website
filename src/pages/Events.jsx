@@ -1,5 +1,6 @@
 import EventCarousel from "../components/EventCarousel2";
 import SiteFooter from "../components/SiteFooter";
+import SEO from "../components/SEO";
 
 const familyCampWeeks = [
   {
@@ -31,6 +32,13 @@ const discounts = [
 export default function Events() {
   return (
     <main className="events-page">
+
+      <SEO
+        title="Events, Family Camp, and Retreats"
+        description="Join Family Camp, Thanksgiving House Party, custom retreats, and personal getaways at Toah Nipi Christian Retreat Center in Rindge, New Hampshire."
+        path="/events"
+      />
+
       <section className="events-hero">
         <div className="events-hero-overlay" />
 

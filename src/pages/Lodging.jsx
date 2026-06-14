@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import SiteFooter from "../components/SiteFooter";
 import LodgingComparison from "../components/LodgingComparison";
+import SEO from "../components/SEO";
 
 const lodgingBuildings = [
   {
@@ -658,6 +659,13 @@ export default function Lodging() {
 
   return (
     <main className="lodging-page">
+
+      <SEO
+        title="Lodging for Retreats in New Hampshire"
+        description="Stay at Toah Nipi in Rindge, NH with lodging for churches, families, ministries, and retreat groups, including Hebron, Bethel, Dothan, cottages, and the Guest House."
+        path="/lodging"
+      />
+
       <section className="lodging-hero">
         <div className="lodging-hero-overlay" />
 

@@ -4,12 +4,19 @@ import { Link } from "react-router-dom";
 import QuickLinks from "../components/QuickLinks";
 import EventCarousel from "../components/EventCarousel";
 import SiteFooter from "../components/SiteFooter";
-
+import SEO from "../components/SEO";
 
 export default function Home() {
 
   return (
     <main className="page">
+
+      <SEO
+        title="Christian Retreat Center in Rindge, NH"
+        description="Toah Nipi is a year-round Christian retreat center in Rindge, New Hampshire offering lakeside lodging, Family Camp, group retreats, and personal getaways."
+        path="/"
+      />
+
       <section className="hero-sticky-wrap">
         <section className="home-hero">
             <div className="hero-content">
@@ -17,6 +24,10 @@ export default function Home() {
               <div className="hero-title-strip reveal-group">
               <p className="eyebrow">Welcome to</p>
               {/* <h1>Toah Nipi</h1> */}
+
+              <h1 className="sr-only">
+                Toah Nipi Christian Retreat Center in Rindge, NH
+              </h1>
 
               <img
                 src="/toah-nipi-logo-2.png"

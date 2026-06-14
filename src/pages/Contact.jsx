@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
 import SiteFooter from "../components/SiteFooter";
+import SEO from "../components/SEO";
 
 
 const retreatTypes = [
@@ -62,6 +63,13 @@ ${formData.message}
 
   return (
     <main className="contact-page">
+
+      <SEO
+        title="Contact Toah Nipi"
+        description="Contact Toah Nipi Christian Retreat Center to plan a retreat, ask about availability, or get directions to Rindge, New Hampshire."
+        path="/contact"
+      />
+
       <section className="contact-hero">
         <div className="contact-hero-overlay" />
 

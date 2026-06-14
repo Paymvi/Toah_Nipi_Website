@@ -1,6 +1,7 @@
 import EventCarousel3 from "../components/EventCarousel3";
 import SiteFooter from "../components/SiteFooter";
 import { FiGift, FiTool, FiHeart, FiShare2 } from "react-icons/fi";
+import SEO from "../components/SEO";
 
 const giveUrl =
   "https://cwngui.campwise.com/Apps/OnlineGuestDonations/Index.html?AppID=MKQ4U6RZOHHSNINZSCJV3VSRQQ3QHB&LocCde=CA0000";
@@ -165,6 +166,13 @@ function Partner() {
 
   return (
     <main className="partner-page">
+
+      <SEO
+        title="Support Toah Nipi"
+        description="Partner with Toah Nipi through giving, volunteering, prayer, and sharing the mission of Christian retreat ministry in New England."
+        path="/partner"
+      />
+
       <section className="partner-hero">
         <div className="partner-hero-overlay" />
 

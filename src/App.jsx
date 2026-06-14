@@ -15,6 +15,9 @@ import RevealOnScroll from "./components/RevealOnScroll";
 
 import Partners from "./pages/Partners";
 
+import SiteSchema from "./components/SiteSchema";
+import SEO from "./components/SEO";
+
 import "./styles/base.css";
 import "./styles/components.css";
 import "./styles/home.css";
@@ -34,6 +37,13 @@ function PlaceholderPage({ title }) {
 
   return (
     <main className="page">
+      <SEO
+        title={`${title} Coming Soon`}
+        description={`${title} page coming soon.`}
+        path=""
+        noindex
+      />
+
       <section className="placeholder-page">
         <p className="eyebrow">
           {section ? `${title} dropdown item ${section}` : "Page coming soon"}
@@ -54,6 +64,7 @@ export default function App() {
   return (
     
     <BrowserRouter>
+      <SiteSchema />
       <RevealOnScroll />
       <ScrollToTop />
       <NavBar />
