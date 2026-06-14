@@ -46,16 +46,15 @@ const navItems = [
       { label: "Spread the Word", path: "/partner#spread-the-word" },
     ],
   },
-
-  {
-    label: "Donors",
-    path: "/donors",
-    dropdown: [
-      { label: "Project Impact", path: "/donors#project-impact" },
-      { label: "Donor Wall", path: "/donors#donor-wall" },
-      { label: "Recognition Notes", path: "/donors#recognition-notes" },
-    ],
-  },
+  // {
+  //   label: "Donors",
+  //   path: "/donors",
+  //   dropdown: [
+  //     { label: "Project Impact", path: "/donors#project-impact" },
+  //     { label: "Donor Wall", path: "/donors#donor-wall" },
+  //     { label: "Recognition Notes", path: "/donors#recognition-notes" },
+  //   ],
+  // },
   {
     label: "Partners",
     path: "/partners",
