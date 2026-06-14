@@ -75,7 +75,7 @@ export default function StoryTimeline() {
 
   return (
     <section className="story-timeline-section" id="history">
-      <div className="story-timeline-header reveal-group">
+      {/* <div className="story-timeline-header reveal-group">
         <p className="story-timeline-eyebrow">The Toah Nipi Story</p>
 
         <h2>
@@ -89,6 +89,10 @@ export default function StoryTimeline() {
           Toah Nipi’s story is one of faithful care, community, and God’s
           creation being shared with others.
         </p>
+      </div> */}
+      <div className="story-timeline-heading reveal-group">
+        <p>Our Timeline</p>
+        <span>The Toah Nipi Story</span>
       </div>
 
       <div className="story-timeline-wrapper">

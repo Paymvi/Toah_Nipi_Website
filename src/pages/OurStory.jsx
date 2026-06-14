@@ -7,6 +7,29 @@ import SiteFooter from "../components/SiteFooter";
 export default function OurStory() {
   return (
     <main className="our-story-page">
+
+      <section
+        className="our-story-hero"
+        style={{
+          "--our-story-hero-image": "url('/Winter-Orange.jpg')",
+        }}
+      >
+        <div className="our-story-hero-overlay" />
+
+        <div className="our-story-hero-content reveal-group">
+          <p className="our-story-eyebrow">Our Story</p>
+
+          <h1>
+            The Toah Nipi Story
+          </h1>
+
+          <p>
+          A place shaped by gift, stewardship, and renewal, where generations of retreat ministry tell a story of faithful care, 
+          Christian community, and God’s creation shared with others.
+          </p>
+        </div>
+      </section>
+
       <StoryTimeline />
       <StatementOfFaith />
       <CoreValues />
