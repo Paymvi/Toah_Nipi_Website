@@ -354,6 +354,24 @@ function Partner() {
         </div>
       </section> */}
 
+      <section className="partners-final-section reveal-group">
+        <div className="partners-final-card">
+          <p className="donors-eyebrow">Interested in partnering?</p>
+
+          <h2>Bring your group to Toah Nipi.</h2>
+
+          <p>
+            Churches, ministries, schools, and organizations are invited to connect
+            with us about retreats, service opportunities, recurring gatherings, and
+            future partnerships.
+          </p>
+
+          <a href="/contact" className="partners-contact-link">
+            Contact us
+          </a>
+        </div>
+      </section>
+
       <SiteFooter/>
 
     </main>

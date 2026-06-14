@@ -138,7 +138,7 @@ export default function Partners() {
           SUPPORT / DONOR MATERIAL MOVED FROM DONORS PAGE
       ========================================================= */}
 
-      <section className="donors-intro-section reveal-group">
+      {/* <section className="donors-intro-section reveal-group">
         <div className="donors-intro-copy">
           <p className="donors-eyebrow">Partner Impact</p>
 
@@ -174,7 +174,7 @@ export default function Partners() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section
         className="donors-project-section reveal-group"
@@ -302,10 +302,10 @@ export default function Partners() {
 
           <h2>Want to honor a donor, family, church, or loved one?</h2>
 
-          <p>
+          {/* <p>
             This page can also include special recognition gifts, memorial
             gifts, church partners, project dedications, and anonymous donors.
-          </p>
+          </p> */}
 
           <div className="recognition-detail-list">
             <article>
@@ -350,19 +350,7 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="donors-final-cta">
-        <div className="donors-final-card reveal-group">
-          <p className="donors-eyebrow donors-eyebrow-light">Thank You</p>
 
-          <h2>To every donor, partner, and friend, thank you.</h2>
-
-          <p>
-            Your generosity helps care for Toah Nipi today and prepares it for
-            the guests, families, students, churches, and communities who will
-            gather here tomorrow.
-          </p>
-        </div>
-      </section>
 
       {/* =========================================================
           ORIGINAL PARTNERS PAGE MATERIAL
@@ -372,7 +360,7 @@ export default function Partners() {
         <div className="partners-intro-copy">
           <p className="donors-eyebrow">Shared Mission</p>
 
-          <h2>The relationships behind the retreat.</h2>
+          <h2>The <span className="highlight-text">relationships</span> behind the retreat.</h2>
         </div>
 
         <div className="partners-intro-text">
@@ -442,7 +430,7 @@ export default function Partners() {
         ))}
       </section>
 
-      <section className="partners-story-band reveal-group">
+      {/* <section className="partners-story-band reveal-group">
         <div>
           <p className="donors-eyebrow donors-eyebrow-light">
             A Place for Gathering
@@ -473,6 +461,21 @@ export default function Partners() {
           <a href="/contact" className="partners-contact-link">
             Contact us
           </a>
+        </div>
+      </section> */}
+
+      <section className="donors-final-cta">
+        <div className="donors-final-card reveal-group">
+          <p className="donors-eyebrow donors-eyebrow-light">Thank You</p>
+
+          <h2>To every partner, and friend
+            <br/>...thank you.</h2>
+
+          <p>
+            Your generosity helps care for Toah Nipi today and prepares it for
+            the guests, families, students, churches, and communities who will
+            gather here tomorrow.
+          </p>
         </div>
       </section>
 
