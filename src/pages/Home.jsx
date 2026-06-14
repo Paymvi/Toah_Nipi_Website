@@ -43,38 +43,35 @@ export default function Home() {
       
 
       <section className="intro-section">
-        <div className="section-label">About the Camp</div>
+        <div className="section-label">What is Toah Nipi</div>
 
         <div className="intro-grid reveal-group">
           <h2>
-            Quiet mornings.
-            <br />Meaningful conversations.
-            <br />Room to breathe.
+            A <span className="highlight-text">year-round</span>
+            <br/>
+            Christian retreat center 
+            <br/>in Rindge, NH.
           </h2>
 
           <div className="intro-copy">
             <p>
-              {/* Toah Nipi is designed to feel set apart from the noise of everyday
-              life. */}
-              {/* <br /> */}
-              Whether guests are visiting for a retreat, family gathering,
-              leadership event, or a weekend away, the goal is simple: create space
-              for <span className="bold-text">rest, connection, and renewal</span>.
+              Toah Nipi welcomes churches, campus ministries, families, retreat
+              groups, and individuals for overnight stays, day events, meals, meeting spaces, and time
+              set apart for{" "}
+              <span className="bold-text">connection, and renewal</span>.
             </p>
 
             <div className="intro-buttons">
               <Link to="/lodging" className="intro-button intro-button-primary">
-                Accommodations
+                View Lodging
               </Link>
 
               <Link to="/events" className="intro-button intro-button-secondary">
-                Explore Activities
+                Explore Events
               </Link>
             </div>
           </div>
         </div>
-        
-
       </section>
 
       <QuickLinks />
