@@ -143,18 +143,17 @@ ${formData.message}
 
           <div className="contact-image-card">
             <img
-              src="/Dothan-Porch.webp"
-              alt="A welcoming porch at Toah Nipi"
+              src="/Toah-Nipi-Map.webp"
+              alt="Map showing Toah Nipi's location in New England"
             />
 
             <div className="contact-image-note">
-              <span>Planning a retreat?</span>
+              {/* <span>Planning a retreat?</span> */}
               <p>
-                Tell us about your group size, dates, and retreat goals. We’ll
-                help you think through lodging, meals, meeting spaces, and time
-                outdoors.
+                Located in Rindge, NH, Toah Nipi offers a peaceful retreat setting within
+  reach of the wider New England region.  
               </p>
-            </div>
+            </div> 
           </div>
         </div>
 
