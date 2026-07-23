@@ -6,6 +6,7 @@ import SiteFooter from "../components/SiteFooter";
 import { FaHistory } from "react-icons/fa";
 import { LuWaypoints } from "react-icons/lu";
 import SEO from "../components/SEO";
+import MissionVision from "../components/MissionVision";
 
 export default function OurStory() {
   return (
@@ -41,7 +42,8 @@ export default function OurStory() {
 
       <StoryTimeline />
       <StatementOfFaith />
-      <CoreValues />
+      {/* <CoreValues /> */}
+      <MissionVision />
       <OurTeam />
 
       <SiteFooter/>

@@ -1491,3 +1491,399 @@
   transform: translateY(3px);
   stroke-width: 1.6;
 }
+
+
+/* =========================================================
+   MISSION & VISION
+========================================================= */
+
+.mission-vision-section {
+  position: relative;
+  z-index: 2;
+
+  padding: 96px clamp(24px, 7vw, 96px) 105px;
+
+  background:
+    radial-gradient(
+      circle at 88% 10%,
+      rgba(247, 241, 223, 0.09),
+      transparent 28%
+    ),
+    #7d8263;
+
+  color: #f7f1df;
+  overflow: hidden;
+}
+
+.mission-vision-inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.mission-vision-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.75fr);
+  gap: clamp(50px, 7vw, 100px);
+  align-items: end;
+
+  padding-bottom: 38px;
+  margin-bottom: 34px;
+
+  border-bottom: 1px solid rgba(247, 241, 223, 0.32);
+}
+
+
+
+.mission-vision-eyebrow {
+  margin: 0 0 16px;
+
+  color: rgba(247, 241, 223, 0.72);
+
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.mission-vision-header h2 {
+  margin: 0;
+
+  color: #f7f1df;
+  font-family: var(--font-cooper);
+
+  font-size: clamp(3rem, 5vw, 4.35rem);
+  line-height: 0.9;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.mission-vision-header h2 span {
+  display: block;
+
+  color: rgba(247, 241, 223, 0.7);
+}
+
+.mission-vision-intro {
+  max-width: 510px;
+  margin: 0 0 3px;
+
+  color: rgba(247, 241, 223, 0.82);
+
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.7;
+}
+
+
+
+
+/* improved */
+.mission-vision-header h2 {
+  margin: 0;
+
+  display: flex;
+  align-items: baseline;
+  gap: 0.18em;
+  flex-wrap: nowrap;
+
+  color: #f7f1df;
+  font-family: var(--font-cooper);
+
+  font-size: clamp(2.9rem, 4.5vw, 4.1rem);
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+}
+
+.mission-vision-header h2 span {
+  display: inline;
+
+  color: rgba(247, 241, 223, 0.7);
+}
+
+
+/* =========================================================
+   STATEMENT GRID
+========================================================= */
+
+.mission-vision-statements {
+  display: grid;
+
+  /* Mission gets more room, but Vision is no longer cramped */
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   SHARED CARD STYLING
+========================================================= */
+
+.mission-statement,
+.vision-statement {
+  position: relative;
+  overflow: hidden;
+
+  /* min-height: 300px; */
+  padding: clamp(30px, 3.3vw, 42px);
+
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 18px;
+}
+
+
+/* =========================================================
+   MISSION CARD
+========================================================= */
+
+.mission-statement {
+  background: #f4efdc;
+  color: #343518;
+
+  border: 1px solid rgba(60, 61, 31, 0.08);
+
+  box-shadow:
+    0 18px 44px rgba(40, 43, 20, 0.12);
+}
+
+
+/* =========================================================
+   VISION CARD
+========================================================= */
+
+.vision-statement {
+  color: #f7f1df;
+
+  border: 1px solid rgba(247, 241, 223, 0.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(57, 62, 29, 0.84),
+      rgba(72, 77, 42, 0.72)
+    );
+
+  box-shadow:
+    0 18px 44px rgba(40, 43, 20, 0.1);
+}
+
+
+/* =========================================================
+   LABELS
+========================================================= */
+
+.statement-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 42px;
+}
+
+.statement-label span {
+  width: 30px;
+  height: 30px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  border-radius: 999px;
+
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.statement-label p {
+  margin: 0;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+
+/* Mission label */
+
+.mission-statement .statement-label span {
+  color: rgba(60, 61, 31, 0.64);
+  border: 1px solid rgba(60, 61, 31, 0.22);
+}
+
+.mission-statement .statement-label p {
+  color: rgba(60, 61, 31, 0.64);
+}
+
+
+/* Vision label */
+
+.vision-statement .statement-label span {
+  color: rgba(247, 241, 223, 0.78);
+  border: 1px solid rgba(247, 241, 223, 0.28);
+}
+
+.vision-statement .statement-label p {
+  color: rgba(247, 241, 223, 0.72);
+}
+
+
+/* =========================================================
+   STATEMENT TEXT
+========================================================= */
+
+.statement-copy {
+  margin: auto 0 0;
+
+  position: relative;
+  z-index: 1;
+
+  font-family: var(--font-cooper);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+
+/* Mission */
+
+.mission-statement .statement-copy {
+  max-width: 760px;
+
+  color: #3a3b1e;
+
+  font-size: clamp(1.3rem, 1.65vw, 1.65rem);
+  line-height: 1.38;
+}
+
+
+/* Vision */
+
+.vision-statement .statement-copy {
+  max-width: 500px;
+
+  color: #f7f1df;
+
+  font-size: clamp(1.25rem, 1.5vw, 1.55rem);
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   SUBTLE ACCENT
+========================================================= */
+
+.mission-statement::before,
+.vision-statement::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 42px;
+
+  width: 72px;
+  height: 3px;
+
+  border-radius: 999px;
+}
+
+.mission-statement::before {
+  background: rgba(60, 61, 31, 0.25);
+}
+
+.vision-statement::before {
+  background: rgba(247, 241, 223, 0.32);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+  .mission-vision-section {
+    padding: 84px 24px 92px;
+  }
+
+  .mission-vision-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mission-vision-intro {
+    max-width: 650px;
+  }
+
+  .mission-vision-statements {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-statement,
+  .vision-statement {
+    min-height: 250px;
+  }
+
+  .mission-statement .statement-copy,
+  .vision-statement .statement-copy {
+    max-width: 720px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+  .mission-vision-section {
+    padding: 72px 20px 78px;
+  }
+
+  .mission-vision-header {
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+  }
+
+  .mission-vision-header h2 {
+    font-size: clamp(2.8rem, 12vw, 3.6rem);
+  }
+
+  .mission-vision-statements {
+    gap: 14px;
+  }
+
+  .mission-statement,
+  .vision-statement {
+    min-height: 0;
+
+    padding: 28px 24px 30px;
+
+    border-radius: 16px;
+  }
+
+  .statement-label {
+    margin-bottom: 34px;
+  }
+
+  .mission-statement .statement-copy {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .vision-statement .statement-copy {
+    font-size: 1.22rem;
+    line-height: 1.42;
+  }
+}
+
+
