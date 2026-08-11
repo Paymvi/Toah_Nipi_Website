@@ -216,7 +216,7 @@ export default function NavBar() {
 
         </div>
 
-        <Link to="https://cwngui.campwise.com/Apps/OnlineGuestDonations/Index.html?AppID=MKQ4U6RZOHHSNINZSCJV3VSRQQ3QHB&LocCde=CA0000" className="give-link">
+        <Link to="https://secure.qgiv.com/for/toahnipichristianretreatcenter/" className="give-link">
           GIVE
         </Link>
       </div>
