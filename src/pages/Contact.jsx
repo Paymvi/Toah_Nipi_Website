@@ -23,9 +23,20 @@ const initialFormState = {
   phone: "",
   churchOrMinistry: "",
   retreatType: "",
+  heardAboutUs: "",
   promoCode: "",
   message: "",
 };
+
+const referralSources = [
+  "Google Search",
+  "Social Media",
+  "Friend or Family",
+  "Church or Ministry",
+  "Previous Visit",
+  "Event or Conference",
+  "Other",
+];
 
 export default function Contact() {
   const [formData, setFormData] = useState(initialFormState);
@@ -52,6 +63,7 @@ Email: ${formData.email}
 Phone: +1 ${formData.phone}
 Church or Ministry: ${formData.churchOrMinistry}
 Type of Retreat: ${formData.retreatType}
+How Did You Hear About Us: ${formData.heardAboutUs || "N/A"}
 Promo Code: ${formData.promoCode || "N/A"}
 
 Message:
@@ -254,6 +266,23 @@ ${formData.message}
                 value={formData.churchOrMinistry}
                 onChange={handleChange}
               />
+            </label>
+
+            <label className="contact-form-full">
+              How did you hear about us?
+              <select
+                name="heardAboutUs"
+                value={formData.heardAboutUs}
+                onChange={handleChange}
+              >
+                <option value="">Select an option</option>
+
+                {referralSources.map((source) => (
+                  <option value={source} key={source}>
+                    {source}
+                  </option>
+                ))}
+              </select>
             </label>
 
             <label className="contact-form-full">
