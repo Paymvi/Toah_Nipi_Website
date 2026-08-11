@@ -906,3 +906,696 @@
   border-top: 1px solid rgba(247, 241, 223, 0.08);
   border-bottom: 1px solid rgba(247, 241, 223, 0.08);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   PROJECT IMPACT BOOK
+   Turns the featured project into an interactive open book
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   Entire open book
+--------------------------------------------------------- */
+
+.donors-project-book {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  min-height: 570px;
+
+  overflow: visible;
+
+  perspective: 2200px;
+
+  border-radius: 18px;
+
+  filter: drop-shadow(0 24px 34px rgba(49, 51, 25, 0.16));
+}
+
+
+/* ---------------------------------------------------------
+   Center binding / gutter
+--------------------------------------------------------- */
+
+.donors-project-book::after {
+  content: "";
+
+  position: absolute;
+  z-index: 20;
+
+  top: 1.5%;
+  bottom: 1.5%;
+  left: 50%;
+
+  width: 2px;
+
+  transform: translateX(-50%);
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(52, 56, 20, 0.15),
+      rgba(255, 255, 255, 0.48),
+      rgba(52, 56, 20, 0.13)
+    );
+
+  box-shadow:
+    -7px 0 14px rgba(52, 56, 20, 0.08),
+    7px 0 14px rgba(52, 56, 20, 0.08);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LEFT PAGE - PHOTO
+========================================================= */
+
+.donors-project-book .donors-book-photo-page {
+  position: relative;
+  z-index: 1;
+
+  min-height: 570px;
+
+  overflow: hidden;
+
+  border-radius: 18px 0 0 18px;
+
+  background: #d8d2b8;
+}
+
+
+/*
+   Subtle darkening near the center of the book.
+   This helps the photo actually feel like a page.
+*/
+
+.donors-project-book .donors-book-photo-page::after {
+  content: "";
+
+  position: absolute;
+  z-index: 4;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to left,
+      rgba(30, 32, 15, 0.18) 0%,
+      rgba(30, 32, 15, 0.06) 5%,
+      transparent 17%
+    );
+
+  pointer-events: none;
+}
+
+
+/* Both current and upcoming images occupy the same spot */
+
+.donors-book-photo {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* Next image waits underneath */
+
+.donors-book-photo--next {
+  z-index: 1;
+}
+
+
+/* Current image sits over it */
+
+.donors-book-photo--current {
+  z-index: 2;
+
+  opacity: 1;
+
+  transition:
+    opacity 260ms ease 340ms,
+    transform 900ms ease;
+}
+
+
+/* When the paper passes the middle, reveal next photo */
+
+.donors-project-book.is-turning
+  .donors-book-photo--current {
+  opacity: 0;
+
+  transform: scale(1.015);
+}
+
+
+/* ---------------------------------------------------------
+   Status badges over image
+--------------------------------------------------------- */
+
+.donors-project-book .donors-project-status {
+  z-index: 6;
+
+  transition:
+    opacity 220ms ease,
+    transform 220ms ease;
+}
+
+
+.donors-project-status--next {
+  opacity: 0;
+  transform: translateY(5px);
+}
+
+
+.donors-project-book.is-turning
+  .donors-project-status--current {
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+
+.donors-project-book.is-turning
+  .donors-project-status--next {
+  opacity: 1;
+  transform: translateY(0);
+
+  transition-delay: 480ms;
+}
+
+
+/* =========================================================
+   RIGHT PAGE STAGE
+========================================================= */
+
+.donors-book-right-page {
+  position: relative;
+  z-index: 5;
+
+  min-width: 0;
+  min-height: 570px;
+
+  perspective: 2200px;
+  transform-style: preserve-3d;
+}
+
+
+/*
+   Both the current physical sheet and the page underneath
+   occupy exactly the same area.
+*/
+
+.donors-book-page-under,
+.donors-book-turning-page {
+  position: absolute;
+  inset: 0;
+}
+
+
+/* =========================================================
+   PAGE UNDERNEATH
+========================================================= */
+
+.donors-book-page-under {
+  z-index: 1;
+
+  overflow: hidden;
+
+  border-radius: 0 18px 18px 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(52, 56, 20, 0.08) 0%,
+      rgba(52, 56, 20, 0.025) 8%,
+      transparent 18%
+    ),
+    #faf6e6;
+
+  box-shadow:
+    inset 12px 0 22px rgba(52, 56, 20, 0.055),
+    inset -1px 0 rgba(52, 56, 20, 0.08);
+}
+
+
+/* =========================================================
+   THE ACTUAL TURNING PIECE OF PAPER
+========================================================= */
+
+.donors-book-turning-page {
+  z-index: 10;
+
+  transform-origin: left center;
+  transform-style: preserve-3d;
+
+  cursor: pointer;
+
+  will-change: transform;
+}
+
+
+/* Slight page-lift hint on hover */
+
+.donors-book-turning-page:not(.is-turning):hover {
+  transform: rotateY(-2.25deg);
+
+  filter: drop-shadow(
+    7px 8px 9px rgba(52, 56, 20, 0.08)
+  );
+}
+
+
+/* Keyboard focus */
+
+.donors-book-turning-page:focus-visible {
+  outline: 3px solid rgba(72, 79, 32, 0.58);
+  outline-offset: 5px;
+}
+
+
+/* Start the physical turn */
+
+.donors-book-turning-page.is-turning {
+  pointer-events: none;
+
+  animation:
+    donors-turn-book-page
+    900ms
+    cubic-bezier(0.64, 0.02, 0.26, 1)
+    forwards;
+}
+
+
+/* =========================================================
+   FRONT + BACK OF THE PAPER
+========================================================= */
+
+.donors-book-page-face {
+  position: absolute;
+  inset: 0;
+
+  overflow: hidden;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+  transform-style: preserve-3d;
+}
+
+
+/* ---------------------------------------------------------
+   Front
+--------------------------------------------------------- */
+
+.donors-book-page-front {
+  z-index: 2;
+
+  border-radius: 0 18px 18px 0;
+
+  background:
+    radial-gradient(
+      circle at 86% 12%,
+      rgba(255, 255, 255, 0.5),
+      transparent 25%
+    ),
+    linear-gradient(
+      90deg,
+      rgba(52, 56, 20, 0.085) 0%,
+      rgba(52, 56, 20, 0.025) 8%,
+      transparent 18%
+    ),
+    #faf6e6;
+
+  box-shadow:
+    inset 12px 0 22px rgba(52, 56, 20, 0.055),
+    inset -1px 0 rgba(52, 56, 20, 0.08);
+}
+
+
+/*
+   Tiny folded corner.
+   Very subtle, but it tells the user:
+   "hey, this is a page."
+*/
+
+.donors-book-page-front::after {
+  content: "";
+
+  position: absolute;
+
+  right: 0;
+  bottom: 0;
+
+  width: 58px;
+  height: 58px;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 49%,
+      rgba(52, 56, 20, 0.07) 50%,
+      rgba(255, 252, 236, 0.92) 52%,
+      #eee8d2 100%
+    );
+
+  border-bottom-right-radius: 18px;
+
+  pointer-events: none;
+
+  transition: width 180ms ease, height 180ms ease;
+}
+
+
+.donors-book-turning-page:not(.is-turning):hover
+  .donors-book-page-front::after {
+  width: 70px;
+  height: 70px;
+}
+
+
+/* ---------------------------------------------------------
+   Backside of the sheet
+--------------------------------------------------------- */
+
+.donors-book-page-back {
+  z-index: 1;
+
+  transform: rotateY(180deg);
+
+  border-radius: 18px 0 0 18px;
+
+  background:
+    linear-gradient(
+      -90deg,
+      rgba(52, 56, 20, 0.09),
+      transparent 14%
+    ),
+    #f1ecd8;
+
+  box-shadow:
+    inset -14px 0 24px rgba(52, 56, 20, 0.07),
+    8px 4px 22px rgba(35, 37, 18, 0.12);
+}
+
+
+.donors-book-paper-back {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.45;
+
+  background:
+    radial-gradient(
+      circle at 70% 20%,
+      rgba(255, 255, 255, 0.7),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 25% 75%,
+      rgba(78, 72, 42, 0.035),
+      transparent 32%
+    );
+}
+
+
+/* =========================================================
+   WHITE PAGE CONTENT
+========================================================= */
+
+.donors-project-book .donors-featured-content {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+
+  padding:
+    clamp(34px, 4vw, 52px)
+    clamp(30px, 4vw, 50px)
+    28px;
+
+  border: none;
+  border-radius: 0;
+
+  background: transparent;
+
+  box-shadow: none;
+}
+
+
+/* Main text fills available area */
+
+.donors-book-page-body {
+  flex: 1;
+}
+
+
+/* Give the page title slightly more editorial/book spacing */
+
+.donors-project-book .donors-featured-content h3 {
+  margin-top: 8px;
+}
+
+
+/* =========================================================
+   PAGE FOOTER
+========================================================= */
+
+.donors-book-page-footer {
+  position: relative;
+  z-index: 5;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-top: 34px;
+  padding-top: 18px;
+  padding-right: 35px;
+
+  border-top: 1px solid rgba(52, 56, 20, 0.12);
+
+  color: rgba(52, 56, 20, 0.5);
+}
+
+
+/* 01 / 04 */
+
+.donors-book-page-number {
+  flex-shrink: 0;
+
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* Next: Woodland Trail... */
+
+.donors-book-next {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+
+  text-align: right;
+
+  font-size: 0.7rem;
+  line-height: 1.35;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+
+.donors-book-next strong {
+  display: inline-block;
+
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  line-height: 0.7;
+  font-weight: 400;
+
+  transition: transform 180ms ease;
+}
+
+
+.donors-book-turning-page:not(.is-turning):hover
+  .donors-book-next {
+  color: #343814;
+}
+
+
+.donors-book-turning-page:not(.is-turning):hover
+  .donors-book-next strong {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   THE PAGE TURN
+========================================================= */
+
+@keyframes donors-turn-book-page {
+  0% {
+    transform: rotateY(0deg);
+  }
+
+  18% {
+    transform: rotateY(-14deg);
+  }
+
+  48% {
+    transform: rotateY(-88deg);
+  }
+
+  58% {
+    transform: rotateY(-108deg);
+  }
+
+  82% {
+    transform: rotateY(-166deg);
+  }
+
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+  .donors-project-book,
+  .donors-book-right-page,
+  .donors-project-book .donors-book-photo-page {
+    min-height: 530px;
+  }
+
+  .donors-project-book .donors-featured-content {
+    padding:
+      34px
+      28px
+      26px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+  .donors-project-book {
+    grid-template-columns: 1fr;
+
+    min-height: 0;
+
+    filter: drop-shadow(
+      0 18px 28px rgba(49, 51, 25, 0.13)
+    );
+  }
+
+
+  /* There's no center seam when the pages stack */
+
+  .donors-project-book::after {
+    display: none;
+  }
+
+
+  .donors-project-book .donors-book-photo-page {
+    min-height: 330px;
+
+    border-radius: 18px 18px 0 0;
+  }
+
+
+  .donors-book-right-page {
+    min-height: 500px;
+  }
+
+
+  .donors-book-page-front,
+  .donors-book-page-under {
+    border-radius: 0 0 18px 18px;
+  }
+
+
+  .donors-project-book .donors-featured-content {
+    padding:
+      30px
+      24px
+      24px;
+  }
+
+
+  .donors-book-page-footer {
+    gap: 14px;
+
+    padding-right: 28px;
+  }
+
+
+  .donors-book-next {
+    max-width: 210px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .donors-book-turning-page.is-turning {
+    animation-duration: 1ms;
+  }
+
+  .donors-book-photo--current,
+  .donors-project-book .donors-project-status {
+    transition-duration: 1ms;
+  }
+}
+
+
+

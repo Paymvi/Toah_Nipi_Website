@@ -110,10 +110,84 @@ const impactStats = [
   },
 ];
 
+function ProjectBookPage({ project, index }) {
+  const nextIndex = (index + 1) % projectImpacts.length;
+  const nextProject = projectImpacts[nextIndex];
+
+  return (
+    <div className="donors-featured-content donors-book-page-content">
+      <div className="donors-book-page-body">
+        <p className="donors-project-category">
+          {project.category}
+        </p>
+
+        <h3>{project.title}</h3>
+
+        <p>{project.description}</p>
+
+        <div className="donors-funded-by">
+          <span>Supported by</span>
+
+          <div>
+            {project.fundedBy.map((donor, donorIndex) => (
+              <p key={`${project.id}-${donor}-${donorIndex}`}>
+                {donor}
+              </p>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="donors-book-page-footer">
+        <span className="donors-book-page-number">
+          {String(index + 1).padStart(2, "0")} /{" "}
+          {String(projectImpacts.length).padStart(2, "0")}
+        </span>
+
+        <span className="donors-book-next">
+          Next: {nextProject.title}
+          <strong>›</strong>
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function Partners() {
   const [activeProject, setActiveProject] = useState(0);
+  const [turningTo, setTurningTo] = useState(null);
 
   const selectedProject = projectImpacts[activeProject];
+
+  const nextProjectIndex =
+    (activeProject + 1) % projectImpacts.length;
+
+  const isPageTurning = turningTo !== null;
+
+  const revealedProjectIndex =
+    turningTo ?? nextProjectIndex;
+
+  const revealedProject =
+    projectImpacts[revealedProjectIndex];
+
+  const startPageTurn = (targetIndex) => {
+    if (isPageTurning) return;
+    if (targetIndex === activeProject) return;
+
+    setTurningTo(targetIndex);
+  };
+
+  const turnToNextPage = () => {
+    startPageTurn(nextProjectIndex);
+  };
+
+  const finishPageTurn = (event) => {
+    if (event.target !== event.currentTarget) return;
+    if (turningTo === null) return;
+
+    setActiveProject(turningTo);
+    setTurningTo(null);
+  };
 
   return (
     <main className="partners-page">
@@ -206,7 +280,8 @@ export default function Partners() {
                 type="button"
                 key={project.id}
                 className={activeProject === index ? "is-active" : ""}
-                onClick={() => setActiveProject(index)}
+                onClick={() => startPageTurn(index)}
+                disabled={isPageTurning}
               >
                 <span>{project.category}</span>
                 {project.title}
@@ -214,39 +289,92 @@ export default function Partners() {
             ))}
           </div>
 
-          <article className="donors-featured-project">
-            <div className="donors-featured-image">
-              <img src={selectedProject.image} alt={selectedProject.title} />
+          <article
+            className={`donors-featured-project donors-project-book ${
+              isPageTurning ? "is-turning" : ""
+            }`}
+          >
+            {/* =====================================================
+                LEFT BOOK PAGE — PROJECT PHOTO
+            ====================================================== */}
 
-              <div className="donors-project-status">
+            <div className="donors-featured-image donors-book-photo-page">
+              {isPageTurning && (
+                <img
+                  className="donors-book-photo donors-book-photo--next"
+                  src={revealedProject.image}
+                  alt=""
+                  aria-hidden="true"
+                />
+              )}
+
+              <img
+                className="donors-book-photo donors-book-photo--current"
+                src={selectedProject.image}
+                alt={selectedProject.title}
+              />
+
+              {isPageTurning && (
+                <div className="donors-project-status donors-project-status--next">
+                  {revealedProject.status}
+                </div>
+              )}
+
+              <div className="donors-project-status donors-project-status--current">
                 {selectedProject.status}
               </div>
             </div>
 
-            <div className="donors-featured-content">
-              <p className="donors-project-category">
-                {selectedProject.category}
-              </p>
+            {/* =====================================================
+                RIGHT BOOK PAGE
+            ====================================================== */}
 
-              <h3>{selectedProject.title}</h3>
+            <div className="donors-book-right-page">
 
-              <p>{selectedProject.description}</p>
+              {/* The page waiting UNDER the current page */}
+              <div
+                className="donors-book-page-under"
+                aria-hidden={!isPageTurning}
+              >
+                <ProjectBookPage
+                  project={revealedProject}
+                  index={revealedProjectIndex}
+                />
+              </div>
 
-              {/* Keep this commented out for now if it feels redundant. */}
-              {/* <div className="donors-project-note">
-                <span>Why it matters</span>
-                <p>{selectedProject.donorNote}</p>
-              </div> */}
+              {/* The physical sheet that turns */}
+              <div
+                className={`donors-book-turning-page ${
+                  isPageTurning ? "is-turning" : ""
+                }`}
+                role="button"
+                tabIndex={isPageTurning ? -1 : 0}
+                aria-label={`Turn page to ${
+                  projectImpacts[nextProjectIndex].title
+                }`}
+                onClick={turnToNextPage}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    turnToNextPage();
+                  }
+                }}
+                onAnimationEnd={finishPageTurn}
+              >
+                {/* FRONT of sheet */}
+                <div className="donors-book-page-face donors-book-page-front">
+                  <ProjectBookPage
+                    project={selectedProject}
+                    index={activeProject}
+                  />
+                </div>
 
-              <div className="donors-funded-by">
-                <span>Supported by</span>
-
-                <div>
-                  {selectedProject.fundedBy.map((donor, index) => (
-                    <p key={`${selectedProject.id}-${donor}-${index}`}>
-                      {donor}
-                    </p>
-                  ))}
+                {/* BACK of sheet */}
+                <div
+                  className="donors-book-page-face donors-book-page-back"
+                  aria-hidden="true"
+                >
+                  <div className="donors-book-paper-back" />
                 </div>
               </div>
             </div>
