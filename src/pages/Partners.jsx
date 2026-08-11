@@ -19,7 +19,9 @@ const projectImpacts = [
     description:
       "A fully lighted Christmas walk experience designed to become a meaningful local tradition, sharing the story of Jesus’ birth through outdoor scenes, lights, and Scripture.",
     donorNote: "Add description here",
-    fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    // fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    fundingRaised: 12500,
+    fundingGoal: 20000,
   },
   {
     id: "woodland-trail",
@@ -31,7 +33,9 @@ const projectImpacts = [
       "Improvements to the woodland trails around the pond will create peaceful, accessible pathways for prayer, reflection, walking, and time outdoors.",
     donorNote:
       "These gifts help preserve the natural beauty of Toah Nipi while making the land easier for guests to enjoy.",
-    fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    // fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    fundingRaised: 12500,
+    fundingGoal: 20000,
   },
   {
     id: "outdoor-amphitheatre",
@@ -43,7 +47,9 @@ const projectImpacts = [
       "A new outdoor amphitheatre near the pond will provide a flexible space for worship, teaching, camp gatherings, concerts, and group events.",
     donorNote:
       "Donor support is helping create a space where future guests can gather, worship, and make lasting memories.",
-    fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    // fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    fundingRaised: 12500,
+    fundingGoal: 20000,
   },
   {
     id: "trex-swings",
@@ -55,7 +61,9 @@ const projectImpacts = [
       "New Trex swings will create a peaceful place for guests to sit, rest, and enjoy the beauty of Toah Nipi’s outdoor spaces. These durable swings will offer a welcoming spot for conversation, reflection, and quiet moments near camp.",
     donorNote:
       "Donor support is helping provide long-lasting outdoor seating where guests can slow down, connect with others, and enjoy God’s creation.",
-    fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    // fundedBy: ["Add donor name", "Add donor name", "Anonymous Donor"],
+    fundingRaised: 12500,
+    fundingGoal: 20000,
   },
 ];
 
@@ -114,6 +122,11 @@ function ProjectBookPage({ project, index }) {
   const nextIndex = (index + 1) % projectImpacts.length;
   const nextProject = projectImpacts[nextIndex];
 
+  const fundingPercent = Math.min(
+    (project.fundingRaised / project.fundingGoal) * 100,
+    100
+  );
+
   return (
     <div className="donors-featured-content donors-book-page-content">
       <div className="donors-book-page-body">
@@ -125,7 +138,7 @@ function ProjectBookPage({ project, index }) {
 
         <p>{project.description}</p>
 
-        <div className="donors-funded-by">
+        {/* <div className="donors-funded-by">
           <span>Supported by</span>
 
           <div>
@@ -134,6 +147,40 @@ function ProjectBookPage({ project, index }) {
                 {donor}
               </p>
             ))}
+          </div>
+        </div> */}
+
+        <div className="donors-project-funding">
+          <div className="donors-project-funding-header">
+            <span>Project Progress</span>
+
+            <strong>
+              {Math.round(fundingPercent)}%
+            </strong>
+          </div>
+
+          <div
+            className="donors-project-progress-track"
+            role="progressbar"
+            aria-valuenow={Math.round(fundingPercent)}
+            aria-valuemin="0"
+            aria-valuemax="100"
+            aria-label={`${project.title} funding progress`}
+          >
+            <div
+              className="donors-project-progress-fill"
+              style={{ width: `${fundingPercent}%` }}
+            />
+          </div>
+
+          <div className="donors-project-funding-values">
+            <span>
+              ${project.fundingRaised.toLocaleString()} raised
+            </span>
+
+            <span>
+              ${project.fundingGoal.toLocaleString()} goal
+            </span>
           </div>
         </div>
       </div>
