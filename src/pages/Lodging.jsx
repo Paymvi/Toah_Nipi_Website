@@ -43,6 +43,26 @@ const lodgingBuildings = [
         src: "/Hebron-Inside-Front.webp",
         alt: "Interior entrance of Hebron Lodge",
       },
+      {
+        src: "/Hebron-Bedroom.jpeg",
+        alt: "",
+      },
+      {
+        src: "/Heborn-Bedroon-2.jpeg",
+        alt: "",
+      },
+      {
+        src: "/Hebron-Meeting-Space.jpeg",
+        alt: "",
+      },
+      {
+        src: "/Hebron-Couches.jpeg",
+        alt: "",
+      },
+      {
+        src: "/Hebron-Bathroom.jpeg",
+        alt: "",
+      },
     ],
     facts: [
       { label: "Sleeps", value: "66 guests" },

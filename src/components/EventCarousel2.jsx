@@ -84,6 +84,10 @@ function EventCarousel2() {
       title: "Women’s Gathering",
       image: "/FamilyCamp/FC-Women.webp",
     },
+    {
+      title: "Carnival",
+      image: "Carina_Carnival.jpeg",
+    },
   ];
 
   const scrollCarousel = (direction) => {
