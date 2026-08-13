@@ -1,13 +1,24 @@
 import { useState } from "react";
-import { partnerGroups, getInitials } from "../data/partnerGroups";
+// import { partnerGroups, getInitials } from "../data/partnerGroups";
+import {
+  relationships,
+  relationshipCategories,
+  getRelationshipInitials,
+} from "../data/relationships";
 import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
-const partnerGroupEyebrows = {
-  "ministry-partners": "Shared Mission",
-  "returning-retreat-groups": "Year After Year",
-  "community-affiliations": "Local Connections",
-};
+/* =========================================================
+   RELATIONSHIP ROCK WALL
+========================================================= */
+
+const relationshipOrganizations = [...relationships].sort((a, b) => {
+  if (b.rank !== a.rank) {
+    return b.rank - a.rank;
+  }
+
+  return a.name.localeCompare(b.name);
+});
 
 const projectImpacts = [
   {
@@ -203,6 +214,17 @@ function ProjectBookPage({ project, index }) {
 export default function Partners() {
   const [activeProject, setActiveProject] = useState(0);
   const [turningTo, setTurningTo] = useState(null);
+
+  const [activeRelationshipCategory, setActiveRelationshipCategory] =
+    useState("all");
+
+  const visibleRelationshipOrganizations =
+  activeRelationshipCategory === "all"
+    ? relationshipOrganizations
+    : relationshipOrganizations.filter(
+        (organization) =>
+          organization.category === activeRelationshipCategory
+      );
 
   const selectedProject = projectImpacts[activeProject];
 
@@ -554,7 +576,7 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="partners-feature-section reveal-group">
+      {/* <section className="partners-feature-section reveal-group">
         {partnerGroups.map((group, index) => (
           <article
             className={`partners-feature-row ${
@@ -610,6 +632,165 @@ export default function Partners() {
             </div>
           </article>
         ))}
+      </section> */}
+
+
+      <section
+        className="relationship-wall-section reveal-group"
+        id="relationship-wall"
+      >
+        <div className="relationship-wall-header">
+          <div>
+            <p className="donors-eyebrow">
+              Our Community
+            </p>
+
+            <h2>
+              Many relationships.
+              <br />
+              One shared place.
+            </h2>
+          </div>
+
+          <p>
+            Each stone represents a church, ministry, school, or organization
+            connected to Toah Nipi. Larger stones represent relationships with
+            a greater ongoing connection to the retreat.
+          </p>
+        </div>
+
+
+        {/* =====================================================
+            CATEGORY FILTER / LEGEND
+        ====================================================== */}
+
+        <div
+          className="relationship-wall-filters"
+          aria-label="Filter relationships by category"
+        >
+          {relationshipCategories.map((category) => {
+            const count =
+              category.id === "all"
+                ? relationshipOrganizations.length
+                : relationshipOrganizations.filter(
+                    (organization) =>
+                      organization.category === category.id
+                  ).length;
+
+            return (
+              <button
+                type="button"
+                key={category.id}
+                id={
+                  category.id === "all"
+                    ? undefined
+                    : category.id
+                }
+                className={`relationship-filter ${
+                  activeRelationshipCategory === category.id
+                    ? "is-active"
+                    : ""
+                }`}
+                onClick={() =>
+                  setActiveRelationshipCategory(category.id)
+                }
+                aria-pressed={
+                  activeRelationshipCategory === category.id
+                }
+              >
+                {category.id !== "all" && (
+                  <span
+                    className={`relationship-filter-dot relationship-filter-dot--${category.id}`}
+                  />
+                )}
+
+                <span className="relationship-filter-label">
+                  {category.label}
+                </span>
+
+                <span className="relationship-filter-count">
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+
+        {/* =====================================================
+            ROCK WALL
+        ====================================================== */}
+
+        <div
+          className="relationship-rock-wall"
+          role="list"
+        >
+          {visibleRelationshipOrganizations.map((organization) => {
+            const RockElement = organization.website ? "a" : "div";
+
+            return (
+              <RockElement
+                className={`
+                  relationship-rock
+                  relationship-rock--${organization.category}
+                `}
+                data-rank={organization.rank}
+                href={
+                  organization.website
+                    ? organization.website
+                    : undefined
+                }
+                target={
+                  organization.website
+                    ? "_blank"
+                    : undefined
+                }
+                rel={
+                  organization.website
+                    ? "noreferrer"
+                    : undefined
+                }
+                role="listitem"
+                title={organization.name}
+                key={organization.name}
+              >
+                <div className="relationship-rock-logo">
+                  {organization.logo ? (
+                    <img
+                      src={organization.logo}
+                      alt=""
+                    />
+                  ) : (
+                    <strong>
+                      {getRelationshipInitials(organization.name)}
+                    </strong>
+                  )}
+                </div>
+
+                <span className="relationship-rock-name">
+                  {organization.name}
+                </span>
+              </RockElement>
+            );
+          })}
+        </div>
+
+
+        <div className="relationship-wall-key">
+          <span>Relationship size</span>
+
+          <div className="relationship-size-example">
+            <span className="relationship-size-dot relationship-size-dot--small" />
+            <span>Growing connection</span>
+          </div>
+
+          <div className="relationship-size-line" />
+
+          <div className="relationship-size-example">
+            <span className="relationship-size-dot relationship-size-dot--large" />
+            <span>Deep connection</span>
+          </div>
+        </div>
       </section>
 
       {/* <section className="partners-story-band reveal-group">
