@@ -466,10 +466,10 @@ const lodgingBuildings = [
         src: "/Ajalon.png",
         alt: "Exterior view of a rustic cottage at Toah Nipi",
       },
-      {
-        src: "/Bezer.webp",
-        alt: "Second rustic cottage at Toah Nipi",
-      },
+      // {
+      //   src: "/Bezer.webp",
+      //   alt: "Second rustic cottage at Toah Nipi",
+      // },
       {
         src: "/Capurnum.webp",
         alt: "Rustic cottage surrounded by trees",

@@ -30,6 +30,7 @@ const initialFormState = {
 
 const referralSources = [
   "Google Search",
+  "Social Media",
   "Friend/Family recommendation",
   "Pastor/Church recommendation",
   "Past guest with my Church",
