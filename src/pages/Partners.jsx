@@ -20,6 +20,18 @@ const relationshipOrganizations = [...relationships].sort((a, b) => {
   return a.name.localeCompare(b.name);
 });
 
+const relationshipCategoryLabels =
+  relationshipCategories.reduce(
+    (labels, category) => {
+      if (category.id !== "all") {
+        labels[category.id] = category.label;
+      }
+
+      return labels;
+    },
+    {}
+  );
+
 const projectImpacts = [
   {
     id: "christmas-walk",
@@ -218,6 +230,12 @@ export default function Partners() {
   const [activeRelationshipCategory, setActiveRelationshipCategory] =
     useState("all");
 
+  const [directoryRelationshipCategory, setDirectoryRelationshipCategory] =
+    useState("all");
+
+  const [relationshipSearch, setRelationshipSearch] =
+    useState("");
+
   const visibleRelationshipOrganizations =
   activeRelationshipCategory === "all"
     ? relationshipOrganizations
@@ -225,6 +243,24 @@ export default function Partners() {
         (organization) =>
           organization.category === activeRelationshipCategory
       );
+
+  const normalizedRelationshipSearch =
+    relationshipSearch.trim().toLowerCase();
+
+  const directoryVisibleRelationships =
+    relationshipOrganizations.filter((organization) => {
+      const matchesCategory =
+        directoryRelationshipCategory === "all" ||
+        organization.category === directoryRelationshipCategory;
+
+      const matchesSearch =
+        normalizedRelationshipSearch === "" ||
+        organization.name
+          .toLowerCase()
+          .includes(normalizedRelationshipSearch);
+
+      return matchesCategory && matchesSearch;
+    });
 
   const selectedProject = projectImpacts[activeProject];
 
@@ -826,6 +862,215 @@ export default function Partners() {
           </a>
         </div>
       </section> */}
+
+
+      {/* =========================================================
+          COMMUNITY DIRECTORY
+      ========================================================= */}
+
+      <section
+        className="relationship-directory-section reveal-group"
+        id="relationship-directory"
+      >
+        <div className="relationship-directory">
+          {/* =====================================================
+              HEADING
+          ====================================================== */}
+
+          <div className="relationship-directory-heading">
+            <div>
+              <p className="donors-eyebrow">
+                Community Directory
+              </p>
+
+              <h2>
+                Explore every relationship.
+              </h2>
+            </div>
+
+            <p>
+              Find churches, ministries, schools, and
+              organizations connected to Toah Nipi.
+            </p>
+          </div>
+
+
+          {/* =====================================================
+              SEARCH + FILTERS
+          ====================================================== */}
+
+          <div className="relationship-directory-tools">
+            <label className="relationship-search">
+              <span className="sr-only">
+                Search relationships
+              </span>
+
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="6.5"
+                />
+
+                <path d="M16 16L21 21" />
+              </svg>
+
+              <input
+                type="search"
+                value={relationshipSearch}
+                onChange={(event) =>
+                  setRelationshipSearch(event.target.value)
+                }
+                placeholder="Search organizations..."
+              />
+            </label>
+
+
+            <div
+              className="relationship-directory-filters"
+              aria-label="Filter directory by category"
+            >
+              {relationshipCategories.map((category) => {
+                const count =
+                  category.id === "all"
+                    ? relationshipOrganizations.length
+                    : relationshipOrganizations.filter(
+                        (organization) =>
+                          organization.category === category.id
+                      ).length;
+
+                return (
+                  <button
+                    type="button"
+                    key={category.id}
+                    className={`relationship-filter ${
+                      directoryRelationshipCategory === category.id
+                        ? "is-active"
+                        : ""
+                    }`}
+                    onClick={() =>
+                      setDirectoryRelationshipCategory(category.id)
+                    }
+                    aria-pressed={
+                      directoryRelationshipCategory === category.id
+                    }
+                  >
+                    {category.id !== "all" && (
+                      <span
+                        className={`
+                          relationship-filter-dot
+                          relationship-filter-dot--${category.id}
+                        `}
+                      />
+                    )}
+
+                    <span className="relationship-filter-label">
+                      {category.label}
+                    </span>
+
+                    <span className="relationship-filter-count">
+                      {count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+
+          {/* =====================================================
+              DIRECTORY RESULTS
+          ====================================================== */}
+
+          <div
+            className="relationship-directory-grid"
+            role="list"
+          >
+            {directoryVisibleRelationships.map((organization) => {
+              const DirectoryElement =
+                organization.website ? "a" : "div";
+
+              return (
+                <DirectoryElement
+                  className="relationship-directory-card"
+                  href={
+                    organization.website
+                      ? organization.website
+                      : undefined
+                  }
+                  target={
+                    organization.website
+                      ? "_blank"
+                      : undefined
+                  }
+                  rel={
+                    organization.website
+                      ? "noreferrer"
+                      : undefined
+                  }
+                  role="listitem"
+                  key={organization.name}
+                >
+                  <div className="relationship-directory-mark">
+                    {organization.logo ? (
+                      <img
+                        src={organization.logo}
+                        alt=""
+                      />
+                    ) : (
+                      <strong>
+                        {getRelationshipInitials(
+                          organization.name
+                        )}
+                      </strong>
+                    )}
+                  </div>
+
+
+                  <div className="relationship-directory-copy">
+                    <span className="relationship-directory-category">
+                      <i
+                        className={`
+                          relationship-directory-dot
+                          relationship-directory-dot--${organization.category}
+                        `}
+                      />
+
+                      {relationshipCategoryLabels[
+                        organization.category
+                      ] || "Community"}
+                    </span>
+
+                    <h3>
+                      {organization.name}
+                    </h3>
+                  </div>
+
+
+                  {organization.website && (
+                    <span
+                      className="relationship-directory-arrow"
+                      aria-hidden="true"
+                    >
+                      ↗
+                    </span>
+                  )}
+                </DirectoryElement>
+              );
+            })}
+          </div>
+
+
+          {directoryVisibleRelationships.length === 0 && (
+            <p className="relationship-directory-empty">
+              No organizations match that search.
+            </p>
+          )}
+        </div>
+      </section>
 
       <section className="donors-final-cta">
         <div className="donors-final-card reveal-group">
