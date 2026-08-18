@@ -1282,7 +1282,7 @@
   width: min(1220px, 100%);
   margin: 0 auto;
 
-  padding: 14px;
+  padding: 20px;
 
   display: grid;
 
@@ -1315,25 +1315,7 @@
     between the individual stones.
   */
 
-  background:
-    radial-gradient(
-      circle at 12% 18%,
-      rgba(255, 255, 255, 0.19),
-      transparent 23%
-    ),
-
-    radial-gradient(
-      circle at 82% 76%,
-      rgba(61, 57, 36, 0.08),
-      transparent 28%
-    ),
-
-    linear-gradient(
-      145deg,
-      #c6bea3 0%,
-      #b9b098 48%,
-      #c9c1a7 100%
-    );
+  background: #c5c0ac;
 
   box-shadow:
     inset 0 3px 10px
@@ -1351,7 +1333,7 @@
    Very subtle unevenness over the mortar itself.
 */
 
-.relationship-rock-wall::before {
+/* .relationship-rock-wall::before {
   content: "";
 
   position: absolute;
@@ -1377,7 +1359,7 @@
       rgba(64, 61, 41, 0.04),
       transparent 11%
     );
-}
+} */
 
 
 /* =========================================================
@@ -1387,18 +1369,39 @@
 .relationship-rock {
   --stone-columns: 3;
   --stone-rows: 5;
-
   --stone-rotation: 0deg;
+
+  /*
+    Default irregular fieldstone silhouette.
+    Individual stones override this below.
+  */
+  --stone-shape: polygon(
+    3% 10%,
+    10% 4%,
+    30% 2%,
+    51% 4%,
+    72% 2%,
+    93% 6%,
+    99% 15%,
+    98% 38%,
+    100% 62%,
+    96% 88%,
+    87% 97%,
+    65% 98%,
+    44% 96%,
+    22% 100%,
+    6% 94%,
+    1% 82%,
+    2% 57%,
+    0% 32%
+  );
 
   position: relative;
   z-index: 1;
   isolation: isolate;
 
-  grid-column:
-    span var(--stone-columns);
-
-  grid-row:
-    span var(--stone-rows);
+  grid-column: span var(--stone-columns);
+  grid-row: span var(--stone-rows);
 
   min-width: 0;
   min-height: 0;
@@ -1406,14 +1409,10 @@
   width: auto;
   height: auto;
 
-  padding:
-    10px
-    10px
-    9px;
+  padding: 11px 12px 10px;
 
   display: flex;
   flex-direction: column;
-
   align-items: center;
   justify-content: center;
 
@@ -1427,44 +1426,37 @@
   color: #faf6e5;
 
   /*
-    Small irregular corner values.
-
-    Notice these are PIXELS now —
-    not 50% border radii.
-
-    That is the major reason these read as
-    stacked stones instead of bubbles.
+    No border radius anymore.
+    The polygon IS the stone.
   */
+  border: 0;
+  border-radius: 0;
 
-  border-radius:
-    9px 13px 7px 11px
-    /
-    7px 10px 12px 8px;
-
-  border:
-    1px solid
-    rgba(44, 43, 27, 0.22);
+  clip-path: var(--stone-shape);
 
   transform:
     rotate(var(--stone-rotation));
 
+  /*
+    box-shadow handles lighting INSIDE the stone.
+  */
   box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.18),
+    inset 5px 5px 7px rgba(255, 255, 255, 0.08),
+    inset -7px -8px 9px rgba(24, 24, 15, 0.16),
+    inset 0 -2px 3px rgba(20, 20, 12, 0.10);
 
-    inset 4px 5px 10px
-    rgba(255, 255, 255, 0.055),
-
-    inset -6px -7px 12px
-    rgba(24, 24, 15, 0.15),
-
-    0 2px 2px
-    rgba(45, 43, 27, 0.21);
+  /*
+    drop-shadow follows the polygon shape,
+    unlike a normal rectangular box-shadow.
+  */
+  filter:
+    drop-shadow(
+      0 2px 1.5px rgba(45, 43, 27, 0.28)
+    );
 
   transition:
     transform 180ms ease,
-    filter 180ms ease,
-    box-shadow 180ms ease;
+    filter 180ms ease;
 }
 
 
@@ -1546,82 +1538,233 @@
    RANDOMIZED STONE SILHOUETTES
 ========================================================= */
 
-/*
-   Do NOT make these wildly different.
+/* =========================================================
+   NATURAL STONE SILHOUETTES
+========================================================= */
 
-   Real stacked fieldstones are irregular,
-   but they still need mostly-flat contact surfaces
-   so they can actually stack.
+/*
+   The shapes intentionally vary in:
+   - corner position
+   - top/bottom irregularity
+   - side angle
+   - subtle rotation
+
+   But horizontal surfaces remain fairly level so
+   the stones still feel stackable.
 */
 
 
-.relationship-rock:nth-child(7n + 1) {
-  --stone-rotation: -0.35deg;
+.relationship-rock:nth-child(8n + 1) {
+  --stone-rotation: -0.2deg;
 
-  border-radius:
-    6px 15px 8px 11px
-    /
-    11px 7px 13px 6px;
+  --stone-shape: polygon(
+    3% 14%,
+    12% 5%,
+    31% 3%,
+    48% 5%,
+    68% 2%,
+    91% 7%,
+    98% 18%,
+    97% 40%,
+    100% 67%,
+    94% 90%,
+    83% 97%,
+    61% 96%,
+    41% 99%,
+    18% 97%,
+    5% 91%,
+    1% 74%,
+    2% 46%,
+    0% 28%
+  );
 }
 
 
-.relationship-rock:nth-child(7n + 2) {
-  --stone-rotation: 0.25deg;
+.relationship-rock:nth-child(8n + 2) {
+  --stone-rotation: 0.15deg;
 
-  border-radius:
-    13px 7px 12px 5px
-    /
-    7px 11px 6px 13px;
+  --stone-shape: polygon(
+    1% 18%,
+    8% 7%,
+    24% 3%,
+    46% 2%,
+    65% 5%,
+    86% 3%,
+    97% 11%,
+    100% 31%,
+    98% 55%,
+    100% 78%,
+    91% 94%,
+    71% 98%,
+    49% 96%,
+    30% 100%,
+    10% 95%,
+    2% 83%,
+    3% 63%,
+    0% 40%
+  );
 }
 
 
-.relationship-rock:nth-child(7n + 3) {
-  --stone-rotation: -0.15deg;
-
-  border-radius:
-    8px 12px 5px 15px
-    /
-    6px 9px 14px 8px;
-}
-
-
-.relationship-rock:nth-child(7n + 4) {
-  --stone-rotation: 0.4deg;
-
-  border-radius:
-    15px 6px 9px 12px
-    /
-    8px 12px 6px 10px;
-}
-
-
-.relationship-rock:nth-child(7n + 5) {
-  --stone-rotation: -0.25deg;
-
-  border-radius:
-    10px 14px 7px 6px
-    /
-    12px 7px 10px 9px;
-}
-
-
-.relationship-rock:nth-child(7n + 6) {
-  --stone-rotation: 0.18deg;
-
-  border-radius:
-    7px 10px 14px 8px
-    /
-    8px 13px 6px 11px;
-}
-
-
-.relationship-rock:nth-child(7n + 7) {
+.relationship-rock:nth-child(8n + 3) {
   --stone-rotation: -0.1deg;
 
-  border-radius:
-    12px 8px 6px 13px
-    /
-    7px 11px 9px 6px;
+  --stone-shape: polygon(
+    5% 8%,
+    21% 3%,
+    39% 5%,
+    58% 2%,
+    79% 4%,
+    94% 10%,
+    100% 24%,
+    98% 47%,
+    99% 69%,
+    94% 88%,
+    84% 96%,
+    66% 99%,
+    45% 97%,
+    26% 99%,
+    9% 94%,
+    1% 82%,
+    0% 60%,
+    2% 34%,
+    1% 18%
+  );
+}
+
+
+.relationship-rock:nth-child(8n + 4) {
+  --stone-rotation: 0.25deg;
+
+  --stone-shape: polygon(
+    2% 12%,
+    14% 4%,
+    33% 5%,
+    52% 2%,
+    75% 3%,
+    91% 8%,
+    99% 20%,
+    97% 42%,
+    100% 59%,
+    97% 82%,
+    88% 94%,
+    72% 98%,
+    52% 95%,
+    34% 99%,
+    13% 96%,
+    4% 88%,
+    0% 67%,
+    3% 46%,
+    0% 27%
+  );
+}
+
+
+.relationship-rock:nth-child(8n + 5) {
+  --stone-rotation: -0.15deg;
+
+  --stone-shape: polygon(
+    4% 17%,
+    10% 8%,
+    27% 2%,
+    50% 4%,
+    70% 1%,
+    89% 5%,
+    98% 16%,
+    100% 38%,
+    97% 59%,
+    99% 79%,
+    90% 92%,
+    76% 98%,
+    56% 97%,
+    37% 100%,
+    16% 97%,
+    5% 91%,
+    0% 76%,
+    2% 52%,
+    1% 31%
+  );
+}
+
+
+.relationship-rock:nth-child(8n + 6) {
+  --stone-rotation: 0.1deg;
+
+  --stone-shape: polygon(
+    2% 21%,
+    7% 10%,
+    19% 4%,
+    38% 2%,
+    55% 4%,
+    76% 2%,
+    93% 7%,
+    99% 19%,
+    97% 38%,
+    100% 63%,
+    95% 84%,
+    87% 95%,
+    68% 99%,
+    48% 96%,
+    25% 99%,
+    9% 94%,
+    1% 83%,
+    3% 63%,
+    0% 42%
+  );
+}
+
+
+.relationship-rock:nth-child(8n + 7) {
+  --stone-rotation: -0.25deg;
+
+  --stone-shape: polygon(
+    5% 10%,
+    17% 4%,
+    36% 3%,
+    57% 5%,
+    77% 2%,
+    93% 9%,
+    100% 23%,
+    98% 45%,
+    100% 72%,
+    94% 88%,
+    82% 97%,
+    63% 95%,
+    43% 99%,
+    23% 96%,
+    8% 98%,
+    1% 86%,
+    2% 64%,
+    0% 40%,
+    1% 22%
+  );
+}
+
+
+.relationship-rock:nth-child(8n + 8) {
+  --stone-rotation: 0.18deg;
+
+  --stone-shape: polygon(
+    1% 16%,
+    11% 6%,
+    30% 5%,
+    49% 2%,
+    69% 4%,
+    88% 3%,
+    97% 14%,
+    100% 34%,
+    97% 57%,
+    99% 76%,
+    92% 90%,
+    80% 97%,
+    59% 100%,
+    39% 96%,
+    18% 99%,
+    6% 91%,
+    0% 78%,
+    2% 54%,
+    0% 32%
+  );
 }
 /* =========================================================
    CATEGORY STONE COLORS
@@ -1749,9 +1892,7 @@
   height: min(42%, 54px);
   min-height: 27px;
 
-  padding:
-    5px
-    7px;
+  padding: 5px 7px;
 
   display: flex;
   align-items: center;
@@ -1761,22 +1902,29 @@
 
   overflow: hidden;
 
-  border:
-    1px solid
-    rgba(56, 54, 33, 0.17);
+  border: 0;
+  border-radius: 0;
 
-  border-radius:
-    5px 7px 4px 6px;
+  /*
+    More like a naturally worn inset / plaque.
+  */
+  clip-path: polygon(
+    4% 9%,
+    94% 4%,
+    100% 14%,
+    98% 87%,
+    91% 96%,
+    6% 100%,
+    0% 88%,
+    2% 17%
+  );
 
   background:
-    rgba(250, 247, 229, 0.94);
+    rgba(250, 247, 229, 0.92);
 
   box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.76),
-
-    0 2px 4px
-    rgba(34, 34, 20, 0.14);
+    inset 2px 2px 3px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 3px rgba(52, 51, 31, 0.08);
 }
 
 
@@ -1790,6 +1938,35 @@
   max-height: 44px;
 
   object-fit: contain;
+}
+
+.relationship-rock:nth-child(3n + 1)
+.relationship-rock-logo {
+  clip-path: polygon(
+    3% 13%,
+    8% 5%,
+    94% 7%,
+    99% 18%,
+    96% 88%,
+    88% 97%,
+    5% 94%,
+    1% 82%
+  );
+}
+
+
+.relationship-rock:nth-child(3n + 2)
+.relationship-rock-logo {
+  clip-path: polygon(
+    6% 5%,
+    93% 3%,
+    100% 16%,
+    97% 91%,
+    89% 97%,
+    3% 100%,
+    1% 87%,
+    2% 14%
+  );
 }
 
 
@@ -2044,12 +2221,7 @@ a.relationship-rock:focus-visible {
   border-radius:
     3px 5px 2px 4px;
 
-  background:
-    linear-gradient(
-      145deg,
-      #7c8259,
-      #59603c
-    );
+  background: #626a43;
 
   box-shadow:
     inset 0 1px 0
@@ -2111,7 +2283,7 @@ a.relationship-rock:focus-visible {
 
     grid-auto-rows: 14px;
 
-    gap: 5px;
+    gap: 3px;
 
     padding: 12px;
   }

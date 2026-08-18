@@ -776,7 +776,7 @@ export default function Partners() {
         </div>
 
 
-        <div className="relationship-wall-key">
+        {/* <div className="relationship-wall-key">
           <span>Relationship size</span>
 
           <div className="relationship-size-example">
@@ -790,7 +790,7 @@ export default function Partners() {
             <span className="relationship-size-dot relationship-size-dot--large" />
             <span>Deep connection</span>
           </div>
-        </div>
+        </div> */}
       </section>
 
       {/* <section className="partners-story-band reveal-group">
