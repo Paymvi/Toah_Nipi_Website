@@ -1054,9 +1054,14 @@
 
 
 
-
 /* =========================================================
    RELATIONSHIP ROCK WALL
+   Natural stacked-stone redesign
+========================================================= */
+
+
+/* =========================================================
+   SECTION
 ========================================================= */
 
 .relationship-wall-section {
@@ -1064,20 +1069,20 @@
   z-index: 2;
 
   padding:
-    42px
+    46px
     clamp(24px, 7vw, 96px)
     110px;
 
   background:
     radial-gradient(
-      circle at 10% 12%,
-      rgba(255, 249, 215, 0.48),
-      transparent 30%
+      circle at 8% 8%,
+      rgba(255, 249, 215, 0.44),
+      transparent 31%
     ),
     radial-gradient(
-      circle at 92% 76%,
-      rgba(198, 192, 155, 0.24),
-      transparent 31%
+      circle at 92% 82%,
+      rgba(191, 184, 145, 0.22),
+      transparent 34%
     ),
     #e8e5cf;
 }
@@ -1089,7 +1094,7 @@
 
 .relationship-wall-header {
   width: min(1220px, 100%);
-  margin: 0 auto 42px;
+  margin: 0 auto 40px;
 
   display: grid;
   grid-template-columns:
@@ -1097,7 +1102,6 @@
     minmax(300px, 0.65fr);
 
   gap: clamp(36px, 7vw, 96px);
-
   align-items: end;
 }
 
@@ -1129,38 +1133,34 @@
 
 
 /* =========================================================
-   FILTERS / CATEGORY LEGEND
+   FILTERS
 ========================================================= */
 
 .relationship-wall-filters {
   width: min(1220px, 100%);
-  margin: 0 auto 34px;
+  margin: 0 auto 26px;
 
   display: flex;
   flex-wrap: wrap;
 
-  gap: 10px;
+  gap: 9px;
 }
 
 
 .relationship-filter {
-  min-height: 44px;
+  min-height: 42px;
 
-  padding: 10px 15px;
+  padding: 9px 14px;
 
   display: inline-flex;
   align-items: center;
 
-  gap: 9px;
+  gap: 8px;
 
-  border:
-    1px solid
-    rgba(60, 61, 31, 0.14);
-
+  border: 1px solid rgba(60, 61, 31, 0.14);
   border-radius: 999px;
 
-  background:
-    rgba(255, 252, 232, 0.54);
+  background: rgba(255, 252, 232, 0.56);
 
   color: rgba(52, 53, 24, 0.78);
 
@@ -1177,17 +1177,14 @@
 
 
 .relationship-filter:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 
-  background:
-    rgba(255, 252, 232, 0.82);
+  background: rgba(255, 252, 232, 0.86);
 
-  border-color:
-    rgba(60, 61, 31, 0.22);
+  border-color: rgba(60, 61, 31, 0.23);
 
   box-shadow:
-    0 8px 18px
-    rgba(49, 51, 25, 0.07);
+    0 7px 16px rgba(49, 51, 25, 0.07);
 }
 
 
@@ -1198,13 +1195,12 @@
   color: #f7f1df;
 
   box-shadow:
-    0 10px 22px
-    rgba(49, 51, 25, 0.16);
+    0 8px 20px rgba(49, 51, 25, 0.14);
 }
 
 
 .relationship-filter-label {
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   line-height: 1;
 
   font-weight: 750;
@@ -1223,10 +1219,9 @@
 
   border-radius: 999px;
 
-  background:
-    rgba(52, 56, 20, 0.09);
+  background: rgba(52, 56, 20, 0.09);
 
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   font-weight: 800;
 
   font-variant-numeric: tabular-nums;
@@ -1235,116 +1230,186 @@
 
 .relationship-filter.is-active
 .relationship-filter-count {
-  background:
-    rgba(247, 241, 223, 0.14);
+  background: rgba(247, 241, 223, 0.14);
 }
 
 
-/* ---------------------------------------------------------
-   Category color dots
---------------------------------------------------------- */
+/* =========================================================
+   CATEGORY DOTS
+========================================================= */
 
 .relationship-filter-dot {
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
 
   flex-shrink: 0;
 
   border-radius: 50%;
-
-  box-shadow:
-    inset 0 1px 1px
-    rgba(255, 255, 255, 0.28);
 }
 
 
 .relationship-filter-dot--ministry-partners {
-  background: #596332;
+  background: #626a43;
 }
 
 
 .relationship-filter-dot--returning-retreat-groups {
-  background: #986750;
+  background: #92705e;
 }
 
 
 .relationship-filter-dot--community-affiliations {
-  background: #687d77;
+  background: #6d7771;
 }
 
 
 /* =========================================================
-   ACTUAL WALL
+   THE WALL
 ========================================================= */
 
-.relationship-rock-wall {
-  width: min(1220px, 100%);
+/*
+   THIS is the most important part of the redesign.
 
+   Instead of flexbox giving every stone its own personal
+   space, we use a dense masonry-like grid.
+
+   The small 5px gap becomes the visible mortar joint.
+*/
+
+.relationship-rock-wall {
+  position: relative;
+
+  width: min(1220px, 100%);
   margin: 0 auto;
 
-  padding:
-    clamp(26px, 4vw, 48px);
+  padding: 14px;
 
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
 
-  align-items: center;
-  justify-content: center;
+  grid-template-columns:
+    repeat(18, minmax(0, 1fr));
 
-  gap: 13px 12px;
+  grid-auto-rows: 14px;
+
+  grid-auto-flow: dense;
+
+  gap: 5px;
+
+  align-items: stretch;
 
   overflow: hidden;
 
+  /*
+    Keep the container itself simple.
+    It should NOT look like a giant rounded website card.
+  */
+
   border:
     1px solid
-    rgba(60, 61, 31, 0.13);
+    rgba(79, 74, 47, 0.20);
 
-  border-radius: 28px;
+  border-radius: 8px;
+
+  /*
+    This is the mortar / earth visible
+    between the individual stones.
+  */
 
   background:
     radial-gradient(
-      circle at 20% 15%,
-      rgba(255, 255, 255, 0.31),
-      transparent 24%
+      circle at 12% 18%,
+      rgba(255, 255, 255, 0.19),
+      transparent 23%
     ),
+
     radial-gradient(
-      circle at 80% 84%,
-      rgba(66, 69, 34, 0.05),
+      circle at 82% 76%,
+      rgba(61, 57, 36, 0.08),
       transparent 28%
     ),
-    rgba(214, 210, 183, 0.44);
+
+    linear-gradient(
+      145deg,
+      #c6bea3 0%,
+      #b9b098 48%,
+      #c9c1a7 100%
+    );
 
   box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.42),
-    0 24px 58px
-    rgba(49, 51, 25, 0.07);
+    inset 0 3px 10px
+    rgba(55, 51, 31, 0.10),
+
+    inset 0 -1px 0
+    rgba(255, 255, 255, 0.35),
+
+    0 18px 42px
+    rgba(49, 51, 25, 0.08);
+}
+
+
+/*
+   Very subtle unevenness over the mortar itself.
+*/
+
+.relationship-rock-wall::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 17% 31%,
+      rgba(73, 68, 44, 0.045),
+      transparent 12%
+    ),
+
+    radial-gradient(
+      ellipse at 62% 71%,
+      rgba(255, 255, 255, 0.07),
+      transparent 14%
+    ),
+
+    radial-gradient(
+      ellipse at 88% 23%,
+      rgba(64, 61, 41, 0.04),
+      transparent 11%
+    );
 }
 
 
 /* =========================================================
-   EACH ROCK
+   BASE STONE
 ========================================================= */
 
 .relationship-rock {
-  --rock-width: 150px;
-  --rock-height: 110px;
-  --rock-rotation: 0deg;
+  --stone-columns: 3;
+  --stone-rows: 5;
+
+  --stone-rotation: 0deg;
 
   position: relative;
+  z-index: 1;
+  isolation: isolate;
 
-  width:
-    min(
-      var(--rock-width),
-      100%
-    );
+  grid-column:
+    span var(--stone-columns);
 
-  height:
-    var(--rock-height);
+  grid-row:
+    span var(--stone-rows);
 
-  flex-shrink: 0;
+  min-width: 0;
+  min-height: 0;
 
-  padding: 14px 12px 12px;
+  width: auto;
+  height: auto;
+
+  padding:
+    10px
+    10px
+    9px;
 
   display: flex;
   flex-direction: column;
@@ -1352,210 +1417,313 @@
   align-items: center;
   justify-content: center;
 
-  gap: 8px;
+  gap: 6px;
 
   overflow: hidden;
-
-  color: #f8f4df;
 
   text-align: center;
   text-decoration: none;
 
-  transform:
-    rotate(var(--rock-rotation));
-
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.12);
+  color: #faf6e5;
 
   /*
-    Intentionally asymmetric.
+    Small irregular corner values.
 
-    This is what prevents these from looking
-    like normal website "pills."
+    Notice these are PIXELS now —
+    not 50% border radii.
+
+    That is the major reason these read as
+    stacked stones instead of bubbles.
   */
 
   border-radius:
-    48% 52% 44% 56%
+    9px 13px 7px 11px
     /
-    55% 44% 56% 45%;
+    7px 10px 12px 8px;
+
+  border:
+    1px solid
+    rgba(44, 43, 27, 0.22);
+
+  transform:
+    rotate(var(--stone-rotation));
 
   box-shadow:
-    inset 5px 7px 12px
-    rgba(255, 255, 255, 0.08),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.18),
 
-    inset -7px -9px 14px
-    rgba(22, 24, 11, 0.14),
+    inset 4px 5px 10px
+    rgba(255, 255, 255, 0.055),
 
-    0 8px 13px
-    rgba(48, 48, 25, 0.10),
+    inset -6px -7px 12px
+    rgba(24, 24, 15, 0.15),
 
-    0 2px 4px
-    rgba(48, 48, 25, 0.08);
+    0 2px 2px
+    rgba(45, 43, 27, 0.21);
 
   transition:
-    transform 190ms ease,
-    box-shadow 190ms ease,
-    filter 190ms ease;
+    transform 180ms ease,
+    filter 180ms ease,
+    box-shadow 180ms ease;
 }
 
 
+/* =========================================================
+   STONE SURFACE LIGHTING
+========================================================= */
+
 /*
-  Give neighboring rocks slightly different shapes.
+   A real rock isn't one flat color.
+
+   This provides a large irregular highlight and darker
+   recesses without making it look glossy.
 */
 
-.relationship-rock:nth-child(4n + 1) {
-  --rock-rotation: -1.2deg;
+.relationship-rock::before {
+  content: "";
 
-  border-radius:
-    55% 45% 51% 49%
-    /
-    44% 57% 43% 56%;
+  position: absolute;
+  z-index: -1;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      ellipse at 18% 17%,
+      rgba(255, 255, 255, 0.17) 0%,
+      rgba(255, 255, 255, 0.06) 24%,
+      transparent 43%
+    ),
+
+    radial-gradient(
+      ellipse at 79% 76%,
+      rgba(20, 20, 13, 0.12) 0%,
+      transparent 45%
+    ),
+
+    radial-gradient(
+      ellipse at 72% 18%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 30%
+    );
 }
 
 
-.relationship-rock:nth-child(4n + 2) {
-  --rock-rotation: 0.7deg;
+/*
+   Directional light.
 
-  border-radius:
-    43% 57% 47% 53%
-    /
-    54% 44% 56% 46%;
-}
+   Keeps the top/left slightly lighter and the
+   bottom/right slightly darker, like an actual stone.
+*/
 
+.relationship-rock::after {
+  content: "";
 
-.relationship-rock:nth-child(4n + 3) {
-  --rock-rotation: -0.4deg;
+  position: absolute;
+  z-index: -1;
 
-  border-radius:
-    51% 49% 56% 44%
-    /
-    46% 55% 45% 54%;
-}
+  inset: 0;
 
+  pointer-events: none;
 
-.relationship-rock:nth-child(4n + 4) {
-  --rock-rotation: 1deg;
+  border-radius: inherit;
 
-  border-radius:
-    47% 53% 44% 56%
-    /
-    57% 45% 55% 43%;
+  background:
+    linear-gradient(
+      155deg,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.025) 35%,
+      transparent 49%,
+      rgba(20, 21, 13, 0.08) 76%,
+      rgba(20, 21, 13, 0.13) 100%
+    );
 }
 
 
 /* =========================================================
-   CATEGORY COLORS
-========================================================= */
-
-/* Ministry Partners */
-
-.relationship-rock--ministry-partners {
-  background:
-    radial-gradient(
-      circle at 32% 22%,
-      rgba(255, 255, 255, 0.13),
-      transparent 24%
-    ),
-    #596332;
-}
-
-
-/* Retreat Groups */
-
-.relationship-rock--returning-retreat-groups {
-  background:
-    radial-gradient(
-      circle at 32% 22%,
-      rgba(255, 255, 255, 0.12),
-      transparent 24%
-    ),
-    #986750;
-}
-
-
-/* Community */
-
-.relationship-rock--community-affiliations {
-  background:
-    radial-gradient(
-      circle at 32% 22%,
-      rgba(255, 255, 255, 0.13),
-      transparent 24%
-    ),
-    #687d77;
-}
-
-
-/* =========================================================
-   RANK -> ROCK SIZE
+   RANDOMIZED STONE SILHOUETTES
 ========================================================= */
 
 /*
-  There are intentionally TEN actual sizes.
+   Do NOT make these wildly different.
 
-  So a rank 7 is genuinely larger than rank 6,
-  instead of lumping several ranks into "small/medium/large."
+   Real stacked fieldstones are irregular,
+   but they still need mostly-flat contact surfaces
+   so they can actually stack.
+*/
+
+
+.relationship-rock:nth-child(7n + 1) {
+  --stone-rotation: -0.35deg;
+
+  border-radius:
+    6px 15px 8px 11px
+    /
+    11px 7px 13px 6px;
+}
+
+
+.relationship-rock:nth-child(7n + 2) {
+  --stone-rotation: 0.25deg;
+
+  border-radius:
+    13px 7px 12px 5px
+    /
+    7px 11px 6px 13px;
+}
+
+
+.relationship-rock:nth-child(7n + 3) {
+  --stone-rotation: -0.15deg;
+
+  border-radius:
+    8px 12px 5px 15px
+    /
+    6px 9px 14px 8px;
+}
+
+
+.relationship-rock:nth-child(7n + 4) {
+  --stone-rotation: 0.4deg;
+
+  border-radius:
+    15px 6px 9px 12px
+    /
+    8px 12px 6px 10px;
+}
+
+
+.relationship-rock:nth-child(7n + 5) {
+  --stone-rotation: -0.25deg;
+
+  border-radius:
+    10px 14px 7px 6px
+    /
+    12px 7px 10px 9px;
+}
+
+
+.relationship-rock:nth-child(7n + 6) {
+  --stone-rotation: 0.18deg;
+
+  border-radius:
+    7px 10px 14px 8px
+    /
+    8px 13px 6px 11px;
+}
+
+
+.relationship-rock:nth-child(7n + 7) {
+  --stone-rotation: -0.1deg;
+
+  border-radius:
+    12px 8px 6px 13px
+    /
+    7px 11px 9px 6px;
+}
+/* =========================================================
+   CATEGORY STONE COLORS
+========================================================= */
+
+/* Ministry Partners — mossy olive */
+.relationship-rock--ministry-partners {
+  background: #626a43;
+}
+
+
+/* Returning Retreat Groups — warm earth */
+.relationship-rock--returning-retreat-groups {
+  background: #8a6957;
+}
+
+
+/* Community Affiliations — muted slate */
+.relationship-rock--community-affiliations {
+  background: #6c7670;
+}
+
+
+/* Fallback */
+.relationship-rock--uncategorized {
+  background: #747469;
+}
+
+/* =========================================================
+   RANK -> ACTUAL STONE SIZE
+========================================================= */
+
+/*
+   The original version went from ~118px to ~268px.
+
+   That difference was so dramatic that the larger
+   organizations looked like giant floating bubbles.
+
+   Here, rank still clearly matters, but the change is
+   more believable for a stone wall.
+
+   Each rank gets its own grid footprint.
 */
 
 
 .relationship-rock[data-rank="1"] {
-  --rock-width: 118px;
-  --rock-height: 88px;
+  --stone-columns: 2;
+  --stone-rows: 4;
 }
 
 
 .relationship-rock[data-rank="2"] {
-  --rock-width: 132px;
-  --rock-height: 96px;
+  --stone-columns: 2;
+  --stone-rows: 5;
 }
 
 
 .relationship-rock[data-rank="3"] {
-  --rock-width: 146px;
-  --rock-height: 105px;
+  --stone-columns: 3;
+  --stone-rows: 4;
 }
 
 
 .relationship-rock[data-rank="4"] {
-  --rock-width: 160px;
-  --rock-height: 114px;
+  --stone-columns: 3;
+  --stone-rows: 5;
 }
 
 
 .relationship-rock[data-rank="5"] {
-  --rock-width: 176px;
-  --rock-height: 124px;
+  --stone-columns: 3;
+  --stone-rows: 6;
 }
 
 
 .relationship-rock[data-rank="6"] {
-  --rock-width: 192px;
-  --rock-height: 135px;
+  --stone-columns: 4;
+  --stone-rows: 5;
 }
 
 
 .relationship-rock[data-rank="7"] {
-  --rock-width: 208px;
-  --rock-height: 146px;
+  --stone-columns: 4;
+  --stone-rows: 6;
 }
 
 
 .relationship-rock[data-rank="8"] {
-  --rock-width: 226px;
-  --rock-height: 158px;
+  --stone-columns: 4;
+  --stone-rows: 7;
 }
 
 
 .relationship-rock[data-rank="9"] {
-  --rock-width: 246px;
-  --rock-height: 172px;
+  --stone-columns: 5;
+  --stone-rows: 6;
 }
 
 
 .relationship-rock[data-rank="10"] {
-  --rock-width: 268px;
-  --rock-height: 188px;
+  --stone-columns: 5;
+  --stone-rows: 7;
 }
 
 
@@ -1563,13 +1731,27 @@
    LOGO AREA
 ========================================================= */
 
+/*
+   This is purposely NOT an oval.
+
+   The old white oval inside an oval stone was one of the
+   biggest reasons the whole thing felt "bubble-y."
+
+   This now feels more like a small plaque/inset on a stone.
+*/
+
 .relationship-rock-logo {
-  width: min(62%, 105px);
-  height: min(48%, 76px);
+  position: relative;
+  z-index: 2;
 
-  min-height: 38px;
+  width: min(62%, 96px);
 
-  padding: 8px 10px;
+  height: min(42%, 54px);
+  min-height: 27px;
+
+  padding:
+    5px
+    7px;
 
   display: flex;
   align-items: center;
@@ -1577,24 +1759,24 @@
 
   flex-shrink: 1;
 
+  overflow: hidden;
+
   border:
     1px solid
-    rgba(255, 255, 255, 0.25);
+    rgba(56, 54, 33, 0.17);
 
   border-radius:
-    46% 54% 49% 51%
-    /
-    53% 46% 54% 47%;
+    5px 7px 4px 6px;
 
   background:
-    rgba(255, 252, 235, 0.93);
+    rgba(250, 247, 229, 0.94);
 
   box-shadow:
-    0 3px 9px
-    rgba(34, 36, 17, 0.12),
-
     inset 0 1px 0
-    rgba(255, 255, 255, 0.75);
+    rgba(255, 255, 255, 0.76),
+
+    0 2px 4px
+    rgba(34, 34, 20, 0.14);
 }
 
 
@@ -1604,25 +1786,28 @@
   width: 100%;
   height: 100%;
 
-  max-width: 82px;
-  max-height: 54px;
+  max-width: 78px;
+  max-height: 44px;
 
   object-fit: contain;
 }
 
 
-/* Initials fallback */
+/* =========================================================
+   INITIALS FALLBACK
+========================================================= */
 
 .relationship-rock-logo strong {
-  color: #41451f;
+  color: #40431f;
 
   font-family: var(--font-cooper);
 
-  font-size: clamp(
-    0.72rem,
-    1.3vw,
-    1rem
-  );
+  font-size:
+    clamp(
+      0.64rem,
+      1.15vw,
+      0.92rem
+    );
 
   line-height: 1;
   font-weight: 400;
@@ -1636,7 +1821,10 @@
 ========================================================= */
 
 .relationship-rock-name {
-  max-width: 88%;
+  position: relative;
+  z-index: 2;
+
+  max-width: 94%;
 
   display: -webkit-box;
 
@@ -1646,26 +1834,107 @@
   -webkit-box-orient: vertical;
 
   color:
-    rgba(255, 253, 239, 0.94);
+    rgba(255, 253, 240, 0.96);
 
-  font-size: clamp(
-    0.62rem,
-    0.75vw,
-    0.75rem
-  );
+  font-size:
+    clamp(
+      0.57rem,
+      0.69vw,
+      0.72rem
+    );
 
-  line-height: 1.16;
+  line-height: 1.14;
 
   font-weight: 750;
 
+  text-wrap: balance;
+
   text-shadow:
     0 1px 2px
-    rgba(21, 22, 10, 0.16);
+    rgba(20, 20, 12, 0.30);
 }
 
 
 /* =========================================================
-   ROCK INTERACTION
+   SMALL STONES
+========================================================= */
+
+/*
+   Smaller stones need slightly tighter content.
+*/
+
+.relationship-rock[data-rank="1"],
+.relationship-rock[data-rank="2"] {
+  padding:
+    7px
+    6px
+    6px;
+
+  gap: 4px;
+}
+
+
+.relationship-rock[data-rank="1"]
+.relationship-rock-logo,
+.relationship-rock[data-rank="2"]
+.relationship-rock-logo {
+  width: min(66%, 68px);
+
+  height: 28px;
+
+  min-height: 24px;
+
+  padding:
+    4px
+    5px;
+}
+
+
+.relationship-rock[data-rank="1"]
+.relationship-rock-logo img,
+.relationship-rock[data-rank="2"]
+.relationship-rock-logo img {
+  max-width: 55px;
+  max-height: 22px;
+}
+
+
+.relationship-rock[data-rank="1"]
+.relationship-rock-name,
+.relationship-rock[data-rank="2"]
+.relationship-rock-name {
+  font-size: 0.55rem;
+
+  line-height: 1.08;
+}
+
+
+/* =========================================================
+   LARGE STONES
+========================================================= */
+
+.relationship-rock[data-rank="8"]
+.relationship-rock-logo,
+.relationship-rock[data-rank="9"]
+.relationship-rock-logo,
+.relationship-rock[data-rank="10"]
+.relationship-rock-logo {
+  width: min(56%, 106px);
+
+  height: 58px;
+}
+
+
+.relationship-rock[data-rank="9"]
+.relationship-rock-name,
+.relationship-rock[data-rank="10"]
+.relationship-rock-name {
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   INTERACTION
 ========================================================= */
 
 a.relationship-rock {
@@ -1673,46 +1942,60 @@ a.relationship-rock {
 }
 
 
+/*
+   Keep interaction restrained.
+
+   This is a WALL.
+
+   The stones should not suddenly fly five pixels
+   into the air like normal cards.
+*/
+
 a.relationship-rock:hover {
-  z-index: 3;
+  z-index: 6;
 
   transform:
-    translateY(-5px)
-    rotate(var(--rock-rotation))
-    scale(1.025);
+    translateY(-2px)
+    rotate(var(--stone-rotation));
 
   filter:
-    saturate(1.06)
-    brightness(1.035);
+    brightness(1.045)
+    saturate(1.035);
 
   box-shadow:
-    inset 5px 7px 12px
-    rgba(255, 255, 255, 0.11),
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.21),
 
-    inset -7px -9px 14px
-    rgba(22, 24, 11, 0.13),
+    inset 4px 5px 10px
+    rgba(255, 255, 255, 0.07),
 
-    0 15px 26px
-    rgba(48, 48, 25, 0.16);
+    inset -6px -7px 12px
+    rgba(24, 24, 15, 0.14),
+
+    0 4px 6px
+    rgba(41, 39, 24, 0.27);
 }
 
 
 a.relationship-rock:focus-visible {
+  z-index: 7;
+
   outline:
     3px solid
-    rgba(52, 56, 20, 0.5);
+    rgba(52, 56, 20, 0.52);
 
-  outline-offset: 5px;
+  outline-offset: 3px;
 }
 
 
 /* =========================================================
-   SIZE KEY
+   RELATIONSHIP SIZE KEY
 ========================================================= */
 
 .relationship-wall-key {
   width: min(1220px, 100%);
-  margin: 24px auto 0;
+
+  margin: 22px auto 0;
 
   display: flex;
   align-items: center;
@@ -1734,6 +2017,7 @@ a.relationship-rock:focus-visible {
   margin-right: 3px;
 
   text-transform: uppercase;
+
   letter-spacing: 0.12em;
 
   font-size: 0.61rem;
@@ -1748,29 +2032,43 @@ a.relationship-rock:focus-visible {
 }
 
 
+/*
+   Mini "stone" examples rather than circles.
+*/
+
 .relationship-size-dot {
   display: inline-block;
 
   flex-shrink: 0;
 
   border-radius:
-    48% 52% 45% 55%
-    /
-    55% 46% 54% 45%;
+    3px 5px 2px 4px;
 
-  background: #6b7145;
+  background:
+    linear-gradient(
+      145deg,
+      #7c8259,
+      #59603c
+    );
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255, 255, 255, 0.18),
+
+    0 1px 2px
+    rgba(52, 56, 20, 0.17);
 }
 
 
 .relationship-size-dot--small {
-  width: 13px;
+  width: 14px;
   height: 10px;
 }
 
 
 .relationship-size-dot--large {
-  width: 23px;
-  height: 16px;
+  width: 25px;
+  height: 17px;
 }
 
 
@@ -1801,8 +2099,21 @@ a.relationship-rock:focus-visible {
   }
 
 
+  /*
+    14 columns instead of 18.
+
+    Stones remain masonry-like without becoming tiny.
+  */
+
   .relationship-rock-wall {
-    padding: 30px 24px;
+    grid-template-columns:
+      repeat(14, minmax(0, 1fr));
+
+    grid-auto-rows: 14px;
+
+    gap: 5px;
+
+    padding: 12px;
   }
 }
 
@@ -1827,39 +2138,144 @@ a.relationship-rock:focus-visible {
 
 
   .relationship-wall-filters {
-    gap: 8px;
+    gap: 7px;
 
-    margin-bottom: 24px;
+    margin-bottom: 22px;
   }
 
 
   .relationship-filter {
-    min-height: 40px;
+    min-height: 39px;
 
     padding:
-      9px
-      12px;
+      8px
+      11px;
   }
 
 
   .relationship-filter-label {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
   }
 
 
+  /*
+    Six-column mobile masonry wall.
+  */
+
   .relationship-rock-wall {
-    gap: 10px 8px;
+    grid-template-columns:
+      repeat(6, minmax(0, 1fr));
+
+    grid-auto-rows: 13px;
+
+    gap: 4px;
+
+    padding: 9px;
+
+    border-radius: 6px;
+  }
+
+
+  /*
+    Mobile width system.
+
+    High-ranked relationships still appear larger,
+    but nothing can become wider than the phone.
+  */
+
+  .relationship-rock[data-rank="1"] {
+    --stone-columns: 2;
+    --stone-rows: 4;
+  }
+
+
+  .relationship-rock[data-rank="2"] {
+    --stone-columns: 2;
+    --stone-rows: 5;
+  }
+
+
+  .relationship-rock[data-rank="3"] {
+    --stone-columns: 3;
+    --stone-rows: 4;
+  }
+
+
+  .relationship-rock[data-rank="4"] {
+    --stone-columns: 3;
+    --stone-rows: 5;
+  }
+
+
+  .relationship-rock[data-rank="5"] {
+    --stone-columns: 3;
+    --stone-rows: 6;
+  }
+
+
+  .relationship-rock[data-rank="6"] {
+    --stone-columns: 4;
+    --stone-rows: 5;
+  }
+
+
+  .relationship-rock[data-rank="7"] {
+    --stone-columns: 4;
+    --stone-rows: 6;
+  }
+
+
+  .relationship-rock[data-rank="8"] {
+    --stone-columns: 4;
+    --stone-rows: 7;
+  }
+
+
+  .relationship-rock[data-rank="9"] {
+    --stone-columns: 5;
+    --stone-rows: 6;
+  }
+
+
+  .relationship-rock[data-rank="10"] {
+    --stone-columns: 5;
+    --stone-rows: 7;
+  }
+
+
+  .relationship-rock {
+    padding:
+      8px
+      6px
+      7px;
+
+    gap: 4px;
+  }
+
+
+  .relationship-rock-logo {
+    width: min(64%, 82px);
+
+    height: min(40%, 43px);
+
+    min-height: 24px;
 
     padding:
-      24px
-      12px;
+      4px
+      6px;
+  }
 
-    border-radius: 20px;
+
+  .relationship-rock-logo img {
+    max-width: 68px;
+    max-height: 34px;
   }
 
 
   .relationship-rock-name {
-    font-size: 0.61rem;
+    font-size: 0.57rem;
+
+    line-height: 1.1;
   }
 
 
@@ -1879,9 +2295,42 @@ a.relationship-rock:focus-visible {
 
 @media (max-width: 380px) {
 
+  /*
+    Four columns prevents ridiculously skinny stones.
+  */
+
+  .relationship-rock-wall {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+
+    gap: 4px;
+  }
+
+
+  .relationship-rock[data-rank="1"],
+  .relationship-rock[data-rank="2"] {
+    --stone-columns: 2;
+  }
+
+
+  .relationship-rock[data-rank="3"],
+  .relationship-rock[data-rank="4"],
+  .relationship-rock[data-rank="5"] {
+    --stone-columns: 3;
+  }
+
+
+  .relationship-rock[data-rank="6"],
+  .relationship-rock[data-rank="7"],
+  .relationship-rock[data-rank="8"],
   .relationship-rock[data-rank="9"],
   .relationship-rock[data-rank="10"] {
-    max-width: 245px;
+    --stone-columns: 4;
+  }
+
+
+  .relationship-rock-name {
+    font-size: 0.55rem;
   }
 }
 
@@ -1896,25 +2345,4 @@ a.relationship-rock:focus-visible {
   .relationship-filter {
     transition: none;
   }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-.relationship-rock--uncategorized {
-  background:
-    radial-gradient(
-      circle at 32% 22%,
-      rgba(255, 255, 255, 0.13),
-      transparent 24%
-    ),
-    #777766;
 }
