@@ -10,6 +10,12 @@
    - rank
    - logo
    - website
+
+   NOTE ABOUT REMOTE LOGOS:
+   For organizations that do not yet have a local logo file,
+   the logo field uses Google's site-icon service as a temporary
+   remote brand image. These can be replaced later with local
+   PNG/SVG/WebP files in /public/partner-logos/.
 ========================================================= */
 
 
@@ -142,12 +148,6 @@ export const relationships = [
 
   /* =======================================================
      CATEGORY STILL NEEDS TO BE ASSIGNED
-
-     These organizations are real relationships and have
-     their rankings, but we do not yet know which of the
-     three public categories they belong in.
-
-     They WILL appear under "All Relationships."
   ======================================================= */
 
   {
@@ -158,9 +158,11 @@ export const relationships = [
 
     rank: 8,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.bc.edu&sz=256",
 
-    website: null,
+    website:
+      "https://www.bc.edu/",
   },
 
 
@@ -172,7 +174,14 @@ export const relationships = [
 
     rank: 8,
 
-    logo: null,
+    /*
+      Temporary denomination-level mark.
+      The exact ministry represented by this relationship
+      should still be confirmed before assigning its final
+      website/logo.
+    */
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://ag.org&sz=256",
 
     website: null,
   },
@@ -186,9 +195,11 @@ export const relationships = [
 
     rank: 2,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://necpn.org&sz=256",
 
-    website: null,
+    website:
+      "https://necpn.org/",
   },
 
 
@@ -200,9 +211,11 @@ export const relationships = [
 
     rank: 2,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.firstbaptistyarmouth.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.firstbaptistyarmouth.org/",
   },
 
 
@@ -214,9 +227,11 @@ export const relationships = [
 
     rank: 1,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.rmsboston.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.rmsboston.org/",
   },
 
 
@@ -228,9 +243,11 @@ export const relationships = [
 
     rank: 3,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.fbcsudbury.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.fbcsudbury.org/",
   },
 
 
@@ -242,9 +259,11 @@ export const relationships = [
 
     rank: 3,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.ndatyngsboro.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.ndatyngsboro.org/",
   },
 
 
@@ -256,9 +275,11 @@ export const relationships = [
 
     rank: 2,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.leondejuda.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.leondejuda.org/",
   },
 
 
@@ -270,9 +291,11 @@ export const relationships = [
 
     rank: 2,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.newcitychurch.cc&sz=256",
 
-    website: null,
+    website:
+      "https://www.newcitychurch.cc/",
   },
 
 
@@ -284,9 +307,11 @@ export const relationships = [
 
     rank: 3,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.thegardenboston.com&sz=256",
 
-    website: null,
+    website:
+      "https://www.thegardenboston.com/",
   },
 
 
@@ -298,9 +323,16 @@ export const relationships = [
 
     rank: 4,
 
-    logo: null,
+    /*
+      Providence Hmong Alliance Church is listed by
+      the Hmong District. This uses the district mark
+      until a dedicated local logo/site is available.
+    */
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.hmongdistrict.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.hmongdistrict.org/area-08-1",
   },
 
 
@@ -312,9 +344,11 @@ export const relationships = [
 
     rank: 4,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.resurrectionbos.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.resurrectionbos.org/",
   },
 
 
@@ -326,9 +360,11 @@ export const relationships = [
 
     rank: 3,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.bcec.net&sz=256",
 
-    website: null,
+    website:
+      "https://www.bcec.net/",
   },
 
 
@@ -341,9 +377,11 @@ export const relationships = [
 
     rank: 6,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.healthcarefellowship.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.healthcarefellowship.org/",
   },
 
 
@@ -355,9 +393,15 @@ export const relationships = [
 
     rank: 1,
 
-    logo: null,
+    /*
+      This currently points to Beacon Church in Derry, NH.
+      Confirm this is the Beacon relationship Toah Nipi means.
+    */
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.beaconnh.com&sz=256",
 
-    website: null,
+    website:
+      "https://www.beaconnh.com/",
   },
 
 
@@ -369,9 +413,11 @@ export const relationships = [
 
     rank: 8,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.harvard.edu&sz=256",
 
-    website: null,
+    website:
+      "https://www.harvard.edu/",
   },
 
 
@@ -383,9 +429,11 @@ export const relationships = [
 
     rank: 8,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.aletheia.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.aletheia.org/",
   },
 
 
@@ -397,9 +445,11 @@ export const relationships = [
 
     rank: 4,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://crosswaycc.org&sz=256",
 
-    website: null,
+    website:
+      "https://crosswaycc.org/",
   },
 
 
@@ -412,9 +462,15 @@ export const relationships = [
 
     rank: 10,
 
-    logo: null,
+    /*
+      Toah Nipi's own history identifies this relationship
+      as Trinitarian Congregational Church of Wayland, MA.
+    */
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.tccwayland.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.tccwayland.org/",
   },
 
 
@@ -426,9 +482,11 @@ export const relationships = [
 
     rank: 3,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.centerforfamilyconnection.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.centerforfamilyconnection.org/",
   },
 
 
@@ -440,9 +498,11 @@ export const relationships = [
 
     rank: 4,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.freechristian.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.freechristian.org/",
   },
 
 
@@ -455,9 +515,11 @@ export const relationships = [
 
     rank: 5,
 
-    logo: null,
+    logo:
+      "https://www.google.com/s2/favicons?domain_url=https://www.fbcweymouth.org&sz=256",
 
-    website: null,
+    website:
+      "https://www.fbcweymouth.org/",
   },
 ];
 
