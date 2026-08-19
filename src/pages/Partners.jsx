@@ -836,10 +836,7 @@ export default function Partners() {
 
             return (
               <RockElement
-                className={`
-                  relationship-rock
-                  relationship-rock--${organization.category}
-                `}
+                className="relationship-rock"
                 data-rank={organization.rank}
                 href={
                   organization.website
@@ -857,14 +854,32 @@ export default function Partners() {
                     : undefined
                 }
                 role="listitem"
+                aria-label={organization.name}
                 title={organization.name}
                 key={organization.name}
               >
+                {/* Blurred copy of the logo creates the rock's ambient color */}
+                {organization.logo && (
+                  <img
+                    className="relationship-rock-ambient"
+                    src={organization.logo}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                )}
+
+                {/* Darkens the artwork slightly so the real logo/name stay readable */}
+                <span
+                  className="relationship-rock-ambient-shade"
+                  aria-hidden="true"
+                />
+
+                {/* Actual visible logo */}
                 <div
                   className="relationship-rock-logo"
                   style={{
                     "--logo-background":
-                      organization.logoBackground || "#f7f1df",
+                      organization.logoBackground || "#ffffff",
                   }}
                 >
                   {organization.logo ? (

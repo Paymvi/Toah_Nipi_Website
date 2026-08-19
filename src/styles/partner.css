@@ -1289,7 +1289,7 @@
   grid-template-columns:
     repeat(18, minmax(0, 1fr));
 
-  grid-auto-rows: 14px;
+  grid-auto-rows: 17px;
 
   grid-auto-flow: dense;
 
@@ -1710,32 +1710,16 @@
   );
 }
 
-
 /* =========================================================
-   CATEGORY STONE COLORS
+   ROCK COLOR FALLBACK
+
+   The actual visible color comes from the blurred logo.
+   This color only appears while an image is loading or
+   if an organization has no logo.
 ========================================================= */
 
-/* Ministry Partners — mossy olive */
-.relationship-rock--ministry-partners {
-  background: #626a43;
-}
-
-
-/* Returning Retreat Groups — warm earth */
-.relationship-rock--returning-retreat-groups {
-  background: #8a6957;
-}
-
-
-/* Community Affiliations — muted slate */
-.relationship-rock--community-affiliations {
-  background: #6c7670;
-}
-
-
-/* Fallback */
-.relationship-rock--uncategorized {
-  background: #747469;
+.relationship-rock {
+  background: #5f6257;
 }
 
 /* =========================================================
@@ -1814,6 +1798,67 @@
   --stone-rows: 7;
 }
 
+
+/* =========================================================
+   AMBIENT LOGO BACKGROUND
+
+   Uses a blurred enlarged version of each organization's
+   logo to create an album-art / YouTube Music style
+   background unique to each rock.
+========================================================= */
+
+.relationship-rock-ambient {
+  position: absolute;
+  z-index: 0;
+
+  /*
+    Make the source image much larger than the rock.
+    This helps average the logo colors together.
+  */
+  top: -60%;
+  left: -60%;
+
+  width: 220%;
+  height: 220%;
+
+  object-fit: cover;
+
+  pointer-events: none;
+
+  /*
+    Heavy blur = more like one overall brand color,
+    less like several distinct colored regions.
+  */
+  filter:
+    blur(58px)
+    saturate(0.8)
+    brightness(0.85)
+    contrast(0.85);
+
+  transform: scale(1.15);
+
+  opacity: 1;
+}
+
+
+/*
+   A subtle dark wash over the ambient artwork.
+
+   Without this, logos with white backgrounds can make
+   their rock almost completely white and the organization
+   name becomes difficult to read.
+*/
+
+.relationship-rock-ambient-shade {
+  position: absolute;
+  z-index: 1;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: rgba(35, 37, 27, 0.32);
+}
 
 /* =========================================================
    LOGO AREA
@@ -2576,13 +2621,9 @@ a.relationship-rock:focus-visible {
 }
 
 
-/*
-   We only have one visible item inside the rock now,
-   so there is no need for spacing underneath it.
-*/
 
 .relationship-rock {
-  gap: 0;
+  gap: 6px;
 }
 
 
