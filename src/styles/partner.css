@@ -1709,6 +1709,8 @@
     0% 32%
   );
 }
+
+
 /* =========================================================
    CATEGORY STONE COLORS
 ========================================================= */
@@ -1965,7 +1967,7 @@
 
   line-height: 1.14;
 
-  font-weight: 750;
+  font-weight: 600;
 
   text-wrap: balance;
 
@@ -2462,7 +2464,126 @@ a.relationship-rock:focus-visible {
   }
 }
 
+/* =========================================================
+   ROCK WALL — CIRCULAR LOGO BADGES
+========================================================= */
 
+/*
+   Each rank controls the size of its logo circle.
+   Bigger relationship = bigger rock + bigger logo.
+*/
+
+.relationship-rock[data-rank="1"] {
+  --rock-logo-size: 34px;
+}
+
+.relationship-rock[data-rank="2"] {
+  --rock-logo-size: 38px;
+}
+
+.relationship-rock[data-rank="3"] {
+  --rock-logo-size: 42px;
+}
+
+.relationship-rock[data-rank="4"] {
+  --rock-logo-size: 46px;
+}
+
+.relationship-rock[data-rank="5"] {
+  --rock-logo-size: 50px;
+}
+
+.relationship-rock[data-rank="6"] {
+  --rock-logo-size: 54px;
+}
+
+.relationship-rock[data-rank="7"] {
+  --rock-logo-size: 58px;
+}
+
+.relationship-rock[data-rank="8"] {
+  --rock-logo-size: 62px;
+}
+
+.relationship-rock[data-rank="9"] {
+  --rock-logo-size: 66px;
+}
+
+.relationship-rock[data-rank="10"] {
+  --rock-logo-size: 70px;
+}
+
+
+/*
+   Replace the irregular rectangular plaque
+   with a clean circular background.
+*/
+
+.relationship-rock[data-rank] .relationship-rock-logo {
+  width: var(--rock-logo-size);
+  height: var(--rock-logo-size);
+
+  min-width: var(--rock-logo-size);
+  min-height: var(--rock-logo-size);
+
+  box-sizing: border-box;
+
+  padding: 7px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 50%;
+
+  clip-path: none;
+
+  background: var(--logo-background, #f7f1df);
+
+  box-shadow: none;
+}
+
+
+/*
+   Let the actual organization logo use
+   much more of the circle.
+*/
+
+.relationship-rock[data-rank] .relationship-rock-logo img {
+  width: 88%;
+  height: 88%;
+
+  max-width: none;
+  max-height: none;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/*
+   Initials fallback for organizations
+   without a logo.
+*/
+
+.relationship-rock[data-rank] .relationship-rock-logo strong {
+  font-size: calc(var(--rock-logo-size) * 0.3);
+  line-height: 1;
+}
+
+
+/*
+   We only have one visible item inside the rock now,
+   so there is no need for spacing underneath it.
+*/
+
+.relationship-rock {
+  gap: 0;
+}
 
 
 

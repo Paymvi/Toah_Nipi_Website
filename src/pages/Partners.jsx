@@ -20,6 +20,71 @@ const relationshipOrganizations = [...relationships].sort((a, b) => {
   return a.name.localeCompare(b.name);
 });
 
+function scatterRelationshipOrganizations(organizations) {
+  const high = organizations.filter(
+    (organization) => organization.rank >= 8
+  );
+
+  const medium = organizations.filter(
+    (organization) =>
+      organization.rank >= 4 &&
+      organization.rank <= 7
+  );
+
+  const small = organizations.filter(
+    (organization) => organization.rank <= 3
+  );
+
+  const scattered = [];
+
+  let highIndex = 0;
+  let mediumIndex = 0;
+  let smallIndex = 0;
+
+  while (
+    highIndex < high.length ||
+    mediumIndex < medium.length ||
+    smallIndex < small.length
+  ) {
+    /*
+      Intentionally mix the sizes instead of
+      rendering all large stones first.
+    */
+
+    if (highIndex < high.length) {
+      scattered.push(high[highIndex]);
+      highIndex++;
+    }
+
+    if (smallIndex < small.length) {
+      scattered.push(small[smallIndex]);
+      smallIndex++;
+    }
+
+    if (mediumIndex < medium.length) {
+      scattered.push(medium[mediumIndex]);
+      mediumIndex++;
+    }
+
+    if (smallIndex < small.length) {
+      scattered.push(small[smallIndex]);
+      smallIndex++;
+    }
+
+    if (highIndex < high.length) {
+      scattered.push(high[highIndex]);
+      highIndex++;
+    }
+
+    if (mediumIndex < medium.length) {
+      scattered.push(medium[mediumIndex]);
+      mediumIndex++;
+    }
+  }
+
+  return scattered;
+}
+
 const relationshipCategoryLabels =
   relationshipCategories.reduce(
     (labels, category) => {
@@ -243,6 +308,11 @@ export default function Partners() {
         (organization) =>
           organization.category === activeRelationshipCategory
       );
+
+  const scatteredRelationshipOrganizations =
+  scatterRelationshipOrganizations(
+    visibleRelationshipOrganizations
+  );
 
   const normalizedRelationshipSearch =
     relationshipSearch.trim().toLowerCase();
@@ -790,7 +860,13 @@ export default function Partners() {
                 title={organization.name}
                 key={organization.name}
               >
-                <div className="relationship-rock-logo">
+                <div
+                  className="relationship-rock-logo"
+                  style={{
+                    "--logo-background":
+                      organization.logoBackground || "#f7f1df",
+                  }}
+                >
                   {organization.logo ? (
                     <img
                       src={organization.logo}
