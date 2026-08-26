@@ -3226,3 +3226,905 @@ a.relationship-directory-card:hover {
     gap: 7px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   RELATIONSHIP CLOTHESLINE
+========================================================= */
+
+.relationship-clothesline-wall {
+  width: min(1280px, 100%);
+
+  margin:
+    34px
+    auto
+    0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 58px;
+}
+
+
+/* =========================================================
+   EACH STRING ROW
+
+   Overflow is intentional on small screens:
+   visitors can horizontally swipe through a row
+   rather than crushing five cards into tiny columns.
+========================================================= */
+
+.relationship-clothesline-row {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  padding-bottom: 10px;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(61, 61, 31, 0.22)
+    transparent;
+}
+
+
+.relationship-clothesline-row::-webkit-scrollbar {
+  height: 6px;
+}
+
+
+.relationship-clothesline-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+.relationship-clothesline-row::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+
+  background:
+    rgba(61, 61, 31, 0.2);
+}
+
+
+/* =========================================================
+   TRACK
+
+   Gives mobile/tablet a minimum physical width so cards
+   keep their shape and can be horizontally scrolled.
+========================================================= */
+
+.relationship-clothesline-track {
+  position: relative;
+
+  width: 100%;
+  min-width: 900px;
+
+  min-height: 325px;
+
+  padding:
+    0
+    22px
+    10px;
+}
+
+
+/* =========================================================
+   STRING / CORD
+
+   Slight curvature keeps it from looking like a plain
+   horizontal CSS divider.
+========================================================= */
+
+.relationship-clothesline-cord {
+  position: absolute;
+  z-index: 1;
+
+  top: 17px;
+  left: 0;
+  right: 0;
+
+  height: 26px;
+
+  border-top:
+    3px solid
+    rgba(76, 69, 48, 0.82);
+
+  border-radius:
+    50%
+    50%
+    0
+    0;
+
+  pointer-events: none;
+
+  box-shadow:
+    0 -1px 0
+    rgba(255, 255, 255, 0.16);
+}
+
+
+/* Alternate rows get a tiny opposite lean */
+
+.relationship-clothesline-row:nth-child(even)
+  .relationship-clothesline-cord {
+  transform: rotate(-0.12deg);
+}
+
+
+.relationship-clothesline-row:nth-child(odd)
+  .relationship-clothesline-cord {
+  transform: rotate(0.12deg);
+}
+
+
+/* =========================================================
+   FIVE CARDS PER ROW
+========================================================= */
+
+.relationship-hanging-row {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap:
+    clamp(22px, 2.7vw, 40px);
+
+  align-items: start;
+
+  padding:
+    54px
+    18px
+    0;
+}
+
+
+/* =========================================================
+   HANGER
+
+   Rotation happens on this wrapper so the inner card
+   can independently perform its 3D flip.
+========================================================= */
+
+.relationship-hanger {
+  position: relative;
+
+  min-width: 0;
+
+  transform:
+    rotate(
+      var(--card-rotation, 0deg)
+    );
+
+  transform-origin:
+    50%
+    -28px;
+}
+
+
+/* =========================================================
+   WOODEN CLIP
+========================================================= */
+
+.relationship-card-clip {
+  position: absolute;
+  z-index: 10;
+
+  top: -40px;
+  left: 50%;
+
+  width: 12px;
+  height: 48px;
+
+  transform:
+    translateX(-50%);
+
+  border:
+    1px solid
+    rgba(74, 52, 29, 0.3);
+
+  border-radius:
+    3px;
+
+  background:
+    #947148;
+
+  box-shadow:
+    0 2px 4px
+    rgba(39, 35, 21, 0.22);
+
+  pointer-events: none;
+}
+
+
+/* Small line in the clip */
+
+.relationship-card-clip::after {
+  content: "";
+
+  position: absolute;
+
+  left: 2px;
+  right: 2px;
+
+  top: 20px;
+
+  height: 1px;
+
+  background:
+    rgba(74, 52, 29, 0.38);
+}
+
+
+/* =========================================================
+   3D CARD CONTAINER
+========================================================= */
+
+.relationship-hanging-card {
+  position: relative;
+
+  width: 100%;
+  height: 270px;
+
+  perspective: 1200px;
+}
+
+
+.relationship-hanging-card-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  transform-style:
+    preserve-3d;
+
+  transition:
+    transform
+    650ms
+    cubic-bezier(
+      0.2,
+      0.72,
+      0.2,
+      1
+    );
+}
+
+
+/* Flip */
+
+.relationship-hanging-card.is-flipped
+  .relationship-hanging-card-inner {
+  transform:
+    rotateY(180deg);
+}
+
+
+/* =========================================================
+   BOTH SIDES OF CARD
+========================================================= */
+
+.relationship-hanging-card-face {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(67, 65, 38, 0.14);
+
+  border-radius: 4px;
+
+  background:
+    #fbf7e8;
+
+  box-shadow:
+    0 13px 25px
+    rgba(48, 47, 27, 0.13);
+
+  backface-visibility: hidden;
+
+  -webkit-backface-visibility:
+    hidden;
+}
+
+
+/* =========================================================
+   FRONT
+========================================================= */
+
+.relationship-hanging-card-front {
+  transform:
+    rotateY(0deg);
+}
+
+
+.relationship-card-front-button {
+  width: 100%;
+  height: 100%;
+
+  padding:
+    24px
+    18px
+    17px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: inherit;
+
+  font: inherit;
+
+  cursor: pointer;
+
+  text-align: center;
+}
+
+
+/* Slight physical hover */
+
+.relationship-hanging-card:not(.is-flipped)
+  .relationship-card-front-button:hover {
+  background:
+    rgba(255, 255, 255, 0.22);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.relationship-card-logo {
+  width: 100%;
+
+  height: 116px;
+
+  padding:
+    10px
+    15px
+    18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.relationship-card-logo img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: 88px;
+
+  object-fit: contain;
+}
+
+
+.relationship-card-logo strong {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #ebe6cc;
+
+  color:
+    #3e4020;
+
+  font-family:
+    var(--font-cooper);
+
+  font-size: 1.35rem;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   FRONT COPY
+========================================================= */
+
+.relationship-card-front-copy {
+  width: 100%;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid
+    rgba(61, 61, 31, 0.12);
+}
+
+
+.relationship-card-front-copy h3 {
+  margin: 0;
+
+  color:
+    #343518;
+
+  font-family:
+    var(--font-cooper);
+
+  font-size:
+    clamp(
+      1.05rem,
+      1.4vw,
+      1.32rem
+    );
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -0.025em;
+
+  font-weight: 400;
+}
+
+
+.relationship-card-category {
+  display: block;
+
+  margin-top: 8px;
+
+  color:
+    rgba(60, 61, 31, 0.6);
+
+  font-size: 0.58rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   FRONT FLIP HINT
+========================================================= */
+
+.relationship-card-flip-hint {
+  margin-top: auto;
+
+  padding-top: 10px;
+
+  color:
+    rgba(60, 61, 31, 0.52);
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.03em;
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.relationship-hanging-card-back {
+  padding:
+    22px
+    20px
+    18px;
+
+  display: flex;
+  flex-direction: column;
+
+  transform:
+    rotateY(180deg);
+
+  background:
+    #f2ecd5;
+}
+
+
+/* =========================================================
+   BACK FLIP BUTTON
+========================================================= */
+
+.relationship-card-back-button {
+  position: absolute;
+
+  top: 13px;
+  right: 13px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(61, 61, 31, 0.18);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.32);
+
+  color:
+    #3d3f20;
+
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    background-color
+    180ms ease,
+    transform
+    180ms ease;
+}
+
+
+.relationship-card-back-button:hover {
+  transform:
+    rotate(-12deg);
+
+  background:
+    rgba(255, 255, 255, 0.7);
+}
+
+
+/* =========================================================
+   BACK COPY
+========================================================= */
+
+.relationship-card-back-copy {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+}
+
+
+.relationship-card-back-category {
+  max-width: calc(100% - 38px);
+
+  margin-bottom: 14px;
+
+  color:
+    rgba(61, 61, 31, 0.58);
+
+  font-size: 0.56rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+}
+
+
+.relationship-card-back-copy h3 {
+  margin: 0;
+
+  color:
+    #343518;
+
+  font-family:
+    var(--font-cooper);
+
+  font-size: 1.25rem;
+
+  line-height: 1.02;
+
+  letter-spacing:
+    -0.025em;
+
+  font-weight: 400;
+}
+
+
+.relationship-card-back-copy p {
+  margin:
+    15px
+    0
+    0;
+
+  color:
+    rgba(58, 59, 31, 0.78);
+
+  font-size: 0.77rem;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   WEBSITE LINK
+========================================================= */
+
+.relationship-card-website {
+  width: fit-content;
+
+  margin-top: auto;
+
+  padding:
+    9px
+    13px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border-radius:
+    999px;
+
+  background:
+    #3f4320;
+
+  color:
+    #f7f1df;
+
+  text-decoration: none;
+
+  font-size: 0.67rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.05em;
+
+  transition:
+    background-color
+    180ms ease,
+    transform
+    180ms ease;
+}
+
+
+.relationship-card-website:hover {
+  transform:
+    translateY(-1px);
+
+  background:
+    #515629;
+}
+
+
+/* =========================================================
+   BACK HINT
+========================================================= */
+
+.relationship-card-back-hint {
+  display: block;
+
+  margin-top: 10px;
+
+  color:
+    rgba(61, 61, 31, 0.44);
+
+  font-size: 0.56rem;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.relationship-card-front-button:focus-visible,
+.relationship-card-back-button:focus-visible,
+.relationship-card-website:focus-visible {
+  outline:
+    3px solid
+    rgba(73, 82, 37, 0.5);
+
+  outline-offset:
+    3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .relationship-clothesline-wall {
+    gap: 46px;
+  }
+
+
+  .relationship-clothesline-track {
+    min-width: 870px;
+  }
+
+
+  .relationship-hanging-row {
+    gap: 24px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .relationship-clothesline-wall {
+    width:
+      calc(100% + 36px);
+
+    margin-left: -18px;
+
+    gap: 38px;
+  }
+
+
+  .relationship-clothesline-row {
+    padding-bottom: 4px;
+  }
+
+
+  .relationship-clothesline-track {
+    min-width: 850px;
+
+    min-height: 305px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .relationship-hanging-row {
+    padding-top: 52px;
+
+    gap: 20px;
+
+    grid-template-columns:
+      repeat(
+        5,
+        150px
+      );
+  }
+
+
+  .relationship-hanging-card {
+    height: 250px;
+  }
+
+
+  .relationship-card-logo {
+    height: 104px;
+  }
+
+
+  .relationship-card-logo img {
+    max-height: 76px;
+  }
+
+
+  .relationship-card-front-copy h3 {
+    font-size: 1rem;
+  }
+
+
+  .relationship-card-category {
+    font-size: 0.52rem;
+  }
+
+
+  .relationship-hanging-card-back {
+    padding:
+      18px
+      16px
+      15px;
+  }
+
+
+  .relationship-card-back-copy h3 {
+    font-size: 1.08rem;
+  }
+
+
+  .relationship-card-back-copy p {
+    font-size: 0.7rem;
+
+    line-height: 1.42;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .relationship-hanging-card-inner,
+  .relationship-card-back-button,
+  .relationship-card-website {
+    transition: none;
+  }
+}

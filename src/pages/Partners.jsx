@@ -97,6 +97,192 @@ const relationshipCategoryLabels =
     {}
   );
 
+/* =========================================================
+   SPLIT RELATIONSHIPS INTO CLOTHESLINE ROWS
+
+   Five cards are placed on each horizontal string.
+========================================================= */
+
+function chunkRelationships(organizations, size = 5) {
+  const rows = [];
+
+  for (let i = 0; i < organizations.length; i += size) {
+    rows.push(organizations.slice(i, i + size));
+  }
+
+  return rows;
+}
+
+
+/* =========================================================
+   INDIVIDUAL HANGING RELATIONSHIP CARD
+
+   Front:
+   - logo
+   - organization name
+   - category
+
+   Back:
+   - organization name
+   - description
+   - website link
+========================================================= */
+
+function RelationshipHangingCard({
+  organization,
+  index,
+}) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  /*
+    Small deterministic rotations make the cards
+    feel physically hung instead of perfectly aligned.
+
+    These are intentionally subtle.
+  */
+  const rotations = [
+    -1.2,
+    0.8,
+    -0.5,
+    1.1,
+    -0.8,
+  ];
+
+  const rotation =
+    rotations[index % rotations.length];
+
+  const categoryLabel =
+    relationshipCategoryLabels[
+      organization.category
+    ] || "Toah Nipi Community";
+
+  /*
+    Existing relationship objects do not all have
+    descriptions yet, so this fallback keeps the
+    backside usable until descriptions are added.
+  */
+  const description =
+    organization.description ||
+    "Part of the community of churches, ministries, schools, and organizations connected to Toah Nipi.";
+
+  return (
+    <div
+      className="relationship-hanger"
+      style={{
+        "--card-rotation": `${rotation}deg`,
+      }}
+      role="listitem"
+    >
+      {/* Wooden clip */}
+      <span
+        className="relationship-card-clip"
+        aria-hidden="true"
+      />
+
+      <div
+        className={`relationship-hanging-card ${
+          isFlipped ? "is-flipped" : ""
+        }`}
+      >
+        <div className="relationship-hanging-card-inner">
+
+          {/* ===============================================
+              FRONT
+          ================================================ */}
+
+          <div className="relationship-hanging-card-face relationship-hanging-card-front">
+            <button
+              type="button"
+              className="relationship-card-front-button"
+              onClick={() => setIsFlipped(true)}
+              aria-label={`Learn more about ${organization.name}`}
+            >
+              <div className="relationship-card-logo">
+                {organization.logo ? (
+                  <img
+                    src={organization.logo}
+                    alt=""
+                  />
+                ) : (
+                  <strong>
+                    {getRelationshipInitials(
+                      organization.name
+                    )}
+                  </strong>
+                )}
+              </div>
+
+              <div className="relationship-card-front-copy">
+                <h3>
+                  {organization.name}
+                </h3>
+
+                <span className="relationship-card-category">
+                  {categoryLabel}
+                </span>
+              </div>
+
+              <span className="relationship-card-flip-hint">
+                Flip to learn more
+                <span aria-hidden="true"> ↻</span>
+              </span>
+            </button>
+          </div>
+
+
+          {/* ===============================================
+              BACK
+          ================================================ */}
+
+          <div className="relationship-hanging-card-face relationship-hanging-card-back">
+
+            <button
+              type="button"
+              className="relationship-card-back-button"
+              onClick={() => setIsFlipped(false)}
+              aria-label={`Turn ${organization.name} card back over`}
+            >
+              <span aria-hidden="true">↶</span>
+            </button>
+
+            <div className="relationship-card-back-copy">
+              <span className="relationship-card-back-category">
+                {categoryLabel}
+              </span>
+
+              <h3>
+                {organization.name}
+              </h3>
+
+              <p>
+                {description}
+              </p>
+
+              {organization.website && (
+                <a
+                  className="relationship-card-website"
+                  href={organization.website}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit website
+                  <span aria-hidden="true">
+                    ↗
+                  </span>
+                </a>
+              )}
+            </div>
+
+            <span className="relationship-card-back-hint">
+              Use the arrow above to flip back
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const projectImpacts = [
   {
     id: "christmas-walk",
@@ -309,10 +495,12 @@ export default function Partners() {
           organization.category === activeRelationshipCategory
       );
 
-  const scatteredRelationshipOrganizations =
-  scatterRelationshipOrganizations(
-    visibleRelationshipOrganizations
-  );
+
+  const relationshipRows =
+    chunkRelationships(
+      visibleRelationshipOrganizations,
+      5
+    );
 
   const normalizedRelationshipSearch =
     relationshipSearch.trim().toLowerCase();
@@ -666,21 +854,6 @@ export default function Partners() {
           ORIGINAL PARTNERS PAGE MATERIAL
       ========================================================= */}
 
-      <section className="partners-intro-section reveal-group">
-        <div className="partners-intro-copy">
-          <p className="donors-eyebrow">Shared Mission</p>
-
-          <h2>The <span className="highlight-text">relationships</span> behind the retreat.</h2>
-        </div>
-
-        <div className="partners-intro-text">
-          <p>
-            These partners and returning groups represent ongoing relationships,
-            shared values, local connections, and communities who continue to
-            make Toah Nipi part of their story.
-          </p>
-        </div>
-      </section>
 
       {/* <section className="partners-feature-section reveal-group">
         {partnerGroups.map((group, index) => (
@@ -758,11 +931,12 @@ export default function Partners() {
             </h2>
           </div>
 
-          <p>
-            Each stone represents a church, ministry, school, or organization
-            connected to Toah Nipi. Larger stones represent relationships with
-            a greater ongoing connection to the retreat.
+         <p>
+            Churches, ministries, schools, and organizations have all
+            become part of Toah Nipi's story. Explore the cards below
+            and flip one over to learn more about each relationship.
           </p>
+
         </div>
 
 
@@ -823,101 +997,56 @@ export default function Partners() {
         </div>
 
 
+
         {/* =====================================================
-            ROCK WALL
-        ====================================================== */}
+            HANGING RELATIONSHIP CARDS
+        ===================================================== */}
 
         <div
-          className="relationship-rock-wall"
+          className="relationship-clothesline-wall"
           role="list"
+          aria-label="Organizations connected to Toah Nipi"
         >
-          {visibleRelationshipOrganizations.map((organization) => {
-            const RockElement = organization.website ? "a" : "div";
-
-            return (
-              <RockElement
-                className="relationship-rock"
-                data-rank={organization.rank}
-                href={
-                  organization.website
-                    ? organization.website
-                    : undefined
-                }
-                target={
-                  organization.website
-                    ? "_blank"
-                    : undefined
-                }
-                rel={
-                  organization.website
-                    ? "noreferrer"
-                    : undefined
-                }
-                role="listitem"
-                aria-label={organization.name}
-                title={organization.name}
-                key={organization.name}
+          {relationshipRows.map(
+            (row, rowIndex) => (
+              <div
+                className="relationship-clothesline-row"
+                key={`relationship-row-${rowIndex}`}
               >
-                {/* Blurred copy of the logo creates the rock's ambient color */}
-                {organization.logo && (
-                  <img
-                    className="relationship-rock-ambient"
-                    src={organization.logo}
-                    alt=""
+                <div className="relationship-clothesline-track">
+
+                  {/* Horizontal cord */}
+                  <div
+                    className="relationship-clothesline-cord"
                     aria-hidden="true"
                   />
-                )}
 
-                {/* Darkens the artwork slightly so the real logo/name stay readable */}
-                <span
-                  className="relationship-rock-ambient-shade"
-                  aria-hidden="true"
-                />
-
-                {/* Actual visible logo */}
-                <div
-                  className="relationship-rock-logo"
-                  style={{
-                    "--logo-background":
-                      organization.logoBackground || "#ffffff",
-                  }}
-                >
-                  {organization.logo ? (
-                    <img
-                      src={organization.logo}
-                      alt=""
-                    />
-                  ) : (
-                    <strong>
-                      {getRelationshipInitials(organization.name)}
-                    </strong>
-                  )}
+                  {/* Cards hanging from this cord */}
+                  <div className="relationship-hanging-row">
+                    {row.map(
+                      (organization, cardIndex) => (
+                        <RelationshipHangingCard
+                          organization={organization}
+                          index={
+                            rowIndex * 5 +
+                            cardIndex
+                          }
+                          key={organization.name}
+                        />
+                      )
+                    )}
+                  </div>
                 </div>
-
-                <span className="relationship-rock-name">
-                  {organization.name}
-                </span>
-              </RockElement>
-            );
-          })}
+              </div>
+            )
+          )}
         </div>
 
 
-        {/* <div className="relationship-wall-key">
-          <span>Relationship size</span>
 
-          <div className="relationship-size-example">
-            <span className="relationship-size-dot relationship-size-dot--small" />
-            <span>Growing connection</span>
-          </div>
+        
 
-          <div className="relationship-size-line" />
 
-          <div className="relationship-size-example">
-            <span className="relationship-size-dot relationship-size-dot--large" />
-            <span>Deep connection</span>
-          </div>
-        </div> */}
       </section>
 
       {/* <section className="partners-story-band reveal-group">
