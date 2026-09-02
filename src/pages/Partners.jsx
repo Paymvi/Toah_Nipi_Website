@@ -100,10 +100,10 @@ const relationshipCategoryLabels =
 /* =========================================================
    SPLIT RELATIONSHIPS INTO CLOTHESLINE ROWS
 
-   Five cards are placed on each horizontal string.
+   Seven cards are placed on each horizontal string.
 ========================================================= */
 
-function chunkRelationships(organizations, size = 5) {
+function chunkRelationships(organizations, size = 7) {
   const rows = [];
 
   for (let i = 0; i < organizations.length; i += size) {
@@ -163,7 +163,7 @@ function RelationshipHangingCard({
   */
   const description =
     organization.description ||
-    "Part of the community of churches, ministries, schools, and organizations connected to Toah Nipi.";
+    "Part of the Toah Nipi community";
 
   return (
     <div
@@ -213,7 +213,15 @@ function RelationshipHangingCard({
               </div>
 
               <div className="relationship-card-front-copy">
-                <h3>
+                <h3
+                  className={
+                    organization.name.length > 30
+                      ? "relationship-card-name--small"
+                      : organization.name.length > 20
+                      ? "relationship-card-name--medium"
+                      : ""
+                  }
+                >
                   {organization.name}
                 </h3>
 
@@ -222,10 +230,10 @@ function RelationshipHangingCard({
                 </span>
               </div>
 
-              <span className="relationship-card-flip-hint">
+              {/* <span className="relationship-card-flip-hint">
                 Flip to learn more
                 <span aria-hidden="true"> ↻</span>
-              </span>
+              </span> */}
             </button>
           </div>
 
@@ -234,16 +242,11 @@ function RelationshipHangingCard({
               BACK
           ================================================ */}
 
-          <div className="relationship-hanging-card-face relationship-hanging-card-back">
+          <div
+            className="relationship-hanging-card-face relationship-hanging-card-back"
+            onClick={() => setIsFlipped(false)}
+          >
 
-            <button
-              type="button"
-              className="relationship-card-back-button"
-              onClick={() => setIsFlipped(false)}
-              aria-label={`Turn ${organization.name} card back over`}
-            >
-              <span aria-hidden="true">↶</span>
-            </button>
 
             <div className="relationship-card-back-copy">
               <span className="relationship-card-back-category">
@@ -264,6 +267,7 @@ function RelationshipHangingCard({
                   href={organization.website}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={(event) => event.stopPropagation()}
                 >
                   Visit website
                   <span aria-hidden="true">
@@ -273,9 +277,6 @@ function RelationshipHangingCard({
               )}
             </div>
 
-            <span className="relationship-card-back-hint">
-              Use the arrow above to flip back
-            </span>
           </div>
         </div>
       </div>
@@ -499,7 +500,7 @@ export default function Partners() {
   const relationshipRows =
     chunkRelationships(
       visibleRelationshipOrganizations,
-      5
+      7
     );
 
   const normalizedRelationshipSearch =
@@ -1028,7 +1029,7 @@ export default function Partners() {
                         <RelationshipHangingCard
                           organization={organization}
                           index={
-                            rowIndex * 5 +
+                            rowIndex * 7 +
                             cardIndex
                           }
                           key={organization.name}

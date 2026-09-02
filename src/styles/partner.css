@@ -3420,7 +3420,7 @@ a.relationship-directory-card:hover {
 
 
 /* =========================================================
-   FIVE CARDS PER ROW
+   SEVEN CARDS PER ROW
 ========================================================= */
 
 .relationship-hanging-row {
@@ -3430,10 +3430,10 @@ a.relationship-directory-card:hover {
   display: grid;
 
   grid-template-columns:
-    repeat(5, minmax(0, 1fr));
+    repeat(7, minmax(0, 1fr));
 
   gap:
-    clamp(22px, 2.7vw, 40px);
+    clamp(14px, 1.6vw, 24px);
 
   align-items: start;
 
@@ -3647,20 +3647,22 @@ a.relationship-directory-card:hover {
 ========================================================= */
 
 .relationship-card-logo {
-  width: 100%;
+  width: 112px;
+  height: 112px;
 
-  height: 116px;
-
-  padding:
-    10px
-    15px
-    18px;
+  margin-bottom: 18px;
+  padding: 12px;
 
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.82);
+}
 
 .relationship-card-logo img {
   display: block;
@@ -3726,9 +3728,9 @@ a.relationship-directory-card:hover {
 
   font-size:
     clamp(
-      1.05rem,
-      1.4vw,
-      1.32rem
+      1.0rem,
+      1.35vw,
+      1.3rem
     );
 
   line-height: 1.05;
@@ -3740,6 +3742,16 @@ a.relationship-directory-card:hover {
 }
 
 
+.relationship-card-front-copy h3.relationship-card-name--medium {
+  font-size: 0.9rem;
+}
+
+.relationship-card-front-copy h3.relationship-card-name--small {
+  font-size: 0.89rem;
+  line-height: 1.1;
+}
+
+
 .relationship-card-category {
   display: block;
 
@@ -3748,9 +3760,9 @@ a.relationship-directory-card:hover {
   color:
     rgba(60, 61, 31, 0.6);
 
-  font-size: 0.58rem;
+  font-size: 0.5rem;
 
-  font-weight: 800;
+  font-weight: 700;
 
   text-transform: uppercase;
 
@@ -3796,6 +3808,8 @@ a.relationship-directory-card:hover {
 
   background:
     #f2ecd5;
+
+  cursor: pointer;
 }
 
 
