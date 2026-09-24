@@ -515,3 +515,74 @@
   background: rgba(52, 56, 20, 0.08);
   transform: translateX(2px);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   NEW / NEWS NAV ITEM
+========================================================= */
+
+.nav-link--new {
+  color: #ffffff;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      110deg,
+      #ffffff 0%,
+      #f8f5e7 30%,
+      #dff6ff 44%,
+      #f3e5ff 50%,
+      #fff4d6 56%,
+      #ffffff 70%,
+      #ffffff 100%
+    );
+
+  background-size: 220% 100%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: new-nav-sheen 4.5s ease-in-out infinite;
+
+  text-shadow:
+    0 0 8px rgba(255, 255, 255, 0.08);
+}
+
+
+@keyframes new-nav-sheen {
+  0%,
+  60% {
+    background-position: 100% center;
+  }
+
+  82% {
+    background-position: 0% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+
+.nav-link--new:hover {
+  opacity: 1;
+
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 0.22);
+}

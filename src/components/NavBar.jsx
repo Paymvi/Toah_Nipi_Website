@@ -71,6 +71,7 @@ const navItems = [
   {
     label: "New!",
     path: "/new",
+    highlight: true,
   },
 
   {
@@ -161,7 +162,9 @@ export default function NavBar() {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `nav-link ${isActive ? "nav-link--active" : ""}`
+                  `nav-link ${isActive ? "nav-link--active" : ""} ${
+                    item.highlight ? "nav-link--new" : ""
+                  }`
                 }
                 onClick={() => setMenuOpen(false)}
               >
