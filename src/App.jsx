@@ -9,6 +9,7 @@ import Partner from "./pages/Partner";
 import OurStory from "./pages/OurStory";
 import Donors from "./pages/Donors";
 import Contact from "./pages/Contact";
+import New from "./pages/New";
 
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
@@ -31,6 +32,7 @@ import "./styles/contact.css";
 import "./styles/footer.css";
 import "./styles/animations.css";
 import "./App.css";
+import "./styles/New.css";
 
 function PlaceholderPage({ title }) {
   const { section } = useParams();
@@ -83,6 +85,8 @@ export default function App() {
           path="/events/:section"
           element={<PlaceholderPage title="Events" />}
         />
+
+        <Route path="/new" element={<New />} />
 
         <Route path="/partner" element={<Partner />} />
         <Route

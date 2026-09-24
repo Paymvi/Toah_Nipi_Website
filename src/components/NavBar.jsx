@@ -67,6 +67,12 @@ const navItems = [
       { label: "Community Affiliations", path: "/partners#community-affiliations" },
     ],
   },
+
+  {
+    label: "New!",
+    path: "/new",
+  },
+
   {
     label: "Contact",
     path: "/contact",
