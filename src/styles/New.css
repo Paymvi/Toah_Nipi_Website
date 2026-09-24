@@ -13,69 +13,106 @@
 ========================================================= */
 
 .news-hero {
-  min-height: 460px;
+  position: relative;
 
-  display: flex;
-  align-items: flex-end;
+  min-height: 700px;
 
   padding:
-    180px
-    clamp(24px, 7vw, 110px)
-    80px;
+    170px
+    clamp(24px, 7vw, 96px)
+    105px;
+
+  display: flex;
+  align-items: center;
+
+  background-image: url("/Stairs-Sunset.jpg");
+  background-size: cover;
+  background-position: center 58%;
+  background-repeat: no-repeat;
+}
+
+
+.news-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
 
   background:
     linear-gradient(
-      rgba(30, 32, 15, 0.35),
-      rgba(30, 32, 15, 0.72)
+      90deg,
+      rgba(20, 24, 12, 0.74) 0%,
+      rgba(20, 24, 12, 0.5) 48%,
+      rgba(20, 24, 12, 0.18) 100%
     ),
-    url("/Apr-2026-Crowd.jpg");
-
-  background-size: cover;
-  background-position: center;
+    linear-gradient(
+      to bottom,
+      rgba(20, 24, 12, 0.16) 0%,
+      rgba(20, 24, 12, 0.08) 45%,
+      rgba(20, 24, 12, 0.42) 100%
+    );
 }
 
 
 .news-hero-content {
-  max-width: 720px;
-  color: white;
+  position: relative;
+  z-index: 2;
+
+  max-width: 820px;
+
+  color: #f7f1df;
 }
 
 
 .news-eyebrow {
-  display: inline-block;
+  margin: 0 0 18px;
 
-  margin-bottom: 14px;
+  color: #ded8ba;
 
-  font-size: 0.8rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
   text-transform: uppercase;
+  letter-spacing: 0.14em;
+
+  font-size: 0.72rem;
+  font-weight: 800;
 }
 
 
 .news-hero h1 {
   margin: 0;
 
-  font-size: clamp(3.5rem, 8vw, 6.8rem);
-  line-height: 0.95;
+  color: #f7f1df;
 
-  font-weight: 700;
+  font-family: var(--font-cooper);
+
+  font-size: clamp(3.4rem, 7.5vw, 5rem);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+
+  font-weight: 400;
+
+  text-shadow:
+    0 4px 22px rgba(0, 0, 0, 0.36);
 }
 
 
-.news-hero p {
-  max-width: 620px;
-
-  margin:
-    24px
-    0
-    0;
-
-  font-size: 1.15rem;
-  line-height: 1.65;
+.news-hero h1 span {
+  color: #f0ecd2;
 }
 
+
+.news-hero-content > p:not(.news-eyebrow) {
+  max-width: 640px;
+
+  margin: 28px 0 0;
+
+  color: rgba(247, 241, 223, 0.92);
+
+  font-size: clamp(1rem, 1.35vw, 1.1rem);
+  line-height: 1.68;
+
+  text-shadow:
+    0 3px 14px rgba(0, 0, 0, 0.28);
+}
 
 /* =========================================================
    SECTIONS
@@ -448,4 +485,23 @@
     grid-template-columns: 1fr;
   }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news-hero-overlay {
+
+  background: rgba(0, 0, 0, 0.5);
 }

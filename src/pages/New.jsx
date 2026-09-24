@@ -1,12 +1,12 @@
 const newsPosts = [
   {
     id: 1,
-    title: "Welcome to the Toah Nipi News",
+    title: "Toah Nipi's 1st batch of Homemade Apple Cider!",
     date: "September 24, 2026",
     category: "Camp Update",
-    image: "/Apr-2026-Crowd.jpg",
+    image: "/Blog/Carina_apples.jpg",
     excerpt:
-      "Stay connected with what is happening at Toah Nipi, from retreat stories and upcoming events to projects, improvements, and life around camp.",
+      "As we enter the fall season and gather more and more apples from our very own orchard, Toah Nipi has pressed its very first batch of homemade apple cider!",
   },
 
   {
@@ -14,9 +14,9 @@ const newsPosts = [
     title: "Looking Back on Family Camp 2026",
     date: "August 15, 2026",
     category: "Family Camp",
-    image: "/Apr-2026-Crowd.jpg",
+    image: "/Blog/Zoey+Raph.png",
     excerpt:
-      "A look back at another meaningful week of worship, community, outdoor adventure, and time together at Toah Nipi.",
+      "A look back at another meaningful time of community, outdoor adventure, and time together at Toah Nipi.",
   },
 
   {
@@ -24,7 +24,7 @@ const newsPosts = [
     title: "What's New Around Camp",
     date: "July 20, 2026",
     category: "Projects",
-    image: "/Apr-2026-Crowd.jpg",
+    image: "/Blog/Ichthus_Trail_Update.png",
     excerpt:
       "See some of the projects, improvements, and behind-the-scenes work happening throughout the retreat center.",
   },
@@ -42,18 +42,24 @@ export default function News() {
           HERO
       ===================================================== */}
       <section className="news-hero">
+
+        <div className="news-hero-overlay" />
+
         <div className="news-hero-content">
+
           <span className="news-eyebrow">
             Stories from Toah Nipi
           </span>
 
-          <h1>News</h1>
+          <h1>What's New?</h1>
 
           <p>
             Updates, stories, projects, and moments from life
             around Toah Nipi.
           </p>
+
         </div>
+
       </section>
 
 
