@@ -1,4 +1,9 @@
-import { useEffect, useState } from "react";
+import {
+  Fragment,
+  useEffect,
+  useState,
+} from "react";
+
 import { Link, useLocation } from "react-router-dom";
 import SiteFooter from "../components/SiteFooter";
 import LodgingComparison from "../components/LodgingComparison";
@@ -456,31 +461,156 @@ const lodgingBuildings = [
     ],
   },
 
-  {
-    id: "rustic-cottages",
-    title: "The Rustic Cottages",
+    {
+    id: "ajalon",
+
+    title: "Ajalon",
+
     description:
-      "Our rustic cottages offer quieter, simpler lodging for personal retreats, families, couples, and small groups.",
+      "Ajalon is a quiet rustic cottage offering a simple, private place to stay away from the larger lodge buildings. It is a comfortable option for families, small groups, and guests looking for a quieter retreat setting.",
+
     images: [
       {
         src: "/Ajalon.png",
-        alt: "Exterior view of a rustic cottage at Toah Nipi",
+        alt: "Exterior view of Ajalon cottage",
       },
-      // {
-      //   src: "/Bezer.webp",
-      //   alt: "Second rustic cottage at Toah Nipi",
-      // },
+      {
+        src: "/Ajalon-inside.jpeg",
+        alt: "Exterior view of Ajalon cottage",
+      },
+    ],
+
+    facts: [
+      {
+        label: "Sleeps",
+        value: "5–8 guests",
+      },
+
+      {
+        label: "Style",
+        value: "Rustic cottage",
+      },
+
+      {
+        label: "Setting",
+        value: "Private and quiet",
+      },
+
+      {
+        label: "Best For",
+        value: "Families and small groups",
+      },
+    ],
+
+    details: [
+      {
+        id: "layout",
+
+        title: "Layout",
+
+        content: (
+          <>
+            <p>
+              Ajalon is an independent cottage set apart from the larger lodge
+              buildings.
+            </p>
+
+            <p>
+              Its smaller scale creates a more private atmosphere for families,
+              small groups, and guests looking for a simple retreat experience.
+            </p>
+          </>
+        ),
+      },
+
+      {
+        id: "guests",
+
+        title: "Number of Guests",
+
+        content: (
+          <>
+            <p>
+              Ajalon can accommodate approximately 5–8 overnight guests.
+            </p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>5–8</span>
+
+                <p>Overnight guests</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+
+      {
+        id: "features",
+
+        title: "Features",
+
+        content: (
+          <>
+            <p>
+              Ajalon is especially well-suited for families, small retreats,
+              prayer, solitude, and guests who prefer a quieter lodging option.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+
+
+
+  {
+    id: "capernaum",
+
+    title: "Capernaum",
+
+    description:
+      "Capernaum is a small rustic cottage surrounded by the peaceful camp setting, offering a simple and private place for personal retreats, couples, families, and small groups.",
+
+    images: [
       {
         src: "/Capurnum.webp",
-        alt: "Rustic cottage surrounded by trees",
+        alt: "Exterior view of Capernaum cottage",
+      },
+
+            {
+        src: "/Capernaum-inside-2.jpeg",
+        alt: "Interior view of Capernaum",
+      },
+
+            {
+        src: "/Capernaum-inside-1.jpeg",
+        alt: "Interior view of Capernaum",
       },
     ],
+
     facts: [
-      { label: "Sleeps", value: "3–8 guests" },
-      { label: "Style", value: "Independent cottages" },
-      { label: "Layout", value: "Varies by cottage" },
-      { label: "Best For", value: "Prayer, solitude, and simple stays" },
+      {
+        label: "Sleeps",
+        value: "Up to 5 guests",
+      },
+
+      {
+        label: "Style",
+        value: "Rustic cottage",
+      },
+
+      {
+        label: "Setting",
+        value: "Quiet and secluded",
+      },
+
+      {
+        label: "Best For",
+        value: "Personal retreats and small groups",
+      },
     ],
+
     details: [
       {
         id: "layout",
@@ -488,50 +618,51 @@ const lodgingBuildings = [
         content: (
           <>
             <p>
-              The rustic cottages are independent lodging spaces set apart from
-              the larger lodge buildings.
+              Capernaum is an independent cottage tucked away from the larger
+              lodge buildings.
             </p>
 
             <p>
-              Each cottage has its own unique layout, making them a good fit for
-              individuals, couples, families, or small groups.
+              Its smaller layout makes it a comfortable option for individuals,
+              couples, families, and small groups looking for a quieter stay.
             </p>
           </>
         ),
       },
+
       {
         id: "guests",
+
         title: "Number of Guests",
+
         content: (
           <>
             <p>
-              The rustic cottages can host 3–8 overnight guests, depending on
-              the cottage.
+              Capernaum can accommodate up to 5 overnight guests.
             </p>
 
             <div className="lodging-spec-list">
               <div>
-                <span>3–8</span>
-                <p>Overnight guests per cottage</p>
-              </div>
+                <span>5</span>
 
-              <div>
-                <span>Several</span>
-                <p>Independent cottage options available</p>
+                <p>Overnight guests</p>
               </div>
             </div>
           </>
         ),
       },
+
       {
         id: "features",
+
         title: "Features",
+
         content: (
           <>
             <p>
-              These cottages are especially well-suited for prayer, solitude,
-              family stays, small retreats, and guests who want a more private
-              lodging option.
+              Capernaum is especially well-suited for personal retreats,
+              prayer, couples, families, and guests looking for a simple and
+              private lodging experience.
             </p>
           </>
         ),
@@ -539,6 +670,33 @@ const lodgingBuildings = [
     ],
   },
 ];
+
+function LodgingSectionDivider({
+  id,
+  title,
+}) {
+  return (
+    <div
+      className="lodging-section-divider"
+      id={id}
+    >
+      <span
+        className="lodging-section-divider-line"
+        aria-hidden="true"
+      />
+
+      <p>
+        {title}
+      </p>
+
+      <span
+        className="lodging-section-divider-line"
+        aria-hidden="true"
+      />
+    </div>
+  );
+}
+
 
 function LodgeSection({ building }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -561,47 +719,66 @@ function LodgeSection({ building }) {
   return (
     <section className="lodge-feature-section" id={building.id}>
       <div className="lodge-gallery reveal-image">
-        <div className="lodge-main-image-wrap">
+        <div
+          className={`lodge-main-image-wrap ${
+            building.id === "ajalon" && activeImage === 1
+              ? "lodge-main-image-wrap-portrait"
+              : ""
+          }`}
+        >
           <img
             src={building.images[activeImage].src}
             alt={building.images[activeImage].alt}
-            className="lodge-main-image"
+            className={`lodge-main-image ${
+              building.id === "ajalon" && activeImage === 1
+                ? "lodge-main-image-portrait"
+                : ""
+            }`}
           />
 
-          <button
-            className="gallery-arrow gallery-arrow-left"
-            type="button"
-            onClick={goToPreviousImage}
-            aria-label="Previous image"
-          >
-            ‹
-          </button>
+            {building.images.length > 1 && (
+              <>
+                <button
+                  className="gallery-arrow gallery-arrow-left"
+                  type="button"
+                  onClick={goToPreviousImage}
+                  aria-label="Previous image"
+                >
+                  ‹
+                </button>
 
-          <button
-            className="gallery-arrow gallery-arrow-right"
-            type="button"
-            onClick={goToNextImage}
-            aria-label="Next image"
-          >
-            ›
-          </button>
+                <button
+                  className="gallery-arrow gallery-arrow-right"
+                  type="button"
+                  onClick={goToNextImage}
+                  aria-label="Next image"
+                >
+                  ›
+                </button>
+              </>
+            )}
+
         </div>
 
-        <div className="lodge-thumbnail-row">
-          {building.images.map((image, index) => (
-            <button
-              className={`lodge-thumbnail ${
-                activeImage === index ? "lodge-thumbnail-active" : ""
-              }`}
-              type="button"
-              key={`${building.id}-${image.src}-${index}`}
-              onClick={() => setActiveImage(index)}
-              aria-label={`View ${building.title} image ${index + 1}`}
-            >
-              <img src={image.src} alt="" />
-            </button>
-          ))}
-        </div>
+        {building.images.length > 1 && (
+          <div className="lodge-thumbnail-row">
+            {building.images.map((image, index) => (
+              <button
+                className={`lodge-thumbnail ${
+                  activeImage === index ? "lodge-thumbnail-active" : ""
+                }`}
+                type="button"
+                key={`${building.id}-${image.src}-${index}`}
+                onClick={() => setActiveImage(index)}
+                aria-label={`View ${building.title} image ${index + 1}`}
+              >
+                <img src={image.src} alt="" />
+              </button>
+            ))}
+          </div>
+        )}
+
+
       </div>
 
       <div className="lodge-info">
@@ -714,7 +891,18 @@ export default function Lodging() {
       <LodgingComparison />
 
       {lodgingBuildings.map((building) => (
-        <LodgeSection building={building} key={building.id} />
+        <Fragment key={building.id}>
+          {building.id === "ajalon" && (
+            <LodgingSectionDivider
+              id="rustic-cottages"
+              title="Rustic Cottages"
+            />
+          )}
+
+          <LodgeSection
+            building={building}
+          />
+        </Fragment>
       ))}
 
       <section className="lake-section">

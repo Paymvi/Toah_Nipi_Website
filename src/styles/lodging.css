@@ -368,6 +368,64 @@
   line-height: 1.55;
 }
 
+/* =========================================================
+   Lodging section divider
+========================================================= */
+
+.lodging-section-divider {
+  max-width: 1220px;
+  margin: 0 auto;
+
+  padding:
+    86px
+    clamp(24px, 4vw, 58px)
+    0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+
+  background: #e8e5cf;
+}
+
+
+.lodging-section-divider-line {
+  height: 1px;
+  flex: 1;
+
+  background: rgba(38, 48, 15, 0.24);
+}
+
+
+.lodging-section-divider p {
+  margin: 0;
+
+  flex-shrink: 0;
+
+  color: rgba(48, 54, 20, 0.7);
+
+  font-size: 0.76rem;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  line-height: 1;
+}
+
+
+/*
+  The normal lodge sections have 96px of top padding.
+
+  Since Ajalon comes directly after the Rustic Cottages
+  divider, reduce that slightly so the divider feels
+  connected to the cottage section below it.
+*/
+
+.lodging-section-divider + .lodge-feature-section {
+  padding-top: 58px;
+}
+
 
 /* =========================================================
    Lodge feature sections
@@ -922,6 +980,8 @@
 #dothan,
 #guest-house,
 #rustic-cottages,
+#ajalon,
+#capernaum,
 #lodging-comparison {
   scroll-margin-top: 125px;
 }
@@ -967,6 +1027,7 @@
 }
 
 @media (max-width: 780px) {
+
   .lodging-hero {
     min-height: 640px;
     padding: 145px 24px 82px;
@@ -1004,6 +1065,26 @@
   .lake-section {
     padding: 80px 20px;
   }
+
+    .lodging-section-divider {
+    padding:
+      68px
+      20px
+      0;
+
+    gap: 14px;
+  }
+
+
+  .lodging-section-divider p {
+    font-size: 0.68rem;
+    letter-spacing: 0.13em;
+  }
+
+
+  .lodging-section-divider + .lodge-feature-section {
+    padding-top: 44px;
+  }
 }
 
 @media (max-width: 430px) {
@@ -1022,4 +1103,25 @@
   .lake-button {
     width: 100%;
   }
+}
+
+
+
+
+
+/* =========================================================
+   Portrait lodging image
+   Ajalon interior photo
+========================================================= */
+
+.lodge-main-image-wrap-portrait {
+  aspect-ratio: auto;
+}
+
+
+.lodge-main-image-portrait {
+  height: auto;
+  aspect-ratio: auto;
+
+  object-fit: initial;
 }
