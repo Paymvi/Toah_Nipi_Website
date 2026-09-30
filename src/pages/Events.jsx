@@ -16,17 +16,17 @@ const familyCampWeeks = [
 ];
 
 const prices = [
-  "Adult 17+ — $515",
-  "Youth 3-17 — $375",
-  "Infant 12-36 months — $185",
-  "Newborn 0-12 months — $0",
+  "Adult 17+: $515",
+  "Youth 3-17: $375",
+  "Infant 12-36 months: $185",
+  "Newborn 0-12 months: $0",
 ];
 
 const discounts = [
-  "InterVarsity Staff — 20%",
-  "Full-time Ministry — 15%",
-  "First-time Family — 10%",
-  "Referred a Family — 10%",
+  "InterVarsity Staff: 20%",
+  "Full-time Ministry: 15%",
+  "First-time Family: 10%",
+  "Referred a Family: 10%",
 ];
 
 export default function Events() {
@@ -73,8 +73,8 @@ export default function Events() {
       <section className="family-camp-section" id="family-camp">
         <div className="family-camp-image-wrap">
           <img
-            src="/Family-Camp.webp"
-            alt="Family camp by the lake"
+            src="/FamilyCamp-New/Carina_Outside.jpg"
+            alt=""
             className="family-camp-image"
           />
 
