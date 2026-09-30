@@ -15,6 +15,7 @@ import Support from "./pages/Support";
 import OurStory from "./pages/OurStory";
 import Donors from "./pages/Donors";
 import Contact from "./pages/Contact";
+import Gallery from "./pages/Gallery";
 import New from "./pages/New";
 
 import ScrollToTop from "./components/ScrollToTop";
@@ -93,6 +94,9 @@ export default function App() {
           path="/events/:section"
           element={<PlaceholderPage title="Events" />}
         />
+
+
+        <Route path="/gallery" element={<Gallery />} />
 
 
         <Route path="/new" element={<New />} />

@@ -60,6 +60,11 @@ const navItems = [
   // },
 
   {
+    label: "Gallery",
+    path: "/gallery",
+  },
+
+  {
     label: "New!",
     path: "/new",
     highlight: true,
