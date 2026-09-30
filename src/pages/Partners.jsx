@@ -425,7 +425,7 @@ function ProjectBookPage({ project, index }) {
           </div>
         </div> */}
 
-        <div className="donors-project-funding">
+        {/* <div className="donors-project-funding">
           <div className="donors-project-funding-header">
             <span>Project Progress</span>
 
@@ -457,7 +457,7 @@ function ProjectBookPage({ project, index }) {
               ${project.fundingGoal.toLocaleString()} goal
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className="donors-book-page-footer">
@@ -746,7 +746,7 @@ export default function Partners() {
         </div>
       </section>
 
-      <section className="donor-wall-section reveal-group" id="donor-wall">
+      {/* <section className="donor-wall-section reveal-group" id="donor-wall">
         <div className="donor-wall-header">
           <p className="donors-eyebrow">Partner Recognition</p>
           <h2>With thanks to our supporters.</h2>
@@ -773,7 +773,7 @@ export default function Partners() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="donors-story-band reveal-group">
         <div>
@@ -918,6 +918,7 @@ export default function Partners() {
       <section
         className="relationship-wall-section reveal-group"
         id="relationship-wall"
+        style={{ display: "none" }}
       >
         <div className="relationship-wall-header">
           <div>
@@ -1045,7 +1046,7 @@ export default function Partners() {
 
 
 
-        
+
 
 
       </section>
