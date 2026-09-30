@@ -38,14 +38,17 @@ const navItems = [
   },
   {
     label: "Support",
-    path: "/partner",
+    path: "/support",
     dropdown: [
-      { label: "Make a Gift", path: "/partner#giving-projects" },
-      { label: "Serve With Us", path: "/partner#serve-with-us" },
-      { label: "Pray", path: "/partner#pray-with-us" },
-      { label: "Spread the Word", path: "/partner#spread-the-word" },
+      { label: "Make a Gift", path: "/support#giving-projects" },
+      { label: "Projects Made Possible", path: "/support#project-impact" },
+      { label: "Serve With Us", path: "/support#serve-with-us" },
+      { label: "Pray", path: "/support#pray-with-us" },
+      { label: "Spread the Word", path: "/support#spread-the-word" },
+      { label: "Community Directory", path: "/support#relationship-directory" },
     ],
   },
+
   // {
   //   label: "Donors",
   //   path: "/donors",
@@ -55,18 +58,6 @@ const navItems = [
   //     { label: "Recognition Notes", path: "/donors#recognition-notes" },
   //   ],
   // },
-  {
-    label: "Partners",
-    path: "/partners",
-    dropdown: [
-      { label: "Projects Made Possible", path: "/partners#project-impact" },
-      { label: "Partner Recognition", path: "/partners#donor-wall" },
-      { label: "Recognition Notes", path: "/partners#recognition-notes" },
-      { label: "Ministry Partners", path: "/partners#ministry-partners" },
-      { label: "Returning Groups", path: "/partners#returning-retreat-groups" },
-      { label: "Community Affiliations", path: "/partners#community-affiliations" },
-    ],
-  },
 
   {
     label: "New!",
@@ -225,7 +216,10 @@ export default function NavBar() {
 
         </div>
 
-        <Link to="https://secure.qgiv.com/for/toahnipichristianretreatcenter/" className="give-link">
+        <Link
+          to="https://secure.qgiv.com/for/toahnipichristianretreatcenter/"
+          className="give-link"
+        >
           GIVE
         </Link>
       </div>
