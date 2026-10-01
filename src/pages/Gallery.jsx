@@ -4,9 +4,14 @@ import {
   useState,
 } from "react";
 
+
 import SEO from "../components/SEO";
 
+
 import "../styles/gallery.css";
+
+
+
 
 
 const categories = [
@@ -15,6 +20,9 @@ const categories = [
   "Camp Life",
   "Food",
 ];
+
+
+
 
 
 const galleryImages = [
@@ -26,43 +34,43 @@ const galleryImages = [
     src: "/Gallery/Apr-2026-Beach.jpg",
     alt: "Toah Nipi lake area",
     category: "Campus",
-    title: "Around Toah Nipi",
+    title: "Beach at Toah Nipi",
   },
   {
     src: "/Gallery/Back-Hebron.jpg",
-    alt: "View across the Toah Nipi property",
+    alt: "Back of Hebron",
     category: "Campus",
-    title: "The Campus",
+    title: "Back of Hebron",
   },
   {
     src: "/Gallery/Hebron-Sunset.jpg",
     alt: "Sunset over Toah Nipi",
     category: "Campus",
-    title: "Evening at Camp",
+    title: "Hebron Sunset",
   },
   {
     src: "/Gallery/May-2024-Canoe.jpg",
     alt: "Lake with canoes",
     category: "Campus",
-    title: "Around Camp",
+    title: "Canoes on the Lake",
   },
   {
     src: "/Gallery/Fall-Pic.jpeg",
     alt: "Scenery around Toah Nipi",
     category: "Campus",
-    title: "Camp in the Woods",
+    title: "Fall at Toah Nipi",
   },
   {
     src: "/Gallery/Sunset-ish.jpg",
-    alt: "Scenery around Toah Nipi",
+    alt: "Sunset at Toah Nipi",
     category: "Campus",
-    title: "Camp in the Woods",
+    title: "Sunset at Toah Nipi",
   },
   {
     src: "/Gallery/Jun-2026-Sunny-Deck.jpg",
-    alt: "Group gathering at Toah Nipi",
+    alt: "Sunny deck at Toah Nipi",
     category: "Camp Life",
-    title: "Community",
+    title: "Sunny Deck",
   },
   // {
   //   src: "/Gallery/Winter.jpg",
@@ -70,6 +78,9 @@ const galleryImages = [
   //   category: "Camp Life",
   //   title: "Community",
   // },
+
+
+
 
 
   // ======================================================
@@ -80,98 +91,98 @@ const galleryImages = [
     src: "/Gallery/Raph-Group-1.jpg",
     alt: "Guests spending time together at Toah Nipi",
     category: "Camp Life",
-    title: "Time Together",
+    title: "Camp Group Photo",
   },
   {
     src: "/Gallery/Pre-Carnival.jpg",
-    alt: "Group gathering at Toah Nipi",
+    alt: "Group gathering before the carnival",
     category: "Camp Life",
-    title: "Community",
+    title: "Before the Carnival",
   },
   {
     src: "/Gallery/Fire-Gathering.jpg",
-    alt: "Guests enjoying camp together",
+    alt: "Guests gathered around a fire",
     category: "Camp Life",
-    title: "Camp Life",
+    title: "Fire Gathering",
   },
   {
     src: "/Gallery/May-2024-Dorm.jpg",
     alt: "Dorm Room",
     category: "Camp Life",
-    title: "Together at Camp",
+    title: "Bethel Room",
   },
   {
     src: "/Gallery/Haystack.jpeg",
-    alt: "Guests gathering outside at Toah Nipi",
+    alt: "Haystack at Toah Nipi",
     category: "Camp Life",
-    title: "Gather Together",
+    title: "Haystack",
   },
   {
     src: "/Gallery/May-2024-Austin-Lake-2.jpg",
-    alt: "Guests enjoying time together",
+    alt: "Austin Lake at Toah Nipi",
     category: "Camp Life",
-    title: "Shared Moments",
+    title: "Lake Life",
   },
   {
     src: "/Gallery/Volleyball.JPG",
-    alt: "Community gathering at Toah Nipi",
+    alt: "Guests playing volleyball",
     category: "Camp Life",
-    title: "Life Together",
+    title: "Volleyball",
   },
   {
     src: "/Gallery/Aahnix-Lesson.JPG",
-    alt: "Guests enjoying a retreat at Toah Nipi",
+    alt: "Aahnix lesson at Toah Nipi",
     category: "Camp Life",
-    title: "Retreat Life",
+    title: "Outdoor Classroom",
   },
   {
     src: "/Gallery/Teen-Cards.JPG",
-    alt: "Friends together during a retreat",
+    alt: "Teens playing cards",
     category: "Camp Life",
-    title: "Camp Memories",
+    title: "Card Games",
   },
   {
     src: "/Gallery/Carnival-Gathering.jpeg",
-    alt: "Guests spending time together around camp",
+    alt: "Guests gathering at the carnival",
     category: "Camp Life",
-    title: "Moments Together",
+    title: "Carnival Gathering",
   },
   {
     src: "/Gallery/Aahnix-seeds.png",
-    alt: "Group enjoying time together at Toah Nipi",
+    alt: "Aahnix seed activity at Toah Nipi",
     category: "Camp Life",
-    title: "Community at Camp",
+    title: "Seed Activity",
   },
   {
     src: "/Gallery/Asian-Karaoke.png",
     alt: "People doing karaoke in the meeting space",
     category: "Camp Life",
-    title: "A Day at Toah Nipi",
+    title: "Karaoke",
   },
 
   {
     src: "/Gallery/Tie-Dye-Boy.JPG",
-    alt: "Activity at Toah Nipi",
+    alt: "Boy doing a tie-dye activity",
     category: "Camp Life",
-    title: "Outdoor Adventures",
+    title: "Tie-Dye",
   },
   {
     src: "/Gallery/Carina-Carnival.jpeg",
-    alt: "Guests participating in an activity",
+    alt: "Carina at the carnival",
     category: "Camp Life",
-    title: "Things to Do",
+    title: "Carnival",
   },
   {
     src: "/Gallery/Human-Pyramid.jpeg",
-    alt: "Recreation at Toah Nipi",
+    alt: "Guests making a human pyramid",
     category: "Camp Life",
-    title: "Explore Together",
+    title: "Human Pyramid",
   },
   {
     src: "/Gallery/May-2024-Abi-Pose.jpg",
-    alt: "Guests enjoying an outdoor activity",
+    alt: "Abi posing at Toah Nipi",
     category: "Camp Life",
-    title: "Outside Together",
+    title: "Basketball",
   },
   // {
   //   src: "/Gallery/Frisbee.JPG",
@@ -181,16 +192,19 @@ const galleryImages = [
   // },
   {
     src: "/Gallery/Leaf-Activity.JPG",
-    alt: "Activity at Toah Nipi",
+    alt: "Leaf activity at Toah Nipi",
     category: "Activities",
-    title: "Outdoor Adventures",
+    title: "Leaf Activity",
   },
   {
     src: "/Gallery/Ollie-Drawing.JPG",
     alt: "Volunteer drawing on Chalkboard",
     category: "Activities",
-    title: "Something for Everyone",
+    title: "Chalkboard Drawing",
   },
+
+
+
 
 
   // ======================================================
@@ -201,50 +215,53 @@ const galleryImages = [
     src: "/Gallery/C+A-Apple-Cider.jpg",
     alt: "Apple Cider making",
     category: "Food",
-    title: "Around the Table",
+    title: "Making Apple Cider",
   },
   {
     src: "/Gallery/Kitchen.JPG",
     alt: "Kitchen",
     category: "Food",
-    title: "Made at Camp",
+    title: "The Kitchen",
   },
   {
     src: "/Gallery/Char-Board-1.jpg",
-    alt: "Guests sharing a meal",
+    alt: "Charcuterie board",
     category: "Food",
-    title: "Meals Together",
+    title: "Charcuterie Board",
   },
   {
     src: "/Gallery/Breakfast-Bar.JPG",
-    alt: "Meal served",
+    alt: "Breakfast bar",
     category: "Food",
-    title: "Camp Meals",
+    title: "Breakfast Bar",
   },
   {
     src: "/Gallery/Beef-Bowl.jpg",
-    alt: "Meal served",
+    alt: "Beef bowl",
     category: "Food",
-    title: "Gathered Around the Table",
+    title: "Beef Bowl",
   },
   {
     src: "/Gallery/Abi-Apple-Cider.jpg",
     alt: "Staff member with finished Apple Cider",
     category: "Food",
-    title: "From the Kitchen",
+    title: "Finished Apple Cider",
   },
   {
     src: "/Gallery/Meal-Ham-Bread-Corn.jpg",
-    alt: "Meal served",
+    alt: "Meal with ham, bread, and corn",
     category: "Food",
-    title: "Camp Meals",
+    title: "Ham, Potatoes, Bread, Corn, and Gravy",
   },
   {
     src: "/Gallery/Grilling.JPG",
-    alt: "Meal served",
+    alt: "Food being grilled",
     category: "Food",
-    title: "Camp Meals",
+    title: "The Grill",
   },
+
+
+
 
 
   // // ======================================================
@@ -289,7 +306,13 @@ const galleryImages = [
   // },
 
 
+
+
+
 ];
+
+
+
 
 
 export default function Gallery() {
@@ -298,10 +321,14 @@ export default function Gallery() {
     setActiveCategory,
   ] = useState("All");
 
+
   const [
     selectedImage,
     setSelectedImage,
   ] = useState(null);
+
+
+
 
 
   const filteredImages = useMemo(() => {
@@ -309,10 +336,14 @@ export default function Gallery() {
       return galleryImages;
     }
 
+
     return galleryImages.filter(
       (image) => image.category === activeCategory
     );
   }, [activeCategory]);
+
+
+
 
 
   useEffect(() => {
@@ -320,26 +351,32 @@ export default function Gallery() {
       return;
     }
 
+
     const handleKeyDown = (event) => {
       if (event.key === "Escape") {
         setSelectedImage(null);
       }
     };
 
+
     const previousOverflow =
       document.body.style.overflow;
 
+
     document.body.style.overflow =
       "hidden";
+
 
     window.addEventListener(
       "keydown",
       handleKeyDown
     );
 
+
     return () => {
       document.body.style.overflow =
         previousOverflow;
+
 
       window.removeEventListener(
         "keydown",
@@ -347,6 +384,9 @@ export default function Gallery() {
       );
     };
   }, [selectedImage]);
+
+
+
 
 
   return (
@@ -358,15 +398,21 @@ export default function Gallery() {
       />
 
 
+
+
+
       <section className="gallery-hero">
         <div className="gallery-hero__overlay" />
+
 
         <div className="gallery-hero__content">
           <p className="gallery-hero__eyebrow">
             Life at Toah Nipi
           </p>
 
+
           <h1>Gallery</h1>
+
 
           <p>
             A glimpse into the places, people,
@@ -377,29 +423,11 @@ export default function Gallery() {
       </section>
 
 
+
+
+
       <section className="gallery-section">
         <div className="gallery-container">
-          <div className="gallery-intro">
-            <div>
-              <p className="gallery-intro__eyebrow">
-                Explore
-              </p>
-
-              <h2>
-                See life around camp
-              </h2>
-            </div>
-
-            <p className="gallery-intro__text">
-              From quiet mornings in the woods
-              to meals around the table and
-              afternoons spent outside, explore
-              some of our favorite moments from
-              around Toah Nipi.
-            </p>
-          </div>
-
-
           <div
             className="gallery-filters"
             role="group"
@@ -424,6 +452,9 @@ export default function Gallery() {
           </div>
 
 
+
+
+
           <div
             className="gallery-grid"
             key={activeCategory}
@@ -445,16 +476,19 @@ export default function Gallery() {
                     loading="lazy"
                   />
 
+
                   <div className="gallery-card__overlay">
                     <div className="gallery-card__text">
                       <span>
                         {image.category}
                       </span>
 
+
                       <h3>
                         {image.title}
                       </h3>
                     </div>
+
 
                     <span
                       className="gallery-card__view"
@@ -469,6 +503,9 @@ export default function Gallery() {
           </div>
         </div>
       </section>
+
+
+
 
 
       {selectedImage && (
@@ -492,6 +529,7 @@ export default function Gallery() {
             ×
           </button>
 
+
           <div
             className="gallery-lightbox__content"
             onClick={(event) =>
@@ -503,10 +541,12 @@ export default function Gallery() {
               alt={selectedImage.alt}
             />
 
+
             <div className="gallery-lightbox__caption">
               <span>
                 {selectedImage.category}
               </span>
+
 
               <h2>
                 {selectedImage.title}
