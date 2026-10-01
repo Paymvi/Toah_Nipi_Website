@@ -14,110 +14,281 @@ const categories = [
   "Campus",
   "Camp Life",
   "Food",
-  "Lodging",
-  "Activities",
 ];
 
 
 const galleryImages = [
+  // ======================================================
+  // CAMPUS
+  // ======================================================
+
   {
-    src: "/Gallery/campus-1.jpg",
-    alt: "Toah Nipi campus surrounded by trees",
+    src: "/Gallery/Apr-2026-Beach.jpg",
+    alt: "Toah Nipi lake area",
     category: "Campus",
     title: "Around Toah Nipi",
   },
   {
-    src: "/Gallery/campus-2.jpg",
+    src: "/Gallery/Back-Hebron.jpg",
     alt: "View across the Toah Nipi property",
     category: "Campus",
     title: "The Campus",
   },
   {
-    src: "/Gallery/campus-3.jpg",
+    src: "/Gallery/Hebron-Sunset.jpg",
     alt: "Sunset over Toah Nipi",
     category: "Campus",
     title: "Evening at Camp",
   },
+  {
+    src: "/Gallery/May-2024-Canoe.jpg",
+    alt: "Lake with canoes",
+    category: "Campus",
+    title: "Around Camp",
+  },
+  {
+    src: "/Gallery/Fall-Pic.jpeg",
+    alt: "Scenery around Toah Nipi",
+    category: "Campus",
+    title: "Camp in the Woods",
+  },
+  {
+    src: "/Gallery/Sunset-ish.jpg",
+    alt: "Scenery around Toah Nipi",
+    category: "Campus",
+    title: "Camp in the Woods",
+  },
+  {
+    src: "/Gallery/Jun-2026-Sunny-Deck.jpg",
+    alt: "Group gathering at Toah Nipi",
+    category: "Camp Life",
+    title: "Community",
+  },
+  // {
+  //   src: "/Gallery/Winter.jpg",
+  //   alt: "Group gathering at Toah Nipi",
+  //   category: "Camp Life",
+  //   title: "Community",
+  // },
 
+
+  // ======================================================
+  // CAMP LIFE
+  // ======================================================
 
   {
-    src: "/Gallery/camp-life-1.jpg",
+    src: "/Gallery/Raph-Group-1.jpg",
     alt: "Guests spending time together at Toah Nipi",
     category: "Camp Life",
     title: "Time Together",
   },
   {
-    src: "/Gallery/camp-life-2.jpg",
+    src: "/Gallery/Pre-Carnival.jpg",
     alt: "Group gathering at Toah Nipi",
     category: "Camp Life",
     title: "Community",
   },
   {
-    src: "/Gallery/camp-life-3.jpg",
+    src: "/Gallery/Fire-Gathering.jpg",
     alt: "Guests enjoying camp together",
     category: "Camp Life",
     title: "Camp Life",
   },
-
-
   {
-    src: "/Gallery/food-1.jpg",
-    alt: "Meal prepared at Toah Nipi",
-    category: "Food",
-    title: "Around the Table",
+    src: "/Gallery/May-2024-Dorm.jpg",
+    alt: "Dorm Room",
+    category: "Camp Life",
+    title: "Together at Camp",
   },
   {
-    src: "/Gallery/food-2.jpg",
-    alt: "Fresh food served at Toah Nipi",
-    category: "Food",
-    title: "Made at Camp",
+    src: "/Gallery/Haystack.jpeg",
+    alt: "Guests gathering outside at Toah Nipi",
+    category: "Camp Life",
+    title: "Gather Together",
   },
   {
-    src: "/Gallery/food-3.jpg",
-    alt: "Guests sharing a meal",
-    category: "Food",
-    title: "Meals Together",
+    src: "/Gallery/May-2024-Austin-Lake-2.jpg",
+    alt: "Guests enjoying time together",
+    category: "Camp Life",
+    title: "Shared Moments",
+  },
+  {
+    src: "/Gallery/Volleyball.JPG",
+    alt: "Community gathering at Toah Nipi",
+    category: "Camp Life",
+    title: "Life Together",
+  },
+  {
+    src: "/Gallery/Aahnix-Lesson.JPG",
+    alt: "Guests enjoying a retreat at Toah Nipi",
+    category: "Camp Life",
+    title: "Retreat Life",
+  },
+  {
+    src: "/Gallery/Teen-Cards.JPG",
+    alt: "Friends together during a retreat",
+    category: "Camp Life",
+    title: "Camp Memories",
+  },
+  {
+    src: "/Gallery/Carnival-Gathering.jpeg",
+    alt: "Guests spending time together around camp",
+    category: "Camp Life",
+    title: "Moments Together",
+  },
+  {
+    src: "/Gallery/Aahnix-seeds.png",
+    alt: "Group enjoying time together at Toah Nipi",
+    category: "Camp Life",
+    title: "Community at Camp",
+  },
+  {
+    src: "/Gallery/Asian-Karaoke.png",
+    alt: "People doing karaoke in the meeting space",
+    category: "Camp Life",
+    title: "A Day at Toah Nipi",
   },
 
-
   {
-    src: "/Gallery/lodging-1.jpg",
-    alt: "Lodging building at Toah Nipi",
-    category: "Lodging",
-    title: "Places to Stay",
+    src: "/Gallery/Tie-Dye-Boy.JPG",
+    alt: "Activity at Toah Nipi",
+    category: "Camp Life",
+    title: "Outdoor Adventures",
   },
   {
-    src: "/Gallery/lodging-2.jpg",
-    alt: "Guest room at Toah Nipi",
-    category: "Lodging",
-    title: "A Place to Rest",
+    src: "/Gallery/Carina-Carnival.jpeg",
+    alt: "Guests participating in an activity",
+    category: "Camp Life",
+    title: "Things to Do",
   },
   {
-    src: "/Gallery/lodging-3.jpg",
-    alt: "Toah Nipi lodging surrounded by woods",
-    category: "Lodging",
-    title: "Stay in the Woods",
+    src: "/Gallery/Human-Pyramid.jpeg",
+    alt: "Recreation at Toah Nipi",
+    category: "Camp Life",
+    title: "Explore Together",
   },
-
-
   {
-    src: "/Gallery/activity-1.jpg",
-    alt: "Outdoor activity at Toah Nipi",
+    src: "/Gallery/May-2024-Abi-Pose.jpg",
+    alt: "Guests enjoying an outdoor activity",
+    category: "Camp Life",
+    title: "Outside Together",
+  },
+  // {
+  //   src: "/Gallery/Frisbee.JPG",
+  //   alt: "Activity at Toah Nipi",
+  //   category: "Activities",
+  //   title: "Outdoor Adventures",
+  // },
+  {
+    src: "/Gallery/Leaf-Activity.JPG",
+    alt: "Activity at Toah Nipi",
     category: "Activities",
     title: "Outdoor Adventures",
   },
   {
-    src: "/Gallery/activity-2.jpg",
-    alt: "Guests participating in an activity",
+    src: "/Gallery/Ollie-Drawing.JPG",
+    alt: "Volunteer drawing on Chalkboard",
     category: "Activities",
-    title: "Things to Do",
+    title: "Something for Everyone",
+  },
+
+
+  // ======================================================
+  // FOOD
+  // ======================================================
+
+  {
+    src: "/Gallery/C+A-Apple-Cider.jpg",
+    alt: "Apple Cider making",
+    category: "Food",
+    title: "Around the Table",
   },
   {
-    src: "/Gallery/activity-3.jpg",
-    alt: "Recreation at Toah Nipi",
-    category: "Activities",
-    title: "Explore Together",
+    src: "/Gallery/Kitchen.JPG",
+    alt: "Kitchen",
+    category: "Food",
+    title: "Made at Camp",
   },
+  {
+    src: "/Gallery/Char-Board-1.jpg",
+    alt: "Guests sharing a meal",
+    category: "Food",
+    title: "Meals Together",
+  },
+  {
+    src: "/Gallery/Breakfast-Bar.JPG",
+    alt: "Meal served",
+    category: "Food",
+    title: "Camp Meals",
+  },
+  {
+    src: "/Gallery/Beef-Bowl.jpg",
+    alt: "Meal served",
+    category: "Food",
+    title: "Gathered Around the Table",
+  },
+  {
+    src: "/Gallery/Abi-Apple-Cider.jpg",
+    alt: "Staff member with finished Apple Cider",
+    category: "Food",
+    title: "From the Kitchen",
+  },
+  {
+    src: "/Gallery/Meal-Ham-Bread-Corn.jpg",
+    alt: "Meal served",
+    category: "Food",
+    title: "Camp Meals",
+  },
+  {
+    src: "/Gallery/Grilling.JPG",
+    alt: "Meal served",
+    category: "Food",
+    title: "Camp Meals",
+  },
+
+
+  // // ======================================================
+  // // LODGING
+  // // ======================================================
+
+  // {
+  //   src: "/Gallery/lodging-1.jpg",
+  //   alt: "Lodging building at Toah Nipi",
+  //   category: "Lodging",
+  //   title: "Places to Stay",
+  // },
+  // {
+  //   src: "/Gallery/lodging-2.jpg",
+  //   alt: "Guest room at Toah Nipi",
+  //   category: "Lodging",
+  //   title: "A Place to Rest",
+  // },
+  // {
+  //   src: "/Gallery/lodging-3.jpg",
+  //   alt: "Toah Nipi lodging surrounded by woods",
+  //   category: "Lodging",
+  //   title: "Stay in the Woods",
+  // },
+  // {
+  //   src: "/Gallery/lodging-4.jpg",
+  //   alt: "Guest lodging at Toah Nipi",
+  //   category: "Lodging",
+  //   title: "Your Home at Camp",
+  // },
+  // {
+  //   src: "/Gallery/lodging-5.jpg",
+  //   alt: "Inside one of the Toah Nipi lodging spaces",
+  //   category: "Lodging",
+  //   title: "Room to Rest",
+  // },
+  // {
+  //   src: "/Gallery/lodging-6.jpg",
+  //   alt: "Lodging surrounded by the Toah Nipi property",
+  //   category: "Lodging",
+  //   title: "Retreat in the Woods",
+  // },
+
+
 ];
 
 
