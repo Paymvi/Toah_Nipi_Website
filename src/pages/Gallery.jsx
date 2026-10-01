@@ -414,7 +414,7 @@ export default function Gallery() {
           <h1>Gallery</h1>
 
 
-          <p>
+          <p className="gallery-hero__description">
             A glimpse into the places, people,
             meals, and moments that make
             Toah Nipi special.
