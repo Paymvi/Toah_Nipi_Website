@@ -42,36 +42,30 @@ export default function News() {
           HERO
       ===================================================== */}
       <section className="news-hero">
-
         <div className="news-hero-overlay" />
 
         <div className="news-hero-content">
-
-          <span className="news-eyebrow">
+          <p className="news-eyebrow">
             Stories from Toah Nipi
-          </span>
+          </p>
 
           <h1>What's New?</h1>
 
-          <p>
+          <p className="news-hero-description">
             Updates, stories, projects, and moments from life
             around Toah Nipi.
           </p>
-
         </div>
-
       </section>
 
 
       {/* =====================================================
           FEATURED ARTICLE
       ===================================================== */}
-      <section className="news-section">
+      <section className="news-section news-latest-section">
 
         <div className="news-section-heading">
-          <span>Latest Story</span>
-
-          <h2>What's happening at Toah Nipi</h2>
+          <p>Latest Story</p>
         </div>
 
 
@@ -80,7 +74,7 @@ export default function News() {
           <div className="news-featured-image">
             <img
               src={featuredPost.image}
-              alt=""
+              alt={featuredPost.title}
             />
           </div>
 
@@ -113,6 +107,7 @@ export default function News() {
               className="news-read-more"
             >
               Read Story
+              <span aria-hidden="true">→</span>
             </button>
 
           </div>
@@ -128,7 +123,7 @@ export default function News() {
       <section className="news-section news-more-section">
 
         <div className="news-section-heading">
-          <span>From Around Camp</span>
+          <p>From Around Camp</p>
 
           <h2>More Stories</h2>
         </div>
@@ -146,7 +141,7 @@ export default function News() {
               <div className="news-card-image">
                 <img
                   src={post.image}
-                  alt=""
+                  alt={post.title}
                 />
               </div>
 
@@ -178,7 +173,8 @@ export default function News() {
                   type="button"
                   className="news-card-link"
                 >
-                  Read Story →
+                  Read Story
+                  <span aria-hidden="true">→</span>
                 </button>
 
               </div>
