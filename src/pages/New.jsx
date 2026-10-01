@@ -123,9 +123,9 @@ export default function News() {
       <section className="news-section news-more-section">
 
         <div className="news-section-heading">
-          <p>From Around Camp</p>
+          <p>More Stories</p>
 
-          <h2>More Stories</h2>
+          {/* <h2>More Stories</h2> */}
         </div>
 
 
