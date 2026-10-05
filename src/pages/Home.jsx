@@ -84,7 +84,7 @@ export default function Home() {
     <main className="page">
 
       <SEO
-        title="Christian Retreat Center in Rindge, NH"
+        title="Toah Nipi"
         description="Toah Nipi is a year-round Christian retreat center in Rindge, New Hampshire offering lakeside lodging, Family Camp, group retreats, and personal getaways."
         path="/"
       />
