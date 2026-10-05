@@ -40,6 +40,9 @@ const referralSources = [
 
 export default function Contact() {
   const [formData, setFormData] = useState(initialFormState);
+  const [isReviewing, setIsReviewing] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -51,21 +54,77 @@ export default function Contact() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const subject = encodeURIComponent("Retreat Inquiry from Toah Nipi Website");
-    const body = encodeURIComponent(`
-Name: ${formData.name}
-Group Size: ${formData.groupSize}
-Desired Dates: ${formData.desiredDates}
-Email: ${formData.email}
-Phone: +1 ${formData.phone}
-Church or Ministry: ${formData.churchOrMinistry}
-Type of Retreat: ${formData.retreatType}
-How Did You Hear About Us: ${formData.heardAboutUs || "N/A"}
-Promo Code: ${formData.promoCode || "N/A"}
-Message:
-${formData.message}
-    `);
-    window.location.href = `mailto:contactus@toahnipi.org?subject=${subject}&body=${body}`;
+    setSubmitStatus("idle");
+    setSubmitMessage("");
+    setIsReviewing(true);
+  };
+
+  const handleSendMessage = async () => {
+    if (submitStatus === "sending") {
+      return;
+    }
+
+    setSubmitStatus("sending");
+    setSubmitMessage("");
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/contactus@toahnipi.org",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "Retreat Inquiry from Toah Nipi Website",
+            _template: "table",
+            _replyto: formData.email,
+            Name: formData.name,
+            "Group Size": formData.groupSize || "N/A",
+            "Desired Dates": formData.desiredDates || "N/A",
+            Email: formData.email,
+            Phone: formData.phone ? `+1 ${formData.phone}` : "N/A",
+            "Church or Ministry": formData.churchOrMinistry || "N/A",
+            "Type of Retreat": formData.retreatType || "N/A",
+            "How Did You Hear About Us": formData.heardAboutUs || "N/A",
+            "Promo Code": formData.promoCode || "N/A",
+            Message: formData.message,
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      console.log("FormSubmit status:", response.status);
+      console.log("FormSubmit response:", result);
+
+      if (
+        !response.ok ||
+        result.success === false ||
+        result.success === "false"
+      ) {
+        throw new Error(
+          result.message || `Form submission failed (${response.status}).`
+        );
+      }
+
+      setSubmitStatus("success");
+      setSubmitMessage(
+        "Thank you! Your message has been sent to the Toah Nipi team."
+      );
+      setFormData(initialFormState);
+      setIsReviewing(false);
+    } catch (error) {
+      console.error("Contact form submission error:", error);
+
+      setSubmitStatus("error");
+
+      setSubmitMessage(
+        error.message ||
+          "We couldn't send your message. Please try again or email contactus@toahnipi.org."
+      );
+    }
   };
 
   return (
@@ -279,13 +338,123 @@ ${formData.message}
             </label>
           </div>
           <button type="submit" className="contact-submit-button">
-            Send Message
+            Review Message
           </button>
           <p className="contact-form-note">
-            This will open your email app with the message prepared for
-            contactus@toahnipi.org.
+            You'll have a chance to review your message before it is sent.
           </p>
+          {submitStatus === "success" && (
+            <p
+              className="contact-form-status contact-form-status-success"
+              role="status"
+            >
+              {submitMessage}
+            </p>
+          )}
         </form>
+
+        {isReviewing && (
+          <div className="contact-review-overlay">
+            <div
+              className="contact-review-modal"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="contact-review-title"
+            >
+              <div className="contact-review-header">
+                <p className="contact-eyebrow">Almost there</p>
+                <h2 id="contact-review-title">Review your message</h2>
+                <p>
+                  Please make sure everything below looks correct before sending
+                  your inquiry.
+                </p>
+              </div>
+
+              <div className="contact-review-email">
+                <div className="contact-review-email-row">
+                  <strong>To:</strong>
+                  <span>contactus@toahnipi.org</span>
+                </div>
+                <div className="contact-review-email-row">
+                  <strong>Subject:</strong>
+                  <span>Retreat Inquiry from Toah Nipi Website</span>
+                </div>
+
+                <div className="contact-review-divider" />
+
+                <div className="contact-review-body">
+                  <p>
+                    <strong>Name:</strong> {formData.name}
+                  </p>
+                  <p>
+                    <strong>Group Size:</strong>{" "}
+                    {formData.groupSize || "N/A"}
+                  </p>
+                  <p>
+                    <strong>Desired Dates:</strong>{" "}
+                    {formData.desiredDates || "N/A"}
+                  </p>
+                  <p>
+                    <strong>Email:</strong> {formData.email}
+                  </p>
+                  <p>
+                    <strong>Phone:</strong>{" "}
+                    {formData.phone ? `+1 ${formData.phone}` : "N/A"}
+                  </p>
+                  <p>
+                    <strong>Church or Ministry:</strong>{" "}
+                    {formData.churchOrMinistry || "N/A"}
+                  </p>
+                  <p>
+                    <strong>Type of Retreat:</strong>{" "}
+                    {formData.retreatType || "N/A"}
+                  </p>
+                  <p>
+                    <strong>How Did You Hear About Us:</strong>{" "}
+                    {formData.heardAboutUs || "N/A"}
+                  </p>
+                  <p>
+                    <strong>Promo Code:</strong>{" "}
+                    {formData.promoCode || "N/A"}
+                  </p>
+
+                  <div className="contact-review-message">
+                    <strong>Message:</strong>
+                    <p>{formData.message}</p>
+                  </div>
+                </div>
+              </div>
+
+              {submitStatus === "error" && (
+                <p
+                  className="contact-form-status contact-form-status-error"
+                  role="alert"
+                >
+                  {submitMessage}
+                </p>
+              )}
+
+              <div className="contact-review-actions">
+                <button
+                  type="button"
+                  className="contact-review-edit-button"
+                  onClick={() => setIsReviewing(false)}
+                  disabled={submitStatus === "sending"}
+                >
+                  ← Edit Message
+                </button>
+                <button
+                  type="button"
+                  className="contact-submit-button"
+                  onClick={handleSendMessage}
+                  disabled={submitStatus === "sending"}
+                >
+                  {submitStatus === "sending" ? "Sending..." : "Send Message"}
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
 
       <section className="contact-join-team-section" id="join-our-team">
