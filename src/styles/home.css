@@ -1086,3 +1086,37 @@
       display: none;
    }
 }
+
+
+
+
+/* Newsletter Form Submission */
+
+.newsletter-form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.newsletter-form-status {
+  width: 100%;
+  margin: 14px 0 0;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.newsletter-form-status-success {
+  border: 1px solid rgba(66, 112, 52, 0.2);
+  background: rgba(226, 239, 215, 0.82);
+  color: #34552a;
+}
+
+.newsletter-form-status-error {
+  border: 1px solid rgba(139, 62, 52, 0.18);
+  background: rgba(248, 226, 220, 0.9);
+  color: #7a332b;
+}

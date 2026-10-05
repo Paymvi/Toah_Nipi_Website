@@ -7,6 +7,78 @@ import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
 export default function Home() {
+  const [newsletterStatus, setNewsletterStatus] = useState("idle");
+  const [newsletterMessage, setNewsletterMessage] = useState("");
+
+  const handleNewsletterSubmit = async (event) => {
+    event.preventDefault();
+
+    if (newsletterStatus === "sending") {
+      return;
+    }
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const firstName = String(formData.get("firstName") || "").trim();
+    const lastName = String(formData.get("lastName") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+
+    setNewsletterStatus("sending");
+    setNewsletterMessage("");
+
+    try {
+      const response = await fetch(
+        "https://formsubmit.co/ajax/contactus@toahnipi.org",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            _subject: "New Newsletter Signup from Toah Nipi Website",
+            _template: "table",
+            _replyto: email,
+
+            "First Name": firstName || "N/A",
+            "Last Name": lastName || "N/A",
+            Email: email,
+            "Signup Source": "Toah Nipi Website Newsletter Form",
+          }),
+        }
+      );
+
+      const result = await response.json();
+
+      console.log("Newsletter FormSubmit status:", response.status);
+      console.log("Newsletter FormSubmit response:", result);
+
+      if (
+        !response.ok ||
+        result.success === false ||
+        result.success === "false"
+      ) {
+        throw new Error(
+          result.message || `Newsletter signup failed (${response.status}).`
+        );
+      }
+
+      setNewsletterStatus("success");
+      setNewsletterMessage(
+        "Thank you! Your newsletter signup has been received."
+      );
+
+      form.reset();
+    } catch (error) {
+      console.error("Newsletter signup error:", error);
+
+      setNewsletterStatus("error");
+      setNewsletterMessage(
+        "We couldn't submit your newsletter signup. Please try again."
+      );
+    }
+  };
 
   return (
     <main className="page">
@@ -19,9 +91,9 @@ export default function Home() {
 
       <section className="hero-sticky-wrap">
         <section className="home-hero">
-            <div className="hero-content">
-              
-              <div className="hero-title-strip reveal-group">
+          <div className="hero-content">
+
+            <div className="hero-title-strip reveal-group">
               <p className="eyebrow">Welcome to</p>
               {/* <h1>Toah Nipi</h1> */}
 
@@ -34,12 +106,11 @@ export default function Home() {
                 alt="Toah Nipi"
                 className="hero-logo"
               />
-            
-            
-            <p>
-              Experience lakeside lodging, meaningful events, and a peaceful place
-              to reconnect with God, creation, and community.
-            </p>
+
+              <p>
+                Experience lakeside lodging, meaningful events, and a peaceful place
+                to reconnect with God, creation, and community.
+              </p>
 
             </div>
 
@@ -51,7 +122,6 @@ export default function Home() {
           </div>
         </section>
       </section>
-      
 
       <section className="intro-section">
         <div className="section-label">What is Toah Nipi</div>
@@ -59,9 +129,9 @@ export default function Home() {
         <div className="intro-grid reveal-group">
           <h2>
             A <span className="highlight-text">year-round</span>
-            <br/>
-            Christian retreat center 
-            <br/>in Rindge, NH.
+            <br />
+            Christian retreat center
+            <br />in Rindge, NH.
           </h2>
 
           <div className="intro-copy">
@@ -152,7 +222,7 @@ export default function Home() {
         </div>
 
         <EventCarousel />
-        
+
       </section>
 
       <section className="split-section">
@@ -271,30 +341,60 @@ export default function Home() {
           </div>
         </div>
 
-        <form className="newsletter-form">
+        <form
+          className="newsletter-form"
+          onSubmit={handleNewsletterSubmit}
+        >
           <div className="newsletter-form-row">
             <label>
               First name
-              <input type="text" name="firstName" />
+              <input
+                type="text"
+                name="firstName"
+                required
+              />
             </label>
 
             <label>
               Last name
-              <input type="text" name="lastName" />
+              <input
+                type="text"
+                name="lastName"
+                required
+              />
             </label>
           </div>
 
           <label>
             Email address
-            <input type="email" name="email" />
+            <input
+              type="email"
+              name="email"
+              required
+            />
           </label>
 
-          <button type="submit">Subscribe</button>
+          <button
+            type="submit"
+            disabled={newsletterStatus === "sending"}
+          >
+            {newsletterStatus === "sending"
+              ? "Submitting..."
+              : "Subscribe"}
+          </button>
+
+          {newsletterMessage && (
+            <p
+              className={`newsletter-form-status newsletter-form-status-${newsletterStatus}`}
+              role={newsletterStatus === "error" ? "alert" : "status"}
+            >
+              {newsletterMessage}
+            </p>
+          )}
         </form>
       </section>
 
       <SiteFooter />
-
 
     </main>
   );
