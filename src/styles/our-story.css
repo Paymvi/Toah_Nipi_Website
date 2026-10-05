@@ -94,12 +94,14 @@
       font-size: 1rem;
       line-height: 1.65;
    }
+
 }
 
 @media (max-width: 430px) {
    .our-story-hero {
       padding-inline: 18px;
    }
+
 }
 
 .story-timeline-header {
@@ -477,25 +479,37 @@
 /* Buttons */
 
 .story-timeline-btn {
-   position: absolute;
-   top: 50%;
-   z-index: 5;
-   width: 52px;
-   height: 52px;
-   border: 1px solid rgba(247, 241, 223, 0.18);
-   border-radius: 999px;
-   background: #343814;
-   color: #f7f1df;
-   font-size: 2.3rem;
-   line-height: 1;
-   cursor: pointer;
-   display: grid;
-   place-items: center;
-   box-shadow: 0 14px 32px rgba(52, 56, 20, 0.28);
-   transition:
-      transform 180ms ease,
-      background-color 180ms ease,
-      opacity 180ms ease;
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+
+  width: 52px;
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 0 8px;
+
+  border: 1px solid rgba(247, 241, 223, 0.18);
+  border-radius: 999px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #343814;
+  color: #f7f1df;
+
+  font-size: 2.3rem;
+  line-height: 1;
+  text-align: center;
+
+  cursor: pointer;
+
+  box-shadow: 0 14px 32px rgba(52, 56, 20, 0.28);
+
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    opacity 180ms ease;
 }
 
 .story-timeline-btn:hover {
@@ -567,6 +581,7 @@
    .story-timeline-hint {
       text-align: left;
    }
+
 }
 
 /* Mobile */
@@ -611,6 +626,7 @@
    .story-timeline-wrapper::before {
       top: 238px;
    }
+
 }
 
 /* statement of faith */
@@ -772,6 +788,7 @@
    .statement-faith-copy > p:not(.statement-faith-eyebrow) {
       max-width: 680px;
    }
+
 }
 
 /* Mobile */
@@ -795,6 +812,7 @@
    .statement-faith-closing {
       padding: 30px 24px;
    }
+
 }
 
 /* core values */
@@ -912,6 +930,7 @@
       margin-bottom: 48px;
       font-size: 1.08rem;
    }
+
 }
 
 /* Mobile */
@@ -943,6 +962,7 @@
       font-size: 1rem;
       line-height: 1.65;
    }
+
 }
 
 /* Our team */
@@ -1158,6 +1178,7 @@
    .our-team-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
    }
+
 }
 
 /* Mobile */
@@ -1187,6 +1208,7 @@
    .team-member-photo {
       height: 260px;
    }
+
 }
 
 .our-team-group + .our-team-group {
@@ -1257,6 +1279,7 @@
       gap: 10px;
       margin-bottom: 38px;
    }
+
 }
 
 .story-timeline-heading p {
@@ -1627,6 +1650,7 @@
    .vision-statement .statement-copy {
       max-width: 720px;
    }
+
 }
 
 /* =========================================================
@@ -1671,4 +1695,5 @@
       font-size: 1.12rem;
       line-height: 1.42;
    }
+
 }

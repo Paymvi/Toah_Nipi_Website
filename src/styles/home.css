@@ -695,27 +695,31 @@
 }
 
 .carousel-btn {
-   position: absolute;
-   top: 45%;
-   z-index: 8;
-   width: 52px;
-   height: 52px;
-   border: 1px solid rgba(247, 241, 223, 0.36);
-   border-radius: var(--tn-radius-pill);
-   display: grid;
-   place-items: center;
-   background: rgba(247, 241, 223, 0.94);
-   color: #303614;
-   font-size: 2rem;
-   line-height: 1;
-   cursor: pointer;
-   box-shadow:
-      0 16px 34px rgba(0, 0, 0, 0.25),
-      inset 0 1px 0 rgba(255, 255, 255, 0.75);
-   transition:
-      transform 180ms ease,
-      background-color 180ms ease,
-      box-shadow 180ms ease;
+  position: absolute;
+  top: 45%;
+  z-index: 8;
+  width: 52px;
+  height: 52px;
+  box-sizing: border-box;
+  padding: 0 0 8px;
+  border: 1px solid rgba(247, 241, 223, 0.36);
+  border-radius: var(--tn-radius-pill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(247, 241, 223, 0.94);
+  color: #303614;
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer;
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .carousel-btn-left {
@@ -1052,6 +1056,7 @@
    .newsletter-form-row {
       grid-template-columns: 1fr;
    }
+
 }
 
 @media (max-width: 768px) {
@@ -1085,10 +1090,8 @@
    .carousel-btn {
       display: none;
    }
+
 }
-
-
-
 
 /* Newsletter Form Submission */
 
