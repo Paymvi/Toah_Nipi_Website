@@ -17,10 +17,8 @@ import {
   getRelationshipInitials,
 } from "../data/relationships";
 
-
 const giveUrl =
   "https://cwngui.campwise.com/Apps/OnlineGuestDonations/Index.html?AppID=MKQ4U6RZOHHSNINZSCJV3VSRQQ3QHB&LocCde=CA0000";
-
 
 const partnerWays = [
   {
@@ -68,7 +66,6 @@ const partnerWays = [
     tone: "share",
   },
 ];
-
 
 const featureSections = [
   {
@@ -156,7 +153,6 @@ const featureSections = [
   },
 ];
 
-
 const projectImpacts = [
   {
     id: "christmas-walk",
@@ -196,7 +192,6 @@ const projectImpacts = [
   },
 ];
 
-
 const relationshipOrganizations = [...relationships].sort((a, b) => {
   if (b.rank !== a.rank) {
     return b.rank - a.rank;
@@ -205,6 +200,9 @@ const relationshipOrganizations = [...relationships].sort((a, b) => {
   return a.name.localeCompare(b.name);
 });
 
+const directoryRelationshipCategories = relationshipCategories.filter(
+  (category) => category.label !== "Community Affiliations"
+);
 
 const relationshipCategoryLabels =
   relationshipCategories.reduce((labels, category) => {
@@ -214,7 +212,6 @@ const relationshipCategoryLabels =
 
     return labels;
   }, {});
-
 
 function ProjectBookPage({ project, index }) {
   const nextIndex = (index + 1) % projectImpacts.length;
@@ -247,7 +244,6 @@ function ProjectBookPage({ project, index }) {
   );
 }
 
-
 function Partner() {
   const [activeProject, setActiveProject] = useState(0);
   const [turningTo, setTurningTo] = useState(null);
@@ -256,7 +252,6 @@ function Partner() {
     useState("all");
 
   const [relationshipSearch, setRelationshipSearch] = useState("");
-
 
   const selectedProject = projectImpacts[activeProject];
 
@@ -270,7 +265,6 @@ function Partner() {
 
   const revealedProject =
     projectImpacts[revealedProjectIndex];
-
 
   const normalizedRelationshipSearch =
     relationshipSearch.trim().toLowerCase();
@@ -290,7 +284,6 @@ function Partner() {
       return matchesCategory && matchesSearch;
     });
 
-
   const handleCardClick = (event, href) => {
     if (!href.startsWith("#")) return;
 
@@ -308,7 +301,6 @@ function Partner() {
     }
   };
 
-
   const startPageTurn = (targetIndex) => {
     if (isPageTurning) return;
     if (targetIndex === activeProject) return;
@@ -316,11 +308,9 @@ function Partner() {
     setTurningTo(targetIndex);
   };
 
-
   const turnToNextPage = () => {
     startPageTurn(nextProjectIndex);
   };
-
 
   const finishPageTurn = (event) => {
     if (event.target !== event.currentTarget) return;
@@ -330,7 +320,6 @@ function Partner() {
     setTurningTo(null);
   };
 
-
   return (
     <main className="partner-page">
 
@@ -339,7 +328,6 @@ function Partner() {
         description="Partner with Toah Nipi through giving, volunteering, prayer, sharing the mission, and connecting with the churches, ministries, schools, organizations, and friends who make up the Toah Nipi community."
         path="/partner"
       />
-
 
       <section className="partner-hero">
         <div className="partner-hero-overlay" />
@@ -380,7 +368,6 @@ function Partner() {
           </div>
         </div>
       </section>
-
 
       <section className="partner-ways-section" id="partner-ways">
         <div className="partner-section-heading reveal-group">
@@ -441,7 +428,6 @@ function Partner() {
         </div>
       </section>
 
-
       <section className="partner-impact-band reveal-group">
         <div>
           <p className="partner-eyebrow partner-eyebrow-light">
@@ -461,14 +447,12 @@ function Partner() {
         </p>
       </section>
 
-
       <section
         id="giving-projects"
         className="partner-giving-projects"
       >
         <EventCarousel3 />
       </section>
-
 
       <section
         className="partner-project-section reveal-group"
@@ -588,7 +572,6 @@ function Partner() {
         </div>
       </section>
 
-
       <section className="partner-feature-stack">
         {featureSections.map((section, index) => (
           <article
@@ -653,7 +636,6 @@ function Partner() {
           </article>
         ))}
       </section>
-
 
       <section className="partner-recognition-section">
         <div className="partner-recognition-image">
@@ -723,7 +705,6 @@ function Partner() {
         </div>
       </section>
 
-
       <section className="partner-community-band reveal-group">
         <div>
           <p className="partner-eyebrow partner-eyebrow-light">
@@ -741,7 +722,6 @@ function Partner() {
           give here, pray here, and help carry the mission forward.
         </p>
       </section>
-
 
       <section
         className="relationship-directory-section reveal-group"
@@ -798,7 +778,7 @@ function Partner() {
               className="relationship-directory-filters"
               aria-label="Filter directory by category"
             >
-              {relationshipCategories.map((category) => {
+              {directoryRelationshipCategories.map((category) => {
                 const count =
                   category.id === "all"
                     ? relationshipOrganizations.length
@@ -923,7 +903,6 @@ function Partner() {
         </div>
       </section>
 
-
       <section className="donors-final-cta">
         <div className="donors-final-card reveal-group">
           <p className="donors-eyebrow donors-eyebrow-light">
@@ -944,14 +923,10 @@ function Partner() {
         </div>
       </section>
 
-
-
-
       <SiteFooter />
 
     </main>
   );
 }
-
 
 export default Partner;

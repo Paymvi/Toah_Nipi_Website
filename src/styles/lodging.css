@@ -129,7 +129,7 @@
 }
 
 .lodging-comparison-header {
-   max-width: 1180px;
+   max-width: 1060px;
    margin: 0 auto 34px;
    display: block;
    text-align: left;
@@ -165,7 +165,7 @@
 }
 
 .lodging-comparison-table-wrap {
-   max-width: 1180px;
+   max-width: 1060px;
    margin: 0 auto;
    overflow-x: auto;
    border: 1px solid rgba(60, 61, 31, 0.11);
@@ -175,15 +175,16 @@
 }
 
 .lodging-comparison-table {
+   --lodging-comparison-text-size: 0.76rem;
    width: 100%;
-   min-width: 1080px;
+   min-width: 980px;
    border-collapse: collapse;
    background: #fffaf0;
    text-align: left;
 }
 
 .lodging-comparison-table th {
-   padding: 16px 22px;
+   padding: 16px 18px;
    background: #303614;
    color: rgba(247, 241, 223, 0.92);
    font-size: 0.64rem;
@@ -194,7 +195,7 @@
 }
 
 .lodging-comparison-table td {
-   padding: 24px 22px;
+   padding: 24px 18px;
    vertical-align: top;
    border-top: 1px solid rgba(60, 61, 31, 0.1);
    background: #fffaf0;
@@ -204,12 +205,19 @@
    font-weight: 400;
 }
 
+/* Match Best For, Bathrooms, and Meeting Space to the highlight tags. */
+.lodging-comparison-table td:nth-child(2),
+.lodging-comparison-table td:nth-child(4),
+.lodging-comparison-table td:nth-child(5) {
+   font-size: var(--lodging-comparison-text-size);
+}
+
 .lodging-comparison-table tbody tr:hover td {
    background: #fffdf6;
 }
 
 .lodging-comparison-name-cell {
-   width: 190px;
+   width: 160px;
 }
 
 .lodging-comparison-name-cell strong {
@@ -268,14 +276,14 @@
    border-radius: 7px;
    background: rgba(232, 229, 207, 0.48);
    color: rgba(48, 54, 20, 0.84);
-   font-size: 0.76rem;
+   font-size: var(--lodging-comparison-text-size);
    font-weight: 550;
    line-height: 1.2;
    white-space: nowrap;
 }
 
 .lodging-comparison-action-cell {
-   width: 105px;
+   width: 95px;
    text-align: right;
 }
 
@@ -311,7 +319,7 @@
 }
 
 .lodging-comparison-note {
-   max-width: 1180px;
+   max-width: 1060px;
    margin: 15px auto 0;
    color: rgba(60, 61, 31, 0.54);
    font-size: 0.84rem;
