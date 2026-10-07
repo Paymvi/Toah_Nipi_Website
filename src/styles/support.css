@@ -213,8 +213,8 @@
 .partner-intro-text p {
   margin: 0;
   color: rgba(58, 59, 31, 0.88);
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
-  line-height: 1.72;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 /* WAY CARDS */
@@ -234,11 +234,11 @@
 .partner-way-card {
   position: relative;
   overflow: hidden;
-  min-height: 430px;
+  min-height: 390px;
   display: grid;
-  grid-template-rows: 136px 1fr;
+  grid-template-rows: 120px 1fr;
   border: 1px solid rgba(60, 61, 31, 0.14);
-  border-radius: 22px;
+  border-radius: 20px;
   background: #fbf7e6;
   color: #343518;
   text-decoration: none;
@@ -259,7 +259,7 @@
 
 .partner-way-logo-panel {
   position: relative;
-  padding: 24px 26px;
+  padding: 20px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -282,8 +282,8 @@
 }
 
 .partner-way-number {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -297,8 +297,8 @@
 }
 
 .partner-way-icon {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   stroke-width: 1.15;
   opacity: 0.92;
 }
@@ -307,13 +307,13 @@
 
 .partner-way-content {
   min-width: 0;
-  padding: 30px 30px 28px;
+  padding: 26px 26px 24px;
   display: flex;
   flex-direction: column;
 }
 
 .partner-way-kicker {
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   color: rgba(60, 61, 31, 0.56);
   font-size: 0.64rem;
   font-weight: 800;
@@ -325,17 +325,17 @@
   margin: 0;
   color: #343518;
   font-family: var(--font-cooper);
-  font-size: clamp(1.7rem, 2.1vw, 2.25rem);
-  line-height: 0.96;
+  font-size: clamp(1.55rem, 1.9vw, 2rem);
+  line-height: 1;
   font-weight: 400;
   letter-spacing: -0.045em;
 }
 
 .partner-way-content > p:not(.partner-way-kicker) {
-  margin: 18px 0 0;
+  margin: 16px 0 0;
   color: rgba(58, 59, 31, 0.78);
-  font-size: 0.94rem;
-  line-height: 1.58;
+  font-size: 0.92rem;
+  line-height: 1.55;
 }
 
 .partner-card-link {
@@ -400,8 +400,8 @@
   max-width: 680px;
   margin: 0;
   color: #ded8ba;
-  font-size: clamp(0.97rem, 1.08vw, 1.08rem);
-  line-height: 1.7;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 /* FEATURE SECTIONS */
@@ -492,8 +492,8 @@
   max-width: 580px;
   margin: 26px 0 0;
   color: rgba(58, 59, 31, 0.88);
-  font-size: clamp(0.98rem, 1.2vw, 1.0rem);
-  line-height: 1.66;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 .partner-text-link {
@@ -549,8 +549,8 @@
   max-width: 560px;
   margin: 0;
   color: #4e5430;
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
-  line-height: 1.72;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 .partner-carousel-shell {
@@ -1025,8 +1025,8 @@
   max-width: 540px;
   margin: 0;
   color: rgba(58, 59, 31, 0.79);
-  font-size: clamp(0.94rem, 1.15vw, 1.03rem);
-  line-height: 1.68;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 /* =========================================================
@@ -3472,8 +3472,8 @@ a.relationship-directory-card:hover {
 .partners-intro-text p {
   margin: 0;
   color: rgba(58, 59, 31, 0.88);
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
-  line-height: 1.72;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 /* Feature rows */
@@ -3555,8 +3555,8 @@ a.relationship-directory-card:hover {
   max-width: 640px;
   margin: 18px 0 30px;
   color: rgba(58, 59, 31, 0.84);
-  font-size: clamp(0.96rem, 1.15vw, 1.04rem);
-  line-height: 1.68;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 /* Logo cards */
@@ -3680,8 +3680,8 @@ a.relationship-directory-card:hover {
   max-width: 680px;
   margin: 0;
   color: #ded8ba;
-  font-size: clamp(0.97rem, 1.08vw, 1.08rem);
-  line-height: 1.7;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 /* =========================================================
@@ -4878,7 +4878,7 @@ a.relationship-directory-card:hover {
 
 .partner-section-heading {
   width: min(1220px, calc(100% - 48px));
-  margin: 0 auto 48px;
+  margin: 0 auto 40px;
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.65fr);
   gap: clamp(36px, 7vw, 90px);
@@ -4890,8 +4890,8 @@ a.relationship-directory-card:hover {
   margin: 0;
   color: #343518;
   font-family: var(--font-cooper);
-  font-size: clamp(2.05rem, 4.6vw, 3.05rem);
-  line-height: 0.94;
+  font-size: clamp(1.95rem, 4.2vw, 2.85rem);
+  line-height: 0.98;
   letter-spacing: -0.045em;
   font-weight: 400;
 }
@@ -4900,8 +4900,8 @@ a.relationship-directory-card:hover {
   max-width: 560px;
   margin: 0;
   color: rgba(58, 59, 31, 0.8);
-  font-size: clamp(0.96rem, 1.15vw, 1.04rem);
-  line-height: 1.7;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 /* =========================================================
@@ -4956,8 +4956,8 @@ a.relationship-directory-card:hover {
   max-width: 560px;
   margin: 0;
   color: #4e5430;
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
-  line-height: 1.72;
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }
 
 .partner-project-layout {
@@ -5271,4 +5271,10 @@ a.relationship-directory-card:hover {
     width: 100%;
   }
 
+}
+
+/* Match giving project introductions to the Ways to Partner paragraph. */
+.partner-giving-projects .partner-projects-header > p {
+  font-size: clamp(0.96rem, 1.1vw, 1rem);
+  line-height: 1.6;
 }

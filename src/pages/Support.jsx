@@ -377,7 +377,7 @@ function Partner() {
             </p>
 
             <h2>
-              There is more than one way to be part of what happens here.
+              Help Toah Nipi thrive.
             </h2>
           </div>
 

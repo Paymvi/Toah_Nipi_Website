@@ -299,7 +299,7 @@
    position: absolute;
    left: 40px;
    right: 40px;
-   top: 270px;
+   top: 239px;
    height: 3px;
    border-radius: 999px;
    background: linear-gradient(
@@ -315,11 +315,11 @@
    position: relative;
    z-index: 1;
    display: flex;
-   gap: 28px;
+   gap: 24px;
    overflow-x: auto;
    scroll-behavior: smooth;
    scroll-snap-type: x mandatory;
-   padding: 18px 6px 42px;
+   padding: 18px 6px 32px;
    scrollbar-width: none;
 }
 
@@ -331,14 +331,14 @@
 
 .story-timeline-card {
    position: relative;
-   flex: 0 0 370px;
+   flex: 0 0 340px;
    scroll-snap-align: start;
    display: flex;
    flex-direction: column;
-   min-height: 560px;
+   min-height: 480px;
    overflow: hidden;
    border: 1px solid rgba(60, 61, 31, 0.15);
-   border-radius: 28px;
+   border-radius: 24px;
    background: rgba(248, 243, 219, 0.78);
    backdrop-filter: blur(10px);
    box-shadow: 0 22px 54px rgba(49, 51, 25, 0.11);
@@ -358,7 +358,7 @@
 
 .story-timeline-image-wrap {
    position: relative;
-   height: 220px;
+   height: 190px;
    overflow: hidden;
    background:
       linear-gradient(135deg, rgba(255, 249, 215, 0.72), rgba(140, 146, 82, 0.18));
@@ -412,7 +412,7 @@
 
 .story-timeline-dot-wrap {
    position: relative;
-   height: 72px;
+   height: 60px;
    display: grid;
    place-items: center;
    background: rgba(248, 243, 219, 0.72);
@@ -421,8 +421,8 @@
 .story-timeline-dot {
    position: relative;
    z-index: 2;
-   width: 30px;
-   height: 30px;
+   width: 26px;
+   height: 26px;
    border: 3px solid #f8f3db;
    border-radius: 999px;
    background: #4c551f;
@@ -447,24 +447,24 @@
 /* Text content */
 
 .story-timeline-card-content {
-   padding: 4px 30px 34px;
+   padding: 4px 24px 26px;
 }
 
 .story-timeline-year {
-   margin: 0 0 16px;
+   margin: 0 0 12px;
    color: #7c6f3d;
-   font-size: 0.82rem;
+   font-size: 0.76rem;
    font-weight: 900;
-   letter-spacing: 0.16em;
+   letter-spacing: 0.13em;
    text-transform: uppercase;
 }
 
 .story-timeline-card-content h3 {
-   margin: 0 0 14px;
+   margin: 0 0 12px;
    color: #37381b;
    font-family: var(--font-cooper);
-   font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-   line-height: 0.98;
+   font-size: clamp(1.15rem, 1.65vw, 1.35rem);
+   line-height: 1.05;
    font-weight: 400;
    letter-spacing: -0.035em;
 }
@@ -472,8 +472,8 @@
 .story-timeline-card-content p:not(.story-timeline-year) {
    margin: 0;
    color: rgba(66, 67, 35, 0.84);
-   font-size: 0.96rem;
-   line-height: 1.65;
+   font-size: 0.9rem;
+   line-height: 1.55;
 }
 
 /* Buttons */
@@ -483,10 +483,10 @@
   top: 50%;
   z-index: 5;
 
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   box-sizing: border-box;
-  padding: 0 0 8px;
+  padding: 0 0 7px;
 
   border: 1px solid rgba(247, 241, 223, 0.18);
   border-radius: 999px;
@@ -498,7 +498,7 @@
   background: #343814;
   color: #f7f1df;
 
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   line-height: 1;
   text-align: center;
 
@@ -517,7 +517,7 @@
 }
 
 .story-timeline-btn-left {
-   left: -26px;
+   left: -24px;
    transform: translateY(-50%);
 }
 
@@ -526,7 +526,7 @@
 }
 
 .story-timeline-btn-right {
-   right: -26px;
+   right: -24px;
    transform: translateY(-50%);
 }
 
@@ -560,18 +560,18 @@
    }
 
    .story-timeline-wrapper::before {
-      top: 252px;
+      top: 229px;
       left: 20px;
       right: 20px;
    }
 
    .story-timeline-card {
-      flex-basis: 330px;
-      min-height: 545px;
+      flex-basis: 310px;
+      min-height: 470px;
    }
 
    .story-timeline-image-wrap {
-      height: 205px;
+      height: 180px;
    }
 
    .story-timeline-btn {
@@ -597,34 +597,34 @@
    }
 
    .story-timeline-card {
-      flex: 0 0 84vw;
-      min-height: 535px;
-      border-radius: 22px;
+      flex: 0 0 80vw;
+      min-height: 460px;
+      border-radius: 20px;
    }
 
    .story-timeline-image-wrap {
-      height: 190px;
+      height: 170px;
    }
 
    .story-timeline-dot-wrap {
-      height: 64px;
+      height: 56px;
    }
 
    .story-timeline-dot {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
    }
 
    .story-timeline-card-content {
-      padding: 2px 26px 30px;
+      padding: 2px 22px 24px;
    }
 
    .story-timeline-card-content h3 {
-      font-size: 1.45rem;
+      font-size: 1.3rem;
    }
 
    .story-timeline-wrapper::before {
-      top: 238px;
+      top: 217px;
    }
 
 }
