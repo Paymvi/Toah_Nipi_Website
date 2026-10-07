@@ -461,10 +461,12 @@ const lodgingBuildings = [
     ],
   },
 
-    {
+  {
     id: "ajalon",
 
     title: "Ajalon",
+
+    seasonalAvailability: "May-October",
 
     description:
       "Ajalon is a quiet rustic cottage offering a simple, private place to stay away from the larger lodge buildings. It is a comfortable option for families, small groups, and guests looking for a quieter retreat setting.",
@@ -562,15 +564,15 @@ const lodgingBuildings = [
     ],
   },
 
-
-
   {
     id: "capernaum",
 
     title: "Capernaum",
 
+    seasonalAvailability: "May–October",
+
     description:
-      "Capernaum is a small rustic cottage surrounded by the peaceful camp setting, offering a simple and private place for personal retreats, couples, families, and small groups.",
+      "Capernaum is a small rustic cottage near the pond, offering a simple and private place for personal retreats, couples, families, and small groups.",
 
     images: [
       {
@@ -578,12 +580,12 @@ const lodgingBuildings = [
         alt: "Exterior view of Capernaum cottage",
       },
 
-            {
+      {
         src: "/Capernaum-inside-2.jpeg",
         alt: "Interior view of Capernaum",
       },
 
-            {
+      {
         src: "/Capernaum-inside-1.jpeg",
         alt: "Interior view of Capernaum",
       },
@@ -592,7 +594,7 @@ const lodgingBuildings = [
     facts: [
       {
         label: "Sleeps",
-        value: "Up to 5 guests",
+        value: "Up to 8 guests",
       },
 
       {
@@ -697,7 +699,6 @@ function LodgingSectionDivider({
   );
 }
 
-
 function LodgeSection({ building }) {
   const [activeImage, setActiveImage] = useState(0);
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -736,27 +737,27 @@ function LodgeSection({ building }) {
             }`}
           />
 
-            {building.images.length > 1 && (
-              <>
-                <button
-                  className="gallery-arrow gallery-arrow-left"
-                  type="button"
-                  onClick={goToPreviousImage}
-                  aria-label="Previous image"
-                >
-                  ‹
-                </button>
+          {building.images.length > 1 && (
+            <>
+              <button
+                className="gallery-arrow gallery-arrow-left"
+                type="button"
+                onClick={goToPreviousImage}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
 
-                <button
-                  className="gallery-arrow gallery-arrow-right"
-                  type="button"
-                  onClick={goToNextImage}
-                  aria-label="Next image"
-                >
-                  ›
-                </button>
-              </>
-            )}
+              <button
+                className="gallery-arrow gallery-arrow-right"
+                type="button"
+                onClick={goToNextImage}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+            </>
+          )}
 
         </div>
 
@@ -778,7 +779,6 @@ function LodgeSection({ building }) {
           </div>
         )}
 
-
       </div>
 
       <div className="lodge-info">
@@ -786,6 +786,31 @@ function LodgeSection({ building }) {
           <p className="lodge-section-label">Lodging Option</p>
 
           <h2>{building.title}</h2>
+
+          {building.seasonalAvailability && (
+            <div className="lodge-seasonal-notice">
+              <svg
+                className="lodge-seasonal-notice-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M16 3v4M8 3v4M3 11h18" />
+                <path d="M8 15h2M14 15h2M8 18h2" />
+              </svg>
+
+              <div className="lodge-seasonal-notice-copy">
+                <span>Seasonal lodging only</span>
+                <strong>Available {building.seasonalAvailability}</strong>
+              </div>
+            </div>
+          )}
 
           <p>{building.description}</p>
 
@@ -856,7 +881,6 @@ export default function Lodging() {
 
   return (
     <main className="lodging-page">
-
       <SEO
         title="Lodging for Retreats in New Hampshire"
         description="Stay at Toah Nipi in Rindge, NH with lodging for churches, families, ministries, and retreat groups, including Hebron, Bethel, Dothan, cottages, and the Guest House."
@@ -927,8 +951,7 @@ export default function Lodging() {
         </div>
       </section>
 
-      <SiteFooter/>
-
+      <SiteFooter />
     </main>
   );
 }

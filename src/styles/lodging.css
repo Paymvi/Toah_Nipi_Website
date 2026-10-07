@@ -518,36 +518,87 @@
    font-weight: 400;
 }
 
+/* =========================================================
+   Seasonal cottage availability
+========================================================= */
+
+.lodge-seasonal-notice {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   width: 100%;
+   box-sizing: border-box;
+   margin-top: 20px;
+   padding: 16px 18px;
+   border: 1px solid #b18a3e;
+   border-left: 5px solid #9b7029;
+   border-radius: 10px;
+   background: #f7edcf;
+   color: #5b451a;
+}
+
+.lodge-seasonal-notice-icon {
+   display: block;
+   flex: 0 0 24px;
+   width: 24px;
+   height: 24px;
+}
+
+.lodge-seasonal-notice-copy {
+   min-width: 0;
+}
+
+.lodge-seasonal-notice-copy > span {
+   display: block;
+   margin: 0 0 5px;
+   color: #5b451a;
+   font-size: 0.6rem;
+   font-weight: 800;
+   line-height: 1.35;
+   letter-spacing: 0.04em;
+   text-transform: uppercase;
+}
+
+.lodge-seasonal-notice-copy > strong {
+   display: block;
+   color: #433311;
+   font-size: 0.9rem;
+   font-weight: 750;
+   line-height: 1.4;
+   letter-spacing: 0;
+}
+
 .lodge-quick-facts {
    display: grid;
    grid-template-columns: repeat(2, minmax(0, 1fr));
-   gap: 12px;
-   margin-top: 30px;
+   gap: 10px;
+   margin-top: 26px;
 }
 
 .lodge-quick-fact {
-   min-height: 96px;
-   padding: 17px 18px;
+   box-sizing: border-box;
+   min-height: 76px;
+   padding: 12px 15px;
    border: 1px solid rgba(38, 48, 15, 0.13);
-   border-radius: 12px;
+   border-radius: 10px;
    background: rgba(255, 250, 240, 0.62);
    box-shadow: 0 10px 26px rgba(49, 51, 25, 0.05);
 }
 
 .lodge-quick-fact span {
    display: block;
-   margin-bottom: 9px;
+   margin-bottom: 6px;
    color: rgba(60, 61, 31, 0.55);
    text-transform: uppercase;
    letter-spacing: 0.11em;
-   font-size: 0.62rem;
+   font-size: 0.6rem;
    font-weight: 750;
 }
 
 .lodge-quick-fact strong {
    display: block;
    color: rgba(38, 48, 15, 0.88);
-   font-size: 0.96rem;
+   font-size: 0.9rem;
    line-height: 1.35;
    font-weight: 550;
 }
@@ -928,7 +979,7 @@
       padding: 80px 20px;
    }
 
-      .lodging-section-divider {
+   .lodging-section-divider {
       padding:
          68px
          20px
