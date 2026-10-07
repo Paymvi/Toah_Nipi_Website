@@ -473,6 +473,10 @@ const lodgingBuildings = [
 
     images: [
       {
+        src: "/Ajalon-Fall-2.jpg",
+        alt: "Exterior view of Ajalon cottage",
+      },
+      {
         src: "/Ajalon.png",
         alt: "Exterior view of Ajalon cottage",
       },
