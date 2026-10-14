@@ -42,7 +42,7 @@ export default function OurStory() {
 
       <StoryTimeline />
       <StatementOfFaith />
-      {/* <CoreValues /> */}
+      <CoreValues />
       <MissionVision />
       <OurTeam />
 
