@@ -1,5 +1,3 @@
-
-
 const faithItems = [
   "The only true God, the almighty Creator of all things, existing eternally in three persons—Father, Son, and Holy Spirit—full of love and glory.",
   "The unique divine inspiration, entire trustworthiness, and authority of the Bible.",
@@ -13,34 +11,58 @@ const faithItems = [
 
 export default function StatementOfFaith() {
   return (
-    <section className="statement-faith-section" id="statement-of-faith">
+    <section
+      className="statement-faith-section"
+      id="statement-of-faith"
+    >
       <div className="statement-faith-inner reveal-group">
-        <div className="statement-faith-copy">
-          <p className="statement-faith-eyebrow">What We Believe</p>
 
-          <h2>Our Statement of Faith</h2>
+        <header className="statement-faith-header">
+          <p className="statement-faith-eyebrow">
+            What We Believe
+          </p>
 
-          <p>
+          <h2>
+            Our Statement of Faith
+          </h2>
+
+          <p className="statement-faith-description">
             At the heart of Toah Nipi is a Christian vision for renewal,
             discipleship, hospitality, and worship. These beliefs shape how we
             steward this place and welcome guests.
           </p>
-        </div>
+        </header>
 
-        <div className="statement-faith-list">
-          <p className="statement-faith-intro">We believe in:</p>
+        <div className="statement-faith-block">
 
-          {faithItems.map((item, index) => (
-            <article className="statement-faith-card" key={index}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <p>{item}</p>
-            </article>
-          ))}
+          <p className="statement-faith-intro">
+            We believe in:
+          </p>
+
+          <div className="statement-faith-text">
+            {faithItems.map((item, index) => (
+              <p
+                className="statement-faith-item"
+                key={index}
+              >
+                <span className="statement-faith-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span>
+                  {item}
+                </span>
+              </p>
+            ))}
+          </div>
 
           <div className="statement-faith-closing">
+            <span />
             <p>To God be glory forever.</p>
           </div>
+
         </div>
+
       </div>
     </section>
   );

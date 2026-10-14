@@ -16,7 +16,7 @@ const lodgingOptions = [
     label: "Family Style",
     bestFor:
       "Large groups and families that benefit from private bathrooms and shared gathering space.",
-    sleeps: "72",
+    sleeps: "70",
     bathrooms: "Private bathrooms",
     meetingSpace: "Several rooms",
     highlights: ["10 family-style bedrooms", "Lake views", "Kitchenette", "Open fireplace"],

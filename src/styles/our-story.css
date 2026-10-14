@@ -1,5 +1,7 @@
 /* =========================================================
+
      OUR STORY PAGE
+
 ========================================================= */
 
 .our-story-page {
@@ -7,8 +9,11 @@
 }
 
 /* =========================================================
+
      OUR STORY HERO
+
 ========================================================= */
+
 .our-story-hero {
    position: relative;
    min-height: 740px;
@@ -83,19 +88,20 @@
 }
 
 /* =========================================================
+
      RESPONSIVE
+
 ========================================================= */
+
 @media (max-width: 760px) {
    .our-story-hero {
       min-height: 660px;
       padding: 145px 24px 82px;
       background-position: center;
    }
-
    .our-story-hero h1 {
       font-size: clamp(2.7rem, 11vw, 4rem);
    }
-
    .our-story-hero-content > p:not(.our-story-eyebrow) {
       font-size: 1rem;
       line-height: 1.65;
@@ -544,36 +550,29 @@
    .story-timeline-section {
       padding: 86px 24px;
    }
-
    .story-timeline-header {
       text-align: left;
       margin-bottom: 46px;
    }
-
    .story-timeline-header > p:not(.story-timeline-eyebrow) {
       margin-left: 0;
       margin-right: 0;
    }
-
    .story-timeline-wrapper::before {
       top: 229px;
       left: 20px;
       right: 20px;
    }
-
    .story-timeline-card {
       flex-basis: 310px;
       min-height: 470px;
    }
-
    .story-timeline-image-wrap {
       height: 180px;
    }
-
    .story-timeline-btn {
       display: none;
    }
-
    .story-timeline-hint {
       text-align: left;
    }
@@ -585,230 +584,312 @@
    .story-timeline-section {
       padding: 76px 20px;
    }
-
    .story-timeline-track {
       gap: 18px;
       padding-bottom: 28px;
    }
-
    .story-timeline-card {
       flex: 0 0 80vw;
       min-height: 460px;
       border-radius: 20px;
    }
-
    .story-timeline-image-wrap {
       height: 170px;
    }
-
    .story-timeline-dot-wrap {
       height: 56px;
    }
-
    .story-timeline-dot {
       width: 24px;
       height: 24px;
    }
-
    .story-timeline-card-content {
       padding: 2px 22px 24px;
    }
-
    .story-timeline-card-content h3 {
       font-size: 1.3rem;
    }
-
    .story-timeline-wrapper::before {
       top: 217px;
    }
 }
 
 /* =========================================================
+
    STATEMENT OF FAITH
+
 ========================================================= */
 
 .statement-faith-section {
   position: relative;
   z-index: 2;
-
-  padding: 110px clamp(24px, 7vw, 96px);
-
+  overflow: hidden;
+  padding: 82px clamp(24px, 7vw, 96px) 88px;
   background:
     radial-gradient(
-      circle at bottom right,
-      rgba(255, 249, 215, 0.5),
-      transparent 34%
+      circle at 8% 8%,
+      rgba(247, 241, 223, 0.08),
+      transparent 30%
     ),
-    #f7f1df;
-
-  color: #3c3d1f;
-}
-
-.statement-faith-inner {
-  width: 100%;
-  max-width: 1220px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: clamp(44px, 7vw, 96px);
-
-  align-items: start;
-}
-
-.statement-faith-copy {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 110px;
-
-  align-self: start;
-  height: fit-content;
-  max-width: 540px;
-
-  z-index: 3;
-}
-
-.statement-faith-list {
-  min-width: 0;
-
-  display: grid;
-  gap: 16px;
-}
-
-.statement-faith-intro {
-   margin: 0 0 8px;
-   color: #343518;
-   font-family: var(--font-cooper);
-   font-size: clamp(1.2rem, 1.8vw, 1.5rem);
-   line-height: 1;
-   font-weight: 400;
-}
-
-.statement-faith-card {
-   position: relative;
-   overflow: hidden;
-   display: grid;
-   grid-template-columns: 54px 1fr;
-   gap: 22px;
-   align-items: start;
-   padding: 26px 28px;
-   border: 1px solid rgba(60, 61, 31, 0.14);
-   border-radius: 16px;
-   background: rgba(247, 242, 216, 0.66);
-   box-shadow: 0 16px 38px rgba(49, 51, 25, 0.07);
-   transition:
-      transform 220ms ease,
-      background-color 220ms ease,
-      box-shadow 220ms ease;
-}
-
-.statement-faith-card::before {
-   content: "";
-   position: absolute;
-   top: 0;
-   left: 28px;
-   right: 28px;
-   height: 4px;
-   border-radius: 999px;
-   background: rgba(61, 62, 32, 0.2);
-}
-
-.statement-faith-card:hover {
-   transform: translateY(-4px);
-   background: rgba(255, 252, 232, 0.78);
-   box-shadow: 0 22px 52px rgba(49, 51, 25, 0.11);
-}
-
-.statement-faith-card span {
-   width: 42px;
-   height: 42px;
-   display: inline-flex;
-   align-items: center;
-   justify-content: center;
-   border: 1.5px solid rgba(61, 62, 32, 0.42);
-   border-radius: 999px;
-   color: rgba(61, 62, 32, 0.72);
-   font-family: var(--font-cooper);
-   font-size: 0.95rem;
-   line-height: 1;
-}
-
-.statement-faith-card p {
-   margin: 0;
-   color: rgba(66, 67, 35, 0.86);
-   font-size: clamp(0.96rem, 1.1vw, 1.04rem);
-   line-height: 1.65;
-}
-
-.statement-faith-closing {
-   margin-top: 8px;
-   padding: 34px 30px;
-   border-radius: 18px;
-   background: #343814;
-   color: #f7f1df;
-   text-align: center;
-   box-shadow: 0 20px 48px rgba(52, 56, 20, 0.18);
-}
-
-.statement-faith-closing p {
-   margin: 0;
-   color: #f7f1df;
-   font-family: var(--font-cooper);
-   font-size: clamp(1.55rem, 3vw, 2.3rem);
-   line-height: 0.95;
-   font-weight: 400;
-   letter-spacing: -0.04em;
-}
-
-/* Tablet */
-
-@media (max-width: 760px) {
-  .statement-faith-inner {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .statement-faith-copy {
-    position: static;
-    max-width: 760px;
-  }
-
-  .statement-faith-copy > p:not(.statement-faith-eyebrow) {
-    max-width: 680px;
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 620px) {
-   .statement-faith-section {
-      padding: 78px 20px;
-   }
-
-   .statement-faith-card {
-      grid-template-columns: 1fr;
-      gap: 16px;
-      padding: 26px 24px;
-   }
-
-   .statement-faith-card span {
-      width: 38px;
-      height: 38px;
-   }
-
-   .statement-faith-closing {
-      padding: 30px 24px;
-   }
+    radial-gradient(
+      circle at 92% 88%,
+      rgba(247, 241, 223, 0.05),
+      transparent 28%
+    ),
+    #343814;
+  color: #f7f1df;
 }
 
 /* =========================================================
+
+   INNER
+
+========================================================= */
+
+.statement-faith-inner {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+
+   HEADER
+
+========================================================= */
+
+.statement-faith-header {
+  max-width: 900px;
+  margin: 0 0 38px;
+}
+
+.statement-faith-eyebrow {
+  margin: 0 0 13px;
+  color: rgba(247, 241, 223, 0.72);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statement-faith-header h2 {
+  margin: 0;
+  color: #f7f1df;
+  font-family: var(--font-cooper);
+  font-size: clamp(2.15rem, 4vw, 3rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.statement-faith-description {
+  max-width: 760px;
+  margin: 18px 0 0;
+  color: rgba(247, 241, 223, 0.8);
+  font-size: clamp(0.86rem, 0.92vw, 0.94rem);
+  line-height: 1.53;
+}
+
+/* =========================================================
+
+   MAIN STATEMENT BLOCK
+
+========================================================= */
+
+.statement-faith-block {
+  position: relative;
+  padding: clamp(28px, 3.5vw, 44px) clamp(26px, 4vw, 52px);
+  border: 1px solid rgba(247, 241, 223, 0.18);
+  border-radius: 18px;
+  background: rgba(247, 241, 223, 0.96);
+  box-shadow: 0 18px 45px rgba(18, 22, 10, 0.24);
+}
+
+.statement-faith-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: clamp(26px, 4vw, 52px);
+  width: 70px;
+  height: 3px;
+  border-radius: 999px;
+  background: rgba(124, 111, 61, 0.42);
+}
+
+/* =========================================================
+
+   INTRO
+
+========================================================= */
+
+.statement-faith-intro {
+  margin: 0 0 18px;
+  color: rgba(60, 61, 31, 0.62);
+  font-size: 0.67rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+
+   FAITH TEXT
+
+========================================================= */
+
+.statement-faith-text {
+  max-width: 1080px;
+}
+
+.statement-faith-item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  margin: 0;
+  padding: 10px 0;
+  color: rgba(58, 59, 31, 0.88);
+  font-size: clamp(0.86rem, 0.92vw, 0.94rem);
+  line-height: 1.53;
+}
+
+.statement-faith-item + .statement-faith-item {
+  border-top: 1px solid rgba(60, 61, 31, 0.09);
+}
+
+.statement-faith-number {
+  padding-top: 3px;
+  color: rgba(124, 111, 61, 0.58);
+  font-size: 0.62rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+/* =========================================================
+
+   CLOSING
+
+========================================================= */
+
+.statement-faith-closing {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(60, 61, 31, 0.16);
+}
+
+.statement-faith-closing > span {
+  width: 34px;
+  height: 2px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: rgba(124, 111, 61, 0.48);
+}
+
+.statement-faith-closing p {
+  margin: 0;
+  color: #4b4c28;
+  font-family: var(--font-cooper);
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* =========================================================
+
+   TABLET
+
+========================================================= */
+
+@media (max-width: 900px) {
+  .statement-faith-section {
+    padding: 74px 24px 80px;
+  }
+  .statement-faith-header {
+    margin-bottom: 32px;
+  }
+  .statement-faith-block {
+    padding: 32px 30px;
+  }
+  .statement-faith-block::before {
+    left: 30px;
+  }
+}
+
+/* =========================================================
+
+   MOBILE
+
+========================================================= */
+
+@media (max-width: 620px) {
+  .statement-faith-section {
+    padding: 64px 20px 68px;
+  }
+  .statement-faith-header {
+    margin-bottom: 26px;
+  }
+  .statement-faith-eyebrow {
+    margin-bottom: 12px;
+    font-size: 0.64rem;
+  }
+  .statement-faith-header h2 {
+    font-size: clamp(2rem, 10vw, 2.7rem);
+  }
+  .statement-faith-description {
+    margin-top: 16px;
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .statement-faith-block {
+    padding: 27px 22px;
+    border-radius: 15px;
+  }
+  .statement-faith-block::before {
+    left: 22px;
+    width: 54px;
+  }
+  .statement-faith-intro {
+    margin-bottom: 13px;
+  }
+  .statement-faith-item {
+    grid-template-columns: 27px minmax(0, 1fr);
+    gap: 9px;
+    padding: 9px 0;
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+  .statement-faith-number {
+    font-size: 0.58rem;
+  }
+  .statement-faith-closing {
+    margin-top: 18px;
+    padding-top: 17px;
+  }
+  .statement-faith-closing p {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================================
+
      CORE VALUES
+
 ========================================================= */
 
 /*
+
    Core Values are intentionally styled in CoreValues.css.
+
    Keeping those styles out of OurStory.css prevents the old
+
    green section rules from overriding the current component.
+
 */
 
 /* Our team */
@@ -1016,11 +1097,9 @@
       grid-template-columns: 1fr;
       align-items: start;
    }
-
    .our-team-header > p {
       max-width: 760px;
    }
-
    .our-team-grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
    }
@@ -1032,24 +1111,19 @@
    .our-team-section {
       padding: 78px 20px;
    }
-
    .our-team-header {
       margin-bottom: 42px;
    }
-
    .our-team-board-heading {
       display: grid;
       gap: 10px;
    }
-
    .our-team-grid {
       grid-template-columns: 1fr;
    }
-
    .team-member-card {
       min-height: auto;
    }
-
    .team-member-photo {
       height: 260px;
    }
@@ -1082,8 +1156,11 @@
 }
 
 /* =========================================================
+
      Timeline heading, matches Board of Trustees heading
+
 ========================================================= */
+
 .story-timeline-heading {
    max-width: 1280px;
    margin: 0 auto 46px;
@@ -1205,8 +1282,11 @@
 }
 
 /* =========================================================
+
      MISSION & VISION
+
 ========================================================= */
+
 .mission-vision-section {
    position: relative;
    z-index: 2;
@@ -1229,8 +1309,11 @@
 }
 
 /* =========================================================
+
      HEADER
+
 ========================================================= */
+
 .mission-vision-header {
    display: grid;
    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.75fr);
@@ -1295,27 +1378,30 @@
 }
 
 /* =========================================================
+
      STATEMENT GRID
+
 ========================================================= */
+
 .mission-vision-statements {
    display: grid;
-
    /* Mission gets more room, but Vision is no longer cramped */
-
    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
    gap: 18px;
 }
 
 /* =========================================================
+
      SHARED CARD STYLING
+
 ========================================================= */
+
 .mission-statement,
+
 .vision-statement {
    position: relative;
    overflow: hidden;
-
    /* min-height: 300px; */
-
    padding: clamp(30px, 3.3vw, 42px);
    display: flex;
    flex-direction: column;
@@ -1323,8 +1409,11 @@
 }
 
 /* =========================================================
+
      MISSION CARD
+
 ========================================================= */
+
 .mission-statement {
    background: #f4efdc;
    color: #343518;
@@ -1334,8 +1423,11 @@
 }
 
 /* =========================================================
+
      VISION CARD
+
 ========================================================= */
+
 .vision-statement {
    color: #f7f1df;
    border: 1px solid rgba(247, 241, 223, 0.2);
@@ -1350,8 +1442,11 @@
 }
 
 /* =========================================================
+
      LABELS
+
 ========================================================= */
+
 .statement-label {
    display: flex;
    align-items: center;
@@ -1403,8 +1498,11 @@
 }
 
 /* =========================================================
+
      STATEMENT TEXT
+
 ========================================================= */
+
 .statement-copy {
    margin: auto 0 0;
    position: relative;
@@ -1433,9 +1531,13 @@
 }
 
 /* =========================================================
+
      SUBTLE ACCENT
+
 ========================================================= */
+
 .mission-statement::before,
+
 .vision-statement::before {
    content: "";
    position: absolute;
@@ -1455,31 +1557,29 @@
 }
 
 /* =========================================================
+
      TABLET
+
 ========================================================= */
+
 @media (max-width: 950px) {
    .mission-vision-section {
       padding: 84px 24px 92px;
    }
-
    .mission-vision-header {
       grid-template-columns: 1fr;
       gap: 24px;
    }
-
    .mission-vision-intro {
       max-width: 650px;
    }
-
    .mission-vision-statements {
       grid-template-columns: 1fr;
    }
-
    .mission-statement,
    .vision-statement {
       min-height: 250px;
    }
-
    .mission-statement .statement-copy,
    .vision-statement .statement-copy {
       max-width: 720px;
@@ -1487,44 +1587,684 @@
 }
 
 /* =========================================================
+
      MOBILE
+
 ========================================================= */
+
 @media (max-width: 560px) {
    .mission-vision-section {
       padding: 72px 20px 78px;
    }
-
    .mission-vision-header {
       padding-bottom: 30px;
       margin-bottom: 20px;
    }
-
    .mission-vision-header h2 {
       font-size: clamp(2.2rem, 9vw, 3rem);
    }
-
    .mission-vision-statements {
       gap: 14px;
    }
-
    .mission-statement,
    .vision-statement {
       min-height: 0;
       padding: 28px 24px 30px;
       border-radius: 16px;
    }
-
    .statement-label {
       margin-bottom: 34px;
    }
-
    .mission-statement .statement-copy {
       font-size: 1.15rem;
       line-height: 1.4;
    }
-
    .vision-statement .statement-copy {
       font-size: 1.12rem;
       line-height: 1.42;
    }
+}
+
+/* =========================================================
+
+   FINAL POLISH: STATEMENT OF FAITH + TIMELINE ONLY
+
+========================================================= */
+
+/* =========================================================
+
+   STATEMENT OF FAITH
+
+========================================================= */
+
+.statement-faith-section {
+  padding: 64px clamp(24px, 7vw, 96px) 70px;
+  background:
+    radial-gradient(
+      circle at 88% 12%,
+      rgba(247, 241, 223, 0.075),
+      transparent 28%
+    ),
+    linear-gradient(135deg, #30361d 0%, #394125 100%);
+}
+
+.statement-faith-header {
+  max-width: 900px;
+  margin-bottom: 26px;
+}
+
+.statement-faith-eyebrow {
+  margin-bottom: 10px;
+  color: rgba(247, 241, 223, 0.68);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+}
+
+.statement-faith-header h2 {
+  font-size: clamp(2.2rem, 3.7vw, 2.95rem);
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.statement-faith-description {
+  max-width: 830px;
+  margin-top: 14px;
+  color: rgba(247, 241, 223, 0.78);
+  font-size: clamp(0.86rem, 0.92vw, 0.94rem);
+  line-height: 1.5;
+}
+
+.statement-faith-block {
+  padding: 26px 34px 24px;
+  border: 1px solid rgba(247, 241, 223, 0.18);
+  border-radius: 16px;
+  background: linear-gradient(180deg, #f6f1e3 0%, #f1ecdc 100%);
+  box-shadow:
+    0 18px 38px rgba(18, 22, 10, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+.statement-faith-block::before {
+  left: 34px;
+  width: 64px;
+  background: rgba(151, 151, 112, 0.82);
+}
+
+.statement-faith-intro {
+  margin-bottom: 12px;
+  color: rgba(73, 76, 48, 0.72);
+  font-size: 0.66rem;
+  letter-spacing: 0.07em;
+}
+
+.statement-faith-text {
+  max-width: none;
+}
+
+.statement-faith-item {
+  grid-template-columns: 30px minmax(0, 1fr);
+  gap: 12px;
+  padding: 9px 0;
+  color: rgba(67, 70, 45, 0.88);
+  font-size: clamp(0.84rem, 0.9vw, 0.92rem);
+  line-height: 1.48;
+}
+
+.statement-faith-item + .statement-faith-item {
+  border-top-color: rgba(73, 76, 48, 0.11);
+}
+
+.statement-faith-number {
+  padding-top: 2px;
+  color: rgba(116, 119, 78, 0.72);
+  font-size: 0.6rem;
+  letter-spacing: 0.07em;
+}
+
+.statement-faith-closing {
+  gap: 12px;
+  margin-top: 14px;
+  padding-top: 15px;
+  border-top-color: rgba(73, 76, 48, 0.15);
+}
+
+.statement-faith-closing > span {
+  width: 28px;
+  background: rgba(116, 119, 78, 0.7);
+}
+
+.statement-faith-closing p {
+  color: #45482d;
+  font-size: 1.02rem;
+  line-height: 1.1;
+}
+
+/* =========================================================
+
+   OUR TIMELINE - COMPACT
+
+========================================================= */
+
+.story-timeline-section {
+  padding: 68px clamp(24px, 7vw, 96px) 72px;
+}
+
+.story-timeline-header {
+  max-width: 840px;
+  margin-bottom: 34px;
+}
+
+.story-timeline-eyebrow {
+  margin-bottom: 12px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.story-timeline-header h2 {
+  font-size: clamp(1.85rem, 3.8vw, 2.55rem);
+  line-height: 0.96;
+}
+
+.story-timeline-header > p:not(.story-timeline-eyebrow) {
+  max-width: 640px;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.story-timeline-heading {
+  margin-bottom: 26px;
+  padding: 14px 0;
+  gap: 18px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.story-timeline-heading p {
+  gap: 9px;
+  font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+  line-height: 1;
+}
+
+.story-timeline-heading span {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+}
+
+.story-timeline-heading-icon {
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  transform: translateY(1px);
+}
+
+.story-timeline-wrapper::before {
+  top: 179px;
+  height: 2px;
+}
+
+.story-timeline-track {
+  gap: 16px;
+  padding: 10px 4px 18px;
+}
+
+.story-timeline-card {
+  flex: 0 0 290px;
+  min-height: 360px;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(49, 51, 25, 0.1);
+}
+
+.story-timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(49, 51, 25, 0.14);
+}
+
+.story-timeline-image-wrap {
+  height: 148px;
+}
+
+.story-timeline-dot-wrap {
+  height: 42px;
+}
+
+.story-timeline-dot {
+  width: 18px;
+  height: 18px;
+  border-width: 2px;
+  box-shadow:
+    0 0 0 5px rgba(76, 85, 31, 0.12),
+    0 8px 18px rgba(49, 51, 25, 0.14);
+}
+
+.story-timeline-dot-wrap::before {
+  height: 2px;
+}
+
+.story-timeline-card-content {
+  padding: 0 18px 18px;
+}
+
+.story-timeline-year {
+  margin-bottom: 7px;
+  font-size: 0.66rem;
+  letter-spacing: 0.1em;
+}
+
+.story-timeline-card-content h3 {
+  margin-bottom: 7px;
+  font-size: clamp(1.05rem, 1.35vw, 1.18rem);
+  line-height: 1.08;
+}
+
+.story-timeline-card-content p:not(.story-timeline-year) {
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.story-timeline-btn {
+  width: 40px;
+  height: 40px;
+  padding-bottom: 5px;
+  font-size: 1.7rem;
+}
+
+.story-timeline-btn-left {
+  left: -18px;
+}
+
+.story-timeline-btn-right {
+  right: -18px;
+}
+
+.story-timeline-hint {
+  margin-top: 6px;
+  font-size: 0.78rem;
+}
+
+/* =========================================================
+
+   TABLET
+
+========================================================= */
+
+@media (max-width: 900px) {
+  .statement-faith-section {
+    padding: 58px 24px 62px;
+  }
+  .statement-faith-header {
+    margin-bottom: 22px;
+  }
+  .statement-faith-block {
+    padding: 24px 28px 22px;
+  }
+  .statement-faith-block::before {
+    left: 28px;
+  }
+  .story-timeline-section {
+    padding: 58px 24px 62px;
+  }
+  .story-timeline-header {
+    margin-bottom: 30px;
+  }
+  .story-timeline-heading {
+    margin-bottom: 24px;
+  }
+  .story-timeline-card {
+    flex-basis: 275px;
+    min-height: 345px;
+  }
+  .story-timeline-image-wrap {
+    height: 138px;
+  }
+  .story-timeline-dot-wrap {
+    height: 40px;
+  }
+  .story-timeline-wrapper::before {
+    top: 168px;
+  }
+  .story-timeline-card-content {
+    padding: 0 17px 17px;
+  }
+}
+
+/* =========================================================
+
+   MOBILE
+
+========================================================= */
+
+@media (max-width: 560px) {
+  .statement-faith-section {
+    padding: 52px 20px 56px;
+  }
+  .statement-faith-header {
+    margin-bottom: 20px;
+  }
+  .statement-faith-eyebrow {
+    margin-bottom: 9px;
+  }
+  .statement-faith-header h2 {
+    font-size: clamp(2rem, 10vw, 2.55rem);
+  }
+  .statement-faith-description {
+    margin-top: 12px;
+  }
+  .statement-faith-block {
+    padding: 23px 20px 21px;
+    border-radius: 14px;
+  }
+  .statement-faith-block::before {
+    left: 20px;
+    width: 50px;
+  }
+  .statement-faith-item {
+    grid-template-columns: 25px minmax(0, 1fr);
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 0.82rem;
+    line-height: 1.46;
+  }
+  .statement-faith-closing {
+    margin-top: 12px;
+    padding-top: 13px;
+  }
+  .statement-faith-closing p {
+    font-size: 0.98rem;
+  }
+  .story-timeline-section {
+    padding: 52px 20px 56px;
+  }
+  .story-timeline-header {
+    margin-bottom: 24px;
+  }
+  .story-timeline-heading {
+    margin-bottom: 22px;
+    padding: 12px 0;
+    gap: 8px;
+  }
+  .story-timeline-heading p {
+    font-size: 1.35rem;
+  }
+  .story-timeline-heading-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .story-timeline-track {
+    gap: 14px;
+    padding: 8px 2px 16px;
+  }
+  .story-timeline-card {
+    flex: 0 0 min(78vw, 290px);
+    min-height: 335px;
+    border-radius: 16px;
+  }
+  .story-timeline-image-wrap {
+    height: 132px;
+  }
+  .story-timeline-dot-wrap {
+    height: 38px;
+  }
+  .story-timeline-dot {
+    width: 17px;
+    height: 17px;
+  }
+  .story-timeline-wrapper::before {
+    top: 159px;
+  }
+  .story-timeline-card-content {
+    padding: 0 16px 16px;
+  }
+  .story-timeline-year {
+    margin-bottom: 6px;
+  }
+  .story-timeline-card-content h3 {
+    margin-bottom: 6px;
+    font-size: 1.08rem;
+  }
+  .story-timeline-card-content p:not(.story-timeline-year) {
+    font-size: 0.8rem;
+    line-height: 1.42;
+  }
+}
+
+/* =========================================================
+   OUR TIMELINE - BALANCED SIZE
+========================================================= */
+
+.story-timeline-section {
+  padding: 82px clamp(24px, 7vw, 96px) 86px;
+}
+
+.story-timeline-header {
+  max-width: 860px;
+  margin-bottom: 44px;
+}
+
+.story-timeline-eyebrow {
+  margin-bottom: 14px;
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+}
+
+.story-timeline-header h2 {
+  font-size: clamp(1.95rem, 4.1vw, 2.8rem);
+  line-height: 0.95;
+}
+
+.story-timeline-header > p:not(.story-timeline-eyebrow) {
+  max-width: 650px;
+  margin-top: 20px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+}
+
+.story-timeline-heading {
+  margin-bottom: 32px;
+  padding: 18px 0;
+  gap: 20px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+.story-timeline-heading p {
+  gap: 11px;
+  font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+  line-height: 1;
+}
+
+.story-timeline-heading span {
+  font-size: 0.71rem;
+  letter-spacing: 0.11em;
+}
+
+.story-timeline-heading-icon {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  transform: translateY(1px);
+}
+
+.story-timeline-wrapper::before {
+  top: 201px;
+  height: 2px;
+}
+
+.story-timeline-track {
+  gap: 20px;
+  padding: 13px 5px 23px;
+}
+
+.story-timeline-card {
+  flex: 0 0 315px;
+  min-height: 410px;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(49, 51, 25, 0.1);
+}
+
+.story-timeline-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 23px 48px rgba(49, 51, 25, 0.15);
+}
+
+.story-timeline-image-wrap {
+  height: 166px;
+}
+
+.story-timeline-dot-wrap {
+  height: 49px;
+}
+
+.story-timeline-dot {
+  width: 21px;
+  height: 21px;
+  border-width: 2px;
+  box-shadow:
+    0 0 0 6px rgba(76, 85, 31, 0.13),
+    0 9px 20px rgba(49, 51, 25, 0.15);
+}
+
+.story-timeline-dot-wrap::before {
+  height: 2px;
+}
+
+.story-timeline-card-content {
+  padding: 2px 21px 22px;
+}
+
+.story-timeline-year {
+  margin-bottom: 9px;
+  font-size: 0.7rem;
+  letter-spacing: 0.11em;
+}
+
+.story-timeline-card-content h3 {
+  margin-bottom: 9px;
+  font-size: clamp(1.1rem, 1.5vw, 1.26rem);
+  line-height: 1.08;
+}
+
+.story-timeline-card-content p:not(.story-timeline-year) {
+  font-size: 0.8rem;
+  line-height: 1.48;
+}
+
+.story-timeline-btn {
+  width: 44px;
+  height: 44px;
+  padding-bottom: 6px;
+  font-size: 1.85rem;
+}
+
+.story-timeline-btn-left {
+  left: -21px;
+}
+
+.story-timeline-btn-right {
+  right: -21px;
+}
+
+.story-timeline-hint {
+  margin-top: 8px;
+  font-size: 0.82rem;
+}
+
+/* =========================================================
+   TABLET - TIMELINE
+========================================================= */
+
+@media (max-width: 900px) {
+  .story-timeline-section {
+    padding: 68px 24px 72px;
+  }
+  .story-timeline-header {
+    margin-bottom: 36px;
+  }
+  .story-timeline-heading {
+    margin-bottom: 28px;
+  }
+  .story-timeline-card {
+    flex-basis: 295px;
+    min-height: 390px;
+  }
+  .story-timeline-image-wrap {
+    height: 154px;
+  }
+  .story-timeline-dot-wrap {
+    height: 46px;
+  }
+  .story-timeline-wrapper::before {
+    top: 188px;
+  }
+  .story-timeline-card-content {
+    padding: 2px 20px 21px;
+  }
+}
+
+/* =========================================================
+   MOBILE - TIMELINE
+========================================================= */
+
+@media (max-width: 560px) {
+  .story-timeline-section {
+    padding: 60px 20px 64px;
+  }
+  .story-timeline-header {
+    margin-bottom: 28px;
+  }
+  .story-timeline-heading {
+    margin-bottom: 25px;
+    padding: 14px 0;
+    gap: 10px;
+  }
+  .story-timeline-heading p {
+    font-size: 1.45rem;
+  }
+  .story-timeline-heading-icon {
+    width: 22px;
+    height: 22px;
+  }
+  .story-timeline-track {
+    gap: 16px;
+    padding: 10px 2px 19px;
+  }
+  .story-timeline-card {
+    flex: 0 0 min(80vw, 305px);
+    min-height: 370px;
+    border-radius: 18px;
+  }
+  .story-timeline-image-wrap {
+    height: 145px;
+  }
+  .story-timeline-dot-wrap {
+    height: 43px;
+  }
+  .story-timeline-dot {
+    width: 19px;
+    height: 19px;
+  }
+  .story-timeline-wrapper::before {
+    top: 176px;
+  }
+  .story-timeline-card-content {
+    padding: 2px 18px 19px;
+  }
+  .story-timeline-year {
+    margin-bottom: 8px;
+  }
+  .story-timeline-card-content h3 {
+    margin-bottom: 8px;
+    font-size: 1.14rem;
+  }
+  .story-timeline-card-content p:not(.story-timeline-year) {
+    font-size: 0.77rem;
+    line-height: 1.46;
+  }
 }
