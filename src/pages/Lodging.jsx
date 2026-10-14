@@ -185,7 +185,7 @@ const lodgingBuildings = [
       },
     ],
     facts: [
-      { label: "Sleeps", value: "72 guests" },
+      { label: "Sleeps", value: "70 guests" },
       { label: "Rooms", value: "10 family-style bedrooms" },
       { label: "Bathrooms", value: "Private bathrooms" },
       { label: "Features", value: "Lake views, kitchenette, fireplace" },
@@ -213,7 +213,7 @@ const lodgingBuildings = [
         title: "Number of Guests",
         content: (
           <>
-            <p>Bethel can host 72 overnight guests.</p>
+            <p>Bethel can host 70 overnight guests.</p>
 
             <div className="lodging-spec-list">
               <div>
