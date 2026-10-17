@@ -32,11 +32,7 @@ const newsPosts = [
       "A look back at another meaningful time of community, outdoor adventure, and time together at Toah Nipi.",
 
     content: [
-      "Family Camp 2026 has come and gone, and we’re grateful for everyone who spent part of their summer with us at Toah Nipi.",
-      "Family Camp gives us a chance to step away from our usual routines, worship together, and spend time with one another. Our hope is that families find room to rest, enjoy God’s creation, and grow closer to Him and each other.",
-      "Kids made new friends over games of Sharks and Minnows and worked on a leaf map of camp. Teens gathered for games of Cambiar and Egyptian Rat Slap, while couples enjoyed some peaceful time together.",
-      "Our young staff had some fun of their own with matching Bluey gear! Everyone experienced camp in their own way, with different moments and memories to take home.",
-      "Thank you to the families who came and to everyone who helped make this year’s camp happen. Whether you were visiting for the first time or returning to a familiar place, we’re glad you were part of Family Camp 2026.",
+      "(Content Pending! Will release soon!)",
     ],
   },
 
@@ -51,10 +47,7 @@ const newsPosts = [
       "See some of the projects, improvements, and behind-the-scenes work happening throughout the retreat center.",
 
     content: [
-      "We’ve been making a few improvements around Toah Nipi to help guests and staff move around camp more easily and safely.",
-      "On the Ichthus Trail, we’ve improved the paved paths and removed obstacles to make the trail more accessible and easier to navigate.",
-      "We’ve also added lights and railings to the stairs leading down to Dothan. With better lighting at night and something steady to hold on to, getting up and down is a little easier and safer!",
-      "There’s always work to do here, and we’re thankful for the people who help us take care of this place. To everyone who’s given their time, shared their skills, or supported these projects: thank you!",
+      "(Content Pending! Will release soon!)",
     ],
   },
 ];
