@@ -14,10 +14,7 @@ const newsPosts = [
       "As we enter the fall season and gather more and more apples from our very own orchard, Toah Nipi has pressed its very first batch of homemade apple cider!",
 
     content: [
-      "This September, we tried something new at Toah Nipi: making our very first batch of homemade apple cider from apples grown in our own orchard!",
-      "Our little crew washed and cut the apples, then ground and pressed them to squeeze out the juice. Everyone pitched in, and working side by side made it a fun way to spend time together.",
-      "When the work was done, we each enjoyed a glass out in the sunshine. The fresh cider had a tart apple flavor, and sharing that first batch was a satisfying finish to our work.",
-      "We’re grateful for the harvest God has provided and for the people who helped turn it into something we could share. Here’s to fall at Toah Nipi and more cider-making days together!",
+      "(Content Pending! Will release soon!)",
     ],
   },
 
