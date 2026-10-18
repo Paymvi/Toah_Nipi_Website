@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
 import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
@@ -38,48 +38,117 @@ const referralSources = [
   "Other",
 ];
 
+const FORM_VERSION = "contact-inquiry-v2";
+
+function createInquiryId() {
+  // Modern browsers on HTTPS provide cryptographically random UUIDs.
+  if (globalThis.crypto?.randomUUID) {
+    return `TN-${globalThis.crypto.randomUUID()}`;
+  }
+
+  const bytes = new Uint8Array(16);
+  globalThis.crypto.getRandomValues(bytes);
+  return `TN-${Array.from(bytes, (byte) =>
+    byte.toString(16).padStart(2, "0")
+  ).join("")}`;
+}
+
+function formatEasternTime(date) {
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    second: "2-digit",
+    timeZoneName: "short",
+  }).format(date);
+}
+
 export default function Contact() {
   const [formData, setFormData] = useState(initialFormState);
   const [isReviewing, setIsReviewing] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
   const [submitMessage, setSubmitMessage] = useState("");
 
+  // A ref locks immediately, before React renders the disabled button.
+  const sendingRef = useRef(false);
+  const inquiryRef = useRef(null);
+
   const handleChange = (event) => {
+    if (sendingRef.current) return;
+
     const { name, value } = event.target;
     setFormData((current) => ({
       ...current,
       [name]: value,
     }));
+    setSubmitStatus("idle");
+    setSubmitMessage("");
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (sendingRef.current) return;
+
     setSubmitStatus("idle");
     setSubmitMessage("");
     setIsReviewing(true);
   };
 
   const handleSendMessage = async () => {
-    if (submitStatus === "sending") {
+    if (sendingRef.current || !isReviewing) return;
+
+    // Keep the ID and attempt count when retrying unchanged form contents.
+    // These refs last while this Contact component stays mounted.
+    const signature = JSON.stringify(formData);
+    if (
+      inquiryRef.current?.signature === signature &&
+      inquiryRef.current.accepted
+    ) {
       return;
     }
 
+    sendingRef.current = true;
     setSubmitStatus("sending");
     setSubmitMessage("");
 
+    let timeoutId;
+
     try {
+      const attemptTime = new Date();
+
+      if (inquiryRef.current?.signature !== signature) {
+        inquiryRef.current = {
+          signature,
+          id: createInquiryId(),
+          firstAttemptAt: attemptTime.toISOString(),
+          attempts: 0,
+          accepted: false,
+        };
+      }
+
+      const inquiry = inquiryRef.current;
+      inquiry.attempts += 1;
+
+      const controller = new AbortController();
+      timeoutId = window.setTimeout(() => controller.abort(), 45000);
+
       const response = await fetch(
         "https://formsubmit.co/ajax/contactus@toahnipi.org",
         {
           method: "POST",
+          signal: controller.signal,
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
           },
           body: JSON.stringify({
-            _subject: "Retreat Inquiry from Toah Nipi Website",
+            _subject: `Retreat Inquiry from Toah Nipi Website | ${inquiry.id}`,
             _template: "table",
             _replyto: formData.email,
+            _cc: "toahnipistorage@gmail.com",
             Name: formData.name,
             "Group Size": formData.groupSize || "N/A",
             "Desired Dates": formData.desiredDates || "N/A",
@@ -90,40 +159,51 @@ export default function Contact() {
             "How Did You Hear About Us": formData.heardAboutUs || "N/A",
             "Promo Code": formData.promoCode || "N/A",
             Message: formData.message,
+
+            // Appended after the inquiry contents in the email table.
+            "Submission Details": "Website inquiry tracking information",
+            "Inquiry ID": inquiry.id,
+            "Send Attempt": String(inquiry.attempts),
+            "First Send Attempt (Eastern)": formatEasternTime(
+              new Date(inquiry.firstAttemptAt)
+            ),
+            "First Send Attempt (UTC)": inquiry.firstAttemptAt,
+            "This Send Attempt (Eastern)": formatEasternTime(attemptTime),
+            "This Send Attempt (UTC)": attemptTime.toISOString(),
+            "Source Page": `${window.location.origin}${window.location.pathname}`,
+            "Form Version": FORM_VERSION,
+            "Timestamp Note":
+              "Times come from the visitor's device at send time. They do not confirm email delivery. Repeated inquiry IDs indicate attempts for the same unchanged inquiry during this page visit.",
           }),
         }
       );
 
       const result = await response.json();
 
-      console.log("FormSubmit status:", response.status);
-      console.log("FormSubmit response:", result);
-
       if (
         !response.ok ||
-        result.success === false ||
-        result.success === "false"
+        (result?.success !== true && result?.success !== "true")
       ) {
-        throw new Error(
-          result.message || `Form submission failed (${response.status}).`
-        );
+        throw new Error("The inquiry service did not confirm acceptance.");
       }
 
+      inquiry.accepted = true;
       setSubmitStatus("success");
       setSubmitMessage(
-        "Thank you! Your message has been sent to the Toah Nipi team."
+        "Thank you! Your inquiry has been submitted to the Toah Nipi team."
       );
       setFormData(initialFormState);
       setIsReviewing(false);
-    } catch (error) {
-      console.error("Contact form submission error:", error);
-
+    } catch {
+      // A failed response or timeout can happen AFTER acceptance. Do not
+      // automatically retry, or claim that nothing was sent.
       setSubmitStatus("error");
-
       setSubmitMessage(
-        error.message ||
-          "We couldn't send your message. Please try again or email contactus@toahnipi.org."
+        "We couldn't confirm whether your inquiry was submitted. It may already have gone through. You can contact contactus@toahnipi.org to check, or try sending again."
       );
+    } finally {
+      if (timeoutId !== undefined) window.clearTimeout(timeoutId);
+      sendingRef.current = false;
     }
   };
 
@@ -438,7 +518,9 @@ export default function Contact() {
                 <button
                   type="button"
                   className="contact-review-edit-button"
-                  onClick={() => setIsReviewing(false)}
+                  onClick={() => {
+                    if (!sendingRef.current) setIsReviewing(false);
+                  }}
                   disabled={submitStatus === "sending"}
                 >
                   ← Edit Message
