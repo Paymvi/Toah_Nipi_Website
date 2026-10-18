@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useId, useState } from "react";
 import "../styles/CoreValues.css";
 
 const coreValues = [
   {
     number: "01",
     title: "Christ-Centered",
+    image: "/Gallery/Hebron-Sunset.jpg",
+    imagePosition: "50% 50%",
     statement: "We seek Christ first in everything we do.",
     description:
       "Every decision, conversation, and act of service begins with our desire to honor Christ and point others toward Him.",
@@ -23,6 +25,8 @@ const coreValues = [
   {
     number: "02",
     title: "Gracious Hospitality",
+    image: "/Gallery/Back-Hebron.jpg",
+    imagePosition: "50% 50%",
     statement: "We embody an attitude of deep welcome.",
     description:
       "Our hospitality is more than excellent service—it is making people feel that they belong.",
@@ -45,6 +49,8 @@ const coreValues = [
   {
     number: "03",
     title: "Intentional Presence",
+    image: "/Gallery/Jun-2026-Sunny-Deck.jpg",
+    imagePosition: "50% 50%",
     statement:
       "We slow down enough to truly see people and create space for God to work.",
     description:
@@ -67,6 +73,8 @@ const coreValues = [
   {
     number: "04",
     title: "Faithful Stewardship",
+    image: "/camp-background-2.jpg",
+    imagePosition: "50% 50%",
     statement:
       "Everything we have belongs to God, and we care for it faithfully.",
     description:
@@ -89,6 +97,8 @@ const coreValues = [
   {
     number: "05",
     title: "Sacred Simplicity",
+    image: "/Gallery/Winter.jpg",
+    imagePosition: "50% 50%",
     statement:
       "We remove distractions so we can focus on what is most important.",
     description:
@@ -110,6 +120,8 @@ const coreValues = [
   {
     number: "06",
     title: "Expectant Faith",
+    image: "/Gallery/Sunset-ish.jpg",
+    imagePosition: "50% 50%",
     statement:
       "We believe God is actively transforming lives and we serve with hope and confidence.",
     description:
@@ -131,24 +143,25 @@ const coreValues = [
 ];
 
 export default function CoreValues() {
+  const instanceId = useId();
   const [openValue, setOpenValue] = useState(null);
+  const headingId = `${instanceId}-heading`;
 
   const toggleValue = (index) => {
     setOpenValue((current) => (current === index ? null : index));
   };
 
   return (
-    <section className="core-values-section" id="core-values">
+    <section
+      className="core-values-section"
+      id="core-values"
+      aria-labelledby={headingId}
+    >
       <div className="core-values-inner">
-        {/* =========================================
-            INTRO
-        ========================================== */}
-
         <div className="core-values-intro">
           <div className="core-values-intro-heading">
             <p className="core-values-label">What Shapes Us</p>
-
-            <h2>Our Core Values</h2>
+            <h2 id={headingId}>Our Core Values</h2>
           </div>
 
           <div className="core-values-intro-copy">
@@ -156,7 +169,6 @@ export default function CoreValues() {
               These values shape how we serve, how we care for this place,
               and how we welcome each person who comes to Toah Nipi.
             </p>
-
             <p>
               Together, they express the kind of ministry and community we
               believe God has called us to be.
@@ -164,28 +176,40 @@ export default function CoreValues() {
           </div>
         </div>
 
-        {/* =========================================
-            VALUES
-        ========================================== */}
-
         <div className="core-values-list">
           {coreValues.map((value, index) => {
             const isOpen = openValue === index;
+            const titleId = `${instanceId}-title-${index}`;
+            const toggleId = `${instanceId}-toggle-${index}`;
+            const detailsId = `${instanceId}-details-${index}`;
 
             return (
               <article
-                className={`core-value ${isOpen ? "is-open" : ""}`}
-                key={value.title}
+                className={`core-value${isOpen ? " is-open" : ""}`}
+                key={value.number}
+                aria-labelledby={titleId}
               >
+                <div className="core-value-media" aria-hidden="true">
+                  <img
+                    className="core-value-image"
+                    src={value.image}
+                    alt=""
+                    width="800"
+                    height="1200"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    decoding="async"
+                    style={{ objectPosition: value.imagePosition }}
+                  />
+                </div>
+
                 <div className="core-value-main">
                   <div className="core-value-identity">
-                    <span className="core-value-number">
+                    <span className="core-value-number" aria-hidden="true">
                       {value.number}
                     </span>
 
                     <div className="core-value-heading">
-                      <h3>{value.title}</h3>
-
+                      <h3 id={titleId}>{value.title}</h3>
                       <p className="core-value-statement">
                         {value.statement}
                       </p>
@@ -199,23 +223,17 @@ export default function CoreValues() {
 
                     <blockquote className="core-value-scripture">
                       <p>“{value.scripture}”</p>
-
                       <cite>{value.reference}</cite>
                     </blockquote>
 
                     <button
+                      id={toggleId}
                       type="button"
                       className="core-value-toggle"
                       onClick={() => toggleValue(index)}
                       aria-expanded={isOpen}
-                      aria-controls={`core-value-details-${index}`}
+                      aria-controls={detailsId}
                     >
-                      <span>
-                        {isOpen
-                          ? "Hide observable behaviors"
-                          : "View observable behaviors"}
-                      </span>
-
                       <span
                         className="core-value-toggle-icon"
                         aria-hidden="true"
@@ -223,19 +241,28 @@ export default function CoreValues() {
                         <span />
                         <span />
                       </span>
+                      <span className="core-value-toggle-label">
+                        {isOpen
+                          ? "Hide observable behaviors"
+                          : "View observable behaviors"}
+                      </span>
+                      <span className="core-value-sr-only">
+                        {` for ${value.title}`}
+                      </span>
                     </button>
                   </div>
                 </div>
 
                 <div
-                  id={`core-value-details-${index}`}
+                  id={detailsId}
                   className="core-value-expand"
-                  aria-hidden={!isOpen}
+                  hidden={!isOpen}
+                  role="region"
+                  aria-labelledby={toggleId}
                 >
                   <div className="core-value-expand-inner">
                     <div className="core-value-behavior-heading">
                       <span>In Practice</span>
-
                       <h4>Observable Behaviors</h4>
                     </div>
 
@@ -246,7 +273,6 @@ export default function CoreValues() {
                             className="core-value-behavior-mark"
                             aria-hidden="true"
                           />
-
                           <span>{behavior}</span>
                         </li>
                       ))}
@@ -259,19 +285,11 @@ export default function CoreValues() {
         </div>
       </div>
 
-      {/* =========================================
-          PROGRESSION
-      ========================================== */}
-
       <div className="core-values-story">
         <div className="core-values-story-inner">
           <div className="core-values-story-heading">
-            <p className="core-values-story-label">
-              A Shared Direction
-            </p>
-
+            <p className="core-values-story-label">A Shared Direction</p>
             <h3>Our values tell a story.</h3>
-
             <p>
               Each one builds naturally on the one before it,
               reflecting the heart of Toah Nipi’s ministry.
@@ -280,14 +298,10 @@ export default function CoreValues() {
 
           <div className="core-values-story-list">
             {coreValues.map((value) => (
-              <div
-                className="core-values-story-item"
-                key={value.number}
-              >
+              <div className="core-values-story-item" key={value.number}>
                 <span className="core-values-story-number">
                   {value.number}
                 </span>
-
                 <div>
                   <h4>{value.title}</h4>
                   <p>{value.progression}</p>
