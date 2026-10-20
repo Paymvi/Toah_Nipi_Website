@@ -18,6 +18,8 @@ import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import New from "./pages/New";
 
+import { Analytics } from "@vercel/analytics/react";
+
 import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
 
@@ -152,6 +154,8 @@ export default function App() {
           element={<PlaceholderPage title="Give" />}
         />
       </Routes>
+
+      <Analytics />
     </BrowserRouter>
   );
 }
