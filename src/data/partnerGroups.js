@@ -4,11 +4,11 @@ export const partnerGroups = [
     title: "Ministry Partners",
     description:
       "Organizations whose mission and relationship with Toah Nipi help strengthen retreat, discipleship, stewardship, and Christian community.",
-    image: "/Apr-2026-Crowd.jpg",
+    image: "/optimized/Apr-2026-Crowd.webp",
     organizations: [
       {
         name: "A Rocha",
-        logo: "/partner-logos/A-Rocha-2.png",
+        logo: "/optimized/partner-logos/A-Rocha-2-160.png",
         description:
           "A Christian conservation organization helping communities care for creation and live out faithful stewardship.",
         website: "https://arocha.org/en/",
@@ -22,7 +22,7 @@ export const partnerGroups = [
       },
       {
         name: "Sattler University",
-        logo: "/partner-logos/Sattler.png",
+        logo: "/optimized/partner-logos/Sattler-160.png",
         description:
           "A Christian university community connected to discipleship, formation, and service.",
         website: "https://sattler.edu/",
@@ -41,7 +41,7 @@ export const partnerGroups = [
     title: "Returning Retreat Groups",
     description:
       "Churches, ministries, schools, and communities that continue to gather at Toah Nipi year after year.",
-    image: "/Apr-2026-Circle-2.jpg",
+    image: "/optimized/Apr-2026-Circle-2.webp",
     organizations: [
       {
         name: "Antioch Church",
@@ -78,7 +78,7 @@ export const partnerGroups = [
     title: "Community Affiliations",
     description:
       "Local and regional organizations connected to Toah Nipi through ongoing relationships, events, service, and shared hospitality.",
-    image: "/Volunteering.png",
+    image: "/optimized/Volunteering.webp",
     organizations: [
       {
         name: "Add organization name",

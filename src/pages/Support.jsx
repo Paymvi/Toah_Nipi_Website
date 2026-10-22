@@ -95,7 +95,7 @@ const featureSections = [
       "Landscaping / Gardening",
       "Hosting",
     ],
-    image: "/May-2024-Volunteer.jpg",
+    image: "/optimized/May-2024-Volunteer.webp",
     imageAlt: "Volunteers serving at Toah Nipi",
     imagePosition: "40% center",
     imageZoom: 1.08,
@@ -122,7 +122,7 @@ const featureSections = [
         we may have the privilege to pray for you as well.
       </>
     ),
-    image: "/May-2025-PrayerGarden.jpg",
+    image: "/optimized/May-2025-PrayerGarden.webp",
     imageAlt: "Prayer garden at Toah Nipi",
     imagePosition: "40% center",
     imageZoom: 1.08,
@@ -144,7 +144,7 @@ const featureSections = [
         God.
       </>
     ),
-    image: "/Oct-2024-Fire.jpg",
+    image: "/optimized/Oct-2024-Fire.webp",
     imageAlt: "People gathered around a fire at Toah Nipi",
     imagePosition: "10% center",
     imageZoom: 1.23,
@@ -159,7 +159,7 @@ const projectImpacts = [
     title: "Christmas Light Walk",
     category: "Future Experience",
     status: "In Development",
-    image: "/Hebron-Night-Lights.png",
+    image: "/optimized/Hebron-Night-Lights.webp",
     description:
       "A fully lighted Christmas walk experience designed to become a meaningful local tradition, sharing the story of Jesus’ birth through outdoor scenes, lights, and Scripture.",
   },
@@ -168,7 +168,7 @@ const projectImpacts = [
     title: "Woodland Trail Around the Pond",
     category: "Land Stewardship",
     status: "In Progress",
-    image: "/May-2025-Lake+Nature-2.jpg",
+    image: "/optimized/May-2025-Lake+Nature-2.webp",
     description:
       "Improvements to the woodland trails around the pond will create peaceful, accessible pathways for prayer, reflection, walking, and time outdoors.",
   },
@@ -177,7 +177,7 @@ const projectImpacts = [
     title: "Outdoor Amphitheatre",
     category: "Gathering Space",
     status: "Planned",
-    image: "/Outdoor-Theatre.png",
+    image: "/optimized/Outdoor-Theatre.webp",
     description:
       "A new outdoor amphitheatre near the pond will provide a flexible space for worship, teaching, camp gatherings, concerts, and group events.",
   },
@@ -186,7 +186,7 @@ const projectImpacts = [
     title: "Trex Swings",
     category: "Outdoor Seating",
     status: "Planned",
-    image: "/Trex-Swings.jpg",
+    image: "/optimized/Trex-Swings.webp",
     description:
       "New Trex swings will create a peaceful place for guests to sit, rest, and enjoy the beauty of Toah Nipi’s outdoor spaces. These durable swings will offer a welcoming spot for conversation, reflection, and quiet moments near camp.",
   },
@@ -585,6 +585,8 @@ function Partner() {
               <img
                 src={section.image}
                 alt={section.imageAlt}
+                loading="lazy"
+                decoding="async"
                 style={{
                   objectPosition: section.imagePosition || "center center",
                   transform: `scale(${section.imageZoom || 1})`,
@@ -640,8 +642,10 @@ function Partner() {
       <section className="partner-recognition-section">
         <div className="partner-recognition-image">
           <img
-            src="/Dothan-Porch.webp"
+            src="/optimized/Dothan-Porch.webp"
             alt="A welcoming porch at Toah Nipi"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 

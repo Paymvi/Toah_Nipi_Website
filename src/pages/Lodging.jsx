@@ -17,55 +17,55 @@ const lodgingBuildings = [
       "Hebron is our main lodge for larger retreats, with dorm-style lodging, private rooms, and a central meeting space for group gatherings.",
     images: [
       {
-        src: "/camp-background-2.jpg",
+        src: "/optimized/camp-background-2.webp",
         alt: "Exterior view of Hebron Lodge",
       },
       {
-        src: "/May-2025-Hebron.jpg",
+        src: "/optimized/May-2025-Hebron.webp",
         alt: "Front exterior view of Hebron Lodge",
       },
       {
-        src: "/Hebron-Back.webp",
+        src: "/optimized/Hebron-Back.webp",
         alt: "Back exterior view of Hebron Lodge",
       },
       {
-        src: "/Hebron-Dining.webp",
+        src: "/optimized/Hebron-Dining.webp",
         alt: "Dining space inside Hebron Lodge",
       },
       {
-        src: "/Hebron-TablesRoom-1.webp",
+        src: "/optimized/Hebron-TablesRoom-1.webp",
         alt: "Meeting room inside Hebron Lodge",
       },
       {
-        src: "/Hebron-TablesRoom-2.webp",
+        src: "/optimized/Hebron-TablesRoom-2.webp",
         alt: "Large table room inside Hebron Lodge",
       },
       {
-        src: "/Hebron-SessionRoom.webp",
+        src: "/optimized/Hebron-SessionRoom.webp",
         alt: "Session room inside Hebron Lodge",
       },
       {
-        src: "/Hebron-Inside-Front.webp",
+        src: "/optimized/Hebron-Inside-Front.webp",
         alt: "Interior entrance of Hebron Lodge",
       },
       {
-        src: "/Hebron-Bedroom.jpeg",
+        src: "/optimized/Hebron-Bedroom.webp",
         alt: "",
       },
       {
-        src: "/Heborn-Bedroon-2.jpeg",
+        src: "/optimized/Heborn-Bedroon-2.webp",
         alt: "",
       },
       {
-        src: "/Hebron-Meeting-Space.jpeg",
+        src: "/optimized/Hebron-Meeting-Space.webp",
         alt: "",
       },
       {
-        src: "/Hebron-Couches.jpeg",
+        src: "/optimized/Hebron-Couches.webp",
         alt: "",
       },
       {
-        src: "/Hebron-Bathroom.jpeg",
+        src: "/optimized/Hebron-Bathroom.webp",
         alt: "",
       },
     ],
@@ -140,47 +140,47 @@ const lodgingBuildings = [
       "Bethel is a three-level lodge with family-style bedrooms, private bathrooms, lake views, meeting rooms, a kitchenette, and an open fireplace.",
     images: [
       {
-        src: "/Bethel.webp",
+        src: "/optimized/Bethel.webp",
         alt: "Exterior view of Bethel Lodge",
       },
       {
-        src: "/Bethel-2.webp",
+        src: "/optimized/Bethel-2.webp",
         alt: "Exterior view of Bethel Lodge",
       },
       {
-        src: "/Bethel-Back-2.webp",
+        src: "/optimized/Bethel-Back-2.webp",
         alt: "Exterior view of Bethel Lodge",
       },
       {
-        src: "/Bethel-Common-Room.webp",
+        src: "/optimized/Bethel-Common-Room.webp",
         alt: "Common room inside Bethel Lodge",
       },
       {
-        src: "/Bethel-Top.webp",
+        src: "/optimized/Bethel-Top.webp",
         alt: "Lake view from Bethel Lodge",
       },
       {
-        src: "/Bethel-Room.webp",
+        src: "/optimized/Bethel-Room.webp",
         alt: "Bedroom inside Bethel Lodge",
       },
       {
-        src: "/Bethel-Room-2.webp",
+        src: "/optimized/Bethel-Room-2.webp",
         alt: "Bedroom inside Bethel Lodge",
       },
       {
-        src: "/Bethel-Wood-Room.webp",
+        src: "/optimized/Bethel-Wood-Room.webp",
         alt: "Bedroom inside Bethel Lodge",
       },
       {
-        src: "/Bethel-Hallway.webp",
+        src: "/optimized/Bethel-Hallway.webp",
         alt: "Hallway inside Bethel Lodge",
       },
       {
-        src: "/Bethel-Mystery-Room.webp",
+        src: "/optimized/Bethel-Mystery-Room.webp",
         alt: "Bedroom inside Bethel Lodge",
       },
       {
-        src: "/Bethel-Bathroom.webp",
+        src: "/optimized/Bethel-Bathroom.webp",
         alt: "Bathroom inside Bethel Lodge",
       },
     ],
@@ -251,35 +251,35 @@ const lodgingBuildings = [
       "Dothan is a pond-side lodge for smaller groups, with six bedrooms, shared common space, and a lower-level meeting room.",
     images: [
       {
-        src: "/Dothan.webp",
+        src: "/optimized/Dothan.webp",
         alt: "Exterior view of Dothan",
       },
       {
-        src: "/Dothan-Porch.webp",
+        src: "/optimized/Dothan-Porch.webp",
         alt: "Porch at Dothan",
       },
       {
-        src: "/Dothan-Bedroom-Top.webp",
+        src: "/optimized/Dothan-Bedroom-Top.webp",
         alt: "Bedroom inside Dothan",
       },
       {
-        src: "/Dothan-Bedroom-Top-2.webp",
+        src: "/optimized/Dothan-Bedroom-Top-2.webp",
         alt: "Bedroom inside Dothan",
       },
       {
-        src: "/Dothan-Couches-Top.webp",
+        src: "/optimized/Dothan-Couches-Top.webp",
         alt: "Sitting room inside Dothan",
       },
       {
-        src: "/Dothan-Couches-Middle.webp",
+        src: "/optimized/Dothan-Couches-Middle.webp",
         alt: "Common space inside Dothan",
       },
       {
-        src: "/Dothan-Room-Bottom.webp",
+        src: "/optimized/Dothan-Room-Bottom.webp",
         alt: "Meeting room inside Dothan",
       },
       {
-        src: "/Dothan-Bathroom.webp",
+        src: "/optimized/Dothan-Bathroom.webp",
         alt: "Bathroom inside Dothan",
       },
     ],
@@ -351,43 +351,43 @@ const lodgingBuildings = [
       "The Guest House is a more private lodging option with a kitchen, dining room, living room, meeting spaces, and a library.",
     images: [
       {
-        src: "/Guest-House.webp",
+        src: "/optimized/Guest-House.webp",
         alt: "Exterior view of the Guest House",
       },
       {
-        src: "/Guest-House-Back.webp",
+        src: "/optimized/Guest-House-Back.webp",
         alt: "Back exterior view of the Guest House",
       },
       {
-        src: "/Guest-House-Kitchen.webp",
+        src: "/optimized/Guest-House-Kitchen.webp",
         alt: "Kitchen inside the Guest House",
       },
       {
-        src: "/Guest-House-Livingroom.webp",
+        src: "/optimized/Guest-House-Livingroom.webp",
         alt: "Living room inside the Guest House",
       },
       {
-        src: "/Guest-House-Master-Bedroom.webp",
+        src: "/optimized/Guest-House-Master-Bedroom.webp",
         alt: "Bedroom inside the Guest House",
       },
       {
-        src: "/Guest-House-Couches.webp",
+        src: "/optimized/Guest-House-Couches.webp",
         alt: "Seating area inside the Guest House",
       },
       {
-        src: "/Guest-House-Bunks.webp",
+        src: "/optimized/Guest-House-Bunks.webp",
         alt: "Bunk room inside the Guest House",
       },
       {
-        src: "/Guest-House-Beds.webp",
+        src: "/optimized/Guest-House-Beds.webp",
         alt: "Bedroom inside the Guest House",
       },
       {
-        src: "/Guest-House-Bathroom.webp",
+        src: "/optimized/Guest-House-Bathroom.webp",
         alt: "Bathroom inside the Guest House",
       },
       {
-        src: "/Guest-House-Mystery-Room.webp",
+        src: "/optimized/Guest-House-Mystery-Room.webp",
         alt: "Room inside the Guest House",
       },
     ],
@@ -473,15 +473,15 @@ const lodgingBuildings = [
 
     images: [
       {
-        src: "/Ajalon-Fall-2.jpg",
+        src: "/optimized/Ajalon-Fall-2.webp",
         alt: "Exterior view of Ajalon cottage",
       },
       {
-        src: "/Ajalon.png",
+        src: "/optimized/Ajalon.webp",
         alt: "Exterior view of Ajalon cottage",
       },
       {
-        src: "/Ajalon-inside.jpeg",
+        src: "/optimized/Ajalon-inside.webp",
         alt: "Exterior view of Ajalon cottage",
       },
     ],
@@ -580,17 +580,17 @@ const lodgingBuildings = [
 
     images: [
       {
-        src: "/Capurnum.webp",
+        src: "/optimized/Capurnum.webp",
         alt: "Exterior view of Capernaum cottage",
       },
 
       {
-        src: "/Capernaum-inside-2.jpeg",
+        src: "/optimized/Capernaum-inside-2.webp",
         alt: "Interior view of Capernaum",
       },
 
       {
-        src: "/Capernaum-inside-1.jpeg",
+        src: "/optimized/Capernaum-inside-1.webp",
         alt: "Interior view of Capernaum",
       },
     ],
@@ -703,6 +703,11 @@ function LodgingSectionDivider({
   );
 }
 
+// Small thumbnail variants are generated alongside the optimized images
+function toThumbnailSrc(src) {
+  return src.replace("/optimized/", "/optimized/thumbs/");
+}
+
 function LodgeSection({ building }) {
   const [activeImage, setActiveImage] = useState(0);
   const [detailsOpen, setDetailsOpen] = useState(false);
@@ -734,6 +739,8 @@ function LodgeSection({ building }) {
           <img
             src={building.images[activeImage].src}
             alt={building.images[activeImage].alt}
+            loading="lazy"
+            decoding="async"
             className={`lodge-main-image ${
               building.id === "ajalon" && activeImage === 1
                 ? "lodge-main-image-portrait"
@@ -777,7 +784,12 @@ function LodgeSection({ building }) {
                 onClick={() => setActiveImage(index)}
                 aria-label={`View ${building.title} image ${index + 1}`}
               >
-                <img src={image.src} alt="" />
+                <img
+                  src={toThumbnailSrc(image.src)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
               </button>
             ))}
           </div>

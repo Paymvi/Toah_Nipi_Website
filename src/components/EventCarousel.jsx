@@ -8,73 +8,73 @@ function EventCarousel() {
     title: "30 Acre Spring Fed Pond",
     description:
       "Our pond has a mini beach and is a great place to cool off and relax.",
-    image: "/SunsetLake.jpg",
+    image: "/optimized/card/SunsetLake.webp",
   },
   {
     title: "Woodland Hiking Trails",
     description:
       "Explore quiet trails surrounded by trees, fresh air, and peaceful views.",
-    image: "/Trails.jpeg",
+    image: "/optimized/Trails.webp",
   },
   {
     title: "Firepits & Fireplaces",
     description:
       "Gather around the fire for conversation, warmth, worship, and late-night laughs.",
-    image: "/Fireplace2.png",
+    image: "/optimized/Fireplace2.webp",
   },
   {
     title: "Sports Areas",
     description:
       "Basketball Court, volleyball court, large field. Suitable for tons of fun!",
-    image: "/Sports2.png",
+    image: "/optimized/Sports2.webp",
   },
   {
     title: "Lake Activities",
     description:
       "Spend time near the water with relaxing views and outdoor adventure.",
-    image: "/Canoe.jpeg",
+    image: "/optimized/Canoe.webp",
   },
   {
     title: "Eating & Community",
     description:
       "Share meals, conversations, and time together around the table.",
-    image: "/Eating.jpeg",
+    image: "/optimized/Eating.webp",
   },
   {
     title: "Stone Prayer Garden",
     description:
       "Find space to slow down, pray, journal, and reconnect with God.",
-    image: "/May-2025-PrayerGarden.jpg",
+    image: "/optimized/card/May-2025-PrayerGarden.webp",
   },
   {
     title: "Broomball",
     description:
       "During the winter, our pond freezes over and becomes the perfect place for a fun game of broomball.",
-    image: "/Broomball2.png",
+    image: "/optimized/Broomball2.webp",
   },
   {
     title: "Tubing",
     description:
       "Enjoy snowy tubing hills, friendly races, and plenty of winter fun around camp.",
-    image: "/Tubing.webp",
+    image: "/optimized/Tubing.webp",
   },
   {
     title: "Rock Climbing Wall",
     description:
       "Challenge yourself, build confidence, and enjoy a fun climb.",
-    image: "/RockClimbing.webp",
+    image: "/optimized/RockClimbing.webp",
   },
   {
     title: "Snowshoeing",
     description:
       "Explore winter trails with snowshoes available courtesy of Toah Nipi.",
-    image: "/Snow.png",
+    image: "/optimized/Snow.webp",
   },
   {
     title: "Indoor Games",
     description:
       "Enjoy board games, group activities, and cozy indoor fun with friends.",
-    image: "/Jun-2026-Fuzball.jpg",
+    image: "/optimized/Jun-2026-Fuzball.webp",
   },
 ];
 
@@ -101,7 +101,7 @@ function EventCarousel() {
         {events.map((event, index) => (
           <article className="event-card" key={index}>
             <div className="event-card-image">
-              <img src={event.image} alt={event.title} />
+              <img src={event.image} alt={event.title} loading="lazy" decoding="async" />
             </div>
 
             <div className="event-card-content">

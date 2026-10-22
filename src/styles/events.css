@@ -23,7 +23,7 @@
   padding: 170px clamp(24px, 7vw, 96px) 105px;
   display: flex;
   align-items: center;
-  background-image: url("/Dandy-Sunset.jpg");
+  background-image: url("/optimized/Dandy-Sunset.webp");
   background-size: cover;
   background-position: center 58%;
   background-repeat: no-repeat;

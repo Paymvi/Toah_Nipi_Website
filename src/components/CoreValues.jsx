@@ -5,7 +5,7 @@ const coreValues = [
   {
     number: "01",
     title: "Christ-Centered",
-    image: "/Gallery/Hebron-Sunset.jpg",
+    image: "/optimized/card/Gallery/Hebron-Sunset.webp",
     imagePosition: "50% 50%",
     statement: "We seek Christ first in everything we do.",
     description:
@@ -25,7 +25,7 @@ const coreValues = [
   {
     number: "02",
     title: "Gracious Hospitality",
-    image: "/Gallery/Back-Hebron.jpg",
+    image: "/optimized/card/Gallery/Back-Hebron.webp",
     imagePosition: "50% 50%",
     statement: "We embody an attitude of deep welcome.",
     description:
@@ -49,7 +49,7 @@ const coreValues = [
   {
     number: "03",
     title: "Intentional Presence",
-    image: "/Gallery/Jun-2026-Sunny-Deck.jpg",
+    image: "/optimized/card/Gallery/Jun-2026-Sunny-Deck.webp",
     imagePosition: "50% 50%",
     statement:
       "We slow down enough to truly see people and create space for God to work.",
@@ -73,7 +73,7 @@ const coreValues = [
   {
     number: "04",
     title: "Faithful Stewardship",
-    image: "/camp-background-2.jpg",
+    image: "/optimized/card/camp-background-2.webp",
     imagePosition: "50% 50%",
     statement:
       "Everything we have belongs to God, and we care for it faithfully.",
@@ -97,7 +97,7 @@ const coreValues = [
   {
     number: "05",
     title: "Sacred Simplicity",
-    image: "/Gallery/Winter.jpg",
+    image: "/optimized/Gallery/Winter.webp",
     imagePosition: "50% 50%",
     statement:
       "We remove distractions so we can focus on what is most important.",
@@ -120,7 +120,7 @@ const coreValues = [
   {
     number: "06",
     title: "Expectant Faith",
-    image: "/Gallery/Sunset-ish.jpg",
+    image: "/optimized/card/Gallery/Sunset-ish.webp",
     imagePosition: "50% 50%",
     statement:
       "We believe God is actively transforming lives and we serve with hope and confidence.",

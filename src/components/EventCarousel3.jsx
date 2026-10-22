@@ -9,35 +9,35 @@ function EventCarousel3() {
       title: "Christmas Light Walk",
       description:
         "A fully lighted Christmas walk through snowy New England woods, with scenes depicting the story of Jesus’ birth and the hope of creating a meaningful local tradition for generations to come.",
-      image: "/Hebron-Night-Lights.png",
+      image: "/optimized/card/Hebron-Night-Lights.webp",
     },
     {
       label: "Trails",
       title: "Woodland Trail Around the Pond",
       description:
         "Help transform the current woodland trails into well-maintained, easy-to-navigate pathways for peaceful walks around the pond.",
-      image: "/May-2025-Lake+Nature-2.jpg",
+      image: "/optimized/card/May-2025-Lake+Nature-2.webp",
     },
     {
       label: "Gathering Space",
       title: "Outdoor Amphitheatre",
       description:
         "Support a new outdoor amphitheatre between the office and the pond, creating a cost-effective space for conferences, meetings, worship, and teaching in a beautiful natural setting.",
-      image: "/Outdoor-Theatre.png",
+      image: "/optimized/card/Outdoor-Theatre.webp",
     },
     {
       label: "Rest & Reflection",
       title: "Trex Swings",
       description:
         "Help place durable Trex swings throughout Toah Nipi as an invitation to pause, connect with friends, and enjoy the beauty of creation.",
-      image: "/Trex-Swings.jpg",
+      image: "/optimized/card/Trex-Swings.webp",
     },
     {
       label: "Ongoing Support",
       title: "General Fund",
       description:
         "Help us continue to build, maintain, and care for Toah Nipi so future generations can come meet with God and one another.",
-      image: "/SunsetLake.jpg",
+      image: "/optimized/card/SunsetLake.webp",
     },
   ];
 
@@ -80,7 +80,7 @@ function EventCarousel3() {
           {projects.map((project) => (
             <article className="partner-project-card" key={project.title}>
               <div className="partner-project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
               </div>
 
               <div className="partner-project-content">

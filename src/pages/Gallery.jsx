@@ -14,6 +14,26 @@ import "../styles/gallery.css";
 
 
 
+// The grid shows smaller variants; the lightbox loads the full optimized image
+function toThumbnailSrc(src) {
+  return src.replace("/optimized/", "/optimized/thumbs/");
+}
+
+function toMediumSrc(src) {
+  return src.replace("/optimized/", "/optimized/md/");
+}
+
+// Matches the grid: 3 columns, 2 below 1050px, 1 below 600px; every 7th card spans 2
+function getGridImageSizes(index) {
+  return index % 7 === 0
+    ? "(max-width: 1050px) 100vw, (max-width: 1560px) 66vw, 1000px"
+    : "(max-width: 600px) 100vw, (max-width: 1050px) 50vw, (max-width: 1560px) 33vw, 500px";
+}
+
+
+
+
+
 const categories = [
   "All",
   "Campus",
@@ -31,43 +51,43 @@ const galleryImages = [
   // ======================================================
 
   {
-    src: "/Gallery/Apr-2026-Beach.jpg",
+    src: "/optimized/Gallery/Apr-2026-Beach.webp",
     alt: "Toah Nipi lake area",
     category: "Campus",
     title: "Beach at Toah Nipi",
   },
   {
-    src: "/Gallery/Back-Hebron.jpg",
+    src: "/optimized/Gallery/Back-Hebron.webp",
     alt: "Back of Hebron",
     category: "Campus",
     title: "Back of Hebron",
   },
   {
-    src: "/Gallery/Hebron-Sunset.jpg",
+    src: "/optimized/Gallery/Hebron-Sunset.webp",
     alt: "Sunset over Toah Nipi",
     category: "Campus",
     title: "Hebron Sunset",
   },
   {
-    src: "/Gallery/May-2024-Canoe.jpg",
+    src: "/optimized/Gallery/May-2024-Canoe.webp",
     alt: "Lake with canoes",
     category: "Campus",
     title: "Canoes on the Lake",
   },
   {
-    src: "/Gallery/Fall-Pic.jpeg",
+    src: "/optimized/Gallery/Fall-Pic.webp",
     alt: "Scenery around Toah Nipi",
     category: "Campus",
     title: "Fall at Toah Nipi",
   },
   {
-    src: "/Gallery/Sunset-ish.jpg",
+    src: "/optimized/Gallery/Sunset-ish.webp",
     alt: "Sunset at Toah Nipi",
     category: "Campus",
     title: "Sunset at Toah Nipi",
   },
   {
-    src: "/Gallery/Jun-2026-Sunny-Deck.jpg",
+    src: "/optimized/Gallery/Jun-2026-Sunny-Deck.webp",
     alt: "Sunny deck at Toah Nipi",
     category: "Camp Life",
     title: "Sunny Deck",
@@ -88,98 +108,98 @@ const galleryImages = [
   // ======================================================
 
   {
-    src: "/Gallery/Raph-Group-1.jpg",
+    src: "/optimized/Gallery/Raph-Group-1.webp",
     alt: "Guests spending time together at Toah Nipi",
     category: "Camp Life",
     title: "Camp Group Photo",
   },
   {
-    src: "/Gallery/Pre-Carnival.jpg",
+    src: "/optimized/Gallery/Pre-Carnival.webp",
     alt: "Group gathering before the carnival",
     category: "Camp Life",
     title: "Before the Carnival",
   },
   {
-    src: "/Gallery/Fire-Gathering.jpg",
+    src: "/optimized/Gallery/Fire-Gathering.webp",
     alt: "Guests gathered around a fire",
     category: "Camp Life",
     title: "Fire Gathering",
   },
   {
-    src: "/Gallery/May-2024-Dorm.jpg",
+    src: "/optimized/Gallery/May-2024-Dorm.webp",
     alt: "Dorm Room",
     category: "Camp Life",
     title: "Bethel Room",
   },
   {
-    src: "/Gallery/Haystack.jpeg",
+    src: "/optimized/Gallery/Haystack.webp",
     alt: "Haystack at Toah Nipi",
     category: "Camp Life",
     title: "Haystack",
   },
   {
-    src: "/Gallery/May-2024-Austin-Lake-2.jpg",
+    src: "/optimized/Gallery/May-2024-Austin-Lake-2.webp",
     alt: "Austin Lake at Toah Nipi",
     category: "Camp Life",
     title: "Lake Life",
   },
   {
-    src: "/Gallery/Volleyball.JPG",
+    src: "/optimized/Gallery/Volleyball.webp",
     alt: "Guests playing volleyball",
     category: "Camp Life",
     title: "Volleyball",
   },
   {
-    src: "/Gallery/Aahnix-Lesson.JPG",
+    src: "/optimized/Gallery/Aahnix-Lesson.webp",
     alt: "Aahnix lesson at Toah Nipi",
     category: "Camp Life",
     title: "Outdoor Classroom",
   },
   {
-    src: "/Gallery/Teen-Cards.JPG",
+    src: "/optimized/Gallery/Teen-Cards.webp",
     alt: "Teens playing cards",
     category: "Camp Life",
     title: "Card Games",
   },
   {
-    src: "/Gallery/Carnival-Gathering.jpeg",
+    src: "/optimized/Gallery/Carnival-Gathering.webp",
     alt: "Guests gathering at the carnival",
     category: "Camp Life",
     title: "Carnival Gathering",
   },
   {
-    src: "/Gallery/Aahnix-seeds.png",
+    src: "/optimized/Gallery/Aahnix-seeds.webp",
     alt: "Aahnix seed activity at Toah Nipi",
     category: "Camp Life",
     title: "Seed Activity",
   },
   {
-    src: "/Gallery/Asian-Karaoke.png",
+    src: "/optimized/Gallery/Asian-Karaoke.webp",
     alt: "People doing karaoke in the meeting space",
     category: "Camp Life",
     title: "Karaoke",
   },
 
   {
-    src: "/Gallery/Tie-Dye-Boy.JPG",
+    src: "/optimized/Gallery/Tie-Dye-Boy.webp",
     alt: "Boy doing a tie-dye activity",
     category: "Camp Life",
     title: "Tie-Dye",
   },
   {
-    src: "/Gallery/Carina-Carnival.jpeg",
+    src: "/optimized/Gallery/Carina-Carnival.webp",
     alt: "Carina at the carnival",
     category: "Camp Life",
     title: "Carnival",
   },
   {
-    src: "/Gallery/Human-Pyramid.jpeg",
+    src: "/optimized/Gallery/Human-Pyramid.webp",
     alt: "Guests making a human pyramid",
     category: "Camp Life",
     title: "Human Pyramid",
   },
   {
-    src: "/Gallery/May-2024-Abi-Pose.jpg",
+    src: "/optimized/Gallery/May-2024-Abi-Pose.webp",
     alt: "Abi posing at Toah Nipi",
     category: "Camp Life",
     title: "Basketball",
@@ -191,13 +211,13 @@ const galleryImages = [
   //   title: "Outdoor Adventures",
   // },
   {
-    src: "/Gallery/Leaf-Activity.JPG",
+    src: "/optimized/Gallery/Leaf-Activity.webp",
     alt: "Leaf activity at Toah Nipi",
     category: "Activities",
     title: "Leaf Activity",
   },
   {
-    src: "/Gallery/Ollie-Drawing.JPG",
+    src: "/optimized/Gallery/Ollie-Drawing.webp",
     alt: "Volunteer drawing on Chalkboard",
     category: "Activities",
     title: "Chalkboard Drawing",
@@ -212,49 +232,49 @@ const galleryImages = [
   // ======================================================
 
   {
-    src: "/Gallery/C+A-Apple-Cider.jpg",
+    src: "/optimized/Gallery/C+A-Apple-Cider.webp",
     alt: "Apple Cider making",
     category: "Food",
     title: "Making Apple Cider",
   },
   {
-    src: "/Gallery/Kitchen.JPG",
+    src: "/optimized/Gallery/Kitchen.webp",
     alt: "Kitchen",
     category: "Food",
     title: "The Kitchen",
   },
   {
-    src: "/Gallery/Char-Board-1.jpg",
+    src: "/optimized/Gallery/Char-Board-1.webp",
     alt: "Charcuterie board",
     category: "Food",
     title: "Charcuterie Board",
   },
   {
-    src: "/Gallery/Breakfast-Bar.JPG",
+    src: "/optimized/Gallery/Breakfast-Bar.webp",
     alt: "Breakfast bar",
     category: "Food",
     title: "Breakfast Bar",
   },
   {
-    src: "/Gallery/Beef-Bowl.jpg",
+    src: "/optimized/Gallery/Beef-Bowl.webp",
     alt: "Beef bowl",
     category: "Food",
     title: "Beef Bowl",
   },
   {
-    src: "/Gallery/Abi-Apple-Cider.jpg",
+    src: "/optimized/Gallery/Abi-Apple-Cider.webp",
     alt: "Staff member with finished Apple Cider",
     category: "Food",
     title: "Finished Apple Cider",
   },
   {
-    src: "/Gallery/Meal-Ham-Bread-Corn.jpg",
+    src: "/optimized/Gallery/Meal-Ham-Bread-Corn.webp",
     alt: "Meal with ham, bread, and corn",
     category: "Food",
     title: "Ham, Potatoes, Bread, Corn, and Gravy",
   },
   {
-    src: "/Gallery/Grilling.JPG",
+    src: "/optimized/Gallery/Grilling.webp",
     alt: "Food being grilled",
     category: "Food",
     title: "The Grill",
@@ -471,9 +491,12 @@ export default function Gallery() {
                   aria-label={`Open ${image.title}`}
                 >
                   <img
-                    src={image.src}
+                    src={toThumbnailSrc(image.src)}
+                    srcSet={`${toThumbnailSrc(image.src)} 640w, ${toMediumSrc(image.src)} 1024w`}
+                    sizes={getGridImageSizes(index)}
                     alt={image.alt}
                     loading="lazy"
+                    decoding="async"
                   />
 
 

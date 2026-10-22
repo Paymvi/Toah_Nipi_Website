@@ -6,87 +6,87 @@ function EventCarousel2() {
   const events = [
     {
       title: "Adult Canoe",
-      image: "/FamilyCamp/FC-AdultCanoe.webp",
+      image: "/optimized/FamilyCamp/FC-AdultCanoe.webp",
     },
     {
       title: "Carpet Ball",
-      image: "/FamilyCamp/FC-CarpetBall.webp",
+      image: "/optimized/FamilyCamp/FC-CarpetBall.webp",
     },
     {
       title: "Face Painting",
-      image: "/FamilyCamp/FC-FacePaint.webp",
+      image: "/optimized/FamilyCamp/FC-FacePaint.webp",
     },
     {
       title: "Field Fun",
-      image: "/FamilyCamp/FC-FieldFun.webp",
+      image: "/optimized/FamilyCamp/FC-FieldFun.webp",
     },
     {
       title: "Hayride",
-      image: "/FamilyCamp/FC-Hayride.webp",
+      image: "/optimized/FamilyCamp/FC-Hayride.webp",
     },
     {
       title: "Indoor Fun",
-      image: "/FamilyCamp/FC-IndoorFun.webp",
+      image: "/optimized/FamilyCamp/FC-IndoorFun.webp",
     },
     {
       title: "Kids Canoe",
-      image: "/FamilyCamp/FC-KidsCanoe.webp",
+      image: "/optimized/FamilyCamp/FC-KidsCanoe.webp",
     },
     {
       title: "Kids in the Field",
-      image: "/FamilyCamp/FC-KidsInField.webp",
+      image: "/optimized/FamilyCamp/FC-KidsInField.webp",
     },
     {
       title: "Kids Trail",
-      image: "/FamilyCamp/FC-KidsTrail.webp",
+      image: "/optimized/FamilyCamp/FC-KidsTrail.webp",
     },
     {
       title: "Kite Flying",
-      image: "/FamilyCamp/FC-Kite.webp",
+      image: "/optimized/FamilyCamp/FC-Kite.webp",
     },
     {
       title: "Lake Fun",
-      image: "/FamilyCamp/FC-LakeFun.webp",
+      image: "/optimized/FamilyCamp/FC-LakeFun.webp",
     },
     {
       title: "Lake Fun",
-      image: "/FamilyCamp/FC-LakeFun2.webp",
+      image: "/optimized/FamilyCamp/FC-LakeFun2.webp",
     },
     {
       title: "Lake Fun",
-      image: "/FamilyCamp/FC-LakeFun3.webp",
+      image: "/optimized/FamilyCamp/FC-LakeFun3.webp",
     },
     {
       title: "Potato Sack Race",
-      image: "/FamilyCamp/FC-PotatoSack.webp",
+      image: "/optimized/FamilyCamp/FC-PotatoSack.webp",
     },
     {
       title: "Potato Sack Race",
-      image: "/FamilyCamp/FC-PotatoSack2.webp",
+      image: "/optimized/FamilyCamp/FC-PotatoSack2.webp",
     },
     {
       title: "Soccer",
-      image: "/FamilyCamp/FC-Soccer.webp",
+      image: "/optimized/FamilyCamp/FC-Soccer.webp",
     },
     {
       title: "Soccer",
-      image: "/FamilyCamp/FC-Soccer2.webp",
+      image: "/optimized/FamilyCamp/FC-Soccer2.webp",
     },
     {
       title: "Tiger Face Paint",
-      image: "/FamilyCamp/FC-Tiger.webp",
+      image: "/optimized/FamilyCamp/FC-Tiger.webp",
     },
     {
       title: "Tipping Canoe",
-      image: "/FamilyCamp/FC-TippingCanoe.webp",
+      image: "/optimized/FamilyCamp/FC-TippingCanoe.webp",
     },
     {
       title: "Women’s Gathering",
-      image: "/FamilyCamp/FC-Women.webp",
+      image: "/optimized/FamilyCamp/FC-Women.webp",
     },
     {
       title: "Carnival",
-      image: "Carina_Carnival.jpeg",
+      image: "/optimized/Carina_Carnival.webp",
     },
   ];
 
@@ -113,7 +113,7 @@ function EventCarousel2() {
         {events.map((event, index) => (
           <article className="event-card" key={index}>
             <div className="event-card-image">
-              <img src={event.image} alt={event.title} />
+              <img src={event.image} alt={event.title} loading="lazy" decoding="async" />
             </div>
 
             <div className="event-card-content">

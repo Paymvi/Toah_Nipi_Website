@@ -73,9 +73,11 @@ export default function Events() {
       <section className="family-camp-section" id="family-camp">
         <div className="family-camp-image-wrap">
           <img
-            src="/FamilyCamp-New/Carina_Outside.jpg"
+            src="/optimized/FamilyCamp-New/Carina_Outside.webp"
             alt=""
             className="family-camp-image"
+            loading="lazy"
+            decoding="async"
           />
 
           {/* Optional image label */}
@@ -156,9 +158,11 @@ export default function Events() {
       <section className="thanksgiving-section" id="thanksgiving">
         <div className="thanksgiving-image-wrap">
           <img
-            src="/TN-Thankgiving-Clear.png"
+            src="/optimized/TN-Thankgiving-Clear.webp"
             alt="Guests gathered around tables during Thanksgiving House Party"
             className="thanksgiving-image"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 
@@ -216,9 +220,11 @@ export default function Events() {
 
             <div className="custom-gathering-item-image-wrap">
               <img
-                src="/camp-background-2.jpg"
+                src="/optimized/card/camp-background-2.webp"
                 alt="Toah Nipi lodging and meeting space"
                 className="custom-gathering-item-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </article>
@@ -238,9 +244,11 @@ export default function Events() {
 
             <div className="custom-gathering-item-image-wrap">
               <img
-                src="/TN-Thankgiving-Clear.png"
+                src="/optimized/card/TN-Thankgiving-Clear.webp"
                 alt="Guests sharing a meal at Toah Nipi"
                 className="custom-gathering-item-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </article>
@@ -260,9 +268,11 @@ export default function Events() {
 
             <div className="custom-gathering-item-image-wrap">
               <img
-                src="/Lake-Fall.webp"
+                src="/optimized/card/Lake-Fall.webp"
                 alt="Lake and outdoor space at Toah Nipi"
                 className="custom-gathering-item-image"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </article>
@@ -278,9 +288,11 @@ export default function Events() {
         <div className="personal-retreat-inner reveal-group">
           <div className="personal-retreat-image-card">
             <img
-              src="/Field-Sunset.jpg"
+              src="/optimized/Field-Sunset.webp"
               alt="A quiet indoor retreat space at Toah Nipi"
               className="personal-retreat-image"
+              loading="lazy"
+              decoding="async"
             />
 
             {/* <div className="personal-retreat-image-note">

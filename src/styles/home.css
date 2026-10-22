@@ -22,7 +22,7 @@
    font-family: var(--font-cooper);
    background:
       linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-      url("/camp-background-2.jpg");
+      url("/optimized/camp-background-2.webp");
    background-size: cover;
    background-position: center 55%;
    background-repeat: no-repeat;
@@ -239,16 +239,16 @@
 }
 
 .quick-links-section .feature-card:nth-child(1) {
-   background-image: url("/Dotham2.png");
+   background-image: url("/optimized/Dotham2.webp");
 }
 
 .quick-links-section .feature-card:nth-child(2) {
-   background-image: url("/Core-Values-2.png");
+   background-image: url("/optimized/Core-Values-2.webp");
    background-position: center 30%;
 }
 
 .quick-links-section .feature-card:nth-child(3) {
-   background-image: url("/stairs.JPG");
+   background-image: url("/optimized/stairs.webp");
 }
 
 .quick-links-section .feature-card::before {
@@ -500,7 +500,7 @@
 .split-image-one {
    background:
       linear-gradient(rgba(52, 56, 20, 0.18), rgba(52, 56, 20, 0.18)),
-      url("/Hero4.png");
+      url("/optimized/Hero4.webp");
    background-size: cover;
    background-position: center;
 }
@@ -762,7 +762,7 @@
    position: absolute;
    inset: 0;
    z-index: 0;
-   background-image: url("/SnowBridge.jpg");
+   background-image: url("/optimized/SnowBridge.webp");
    background-size: cover;
    background-position: center 73%;
    background-repeat: no-repeat;

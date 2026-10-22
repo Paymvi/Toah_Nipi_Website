@@ -8,7 +8,7 @@ const projectImpacts = [
     title: "Christmas Light Walk",
     category: "Future Experience",
     status: "In Development",
-    image: "/Hebron-Night-Lights.png",
+    image: "/optimized/Hebron-Night-Lights.webp",
     description:
       "A fully lighted Christmas walk experience designed to become a meaningful local tradition, sharing the story of Jesus’ birth through outdoor scenes, lights, and Scripture.",
     donorNote:
@@ -24,7 +24,7 @@ const projectImpacts = [
     title: "Woodland Trail Around the Pond",
     category: "Land Stewardship",
     status: "In Progress",
-    image: "/May-2025-Lake+Nature-2.jpg",
+    image: "/optimized/May-2025-Lake+Nature-2.webp",
     description:
       "Improvements to the woodland trails around the pond will create peaceful, accessible pathways for prayer, reflection, walking, and time outdoors.",
     donorNote:
@@ -40,7 +40,7 @@ const projectImpacts = [
     title: "Outdoor Amphitheatre",
     category: "Gathering Space",
     status: "Planned",
-    image: "/Outdoor-Theatre.png",
+    image: "/optimized/Outdoor-Theatre.webp",
     description:
       "A new outdoor amphitheatre near the pond will provide a flexible space for worship, teaching, camp gatherings, concerts, and group events.",
     donorNote:
@@ -56,7 +56,7 @@ const projectImpacts = [
     title: "Trex Swings",
     category: "Outdoor Seating",
     status: "Planned",
-    image: "/Trex-Swings.jpg",
+    image: "/optimized/Trex-Swings.webp",
     description:
       "New Trex swings will create a peaceful place for guests to sit, rest, and enjoy the beauty of Toah Nipi’s outdoor spaces. These durable swings will offer a welcoming spot for conversation, reflection, and quiet moments near camp.",
     donorNote:
@@ -340,8 +340,10 @@ export default function Donors() {
       <section className="donors-recognition-section" id="recognition-notes">
         <div className="donors-recognition-image">
           <img
-            src="/Dothan-Porch.webp"
+            src="/optimized/Dothan-Porch.webp"
             alt="A welcoming porch at Toah Nipi"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 

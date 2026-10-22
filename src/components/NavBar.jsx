@@ -135,7 +135,7 @@ export default function NavBar() {
       }}
     >
       <Link to="/" className="nav-logo" onClick={() => setMenuOpen(false)}>
-        <img src="/Secondary-Logo-3.png" alt="Toah Nipi logo" />
+        <img src="/optimized/Secondary-Logo-3-256.png" alt="Toah Nipi logo" />
       </Link>
 
       <button

@@ -19,7 +19,7 @@
   display: flex;
   align-items: center;
 
-  background-image: url("/Winter.jpg");
+  background-image: url("/optimized/Winter.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -982,7 +982,7 @@
   align-items: center;
   justify-content: center;
 
-  background-image: url("/Winter-2.jpg");
+  background-image: url("/optimized/Winter-2.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

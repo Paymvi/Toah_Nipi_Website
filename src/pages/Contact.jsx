@@ -287,7 +287,7 @@ export default function Contact() {
 
           <div className="contact-image-card">
             <img
-              src="/Toah-Nipi-Map.webp"
+              src="/optimized/Toah-Nipi-Map.webp"
               alt="Map showing Toah Nipi's location in New England"
             />
             <div className="contact-image-note">

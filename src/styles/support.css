@@ -51,7 +51,7 @@
   padding: 170px clamp(24px, 7vw, 96px) 105px;
   display: flex;
   align-items: center;
-  background-image: url("/Dothan-Porch.webp");
+  background-image: url("/optimized/Dothan-Porch.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3383,7 +3383,7 @@ a.relationship-directory-card:hover {
   display: flex;
   align-items: center;
   padding: 165px clamp(24px, 7vw, 96px) 100px;
-  background-image: url("/SunsetLake.jpg");
+  background-image: url("/optimized/SunsetLake.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -3895,7 +3895,7 @@ a.relationship-directory-card:hover {
       rgba(20, 24, 12, 0.38),
       rgba(20, 24, 12, 0.38)
     ),
-    url("/Apr-2026-Kareoke.jpg");
+    url("/optimized/Apr-2026-Kareoke.webp");
   background-size: cover;
   background-position: center 58%;
   background-repeat: no-repeat;
@@ -4019,7 +4019,7 @@ a.relationship-directory-card:hover {
       rgba(15, 18, 9, 0.58),
       rgba(15, 18, 9, 0.58)
     ),
-    url("/May-2024-Outside-Hebron.jpg");
+    url("/optimized/May-2024-Outside-Hebron.webp");
   background-size: cover;
   background-position: center 48%;
   background-repeat: no-repeat;
@@ -4167,7 +4167,7 @@ a.relationship-directory-card:hover {
       rgba(247, 241, 223, 0.58),
       rgba(247, 241, 223, 0.58)
     ),
-    url("/May-2024-Outside-Hebron.jpg");
+    url("/optimized/May-2024-Outside-Hebron.webp");
   background-size: cover;
   background-position: center 48%;
   background-repeat: no-repeat;
