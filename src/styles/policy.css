@@ -1,0 +1,98 @@
+/* =========================================================
+   POLICY PAGES (Privacy Notice, Accessibility Statement)
+========================================================= */
+
+.policy-page {
+  background: var(--tn-paper);
+  color: var(--tn-text);
+}
+
+.policy-content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 160px 24px 96px;
+  font-family: var(--tn-font-body);
+  line-height: 1.7;
+}
+
+.policy-header {
+  margin-bottom: 40px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(52, 56, 20, 0.16);
+}
+
+.policy-eyebrow {
+  margin: 0 0 12px;
+  color: var(--tn-green-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.policy-content h1 {
+  margin: 0 0 10px;
+  color: var(--tn-green);
+  font-family: var(--tn-font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.policy-updated {
+  margin: 0 0 18px;
+  color: var(--tn-text-soft);
+  font-size: 0.9rem;
+}
+
+.policy-content section {
+  margin-bottom: 34px;
+}
+
+.policy-content h2 {
+  margin: 0 0 12px;
+  color: var(--tn-green);
+  font-family: var(--tn-font-display);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.policy-content h3 {
+  margin: 20px 0 8px;
+  color: var(--tn-text-deep);
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.policy-content p,
+.policy-content li {
+  color: var(--tn-text);
+  font-size: 1rem;
+}
+
+.policy-content ul {
+  margin: 0 0 12px;
+  padding-left: 1.25rem;
+}
+
+.policy-content li + li {
+  margin-top: 8px;
+}
+
+.policy-content a {
+  color: var(--tn-green);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.policy-contact {
+  margin: 12px 0 16px;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .policy-content {
+    padding: 124px 18px 72px;
+  }
+}

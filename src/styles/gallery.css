@@ -304,6 +304,15 @@
   inset: 0;
   z-index: 5000;
 
+  /* Reset native <dialog> sizing so the lightbox still fills the screen */
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  border: 0;
+  color: inherit;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,6 +324,10 @@
   backdrop-filter: blur(7px);
 
   animation: galleryLightboxIn 220ms ease;
+}
+
+.gallery-lightbox::backdrop {
+  background: transparent;
 }
 
 .gallery-lightbox__close {

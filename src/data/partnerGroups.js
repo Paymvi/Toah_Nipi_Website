@@ -21,7 +21,7 @@ export const partnerGroups = [
         website: "https://intervarsity.org/",
       },
       {
-        name: "Sattler University",
+        name: "Sattler College",
         logo: "/optimized/partner-logos/Sattler-160.png",
         description:
           "A Christian university community connected to discipleship, formation, and service.",

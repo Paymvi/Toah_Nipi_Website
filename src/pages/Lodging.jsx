@@ -50,23 +50,23 @@ const lodgingBuildings = [
       },
       {
         src: "/optimized/Hebron-Bedroom.webp",
-        alt: "",
+        alt: "Bedroom inside Hebron Lodge with two twin beds",
       },
       {
         src: "/optimized/Heborn-Bedroon-2.webp",
-        alt: "",
+        alt: "Bedroom inside Hebron Lodge with a bunk bed and a larger bed",
       },
       {
         src: "/optimized/Hebron-Meeting-Space.webp",
-        alt: "",
+        alt: "Open meeting space inside Hebron Lodge with chairs along the wall",
       },
       {
         src: "/optimized/Hebron-Couches.webp",
-        alt: "",
+        alt: "Lounge with couches inside Hebron Lodge",
       },
       {
         src: "/optimized/Hebron-Bathroom.webp",
-        alt: "",
+        alt: "Bathroom with a shower inside Hebron Lodge",
       },
     ],
     facts: [
@@ -482,7 +482,7 @@ const lodgingBuildings = [
       },
       {
         src: "/optimized/Ajalon-inside.webp",
-        alt: "Exterior view of Ajalon cottage",
+        alt: "Interior of Ajalon cottage with a sleeping loft",
       },
     ],
 

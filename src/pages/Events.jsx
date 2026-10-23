@@ -2,18 +2,31 @@ import EventCarousel from "../components/EventCarousel2";
 import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
+// Dates match the linked 2026 registration forms.
 const familyCampWeeks = [
   {
     title: "Family Camp: Week 1",
-    date: "June 28th - July 3rd",
+    date: "June 28 – July 3, 2026",
+    endDate: "2026-07-03",
     href: "https://forms.toahnipi.org/r/A7KVOz",
   },
   {
     title: "Family Camp: Week 2",
-    date: "July 5th - July 10th",
+    date: "July 5 – July 10, 2026",
+    endDate: "2026-07-10",
     href: "https://forms.toahnipi.org/r/OD4DBa",
   },
 ];
+
+// Checked once when the page script loads. A week counts as past once its
+// last day has ended in Eastern time, so we stop offering registration for it.
+const loadedAt = Date.now();
+
+function hasWeekEnded(week) {
+  return loadedAt > new Date(`${week.endDate}T23:59:59-04:00`).getTime();
+}
+
+const allWeeksEnded = familyCampWeeks.every(hasWeekEnded);
 
 const prices = [
   "Adult 17+: $515",
@@ -74,7 +87,7 @@ export default function Events() {
         <div className="family-camp-image-wrap">
           <img
             src="/optimized/FamilyCamp-New/Carina_Outside.webp"
-            alt=""
+            alt="A young woman and two children waving on a wooden boardwalk trail in the woods"
             className="family-camp-image"
             loading="lazy"
             decoding="async"
@@ -90,12 +103,12 @@ export default function Events() {
           <div className="family-camp-inner reveal-group">
             <p className="events-eyebrow">Summer</p>
 
-            <h1>Family Camp</h1>
+            <h2 className="family-camp-title">Family Camp</h2>
 
             <div className="family-camp-description">
               <p>
-                Join us this summer for a full family camp program hosted by
-                the Toah Nipi staff.
+                Family Camp is a full family camp program hosted by the Toah
+                Nipi staff.
               </p>
 
               <p>
@@ -105,40 +118,68 @@ export default function Events() {
             </div>
 
             <div className="family-camp-week-grid">
-              {familyCampWeeks.map((week) => (
-                <article className="camp-week-card" key={week.title}>
-                  <div>
-                    <p className="camp-week-label">Available Week</p>
-                    <h2>{week.title}</h2>
-                    <p className="camp-week-date">{week.date}</p>
-                  </div>
+              {familyCampWeeks.map((week) => {
+                const ended = hasWeekEnded(week);
 
-                  <a href={week.href} className="camp-register-button">
-                    Register
-                  </a>
-                </article>
-              ))}
+                return (
+                  <article className="camp-week-card" key={week.title}>
+                    <div>
+                      <p className="camp-week-label">
+                        {ended ? "Past Week" : "Available Week"}
+                      </p>
+                      <h3>{week.title}</h3>
+                      <p className="camp-week-date">{week.date}</p>
+                    </div>
+
+                    {ended ? (
+                      <p className="camp-week-closed">Registration closed</p>
+                    ) : (
+                      <a href={week.href} className="camp-register-button">
+                        Register
+                      </a>
+                    )}
+                  </article>
+                );
+              })}
             </div>
+
+            {allWeeksEnded && (
+              <p className="family-camp-next-note">
+                Dates for the next Family Camp haven’t been posted yet.{" "}
+                <a href="/contact">Contact us</a> to ask about future dates.
+              </p>
+            )}
 
             <div className="family-camp-info-grid">
               <aside className="pricing-block">
-                <h2>Family Camp Prices</h2>
+                <h3>Family Camp Prices</h3>
 
                 <ul>
                   {prices.map((price) => (
                     <li key={price}>{price}</li>
                   ))}
                 </ul>
+
+                <p className="pricing-block-note">
+                  Registration requires a $500 security deposit. Invoices for
+                  the total amount due are sent within 14 business days of
+                  registration, and final payment is due within 14 business
+                  days of the last day of Family Camp.
+                </p>
               </aside>
 
               <aside className="pricing-block pricing-block-muted">
-                <h2>Discounts</h2>
+                <h3>Discounts</h3>
 
                 <ul>
                   {discounts.map((discount) => (
                     <li key={discount}>{discount}</li>
                   ))}
                 </ul>
+
+                <p className="pricing-block-note">
+                  Discounts are applied to the total after registration.
+                </p>
               </aside>
             </div>
           </div>
@@ -289,7 +330,7 @@ export default function Events() {
           <div className="personal-retreat-image-card">
             <img
               src="/optimized/Field-Sunset.webp"
-              alt="A quiet indoor retreat space at Toah Nipi"
+              alt="Sunset over a building and lawn at Toah Nipi"
               className="personal-retreat-image"
               loading="lazy"
               decoding="async"

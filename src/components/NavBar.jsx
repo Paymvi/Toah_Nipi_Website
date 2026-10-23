@@ -140,8 +140,11 @@ export default function NavBar() {
 
       <button
         className="nav-toggle"
+        type="button"
         onClick={() => setMenuOpen((current) => !current)}
         aria-label="Toggle navigation menu"
+        aria-expanded={menuOpen}
+        aria-controls="main-navigation"
       >
         <span />
         <span />
@@ -149,6 +152,7 @@ export default function NavBar() {
       </button>
 
       <nav
+        id="main-navigation"
         className={`nav-menu ${menuOpen ? "nav-menu--open" : ""}`}
         aria-label="Main navigation"
       >

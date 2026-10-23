@@ -1,11 +1,13 @@
 import {
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from "react";
 
 
 import SEO from "../components/SEO";
+import SiteFooter from "../components/SiteFooter";
 
 
 import "../styles/gallery.css";
@@ -348,6 +350,10 @@ export default function Gallery() {
   ] = useState(null);
 
 
+  const lightboxRef = useRef(null);
+  const lightboxTriggerRef = useRef(null);
+
+
 
 
 
@@ -366,17 +372,19 @@ export default function Gallery() {
 
 
 
+  // The lightbox is a native modal dialog: it traps focus, makes the page
+  // behind it inert, and closes on Escape (see onCancel below).
   useEffect(() => {
     if (!selectedImage) {
       return;
     }
 
 
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        setSelectedImage(null);
-      }
-    };
+    const dialog = lightboxRef.current;
+
+    if (dialog && !dialog.open) {
+      dialog.showModal();
+    }
 
 
     const previousOverflow =
@@ -387,21 +395,21 @@ export default function Gallery() {
       "hidden";
 
 
-    window.addEventListener(
-      "keydown",
-      handleKeyDown
-    );
-
-
     return () => {
       document.body.style.overflow =
         previousOverflow;
 
 
-      window.removeEventListener(
-        "keydown",
-        handleKeyDown
-      );
+      if (dialog?.open) {
+        dialog.close();
+      }
+
+
+      if (lightboxTriggerRef.current?.isConnected) {
+        lightboxTriggerRef.current.focus({
+          preventScroll: true,
+        });
+      }
     };
   }, [selectedImage]);
 
@@ -485,9 +493,11 @@ export default function Gallery() {
                   key={`${image.src}-${index}`}
                   type="button"
                   className="gallery-card"
-                  onClick={() =>
-                    setSelectedImage(image)
-                  }
+                  onClick={(event) => {
+                    lightboxTriggerRef.current =
+                      event.currentTarget;
+                    setSelectedImage(image);
+                  }}
                   aria-label={`Open ${image.title}`}
                 >
                   <img
@@ -532,14 +542,17 @@ export default function Gallery() {
 
 
       {selectedImage && (
-        <div
+        <dialog
+          ref={lightboxRef}
           className="gallery-lightbox"
-          role="dialog"
-          aria-modal="true"
           aria-label={selectedImage.title}
           onClick={() =>
             setSelectedImage(null)
           }
+          onCancel={(event) => {
+            event.preventDefault();
+            setSelectedImage(null);
+          }}
         >
           <button
             type="button"
@@ -576,8 +589,11 @@ export default function Gallery() {
               </h2>
             </div>
           </div>
-        </div>
+        </dialog>
       )}
+
+
+      <SiteFooter />
     </main>
   );
 }

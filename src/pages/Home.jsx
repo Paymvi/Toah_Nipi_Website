@@ -41,6 +41,9 @@ export default function Home() {
             _template: "table",
             _replyto: email,
 
+            // FormSubmit discards submissions where this hidden field is filled.
+            _honey: String(formData.get("_honey") || ""),
+
             "First Name": firstName || "N/A",
             "Last Name": lastName || "N/A",
             Email: email,
@@ -50,9 +53,6 @@ export default function Home() {
       );
 
       const result = await response.json();
-
-      console.log("Newsletter FormSubmit status:", response.status);
-      console.log("Newsletter FormSubmit response:", result);
 
       if (
         !response.ok ||
@@ -374,6 +374,18 @@ export default function Home() {
             />
           </label>
 
+          <div className="form-honeypot" aria-hidden="true">
+            <label>
+              Leave this field empty
+              <input
+                type="text"
+                name="_honey"
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </label>
+          </div>
+
           <button
             type="submit"
             disabled={newsletterStatus === "sending"}
@@ -391,6 +403,11 @@ export default function Home() {
               {newsletterMessage}
             </p>
           )}
+
+          <p className="newsletter-form-privacy">
+            Your information will be handled as described in our{" "}
+            <Link to="/privacy">Privacy Notice</Link>.
+          </p>
         </form>
       </section>
 

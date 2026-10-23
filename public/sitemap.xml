@@ -2,38 +2,53 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://www.toah-nipi.vercel.app/</loc>
+    <loc>https://toahnipi.org/</loc>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://www.toah-nipi.vercel.app/lodging</loc>
+    <loc>https://toahnipi.org/lodging</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.toah-nipi.vercel.app/events</loc>
+    <loc>https://toahnipi.org/events</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.toah-nipi.vercel.app/our-story</loc>
+    <loc>https://toahnipi.org/contact</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://toahnipi.org/our-story</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://www.toah-nipi.vercel.app/partner</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://www.toah-nipi.vercel.app/partners</loc>
+    <loc>https://toahnipi.org/support</loc>
     <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://toah-nipi.vercel.app/contact</loc>
-    <priority>0.9</priority>
+    <loc>https://toahnipi.org/gallery</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://toahnipi.org/new</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://toahnipi.org/privacy</loc>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://toahnipi.org/accessibility</loc>
+    <priority>0.3</priority>
   </url>
 
 </urlset>

@@ -9,13 +9,13 @@ const visitLinks = [
   { label: "Lodging", href: "/lodging" },
   { label: "Events", href: "/events" },
   { label: "Our Story", href: "/our-story" },
-  { label: "Partners", href: "/partners" },
+  { label: "Community Directory", href: "/support#relationship-directory" },
 ];
 
 const supportLinks = [
-  { label: "Give", href: "/partner" },
-  { label: "Volunteer", href: "/partner#serve-with-us" },
-  { label: "Pray With Us", href: "/partner#pray-with-us" },
+  { label: "Give", href: "/support" },
+  { label: "Volunteer", href: "/support#serve-with-us" },
+  { label: "Pray With Us", href: "/support#pray-with-us" },
   { label: "Contact Us", href: "/contact" },
 ];
 
@@ -102,10 +102,17 @@ export default function SiteFooter() {
             className="site-footer-logo-secondary"
           />
 
-          <p>
-            © {new Date().getFullYear()} Toah Nipi Christian Retreat Center.
-            <br/>All rights reserved.
-          </p>
+          <div className="site-footer-legal">
+            <p>
+              © {new Date().getFullYear()} Toah Nipi Christian Retreat Center.
+              <br/>All rights reserved.
+            </p>
+
+            <nav className="site-footer-legal-links" aria-label="Legal">
+              <Link to="/privacy">Privacy</Link>
+              <Link to="/accessibility">Accessibility</Link>
+            </nav>
+          </div>
 
           <div className="site-footer-socials" aria-label="Social media links">
             <a

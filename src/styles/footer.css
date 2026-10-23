@@ -208,10 +208,29 @@
 
 .site-footer-bottom p {
   margin: 0;
-  color: rgba(247, 241, 223, 0.52);
+  color: rgba(247, 241, 223, 0.72);
   font-size: 0.76rem;
   line-height: 1.45;
   font-weight: 400;
+}
+
+.site-footer-legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-top: 6px;
+}
+
+.site-footer-legal-links a {
+  color: rgba(247, 241, 223, 0.72);
+  font-size: 0.76rem;
+  line-height: 1.45;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer-legal-links a:hover {
+  color: #f7f1df;
 }
 
 .site-footer-socials {

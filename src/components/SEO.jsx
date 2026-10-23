@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
 
 const SITE_NAME = "Toah Nipi Christian Retreat Center";
-const SITE_URL = "https://toah-nipi.vercel.app";
-const DEFAULT_IMAGE = "https://toah-nipi.vercel.app/camp-background-2.jpg";
+const SITE_URL = "https://toahnipi.org";
+const DEFAULT_IMAGE = "https://toahnipi.org/camp-background-2.jpg";
 
 export default function SEO({
   title,
@@ -18,7 +18,7 @@ export default function SEO({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={canonicalUrl} />
+      {!noindex && <link rel="canonical" href={canonicalUrl} />}
 
       {noindex && <meta name="robots" content="noindex" />}
 

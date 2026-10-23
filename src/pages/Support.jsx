@@ -326,7 +326,7 @@ function Partner() {
       <SEO
         title="Partner With Toah Nipi"
         description="Partner with Toah Nipi through giving, volunteering, prayer, sharing the mission, and connecting with the churches, ministries, schools, organizations, and friends who make up the Toah Nipi community."
-        path="/partner"
+        path="/support"
       />
 
       <section className="partner-hero">
@@ -716,14 +716,14 @@ function Partner() {
           </p>
 
           <h2>
-            Partnership is also relationship.
+            Shaped by the people who gather here.
           </h2>
         </div>
 
         <p>
           Toah Nipi is shaped by the churches, ministries, schools,
           organizations, families, and friends who gather here, serve here,
-          give here, pray here, and help carry the mission forward.
+          give here, and pray here.
         </p>
       </section>
 
@@ -739,20 +739,20 @@ function Partner() {
               </p>
 
               <h2>
-                Explore every relationship.
+                Groups that have retreated with us.
               </h2>
             </div>
 
             <p>
-              Find churches, ministries, schools, and organizations connected
-              to Toah Nipi.
+              Churches, ministries, schools, and other organizations that have
+              retreated at or had a relationship with Toah Nipi.
             </p>
           </div>
 
           <div className="relationship-directory-tools">
             <label className="relationship-search">
               <span className="sr-only">
-                Search relationships
+                Search organizations
               </span>
 
               <svg
@@ -780,6 +780,7 @@ function Partner() {
 
             <div
               className="relationship-directory-filters"
+              role="group"
               aria-label="Filter directory by category"
             >
               {directoryRelationshipCategories.map((category) => {
@@ -826,84 +827,90 @@ function Partner() {
             </div>
           </div>
 
-          <div
-            className="relationship-directory-grid"
-            role="list"
-          >
+          <ul className="relationship-directory-grid">
             {directoryVisibleRelationships.map((organization) => {
               const DirectoryElement =
                 organization.website ? "a" : "div";
 
               return (
-                <DirectoryElement
-                  className="relationship-directory-card"
-                  href={
-                    organization.website
-                      ? organization.website
-                      : undefined
-                  }
-                  target={
-                    organization.website
-                      ? "_blank"
-                      : undefined
-                  }
-                  rel={
-                    organization.website
-                      ? "noreferrer"
-                      : undefined
-                  }
-                  role="listitem"
+                <li
+                  className="relationship-directory-item"
                   key={organization.name}
                 >
-                  <div className="relationship-directory-mark">
-                    {organization.logo ? (
-                      <img
-                        src={organization.logo}
-                        alt=""
-                      />
-                    ) : (
-                      <strong>
-                        {getRelationshipInitials(
-                          organization.name
-                        )}
-                      </strong>
+                  <DirectoryElement
+                    className="relationship-directory-card"
+                    href={
+                      organization.website
+                        ? organization.website
+                        : undefined
+                    }
+                    target={
+                      organization.website
+                        ? "_blank"
+                        : undefined
+                    }
+                    rel={
+                      organization.website
+                        ? "noreferrer"
+                        : undefined
+                    }
+                  >
+                    <div className="relationship-directory-mark">
+                      {organization.logo ? (
+                        <img
+                          src={organization.logo}
+                          alt=""
+                        />
+                      ) : (
+                        <strong>
+                          {getRelationshipInitials(
+                            organization.name
+                          )}
+                        </strong>
+                      )}
+                    </div>
+
+                    <div className="relationship-directory-copy">
+                      <span className="relationship-directory-category">
+                        <i
+                          className={`relationship-directory-dot relationship-directory-dot--${organization.category}`}
+                        />
+
+                        {relationshipCategoryLabels[
+                          organization.category
+                        ] || "Community"}
+                      </span>
+
+                      <h3>
+                        {organization.name}
+                      </h3>
+                    </div>
+
+                    {organization.website && (
+                      <span
+                        className="relationship-directory-arrow"
+                        aria-hidden="true"
+                      >
+                        ↗
+                      </span>
                     )}
-                  </div>
-
-                  <div className="relationship-directory-copy">
-                    <span className="relationship-directory-category">
-                      <i
-                        className={`relationship-directory-dot relationship-directory-dot--${organization.category}`}
-                      />
-
-                      {relationshipCategoryLabels[
-                        organization.category
-                      ] || "Community"}
-                    </span>
-
-                    <h3>
-                      {organization.name}
-                    </h3>
-                  </div>
-
-                  {organization.website && (
-                    <span
-                      className="relationship-directory-arrow"
-                      aria-hidden="true"
-                    >
-                      ↗
-                    </span>
-                  )}
-                </DirectoryElement>
+                  </DirectoryElement>
+                </li>
               );
             })}
-          </div>
+          </ul>
 
           {directoryVisibleRelationships.length === 0 && (
             <p className="relationship-directory-empty">
               No organizations match that search.
             </p>
           )}
+
+          <p className="relationship-directory-disclaimer">
+            Organizations listed here have participated in retreats or had a
+            relationship with Toah Nipi. Listing does not imply endorsement or
+            formal affiliation.
+          </p>
         </div>
       </section>
 

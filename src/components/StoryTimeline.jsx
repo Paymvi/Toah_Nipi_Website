@@ -44,7 +44,7 @@ const timelineItems = [
     title: "Gifted to InterVarsity",
     image: "/optimized/Timeline-Retreat.webp",
     imageAlt: "Retreat gathering at Toah Nipi",
-    text: "Toah Nipi was gifted to InterVarsity Christian Ministries, continuing its purpose as a place for Christian retreat, renewal, and community.",
+    text: "Toah Nipi was gifted to InterVarsity Christian Fellowship, continuing its purpose as a place for Christian retreat, renewal, and community.",
   },
   {
     year: "2024",

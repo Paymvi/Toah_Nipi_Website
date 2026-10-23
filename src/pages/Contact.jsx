@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
 import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
@@ -76,6 +77,31 @@ export default function Contact() {
   const sendingRef = useRef(false);
   const inquiryRef = useRef(null);
 
+  const reviewDialogRef = useRef(null);
+  const reviewTriggerRef = useRef(null);
+  const honeypotRef = useRef(null);
+
+  // The native modal dialog traps focus, makes the page behind it inert,
+  // and handles Escape. Focus goes back to whatever opened it.
+  useEffect(() => {
+    const dialog = reviewDialogRef.current;
+    if (!dialog || !isReviewing) return undefined;
+
+    if (!dialog.open) {
+      dialog.showModal();
+    }
+
+    return () => {
+      if (dialog.open) {
+        dialog.close();
+      }
+
+      if (reviewTriggerRef.current?.isConnected) {
+        reviewTriggerRef.current.focus({ preventScroll: true });
+      }
+    };
+  }, [isReviewing]);
+
   const handleChange = (event) => {
     if (sendingRef.current) return;
 
@@ -92,6 +118,7 @@ export default function Contact() {
     event.preventDefault();
     if (sendingRef.current) return;
 
+    reviewTriggerRef.current = document.activeElement;
     setSubmitStatus("idle");
     setSubmitMessage("");
     setIsReviewing(true);
@@ -149,6 +176,8 @@ export default function Contact() {
             _template: "table",
             _replyto: formData.email,
             _cc: "toahnipistorage@gmail.com",
+            // FormSubmit discards submissions where this hidden field is filled.
+            _honey: honeypotRef.current?.value || "",
             Name: formData.name,
             "Group Size": formData.groupSize || "N/A",
             "Desired Dates": formData.desiredDates || "N/A",
@@ -417,11 +446,27 @@ export default function Contact() {
               />
             </label>
           </div>
+          <div className="form-honeypot" aria-hidden="true">
+            <label>
+              Leave this field empty
+              <input
+                type="text"
+                name="_honey"
+                ref={honeypotRef}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </label>
+          </div>
           <button type="submit" className="contact-submit-button">
             Review Message
           </button>
           <p className="contact-form-note">
             You'll have a chance to review your message before it is sent.
+          </p>
+          <p className="contact-form-note">
+            Your information will be handled as described in our{" "}
+            <Link to="/privacy">Privacy Notice</Link>.
           </p>
           {submitStatus === "success" && (
             <p
@@ -433,110 +478,116 @@ export default function Contact() {
           )}
         </form>
 
-        {isReviewing && (
-          <div className="contact-review-overlay">
-            <div
-              className="contact-review-modal"
-              role="dialog"
-              aria-modal="true"
-              aria-labelledby="contact-review-title"
-            >
-              <div className="contact-review-header">
-                <p className="contact-eyebrow">Almost there</p>
-                <h2 id="contact-review-title">Review your message</h2>
-                <p>
-                  Please make sure everything below looks correct before sending
-                  your inquiry.
-                </p>
-              </div>
-
-              <div className="contact-review-email">
-                <div className="contact-review-email-row">
-                  <strong>To:</strong>
-                  <span>contactus@toahnipi.org</span>
-                </div>
-                <div className="contact-review-email-row">
-                  <strong>Subject:</strong>
-                  <span>Retreat Inquiry from Toah Nipi Website</span>
+        <dialog
+          ref={reviewDialogRef}
+          className="contact-review-dialog"
+          aria-labelledby={isReviewing ? "contact-review-title" : undefined}
+          onCancel={(event) => {
+            // Escape closes the review, except while a send is in progress.
+            event.preventDefault();
+            if (!sendingRef.current) setIsReviewing(false);
+          }}
+        >
+          {isReviewing && (
+            <div className="contact-review-overlay">
+              <div className="contact-review-modal">
+                <div className="contact-review-header">
+                  <p className="contact-eyebrow">Almost there</p>
+                  <h2 id="contact-review-title">Review your message</h2>
+                  <p>
+                    Please make sure everything below looks correct before sending
+                    your inquiry.
+                  </p>
                 </div>
 
-                <div className="contact-review-divider" />
+                <div className="contact-review-email">
+                  <div className="contact-review-email-row">
+                    <strong>To:</strong>
+                    <span>contactus@toahnipi.org</span>
+                  </div>
+                  <div className="contact-review-email-row">
+                    <strong>Subject:</strong>
+                    <span>Retreat Inquiry from Toah Nipi Website</span>
+                  </div>
 
-                <div className="contact-review-body">
-                  <p>
-                    <strong>Name:</strong> {formData.name}
-                  </p>
-                  <p>
-                    <strong>Group Size:</strong>{" "}
-                    {formData.groupSize || "N/A"}
-                  </p>
-                  <p>
-                    <strong>Desired Dates:</strong>{" "}
-                    {formData.desiredDates || "N/A"}
-                  </p>
-                  <p>
-                    <strong>Email:</strong> {formData.email}
-                  </p>
-                  <p>
-                    <strong>Phone:</strong>{" "}
-                    {formData.phone ? `+1 ${formData.phone}` : "N/A"}
-                  </p>
-                  <p>
-                    <strong>Church or Ministry:</strong>{" "}
-                    {formData.churchOrMinistry || "N/A"}
-                  </p>
-                  <p>
-                    <strong>Type of Retreat:</strong>{" "}
-                    {formData.retreatType || "N/A"}
-                  </p>
-                  <p>
-                    <strong>How Did You Hear About Us:</strong>{" "}
-                    {formData.heardAboutUs || "N/A"}
-                  </p>
-                  <p>
-                    <strong>Promo Code:</strong>{" "}
-                    {formData.promoCode || "N/A"}
-                  </p>
+                  <div className="contact-review-divider" />
 
-                  <div className="contact-review-message">
-                    <strong>Message:</strong>
-                    <p>{formData.message}</p>
+                  <div className="contact-review-body">
+                    <p>
+                      <strong>Name:</strong> {formData.name}
+                    </p>
+                    <p>
+                      <strong>Group Size:</strong>{" "}
+                      {formData.groupSize || "N/A"}
+                    </p>
+                    <p>
+                      <strong>Desired Dates:</strong>{" "}
+                      {formData.desiredDates || "N/A"}
+                    </p>
+                    <p>
+                      <strong>Email:</strong> {formData.email}
+                    </p>
+                    <p>
+                      <strong>Phone:</strong>{" "}
+                      {formData.phone ? `+1 ${formData.phone}` : "N/A"}
+                    </p>
+                    <p>
+                      <strong>Church or Ministry:</strong>{" "}
+                      {formData.churchOrMinistry || "N/A"}
+                    </p>
+                    <p>
+                      <strong>Type of Retreat:</strong>{" "}
+                      {formData.retreatType || "N/A"}
+                    </p>
+                    <p>
+                      <strong>How Did You Hear About Us:</strong>{" "}
+                      {formData.heardAboutUs || "N/A"}
+                    </p>
+                    <p>
+                      <strong>Promo Code:</strong>{" "}
+                      {formData.promoCode || "N/A"}
+                    </p>
+
+                    <div className="contact-review-message">
+                      <strong>Message:</strong>
+                      <p>{formData.message}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {submitStatus === "error" && (
-                <p
-                  className="contact-form-status contact-form-status-error"
-                  role="alert"
-                >
-                  {submitMessage}
-                </p>
-              )}
+                {submitStatus === "error" && (
+                  <p
+                    className="contact-form-status contact-form-status-error"
+                    role="alert"
+                  >
+                    {submitMessage}
+                  </p>
+                )}
 
-              <div className="contact-review-actions">
-                <button
-                  type="button"
-                  className="contact-review-edit-button"
-                  onClick={() => {
-                    if (!sendingRef.current) setIsReviewing(false);
-                  }}
-                  disabled={submitStatus === "sending"}
-                >
-                  ← Edit Message
-                </button>
-                <button
-                  type="button"
-                  className="contact-submit-button"
-                  onClick={handleSendMessage}
-                  disabled={submitStatus === "sending"}
-                >
-                  {submitStatus === "sending" ? "Sending..." : "Send Message"}
-                </button>
+                <div className="contact-review-actions">
+                  <button
+                    type="button"
+                    className="contact-review-edit-button"
+                    onClick={() => {
+                      if (!sendingRef.current) setIsReviewing(false);
+                    }}
+                    disabled={submitStatus === "sending"}
+                  >
+                    ← Edit Message
+                  </button>
+                  <button
+                    type="button"
+                    className="contact-submit-button"
+                    onClick={handleSendMessage}
+                    disabled={submitStatus === "sending"}
+                  >
+                    {submitStatus === "sending" ? "Sending..." : "Send Message"}
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </dialog>
       </section>
 
       <section className="contact-join-team-section" id="join-our-team">

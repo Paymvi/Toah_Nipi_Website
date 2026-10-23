@@ -4,9 +4,9 @@ const schema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Toah Nipi Christian Retreat Center",
-  url: "https://toah-nipi.vercel.app",
-  logo: "https://toah-nipi.vercel.app/TN-Logo.png",
-  image: "https://toah-nipi.vercel.app/camp-background-2.jpg",
+  url: "https://toahnipi.org",
+  logo: "https://toahnipi.org/TN-Logo.png",
+  image: "https://toahnipi.org/camp-background-2.jpg",
   telephone: "+1-603-899-5464",
   email: "contactus@toahnipi.org",
   address: {

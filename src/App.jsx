@@ -5,7 +5,6 @@ import {
   Routes,
   Route,
   Navigate,
-  useParams,
 } from "react-router-dom";
 
 import Home from "./pages/Home";
@@ -13,10 +12,12 @@ import Lodging from "./pages/Lodging";
 import Events from "./pages/Events";
 import Support from "./pages/Support";
 import OurStory from "./pages/OurStory";
-import Donors from "./pages/Donors";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import New from "./pages/New";
+import Privacy from "./pages/Privacy";
+import Accessibility from "./pages/Accessibility";
+import NotFound from "./pages/NotFound";
 
 import { Analytics } from "@vercel/analytics/react";
 
@@ -24,7 +25,6 @@ import ScrollToTop from "./components/ScrollToTop";
 import RevealOnScroll from "./components/RevealOnScroll";
 
 import SiteSchema from "./components/SiteSchema";
-import SEO from "./components/SEO";
 
 import "./styles/base.css";
 import "./styles/components.css";
@@ -37,35 +37,32 @@ import "./styles/donors.css";
 import "./styles/contact.css";
 import "./styles/footer.css";
 import "./styles/animations.css";
+import "./styles/policy.css";
 import "./App.css";
 import "./styles/New.css";
 
 
-function PlaceholderPage({ title }) {
-  const { section } = useParams();
+// Every page renders a single <main>, so the skip link targets it directly
+// instead of each page needing its own id.
+function SkipLink() {
+  const handleClick = (event) => {
+    const main = document.querySelector("main");
+    if (!main) return;
+
+    event.preventDefault();
+
+    if (!main.hasAttribute("tabindex")) {
+      main.setAttribute("tabindex", "-1");
+    }
+
+    main.focus({ preventScroll: true });
+    main.scrollIntoView({ block: "start" });
+  };
 
   return (
-    <main className="page">
-      <SEO
-        title={`${title} Coming Soon`}
-        description={`${title} page coming soon.`}
-        path=""
-        noindex
-      />
-
-      <section className="placeholder-page">
-        <p className="eyebrow">
-          {section ? `${title} dropdown item ${section}` : "Page coming soon"}
-        </p>
-
-        <h1>{title}</h1>
-
-        <p>
-          This route is set up. Later, you can replace this placeholder with the
-          real {title.toLowerCase()} page.
-        </p>
-      </section>
-    </main>
+    <a href="#main-content" className="skip-link" onClick={handleClick}>
+      Skip to main content
+    </a>
   );
 }
 
@@ -73,6 +70,7 @@ function PlaceholderPage({ title }) {
 export default function App() {
   return (
     <BrowserRouter>
+      <SkipLink />
       <SiteSchema />
       <RevealOnScroll />
       <ScrollToTop />
@@ -84,18 +82,8 @@ export default function App() {
 
         <Route path="/lodging" element={<Lodging />} />
 
-        <Route
-          path="/lodging/:section"
-          element={<PlaceholderPage title="Lodging" />}
-        />
-
 
         <Route path="/events" element={<Events />} />
-
-        <Route
-          path="/events/:section"
-          element={<PlaceholderPage title="Events" />}
-        />
 
 
         <Route path="/gallery" element={<Gallery />} />
@@ -106,13 +94,8 @@ export default function App() {
 
         <Route path="/support" element={<Support />} />
 
-        <Route
-          path="/support/:section"
-          element={<PlaceholderPage title="Support" />}
-        />
 
-
-        {/* Redirect old Partner / Partners URLs to the new combined page */}
+        {/* Redirect old Partner / Partners / Give URLs to the Support page */}
 
         <Route
           path="/partner"
@@ -124,35 +107,25 @@ export default function App() {
           element={<Navigate to="/support" replace />}
         />
 
+        <Route
+          path="/give"
+          element={<Navigate to="/support" replace />}
+        />
+
 
         <Route path="/our-story" element={<OurStory />} />
-
-        <Route
-          path="/our-story/:section"
-          element={<PlaceholderPage title="Our Story" />}
-        />
-
-
-        <Route path="/donors" element={<Donors />} />
-
-        <Route
-          path="/donors/:section"
-          element={<PlaceholderPage title="Donors" />}
-        />
 
 
         <Route path="/contact" element={<Contact />} />
 
-        <Route
-          path="/contact/:section"
-          element={<PlaceholderPage title="Contact" />}
-        />
+
+        <Route path="/privacy" element={<Privacy />} />
 
 
-        <Route
-          path="/give"
-          element={<PlaceholderPage title="Give" />}
-        />
+        <Route path="/accessibility" element={<Accessibility />} />
+
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Analytics />

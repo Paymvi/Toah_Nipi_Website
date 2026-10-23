@@ -40,7 +40,7 @@ export const RELATIONSHIP_CATEGORY = {
    FILTER CATEGORIES
 
    Uncategorized organizations still appear when
-   "All Relationships" is selected.
+   "All Groups" is selected.
 
    We intentionally do NOT show an "Uncategorized"
    button to visitors.
@@ -49,17 +49,17 @@ export const RELATIONSHIP_CATEGORY = {
 export const relationshipCategories = [
   {
     id: "all",
-    label: "All Relationships",
+    label: "All Groups",
   },
 
   {
     id: RELATIONSHIP_CATEGORY.MINISTRY,
-    label: "Ministry Partners",
+    label: "Ministries",
   },
 
   {
     id: RELATIONSHIP_CATEGORY.RETREAT,
-    label: "Retreating Retreat Groups",
+    label: "Returning Retreat Groups",
   },
 
   {
@@ -98,7 +98,7 @@ export const relationships = [
   },
 
   {
-    name: "Sattler University",
+    name: "Sattler College",
     category: RELATIONSHIP_CATEGORY.MINISTRY,
     rank: 7,
     logo: "/partner-logos/Sattler.png",

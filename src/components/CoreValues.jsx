@@ -18,7 +18,7 @@ const coreValues = [
     ],
     scripture:
       "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.",
-    reference: "John 15:5",
+    reference: "John 15:5 (NIV)",
     progression: "Why we exist.",
   },
 
@@ -66,7 +66,7 @@ const coreValues = [
     ],
     scripture:
       "Jesus stopped and called them. “What do you want me to do for you?” he asked.",
-    reference: "Matthew 20:32",
+    reference: "Matthew 20:32 (NIV)",
     progression: "How we relate to people.",
   },
 
@@ -90,7 +90,7 @@ const coreValues = [
     ],
     scripture:
       "Now it is required that those who have been given a trust must prove faithful.",
-    reference: "1 Corinthians 4:2",
+    reference: "1 Corinthians 4:2 (NIV)",
     progression: "How we care for God’s resources.",
   },
 
@@ -113,7 +113,7 @@ const coreValues = [
     ],
     scripture:
       "Come to me, all you who are weary and burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls. For my yoke is easy and my burden is light.",
-    reference: "Matthew 11:28–30",
+    reference: "Matthew 11:28–30 (NIV)",
     progression: "How we shape the environment.",
   },
 
@@ -137,7 +137,7 @@ const coreValues = [
     ],
     scripture:
       "Now to him who is able to do immeasurably more than all we ask or imagine...",
-    reference: "Ephesians 3:20",
+    reference: "Ephesians 3:20 (NIV)",
     progression: "What we believe God will do.",
   },
 ];
