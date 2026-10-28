@@ -709,6 +709,24 @@
   background: #eeecdf;
 }
 
+/* Stays pinned over the top-right of the PDF while it scrolls. */
+.news-story-close--floating {
+  position: sticky;
+  top: 14px;
+  z-index: 2;
+
+  display: flex;
+  width: fit-content;
+  margin: 14px 14px -58px auto;
+
+  background: #fffef8;
+  box-shadow: 0 4px 14px rgba(18, 24, 10, 0.25);
+}
+
+.news-story-close--floating:hover {
+  background: #eeecdf;
+}
+
 .news-story-close > span {
   font-size: 1.4rem;
   line-height: 1;
@@ -766,6 +784,60 @@
 
 .news-story-body p:last-child {
   margin-bottom: 0;
+}
+
+/* PDF stories: the popup is just the close button and the PDF. */
+.news-story-dialog--pdf {
+  --pdf-brown: #7a5a41;
+
+  background: var(--pdf-brown);
+
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 254, 248, 0.55) transparent;
+}
+
+/* Safari, which ignores scrollbar-color. */
+.news-story-dialog--pdf::-webkit-scrollbar {
+  width: 10px;
+}
+
+.news-story-dialog--pdf::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.news-story-dialog--pdf::-webkit-scrollbar-thumb {
+  border: 3px solid var(--pdf-brown);
+  border-radius: 999px;
+  background: rgba(255, 254, 248, 0.55);
+}
+
+.pdf-pages-canvases canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pdf-pages-status {
+  margin: 0;
+  padding: 120px 24px;
+
+  color: #fffef8;
+  text-align: center;
+}
+
+.news-story-pdf-fallback {
+  background: #fffef8;
+}
+
+.news-story-pdf-fallback {
+  padding: clamp(24px, 4vw, 44px);
+
+  color: rgba(38, 48, 15, 0.84);
+  line-height: 1.85;
+}
+
+.news-story-pdf-fallback p {
+  margin: 0 0 20px;
 }
 
 .news-story-footer {

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import PdfPages from "../components/PdfPages";
 import SiteFooter from "../components/SiteFooter";
 
 // Draft copy: edit the strings in each content array below.
@@ -14,9 +15,9 @@ const newsPosts = [
     excerpt:
       "As we enter the fall season and gather more and more apples from our very own orchard, Toah Nipi has pressed its very first batch of homemade apple cider!",
 
-    content: [
-      "(Content Pending! Will release soon!)",
-    ],
+    // Shown in place of the text content when set.
+    pdf: "/Blog/Officially-Fall-at-Toah-Nipi.pdf",
+    pdfTitle: "It’s Officially Fall at Toah Nipi",
   },
 
   {
@@ -280,8 +281,17 @@ export default function News() {
       <dialog
         ref={dialogRef}
         id="news-story-dialog"
-        className="news-story-dialog"
-        aria-labelledby={selectedPost ? "news-story-title" : undefined}
+        className={`news-story-dialog${
+          selectedPost?.pdf ? " news-story-dialog--pdf" : ""
+        }`}
+        aria-labelledby={
+          selectedPost && !selectedPost.pdf ? "news-story-title" : undefined
+        }
+        aria-label={
+          selectedPost?.pdf
+            ? selectedPost.pdfTitle || selectedPost.title
+            : undefined
+        }
         onPointerDown={handleDialogPointerDown}
         onClick={handleDialogClick}
         onCancel={(event) => {
@@ -297,68 +307,102 @@ export default function News() {
       >
         {selectedPost && (
           <>
-            <div className="news-story-toolbar">
-              <span>Stories from Toah Nipi</span>
-
+            {selectedPost.pdf ? (
               <button
                 type="button"
-                className="news-story-close"
+                className="news-story-close news-story-close--floating"
                 onClick={closeStory}
                 aria-label="Close story"
               >
                 Close
                 <span aria-hidden="true">×</span>
               </button>
-            </div>
+            ) : (
+              <div className="news-story-toolbar">
+                <span>Stories from Toah Nipi</span>
 
-            <article>
-              <div className="news-story-image">
-                <img
-                  src={selectedPost.image}
-                  alt={selectedPost.title}
-                />
+                <button
+                  type="button"
+                  className="news-story-close"
+                  onClick={closeStory}
+                  aria-label="Close story"
+                >
+                  Close
+                  <span aria-hidden="true">×</span>
+                </button>
               </div>
+            )}
 
-              <div className="news-story-content">
-                <header>
-                  <div className="news-post-meta">
-                    <span className="news-category">
-                      {selectedPost.category}
-                    </span>
+            {selectedPost.pdf ? (
+              <PdfPages
+                src={selectedPost.pdf}
+                title={selectedPost.pdfTitle || selectedPost.title}
+                fallback={
+                  <div className="news-story-pdf-fallback">
+                    <p>{selectedPost.excerpt}</p>
 
-                    <time dateTime={selectedPost.dateTime}>
-                      {selectedPost.date}
-                    </time>
+                    <a
+                      className="news-read-more"
+                      href={selectedPost.pdf}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open the story (PDF)
+                      <span aria-hidden="true">↗</span>
+                    </a>
                   </div>
-
-                  <h2 id="news-story-title" className="news-story-title">
-                    {selectedPost.title}
-                  </h2>
-                </header>
-
-                <div className="news-story-body">
-                  {(selectedPost.content?.length
-                    ? selectedPost.content
-                    : [selectedPost.excerpt]
-                  ).map((paragraph, index) => (
-                    <p key={`${selectedPost.id}-${index}`}>
-                      {paragraph}
-                    </p>
-                  ))}
+                }
+              />
+            ) : (
+              <article>
+                <div className="news-story-image">
+                  <img
+                    src={selectedPost.image}
+                    alt={selectedPost.title}
+                  />
                 </div>
-
-                <footer className="news-story-footer">
-                  <button
-                    type="button"
-                    className="news-read-more"
-                    onClick={closeStory}
-                  >
-                    <span aria-hidden="true">←</span>
-                    Back to all stories
-                  </button>
-                </footer>
-              </div>
-            </article>
+  
+                <div className="news-story-content">
+                  <header>
+                    <div className="news-post-meta">
+                      <span className="news-category">
+                        {selectedPost.category}
+                      </span>
+  
+                      <time dateTime={selectedPost.dateTime}>
+                        {selectedPost.date}
+                      </time>
+                    </div>
+  
+                    <h2 id="news-story-title" className="news-story-title">
+                      {selectedPost.title}
+                    </h2>
+                  </header>
+  
+                  <div className="news-story-body">
+                    {(selectedPost.content?.length
+                      ? selectedPost.content
+                      : [selectedPost.excerpt]
+                    ).map((paragraph, index) => (
+                      <p key={`${selectedPost.id}-${index}`}>
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+  
+                  <footer className="news-story-footer">
+                    <button
+                      type="button"
+                      className="news-read-more"
+                      onClick={closeStory}
+                    >
+                      <span aria-hidden="true">←</span>
+                      Back to all stories
+                    </button>
+                  </footer>
+                </div>
+              </article>
+            )}
           </>
         )}
       </dialog>
