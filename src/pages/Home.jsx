@@ -351,6 +351,7 @@ export default function Home() {
               <input
                 type="text"
                 name="firstName"
+                autoComplete="given-name"
                 required
               />
             </label>
@@ -360,6 +361,7 @@ export default function Home() {
               <input
                 type="text"
                 name="lastName"
+                autoComplete="family-name"
                 required
               />
             </label>
@@ -370,6 +372,7 @@ export default function Home() {
             <input
               type="email"
               name="email"
+              autoComplete="email"
               required
             />
           </label>

@@ -2401,6 +2401,14 @@ a.relationship-rock:focus-visible {
   font-size: 0.84rem;
 }
 
+/* 16px keeps iOS Safari from zooming the page when the field is focused */
+@media (max-width: 720px), (pointer: coarse) {
+  .relationship-search input {
+    min-height: 40px;
+    font-size: 16px;
+  }
+}
+
 .relationship-search input::placeholder {
   color:
     rgba(

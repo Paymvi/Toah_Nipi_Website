@@ -369,3 +369,34 @@
     justify-content: flex-start;
   }
 }
+/* Roomier tap targets for touch screens and narrow layouts */
+@media (max-width: 720px), (pointer: coarse) {
+  .site-footer-column a,
+  .site-footer-legal-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .site-footer-column h2 {
+    margin-bottom: 4px;
+  }
+
+  .site-footer-column a + a {
+    margin-top: 0;
+  }
+
+  .site-footer-legal-links {
+    gap: 0 20px;
+  }
+
+  .site-footer-primary-link,
+  .site-footer-secondary-link {
+    min-height: 44px;
+  }
+
+  .site-footer-socials a {
+    width: 44px;
+    height: 44px;
+  }
+}

@@ -442,6 +442,25 @@
   box-shadow: 0 0 0 4px rgba(61, 62, 32, 0.08);
 }
 
+/*
+  iOS Safari zooms the page when a field under 16px is focused, and 36px
+  fields are tight for touch, so phones and touch screens get larger fields.
+*/
+@media (max-width: 720px), (pointer: coarse) {
+  .contact-page .contact-form-card input,
+  .contact-page .contact-form-card select,
+  .contact-page .contact-form-card textarea {
+    font-size: 16px;
+  }
+
+  .contact-page .contact-form-card input,
+  .contact-page .contact-form-card select,
+  .phone-input-wrap {
+    height: 44px;
+    min-height: 44px;
+  }
+}
+
 .contact-submit-button {
   width: 100%;
   min-height: 42px;
@@ -981,6 +1000,27 @@
 .contact-join-team-button span {
   font-size: 1rem;
   line-height: 1;
+}
+
+/* The card column has a 320px floor, so stack before it crowds the copy. */
+@media (max-width: 860px) {
+  .contact-join-team-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-join-team-card {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 430px) {
+  .contact-join-team-section {
+    padding: 64px 18px;
+  }
+
+  .contact-join-team-card {
+    padding: 26px 22px;
+  }
 }
 
 /* DIRECTIONS */

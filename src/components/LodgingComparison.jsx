@@ -71,44 +71,56 @@ export default function LodgingComparison() {
       </div>
 
       <div className="lodging-comparison-table-wrap reveal-group">
-        <table className="lodging-comparison-table">
-          <thead>
-            <tr>
-              <th>Space</th>
-              <th>Best For</th>
-              <th>Sleeps</th>
-              <th>Bathrooms</th>
-              <th>Meeting Space</th>
-              <th>Highlights</th>
-              <th>
+        {/*
+          Below 760px the rows restyle as stacked cards. The explicit roles keep
+          table semantics for screen readers once the display values change.
+        */}
+        <table className="lodging-comparison-table" role="table">
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader">Space</th>
+              <th role="columnheader">Best For</th>
+              <th role="columnheader">Sleeps</th>
+              <th role="columnheader">Bathrooms</th>
+              <th role="columnheader">Meeting Space</th>
+              <th role="columnheader">Highlights</th>
+              <th role="columnheader">
                 <span className="sr-only">View lodging details</span>
               </th>
             </tr>
           </thead>
 
-          <tbody>
+          <tbody role="rowgroup">
             {lodgingOptions.map((option) => (
-              <tr key={option.id}>
-                <td className="lodging-comparison-name-cell">
+              <tr key={option.id} role="row">
+                <td className="lodging-comparison-name-cell" role="cell">
                   <strong>{option.name}</strong>
                   <span>{option.label}</span>
                 </td>
 
-                <td className="lodging-comparison-best-for">
+                <td
+                  className="lodging-comparison-best-for"
+                  role="cell"
+                  data-label="Best for"
+                >
                   {option.bestFor}
                 </td>
 
-                <td>
+                <td role="cell" data-label="Sleeps">
                   <span className="lodging-comparison-sleeps">
                     {option.sleeps}
                   </span>
                 </td>
 
-                <td>{option.bathrooms}</td>
+                <td role="cell" data-label="Bathrooms">
+                  {option.bathrooms}
+                </td>
 
-                <td>{option.meetingSpace}</td>
+                <td role="cell" data-label="Meeting space">
+                  {option.meetingSpace}
+                </td>
 
-                <td>
+                <td role="cell" data-label="Highlights">
                   <div className="lodging-comparison-tags">
                     {option.highlights.map((highlight) => (
                       <span key={highlight}>{highlight}</span>
@@ -116,10 +128,11 @@ export default function LodgingComparison() {
                   </div>
                 </td>
 
-                <td className="lodging-comparison-action-cell">
+                <td className="lodging-comparison-action-cell" role="cell">
                   <a
                     href={`#${option.id}`}
                     className="lodging-comparison-link"
+                    aria-label={`View ${option.name} details`}
                   >
                     View <span aria-hidden="true">→</span>
                   </a>

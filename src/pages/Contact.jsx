@@ -339,6 +339,7 @@ export default function Contact() {
               <input
                 type="text"
                 name="name"
+                autoComplete="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
@@ -369,6 +370,7 @@ export default function Contact() {
               <input
                 type="email"
                 name="email"
+                autoComplete="email"
                 value={formData.email}
                 onChange={handleChange}
                 required
@@ -381,6 +383,7 @@ export default function Contact() {
                 <input
                   type="tel"
                   name="phone"
+                  autoComplete="tel-national"
                   value={formData.phone}
                   onChange={handleChange}
                 />
@@ -406,6 +409,7 @@ export default function Contact() {
               <input
                 type="text"
                 name="churchOrMinistry"
+                autoComplete="organization"
                 value={formData.churchOrMinistry}
                 onChange={handleChange}
               />
@@ -430,6 +434,7 @@ export default function Contact() {
               <input
                 type="text"
                 name="promoCode"
+                autoComplete="off"
                 placeholder="If applicable"
                 value={formData.promoCode}
                 onChange={handleChange}

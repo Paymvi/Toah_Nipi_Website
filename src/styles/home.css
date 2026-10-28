@@ -8,6 +8,8 @@
 
 .hero-sticky-wrap {
    height: 100vh;
+   /* Small viewport units keep the CTA above mobile browser toolbars */
+   height: 100svh;
    position: sticky;
    top: 0;
    z-index: 0;
@@ -15,6 +17,7 @@
 
 .home-hero {
    height: 100vh;
+   height: 100svh;
    padding: 160px 24px 80px;
    display: flex;
    align-items: center;
@@ -26,6 +29,17 @@
    background-size: cover;
    background-position: center 55%;
    background-repeat: no-repeat;
+}
+
+/* Short screens, e.g. phones in landscape: keep the whole hero in view */
+@media (max-height: 560px) {
+   .home-hero {
+      padding: 96px 24px 28px;
+   }
+
+   .home-hero .hero-buttons {
+      margin-top: 22px;
+   }
 }
 
 .hero-title-strip {
@@ -404,19 +418,35 @@
    max-height: 0;
    overflow: hidden;
    opacity: 0;
+   /* Keep links in a collapsed card out of the tab order */
+   visibility: hidden;
    transition:
       max-height 300ms ease,
       opacity 220ms ease,
-      margin-top 220ms ease;
+      margin-top 220ms ease,
+      visibility 0s linear 300ms;
 }
 
+/*
+  Narrow phones wrap the longer descriptions past 260px, which cut off the
+  "Learn more" link, so the open height leaves room for that. The bottom
+  padding keeps the link's enlarged tap area inside the clipped box.
+*/
 .expandable-card.is-open .feature-card-dropdown {
-   max-height: 260px;
+   max-height: 420px;
+   padding-bottom: 12px;
    opacity: 1;
+   visibility: visible;
    margin-top: 24px;
+   transition:
+      max-height 300ms ease,
+      opacity 220ms ease,
+      margin-top 220ms ease,
+      visibility 0s linear 0s;
 }
 
-.feature-card-dropdown p {
+.feature-card-dropdown p,
+.quick-links-section .feature-card-dropdown p {
    margin: 0 0 18px;
    line-height: 1.6;
 }
@@ -897,6 +927,13 @@
    color: rgba(52, 56, 20, 0.55);
    font-size: 0.91rem;
    line-height: 1.5;
+}
+
+/* Keep the enlarged tap areas of wrapped links (components.css) apart */
+@media (max-width: 720px), (pointer: coarse) {
+   .newsletter-archive-links {
+      row-gap: 22px;
+   }
 }
 
 .newsletter-archive-links a {

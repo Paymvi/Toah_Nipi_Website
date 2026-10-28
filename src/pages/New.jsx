@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import SiteFooter from "../components/SiteFooter";
 
 // Draft copy: edit the strings in each content array below.
 // Bracketed paragraphs mark details to fill in.
@@ -361,6 +362,8 @@ export default function News() {
           </>
         )}
       </dialog>
+
+      <SiteFooter />
     </main>
   );
 }

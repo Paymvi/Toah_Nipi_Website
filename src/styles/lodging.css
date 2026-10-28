@@ -948,6 +948,119 @@
    }
 }
 
+/* Phones: each lodging row becomes a labeled card instead of a wide table */
+@media (max-width: 760px) {
+   .lodging-comparison-table-wrap {
+      overflow: visible;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+   }
+
+   .lodging-comparison-table,
+   .lodging-comparison-table tbody,
+   .lodging-comparison-table tr,
+   .lodging-comparison-table td {
+      display: block;
+      width: auto;
+      min-width: 0;
+   }
+
+   .lodging-comparison-table {
+      background: transparent;
+   }
+
+   .lodging-comparison-table thead {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+   }
+
+   .lodging-comparison-table tbody {
+      display: grid;
+      gap: 14px;
+   }
+
+   .lodging-comparison-table tbody tr {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      overflow: hidden;
+      border: 1px solid rgba(60, 61, 31, 0.11);
+      border-radius: 12px;
+      background: #fffaf0;
+      box-shadow: 0 14px 30px rgba(49, 51, 25, 0.06);
+   }
+
+   .lodging-comparison-table th,
+   .lodging-comparison-table td {
+      padding: 14px 18px;
+   }
+
+   .lodging-comparison-table td {
+      border-top: 1px solid rgba(60, 61, 31, 0.08);
+   }
+
+   .lodging-comparison-table td[data-label]::before {
+      content: attr(data-label);
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(60, 61, 31, 0.55);
+      font-size: 0.64rem;
+      font-weight: 650;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+   }
+
+   .lodging-comparison-table td:nth-child(2),
+   .lodging-comparison-table td:nth-child(4),
+   .lodging-comparison-table td:nth-child(5) {
+      font-size: 0.86rem;
+   }
+
+   .lodging-comparison-name-cell,
+   .lodging-comparison-best-for,
+   .lodging-comparison-table td:nth-child(5),
+   .lodging-comparison-table td:nth-child(6),
+   .lodging-comparison-action-cell {
+      grid-column: 1 / -1;
+   }
+
+   .lodging-comparison-name-cell {
+      padding-top: 18px;
+      border-top: 0;
+      background: rgba(232, 229, 207, 0.4);
+   }
+
+   .lodging-comparison-table .lodging-comparison-name-cell {
+      border-top: 0;
+   }
+
+   .lodging-comparison-best-for {
+      max-width: none;
+   }
+
+   .lodging-comparison-tags {
+      max-width: none;
+   }
+
+   .lodging-comparison-tags span {
+      white-space: normal;
+   }
+
+   .lodging-comparison-action-cell {
+      text-align: left;
+   }
+
+   .lodging-comparison-link {
+      width: 100%;
+      min-height: 44px;
+   }
+}
+
 @media (max-width: 780px) {
    .lodging-hero {
       min-height: 640px;

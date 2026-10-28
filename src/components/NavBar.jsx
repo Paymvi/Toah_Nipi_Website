@@ -1,7 +1,19 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FiChevronDown } from "react-icons/fi";
+
+const giveUrl = "https://secure.qgiv.com/for/toahnipichristianretreatcenter/";
+
+// Matches the breakpoint in NavBar.css where the menu collapses.
+const mobileMenuQuery = "(max-width: 1180px)";
+
+const socialLinks = [
+  { label: "Instagram", href: "https://www.instagram.com/toah_nipi/", Icon: FaInstagram },
+  { label: "Facebook", href: "https://www.facebook.com/ToahNipiRetreatCenter/", Icon: FaFacebookF },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/91656401/", Icon: FaLinkedinIn },
+];
 
 const navItems = [
   {
@@ -86,6 +98,57 @@ export default function NavBar() {
 
   const [bgOpacity, setBgOpacity] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  // Which section's sub-links are expanded in the mobile menu
+  const [openSection, setOpenSection] = useState(null);
+  const [menuLocationKey, setMenuLocationKey] = useState(location.key);
+  const toggleRef = useRef(null);
+
+  // Close the menu on any navigation, including the browser back button
+  if (menuLocationKey !== location.key) {
+    setMenuLocationKey(location.key);
+    setMenuOpen(false);
+    setOpenSection(null);
+  }
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenSection(null);
+  };
+
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const mobileMenu = window.matchMedia(mobileMenuQuery);
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setMenuOpen(false);
+        setOpenSection(null);
+        toggleRef.current?.focus();
+      }
+    };
+
+    // Resizing up to the desktop layout leaves no visible toggle to close it
+    const handleBreakpointChange = (event) => {
+      if (!event.matches) {
+        setMenuOpen(false);
+        setOpenSection(null);
+      }
+    };
+
+    // Keep the page behind the open menu from scrolling
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    document.addEventListener("keydown", handleKeyDown);
+    mobileMenu.addEventListener("change", handleBreakpointChange);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+      mobileMenu.removeEventListener("change", handleBreakpointChange);
+    };
+  }, [menuOpen]);
 
   useEffect(() => {
     if (!isHomePage) {
@@ -105,7 +168,9 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
-  const isScrolled = bgOpacity > 0.15;
+  // The open menu sits under the header, so the header goes solid with it
+  const headerOpacity = menuOpen ? 1 : bgOpacity;
+  const isScrolled = headerOpacity > 0.15;
 
   useEffect(() => {
     if (!location.hash) return;
@@ -130,19 +195,20 @@ export default function NavBar() {
     <header
       className={`site-header ${isScrolled ? "site-header--scrolled" : ""}`}
       style={{
-        backgroundColor: `rgba(52, 56, 20, ${bgOpacity})`,
-        backdropFilter: bgOpacity > 0.1 ? "blur(8px)" : "none",
+        backgroundColor: `rgba(52, 56, 20, ${headerOpacity})`,
+        backdropFilter: headerOpacity > 0.1 ? "blur(8px)" : "none",
       }}
     >
-      <Link to="/" className="nav-logo" onClick={() => setMenuOpen(false)}>
+      <Link to="/" className="nav-logo" onClick={closeMenu}>
         <img src="/optimized/Secondary-Logo-3-256.png" alt="Toah Nipi logo" />
       </Link>
 
       <button
-        className="nav-toggle"
+        ref={toggleRef}
+        className={`nav-toggle ${menuOpen ? "nav-toggle--open" : ""}`}
         type="button"
-        onClick={() => setMenuOpen((current) => !current)}
-        aria-label="Toggle navigation menu"
+        onClick={() => (menuOpen ? closeMenu() : setMenuOpen(true))}
+        aria-label="Main menu"
         aria-expanded={menuOpen}
         aria-controls="main-navigation"
       >
@@ -157,80 +223,103 @@ export default function NavBar() {
         aria-label="Main navigation"
       >
         <ul className="nav-list">
-          {navItems.map((item) => (
-            <li className="nav-item" key={item.path}>
-              <NavLink
-                to={item.path}
-                className={({ isActive }) =>
-                  `nav-link ${isActive ? "nav-link--active" : ""} ${
-                    item.highlight ? "nav-link--new" : ""
-                  }`
-                }
-                onClick={() => setMenuOpen(false)}
+          {navItems.map((item) => {
+            const hasDropdown = item.dropdown && item.dropdown.length > 0;
+            const sectionOpen = openSection === item.path;
+            const dropdownId = `nav-dropdown-${item.path.slice(1)}`;
+
+            return (
+              <li
+                className={`nav-item ${sectionOpen ? "nav-item--expanded" : ""}`}
+                key={item.path}
               >
-                {item.label}
-              </NavLink>
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "nav-link--active" : ""} ${
+                      item.highlight ? "nav-link--new" : ""
+                    }`
+                  }
+                  onClick={closeMenu}
+                >
+                  {item.label}
+                </NavLink>
 
-              {item.dropdown && item.dropdown.length > 0 && (
-                <div className="dropdown">
-                  {item.dropdown.map((dropdownItem) => (
-                    <Link
-                      key={dropdownItem.path}
-                      to={dropdownItem.path}
-                      onClick={() => setMenuOpen(false)}
+                {hasDropdown && (
+                  <>
+                    {/* Mobile only: desktop opens dropdowns on hover/focus */}
+                    <button
+                      type="button"
+                      className="nav-subtoggle"
+                      aria-expanded={sectionOpen}
+                      aria-controls={dropdownId}
+                      aria-label={`${item.label} sections`}
+                      onClick={() =>
+                        setOpenSection(sectionOpen ? null : item.path)
+                      }
                     >
-                      {dropdownItem.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
+                      <FiChevronDown aria-hidden="true" />
+                    </button>
 
-            </li>
-          ))}
+                    <div className="dropdown" id={dropdownId}>
+                      {item.dropdown.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.path}
+                          to={dropdownItem.path}
+                          onClick={closeMenu}
+                        >
+                          {dropdownItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                )}
+              </li>
+            );
+          })}
         </ul>
+
+        {/* Mobile only: the header actions are hidden once the menu collapses */}
+        <div className="nav-menu-actions">
+          <a href={giveUrl} className="nav-menu-give">
+            Give
+          </a>
+
+          <div className="nav-menu-socials">
+            {socialLinks.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                aria-label={label}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Icon aria-hidden="true" />
+              </a>
+            ))}
+          </div>
+        </div>
       </nav>
 
       <div className="nav-actions">
         <div className="social-links">
-          <a
-            href="https://www.instagram.com/toah_nipi/"
-            className="social-link"
-            aria-label="Instagram"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaInstagram />
-          </a>
-
-          <a
-            href="https://www.facebook.com/ToahNipiRetreatCenter/"
-            className="social-link"
-            aria-label="Facebook"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaFacebookF />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/company/91656401/"
-            className="social-link"
-            aria-label="LinkedIn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaLinkedinIn />
-          </a>
-
-
+          {socialLinks.map(({ label, href, Icon }) => (
+            <a
+              key={label}
+              href={href}
+              className="social-link"
+              aria-label={label}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon />
+            </a>
+          ))}
         </div>
 
-        <Link
-          to="https://secure.qgiv.com/for/toahnipichristianretreatcenter/"
-          className="give-link"
-        >
+        <a href={giveUrl} className="give-link">
           GIVE
-        </Link>
+        </a>
       </div>
     </header>
   );

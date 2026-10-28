@@ -247,3 +247,34 @@
   font-size: 1.1rem;
   line-height: 1.7;
 }
+/* -----------------------------
+   Touch targets for text-style CTAs
+   These links stay visually small, but an invisible 44px-tall hit area
+   makes them easier to tap. Padding would move their underlines.
+----------------------------- */
+
+@media (max-width: 720px), (pointer: coarse) {
+  .text-link,
+  .feature-card-link,
+  .lodge-inquiry-link,
+  .thanksgiving-link,
+  .partner-text-link,
+  .newsletter-archive-links a {
+    position: relative;
+  }
+
+  .text-link::before,
+  .feature-card-link::before,
+  .lodge-inquiry-link::before,
+  .thanksgiving-link::before,
+  .partner-text-link::before,
+  .newsletter-archive-links a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    right: -4px;
+    height: 44px;
+    transform: translateY(-50%);
+  }
+}

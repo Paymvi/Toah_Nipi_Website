@@ -537,6 +537,22 @@
   }
 }
 
+/* Short screens (phones in landscape): shrink the photo so the caption fits */
+@media (max-height: 560px) {
+  .gallery-lightbox {
+    padding: 16px 76px 16px 28px;
+  }
+
+  .gallery-lightbox__content img {
+    max-height: calc(100vh - 110px);
+    max-height: calc(100dvh - 110px);
+  }
+
+  .gallery-lightbox__caption {
+    padding-top: 10px;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .gallery-grid,
   .gallery-lightbox {

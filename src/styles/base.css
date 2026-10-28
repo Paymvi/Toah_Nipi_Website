@@ -130,6 +130,14 @@ a {
   min-height: 100vh;
 }
 
+/*
+  Keep anchor targets clear of the fixed header (84-88px tall). Page styles
+  that set their own offset with an #id selector still take priority.
+*/
+main [id] {
+  scroll-margin-top: 104px;
+}
+
 /* -----------------------------
    Accessibility
 ----------------------------- */
