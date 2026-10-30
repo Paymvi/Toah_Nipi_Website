@@ -241,6 +241,11 @@ export default function News() {
         className={`news-story-dialog${
           selectedPost?.pdf ? " news-story-dialog--pdf" : ""
         }`}
+        style={
+          selectedPost?.pdfBackground
+            ? { "--pdf-background": selectedPost.pdfBackground }
+            : undefined
+        }
         aria-labelledby={
           selectedPost && !selectedPost.pdf ? "news-story-title" : undefined
         }

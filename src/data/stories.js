@@ -9,6 +9,7 @@
 //
 // Optional fields:
 //   pdf / pdfTitle: show a PDF instead of `content`.
+//   pdfBackground: pop-up color around the PDF (defaults to brown).
 //   description: the search/link-preview summary (approved wording only).
 //   socialImage: a 1200x630 preview image in /public/social.
 const stories = [
@@ -37,7 +38,6 @@ const stories = [
 
   {
     slug: "family-camp-2026",
-    draft: true,
     title: "Looking Back on Family Camp 2026",
     date: "August 15, 2026",
     dateTime: "2026-08-15",
@@ -50,11 +50,14 @@ const stories = [
       height: 630,
     },
     excerpt:
-      "A look back at another meaningful time of community, outdoor adventure, and time together at Toah Nipi.",
+      "God blessed us with another wonderful season filled with fellowship, laughter, great memories, and countless moments of seeing Him at work.",
+    description:
+      "God blessed us with another wonderful season filled with fellowship, laughter, great memories, and countless moments of seeing Him at work.",
 
-    content: [
-      "(Content Pending! Will release soon!)",
-    ],
+    // Shown in place of the text content when set.
+    pdf: "/Blog/Family_Camp_2026.pdf",
+    pdfTitle: "Family Camp 2026: At the Table, We All Belong",
+    pdfBackground: "#5f7237",
   },
 
   {

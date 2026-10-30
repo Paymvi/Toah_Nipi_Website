@@ -788,9 +788,7 @@
 
 /* PDF stories: the popup is just the close button and the PDF. */
 .news-story-dialog--pdf {
-  --pdf-brown: #7a5a41;
-
-  background: var(--pdf-brown);
+  background: var(--pdf-background, #7a5a41);
 
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 254, 248, 0.55) transparent;
@@ -806,7 +804,7 @@
 }
 
 .news-story-dialog--pdf::-webkit-scrollbar-thumb {
-  border: 3px solid var(--pdf-brown);
+  border: 3px solid var(--pdf-background, #7a5a41);
   border-radius: 999px;
   background: rgba(255, 254, 248, 0.55);
 }
@@ -926,7 +924,7 @@
 }
 
 .news-story-sheet--pdf .pdf-pages {
-  background: #7a5a41;
+  background: var(--pdf-background, #7a5a41);
 }
 
 .news-story-pdf-footer .news-story-footer {

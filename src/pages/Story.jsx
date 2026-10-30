@@ -40,6 +40,11 @@ export default function Story() {
         className={`news-story-sheet${
           story.pdf ? " news-story-sheet--pdf" : ""
         }`}
+        style={
+          story.pdfBackground
+            ? { "--pdf-background": story.pdfBackground }
+            : undefined
+        }
       >
         <div className="news-story-toolbar">
           <span>Stories from Toah Nipi</span>
