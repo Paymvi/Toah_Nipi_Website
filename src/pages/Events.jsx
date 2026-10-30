@@ -1,5 +1,92 @@
-import EventCarousel from "../components/EventCarousel2";
+import EventCarousel from "../components/EventCarousel";
 import SEO from "../components/SEO";
+
+const familyCampPhotos = [
+  {
+    title: "Adult Canoe",
+    image: "/optimized/FamilyCamp/FC-AdultCanoe.webp",
+  },
+  {
+    title: "Carpet Ball",
+    image: "/optimized/FamilyCamp/FC-CarpetBall.webp",
+  },
+  {
+    title: "Face Painting",
+    image: "/optimized/FamilyCamp/FC-FacePaint.webp",
+  },
+  {
+    title: "Field Fun",
+    image: "/optimized/FamilyCamp/FC-FieldFun.webp",
+  },
+  {
+    title: "Hayride",
+    image: "/optimized/FamilyCamp/FC-Hayride.webp",
+  },
+  {
+    title: "Indoor Fun",
+    image: "/optimized/FamilyCamp/FC-IndoorFun.webp",
+  },
+  {
+    title: "Kids Canoe",
+    image: "/optimized/FamilyCamp/FC-KidsCanoe.webp",
+  },
+  {
+    title: "Kids in the Field",
+    image: "/optimized/FamilyCamp/FC-KidsInField.webp",
+  },
+  {
+    title: "Kids Trail",
+    image: "/optimized/FamilyCamp/FC-KidsTrail.webp",
+  },
+  {
+    title: "Kite Flying",
+    image: "/optimized/FamilyCamp/FC-Kite.webp",
+  },
+  {
+    title: "Pond Fun",
+    image: "/optimized/FamilyCamp/FC-LakeFun.webp",
+  },
+  {
+    title: "Pond Fun",
+    image: "/optimized/FamilyCamp/FC-LakeFun2.webp",
+  },
+  {
+    title: "Pond Fun",
+    image: "/optimized/FamilyCamp/FC-LakeFun3.webp",
+  },
+  {
+    title: "Potato Sack Race",
+    image: "/optimized/FamilyCamp/FC-PotatoSack.webp",
+  },
+  {
+    title: "Potato Sack Race",
+    image: "/optimized/FamilyCamp/FC-PotatoSack2.webp",
+  },
+  {
+    title: "Soccer",
+    image: "/optimized/FamilyCamp/FC-Soccer.webp",
+  },
+  {
+    title: "Soccer",
+    image: "/optimized/FamilyCamp/FC-Soccer2.webp",
+  },
+  {
+    title: "Tiger Face Paint",
+    image: "/optimized/FamilyCamp/FC-Tiger.webp",
+  },
+  {
+    title: "Tipping Canoe",
+    image: "/optimized/FamilyCamp/FC-TippingCanoe.webp",
+  },
+  {
+    title: "Women’s Gathering",
+    image: "/optimized/FamilyCamp/FC-Women.webp",
+  },
+  {
+    title: "Carnival",
+    image: "/optimized/Carina_Carnival.webp",
+  },
+];
 
 // Dates match the linked 2026 registration forms.
 const familyCampWeeks = [
@@ -190,7 +277,7 @@ export default function Events() {
           <h2>What's waiting for you</h2>
         </div>
 
-        <EventCarousel />
+        <EventCarousel items={familyCampPhotos} showCaptions={false} />
       </section>
 
       <section className="thanksgiving-section" id="thanksgiving">

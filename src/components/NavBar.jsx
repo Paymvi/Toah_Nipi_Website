@@ -3,8 +3,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 import "./NavBar.css";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
-
-const giveUrl = "https://secure.qgiv.com/for/toahnipichristianretreatcenter/";
+import { DONATION_URL } from "../data/donation";
 
 // Matches the breakpoint in NavBar.css where the menu collapses.
 const mobileMenuQuery = "(max-width: 1180px)";
@@ -151,10 +150,7 @@ export default function NavBar() {
   }, [menuOpen]);
 
   useEffect(() => {
-    if (!isHomePage) {
-      setBgOpacity(1);
-      return;
-    }
+    if (!isHomePage) return;
 
     const handleScroll = () => {
       const opacity = Math.min(window.scrollY / 160, 1);
@@ -168,28 +164,10 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHomePage]);
 
-  // The open menu sits under the header, so the header goes solid with it
-  const headerOpacity = menuOpen ? 1 : bgOpacity;
+  // Only the Home page fades the header in on scroll. The open menu sits
+  // under the header, so the header goes solid with it.
+  const headerOpacity = menuOpen || !isHomePage ? 1 : bgOpacity;
   const isScrolled = headerOpacity > 0.15;
-
-  useEffect(() => {
-    if (!location.hash) return;
-
-    const sectionId = location.hash.replace("#", "");
-
-    const timeout = setTimeout(() => {
-      const section = document.getElementById(sectionId);
-
-      if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      }
-    }, 80);
-
-    return () => clearTimeout(timeout);
-  }, [location]);
 
   return (
     <header
@@ -281,7 +259,7 @@ export default function NavBar() {
 
         {/* Mobile only: the header actions are hidden once the menu collapses */}
         <div className="nav-menu-actions">
-          <a href={giveUrl} className="nav-menu-give">
+          <a href={DONATION_URL} className="nav-menu-give">
             Give
           </a>
 
@@ -317,7 +295,7 @@ export default function NavBar() {
           ))}
         </div>
 
-        <a href={giveUrl} className="give-link">
+        <a href={DONATION_URL} className="give-link">
           GIVE
         </a>
       </div>

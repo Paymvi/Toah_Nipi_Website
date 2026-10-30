@@ -2,8 +2,6 @@ import StoryTimeline from "../components/StoryTimeline";
 import StatementOfFaith from "../components/StatementOfFaith";
 import CoreValues from "../components/CoreValues";
 import OurTeam from "../components/OurTeam";
-import { FaHistory } from "react-icons/fa";
-import { LuWaypoints } from "react-icons/lu";
 import SEO from "../components/SEO";
 import MissionVision from "../components/MissionVision";
 

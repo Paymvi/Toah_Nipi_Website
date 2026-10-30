@@ -1,10 +1,9 @@
 import {
   Fragment,
-  useEffect,
   useState,
 } from "react";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import LodgingComparison from "../components/LodgingComparison";
 import LodgingFaq from "../components/LodgingFaq";
 import SEO from "../components/SEO";
@@ -887,22 +886,6 @@ function LodgeSection({ building }) {
 }
 
 export default function Lodging() {
-  const location = useLocation();
-
-  useEffect(() => {
-    if (!location.hash) return;
-
-    const sectionId = location.hash.replace("#", "");
-    const section = document.getElementById(sectionId);
-
-    if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [location]);
-
   return (
     <main className="lodging-page">
       <SEO path="/lodging" />

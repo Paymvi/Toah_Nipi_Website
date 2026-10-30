@@ -1,9 +1,9 @@
-import { Helmet } from "react-helmet-async";
 import { getRoute } from "../seo/pages";
 import { getHeadTags, getStructuredData } from "../seo/head";
 
 // Page titles, descriptions, and preview images live in src/seo/pages.js.
 // Pass `path` for a listed page, or a full `route` object (e.g. Not Found).
+// React 19 moves these title, meta, and link tags into the document <head>.
 export default function SEO({ path, route }) {
   const page = route || getRoute(path);
 
@@ -14,7 +14,7 @@ export default function SEO({ path, route }) {
   const structuredData = getStructuredData(page);
 
   return (
-    <Helmet>
+    <>
       {getHeadTags(page).map(({ tag: Tag, attrs, text }, index) =>
         text === undefined ? (
           <Tag key={index} {...attrs} />
@@ -28,6 +28,6 @@ export default function SEO({ path, route }) {
           {JSON.stringify(structuredData)}
         </script>
       )}
-    </Helmet>
+    </>
   );
 }

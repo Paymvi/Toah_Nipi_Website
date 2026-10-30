@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import { FaHistory } from "react-icons/fa";
 import { FaRegCompass } from "react-icons/fa";
 // import { LuWaypoints } from "react-icons/lu";
 
