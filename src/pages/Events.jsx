@@ -1,5 +1,4 @@
 import EventCarousel from "../components/EventCarousel2";
-import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
 // Dates match the linked 2026 registration forms.
@@ -46,16 +45,12 @@ export default function Events() {
   return (
     <main className="events-page">
 
-      <SEO
-        title="Events, Family Camp, and Retreats"
-        description="Join Family Camp, Thanksgiving House Party, custom retreats, and personal getaways at Toah Nipi Christian Retreat Center in Rindge, New Hampshire."
-        path="/events"
-      />
+      <SEO path="/events" />
 
       <section className="events-hero">
         <div className="events-hero-overlay" />
 
-        <div className="events-hero-content reveal-group">
+        <div className="events-hero-content">
           <p className="events-hero-eyebrow">Events & Retreats</p>
 
           <h1>
@@ -146,7 +141,9 @@ export default function Events() {
             {allWeeksEnded && (
               <p className="family-camp-next-note">
                 Dates for the next Family Camp haven’t been posted yet.{" "}
-                <a href="/contact">Contact us</a> to ask about future dates.
+                <a href="/contact">Contact us</a> to ask about future dates.{" "}
+                <a href="/#newsletter">Sign up for our newsletter</a> to hear
+                when dates are announced.
               </p>
             )}
 
@@ -301,7 +298,7 @@ export default function Events() {
               <div>
                 <h3>Add time outdoors</h3>
                 <p>
-                  Include trails, lakefront space, firepits, recreation, and simple
+                  Include trails, time on Pecker Pond, firepits, recreation, and simple
                   time away from the noise.
                 </p>
               </div>
@@ -310,7 +307,7 @@ export default function Events() {
             <div className="custom-gathering-item-image-wrap">
               <img
                 src="/optimized/card/Lake-Fall.webp"
-                alt="Lake and outdoor space at Toah Nipi"
+                alt="Pond and outdoor space at Toah Nipi"
                 className="custom-gathering-item-image"
                 loading="lazy"
                 decoding="async"
@@ -369,8 +366,8 @@ export default function Events() {
                 <div>
                   <h3>Meals your way</h3>
                   <p>
-                    Prepare your own meals or connect with the camp meal schedule
-                    when available.
+                    Bring your own food, or ask about joining camp meals in the
+                    Hebron dining room.
                   </p>
                 </div>
               </article>
@@ -395,7 +392,6 @@ export default function Events() {
       </section>
 
 
-      <SiteFooter/>
 
     </main>
   );

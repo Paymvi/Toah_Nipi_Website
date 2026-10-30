@@ -1,59 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import PdfPages from "../components/PdfPages";
-import SiteFooter from "../components/SiteFooter";
+import SEO from "../components/SEO";
+import stories from "../data/stories";
 
-// Draft copy: edit the strings in each content array below.
-// Bracketed paragraphs mark details to fill in.
-const newsPosts = [
-  {
-    id: 1,
-    title: "Our First Batch of Homemade Apple Cider!",
-    date: "September 24, 2026",
-    dateTime: "2026-09-24",
-    category: "Camp Update",
-    image: "/Blog/Carina_apples.jpg",
-    excerpt:
-      "As we enter the fall season and gather more and more apples from our very own orchard, Toah Nipi has pressed its very first batch of homemade apple cider!",
-
-    // Shown in place of the text content when set.
-    pdf: "/Blog/Officially-Fall-at-Toah-Nipi.pdf",
-    pdfTitle: "It’s Officially Fall at Toah Nipi",
-  },
-
-  {
-    id: 2,
-    title: "Looking Back on Family Camp 2026",
-    date: "August 15, 2026",
-    dateTime: "2026-08-15",
-    category: "Family Camp",
-    image: "/Blog/Zoey+Raph.png",
-    excerpt:
-      "A look back at another meaningful time of community, outdoor adventure, and time together at Toah Nipi.",
-
-    content: [
-      "(Content Pending! Will release soon!)",
-    ],
-  },
-
-  {
-    id: 3,
-    title: "What’s New Around Camp",
-    date: "July 20, 2026",
-    dateTime: "2026-07-20",
-    category: "Projects",
-    image: "/Blog/Ichthus_Trail_Update.png",
-    excerpt:
-      "See some of the projects, improvements, and behind-the-scenes work happening throughout the retreat center.",
-
-    content: [
-      "(Content Pending! Will release soon!)",
-    ],
-  },
-];
-
+// Story details live in src/data/stories.js. Each story also has its own
+// page at /new/<slug> (src/pages/Story.jsx) for search results and shared
+// links; on this page, "Read Story" opens it in the pop-up reader.
 export default function News() {
-  const featuredPost = newsPosts[0];
-  const remainingPosts = newsPosts.slice(1);
+  const featuredPost = stories[0];
+  const remainingPosts = stories.slice(1);
 
   const [selectedPost, setSelectedPost] = useState(null);
   const dialogRef = useRef(null);
@@ -154,6 +109,7 @@ export default function News() {
 
   return (
     <main className="news-page">
+      <SEO path="/new" />
 
       {/* =====================================================
           HERO
@@ -188,7 +144,7 @@ export default function News() {
           <div className="news-featured-image">
             <img
               src={featuredPost.image}
-              alt={featuredPost.title}
+              alt={featuredPost.imageAlt}
             />
           </div>
 
@@ -203,7 +159,7 @@ export default function News() {
               </time>
             </div>
 
-            <h3>{featuredPost.title}</h3>
+            <h2>{featuredPost.title}</h2>
 
             <p>{featuredPost.excerpt}</p>
 
@@ -233,12 +189,13 @@ export default function News() {
 
         <div className="news-grid">
           {remainingPosts.map((post) => (
-            <article className="news-card" key={post.id}>
+            <article className="news-card" key={post.slug}>
               <div className="news-card-image">
                 <img
                   src={post.image}
-                  alt={post.title}
+                  alt={post.imageAlt}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
 
@@ -253,7 +210,7 @@ export default function News() {
                   </time>
                 </div>
 
-                <h3>{post.title}</h3>
+                <h2>{post.title}</h2>
 
                 <p>{post.excerpt}</p>
 
@@ -358,7 +315,7 @@ export default function News() {
                 <div className="news-story-image">
                   <img
                     src={selectedPost.image}
-                    alt={selectedPost.title}
+                    alt={selectedPost.imageAlt}
                   />
                 </div>
   
@@ -384,7 +341,7 @@ export default function News() {
                       ? selectedPost.content
                       : [selectedPost.excerpt]
                     ).map((paragraph, index) => (
-                      <p key={`${selectedPost.id}-${index}`}>
+                      <p key={`${selectedPost.slug}-${index}`}>
                         {paragraph}
                       </p>
                     ))}
@@ -407,7 +364,6 @@ export default function News() {
         )}
       </dialog>
 
-      <SiteFooter />
     </main>
   );
 }

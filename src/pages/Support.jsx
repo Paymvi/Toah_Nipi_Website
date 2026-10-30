@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import EventCarousel3 from "../components/EventCarousel3";
-import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
 import {
@@ -323,16 +322,12 @@ function Partner() {
   return (
     <main className="partner-page">
 
-      <SEO
-        title="Partner With Toah Nipi"
-        description="Partner with Toah Nipi through giving, volunteering, prayer, sharing the mission, and connecting with the churches, ministries, schools, organizations, and friends who make up the Toah Nipi community."
-        path="/support"
-      />
+      <SEO path="/support" />
 
       <section className="partner-hero">
         <div className="partner-hero-overlay" />
 
-        <div className="partner-hero-content reveal-group">
+        <div className="partner-hero-content">
           <p className="partner-eyebrow partner-eyebrow-light">
             Partner With Us
           </p>
@@ -934,7 +929,6 @@ function Partner() {
         </div>
       </section>
 
-      <SiteFooter />
 
     </main>
   );

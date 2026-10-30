@@ -45,15 +45,15 @@ function EventCarousel2() {
       image: "/optimized/FamilyCamp/FC-Kite.webp",
     },
     {
-      title: "Lake Fun",
+      title: "Pond Fun",
       image: "/optimized/FamilyCamp/FC-LakeFun.webp",
     },
     {
-      title: "Lake Fun",
+      title: "Pond Fun",
       image: "/optimized/FamilyCamp/FC-LakeFun2.webp",
     },
     {
-      title: "Lake Fun",
+      title: "Pond Fun",
       image: "/optimized/FamilyCamp/FC-LakeFun3.webp",
     },
     {

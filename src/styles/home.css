@@ -120,7 +120,7 @@
 
 .section-label {
    margin-bottom: 24px;
-   color: #6f7442;
+   color: #65693b;
    font-family: var(--font-cooper);
    text-transform: uppercase;
    letter-spacing: 0.14em;
@@ -612,6 +612,10 @@
    scroll-behavior: smooth;
    scroll-snap-type: x mandatory;
    padding: 28px 14px 36px;
+   /* Matches the side padding so the resting position is already a snap
+      point; otherwise the browser snap-scrolls on load, which stops
+      Chrome from recording Largest Contentful Paint for the page. */
+   scroll-padding-inline: 14px;
    scrollbar-width: none;
 }
 
@@ -792,7 +796,7 @@
    position: absolute;
    inset: 0;
    z-index: 0;
-   background-image: url("/optimized/SnowBridge.webp");
+   background-image: url("/optimized/SnowBridge-1600.webp");
    background-size: cover;
    background-position: center 73%;
    background-repeat: no-repeat;
@@ -1113,6 +1117,7 @@
    .event-carousel {
       gap: 22px;
       padding: 22px 8px 42px;
+      scroll-padding-inline: 8px;
    }
 
    .events-preview-section .event-card {
@@ -1173,4 +1178,13 @@
   border: 1px solid rgba(139, 62, 52, 0.18);
   background: rgba(248, 226, 220, 0.9);
   color: #7a332b;
+}
+
+/* Phone-sized hero image (see scripts/generate-seo-images.py) */
+@media (max-width: 480px) {
+   .home-hero {
+      background-image:
+         linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
+         url("/optimized/mobile/camp-background-2.webp");
+   }
 }

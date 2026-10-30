@@ -70,7 +70,8 @@ const quickLinkCards = [
         events, family programs, seasonal events, volunteer weekends,</strong> and{" "}
         <strong>special staff-led programs</strong>. Groups can bring their own
         speakers and programming while the camp provides the{" "}
-        <strong>setting, meals, lodging,</strong> and <strong>gathering spaces</strong>.
+        <strong>setting, lodging,</strong> and <strong>gathering spaces</strong>,
+        with <strong>meals</strong> available if you'd like them.
       </>
     ),
     link: "/events",

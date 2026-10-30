@@ -2268,3 +2268,13 @@
     line-height: 1.46;
   }
 }
+
+/* Phone-sized hero image (see scripts/generate-seo-images.py) */
+@media (max-width: 480px) {
+   .our-story-hero {
+      background-image: var(
+         --our-story-hero-image-mobile,
+         var(--our-story-hero-image)
+      );
+   }
+}

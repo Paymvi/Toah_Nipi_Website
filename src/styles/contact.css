@@ -1662,3 +1662,10 @@
   font-size: 1.05rem;
   transform: translateY(-1px);
 }
+
+/* Phone-sized hero image (see scripts/generate-seo-images.py) */
+@media (max-width: 480px) {
+  .contact-hero {
+    background-image: url("/optimized/mobile/Lake-Fall.webp");
+  }
+}

@@ -6,7 +6,7 @@ const lodgingOptions = [
     bestFor:
       "Large overnight retreats that need shared lodging and a central gathering space.",
     sleeps: "66",
-    bathrooms: "Dorm bathrooms + showers",
+    bathrooms: "Dorm baths + private baths",
     meetingSpace: "Up to 200",
     highlights: ["Bunk-style dormitories", "5 private rooms", "Large meeting space"],
   },
@@ -19,7 +19,7 @@ const lodgingOptions = [
     sleeps: "70",
     bathrooms: "Private bathrooms",
     meetingSpace: "Several rooms",
-    highlights: ["10 family-style bedrooms", "Lake views", "Kitchenette", "Open fireplace"],
+    highlights: ["10 family-style bedrooms", "Pond views", "Kitchenette", "Open fireplace"],
   },
   {
     id: "dothan",
@@ -30,7 +30,7 @@ const lodgingOptions = [
     sleeps: "22",
     bathrooms: "Two common bathrooms",
     meetingSpace: "20–30 people",
-    highlights: ["Pond-side setting", "6 bedrooms", "Shared common space"],
+    highlights: ["Pond-side setting", "6 bedrooms", "Shared common space", "Kitchenette"],
   },
   {
     id: "guest-house",
@@ -39,7 +39,7 @@ const lodgingOptions = [
     bestFor:
       "Sabbaticals, furloughs, church leader retreats, board retreats, and small gatherings.",
     sleeps: "Up to 12",
-    bathrooms: "Bathroom details not listed",
+    bathrooms: "3 bathrooms",
     meetingSpace: "Meeting spaces",
     highlights: ["Full kitchen", "Dining room", "Living room", "Library"],
   },
@@ -49,8 +49,8 @@ const lodgingOptions = [
     label: "Quiet Retreat",
     bestFor:
       "Personal retreats, prayer, solitude, families, and small groups seeking a simpler stay.",
-    sleeps: "3–8",
-    bathrooms: "Bathroom details not listed",
+    sleeps: "Up to 8",
+    bathrooms: "1 bathroom each",
     meetingSpace: "Varies by cottage",
     highlights: ["Independent cottages", "Unique layouts", "Quiet private stay"],
   },
@@ -66,7 +66,9 @@ export default function LodgingComparison() {
 
         <p>
           A simple overview of each lodging option before you explore the full
-          photos and details below.
+          photos and details below. Hebron, Bethel, Dothan, and the Guest House
+          are heated and open year-round. The rustic cottages are open
+          May–October.
         </p>
       </div>
 

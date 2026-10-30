@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
-import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
 export default function Accessibility() {
   return (
     <main className="policy-page">
-      <SEO
-        title="Accessibility Statement"
-        description="Toah Nipi Christian Retreat Center's commitment to making its website usable by as many people as possible, and how to get help."
-        path="/accessibility"
-      />
+      <SEO path="/accessibility" />
 
       <article className="policy-content">
         <header className="policy-header">
@@ -70,7 +65,6 @@ export default function Accessibility() {
         </section>
       </article>
 
-      <SiteFooter />
     </main>
   );
 }

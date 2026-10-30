@@ -1206,6 +1206,8 @@
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   padding: 28px 14px 36px;
+  /* See .event-carousel in home.css */
+  scroll-padding-inline: 14px;
   scrollbar-width: none;
 }
 
@@ -1376,6 +1378,7 @@
   .events-page .event-carousel {
     gap: 22px;
     padding: 22px 8px 42px;
+    scroll-padding-inline: 8px;
   }
 
   .events-page .events-preview-section .event-card {
@@ -1389,5 +1392,12 @@
 
   .events-page .carousel-btn {
     display: none;
+  }
+}
+
+/* Phone-sized hero image (see scripts/generate-seo-images.py) */
+@media (max-width: 480px) {
+  .events-hero {
+    background-image: url("/optimized/mobile/Dandy-Sunset.webp");
   }
 }

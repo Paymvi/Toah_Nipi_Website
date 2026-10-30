@@ -5,8 +5,8 @@ import {
 } from "react";
 
 import { Link, useLocation } from "react-router-dom";
-import SiteFooter from "../components/SiteFooter";
 import LodgingComparison from "../components/LodgingComparison";
+import LodgingFaq from "../components/LodgingFaq";
 import SEO from "../components/SEO";
 
 const lodgingBuildings = [
@@ -72,7 +72,7 @@ const lodgingBuildings = [
     facts: [
       { label: "Sleeps", value: "66 guests" },
       { label: "Rooms", value: "2 dormitories + 5 private rooms" },
-      { label: "Bathrooms", value: "Dorm bathrooms and showers" },
+      { label: "Bathrooms", value: "Dorm and private bathrooms" },
       { label: "Meeting Space", value: "Up to 200 guests" },
     ],
     details: [
@@ -112,7 +112,7 @@ const lodgingBuildings = [
 
               <div>
                 <span>5</span>
-                <p>Private rooms located on the top level</p>
+                <p>Private rooms on the top level, each with its own bathroom</p>
               </div>
             </div>
           </>
@@ -137,7 +137,7 @@ const lodgingBuildings = [
     id: "bethel",
     title: "Bethel: Family Style",
     description:
-      "Bethel is a three-level lodge with family-style bedrooms, private bathrooms, lake views, meeting rooms, a kitchenette, and an open fireplace.",
+      "Bethel is a three-level lodge with family-style bedrooms, private bathrooms, pond views, meeting rooms, a kitchenette, and an open fireplace.",
     images: [
       {
         src: "/optimized/Bethel.webp",
@@ -157,7 +157,7 @@ const lodgingBuildings = [
       },
       {
         src: "/optimized/Bethel-Top.webp",
-        alt: "Lake view from Bethel Lodge",
+        alt: "Pond view from Bethel Lodge",
       },
       {
         src: "/optimized/Bethel-Room.webp",
@@ -188,7 +188,7 @@ const lodgingBuildings = [
       { label: "Sleeps", value: "70 guests" },
       { label: "Rooms", value: "10 family-style bedrooms" },
       { label: "Bathrooms", value: "Private bathrooms" },
-      { label: "Features", value: "Lake views, kitchenette, fireplace" },
+      { label: "Features", value: "Pond views, kitchenette, fireplace" },
     ],
     details: [
       {
@@ -235,7 +235,7 @@ const lodgingBuildings = [
         content: (
           <>
             <p>
-              Bethel includes lake views, expansive windows, several meeting
+              Bethel includes pond views, expansive windows, several meeting
               rooms, a kitchenette, and an open fireplace.
             </p>
           </>
@@ -304,6 +304,7 @@ const lodgingBuildings = [
               The top level includes two bedrooms and a sitting room. The middle
               level includes four bunk-style bedrooms, two common bathrooms, and
               shared common space. The bottom level includes meeting space.
+              Dothan also has a kitchenette.
             </p>
           </>
         ),
@@ -409,8 +410,8 @@ const lodgingBuildings = [
             </p>
 
             <p>
-              Guests may choose to dine at the main dining room or manage their
-              own meals.
+              Guests may choose to eat in the Hebron dining room or prepare their
+              own meals in the Guest House kitchen.
             </p>
           </>
         ),
@@ -466,7 +467,7 @@ const lodgingBuildings = [
 
     title: "Ajalon",
 
-    seasonalAvailability: "May-October",
+    seasonalAvailability: "May–October",
 
     description:
       "Ajalon is a quiet rustic cottage offering a simple, private place to stay away from the larger lodge buildings. It is a comfortable option for families, small groups, and guests looking for a quieter retreat setting.",
@@ -489,7 +490,7 @@ const lodgingBuildings = [
     facts: [
       {
         label: "Sleeps",
-        value: "5–8 guests",
+        value: "Up to 8 guests",
       },
 
       {
@@ -521,6 +522,8 @@ const lodgingBuildings = [
               buildings.
             </p>
 
+            <p>Ajalon has a kitchenette and one bathroom.</p>
+
             <p>
               Its smaller scale creates a more private atmosphere for families,
               small groups, and guests looking for a simple retreat experience.
@@ -537,12 +540,12 @@ const lodgingBuildings = [
         content: (
           <>
             <p>
-              Ajalon can accommodate approximately 5–8 overnight guests.
+              Ajalon can accommodate up to 8 overnight guests.
             </p>
 
             <div className="lodging-spec-list">
               <div>
-                <span>5–8</span>
+                <span>8</span>
 
                 <p>Overnight guests</p>
               </div>
@@ -629,6 +632,11 @@ const lodgingBuildings = [
             </p>
 
             <p>
+              Capernaum has one bathroom but no kitchen, so guests bring their
+              own food or join camp meals.
+            </p>
+
+            <p>
               Its smaller layout makes it a comfortable option for individuals,
               couples, families, and small groups looking for a quieter stay.
             </p>
@@ -644,12 +652,12 @@ const lodgingBuildings = [
         content: (
           <>
             <p>
-              Capernaum can accommodate up to 5 overnight guests.
+              Capernaum can accommodate up to 8 overnight guests.
             </p>
 
             <div className="lodging-spec-list">
               <div>
-                <span>5</span>
+                <span>8</span>
 
                 <p>Overnight guests</p>
               </div>
@@ -897,25 +905,21 @@ export default function Lodging() {
 
   return (
     <main className="lodging-page">
-      <SEO
-        title="Lodging for Retreats in New Hampshire"
-        description="Stay at Toah Nipi in Rindge, NH with lodging for churches, families, ministries, and retreat groups, including Hebron, Bethel, Dothan, cottages, and the Guest House."
-        path="/lodging"
-      />
+      <SEO path="/lodging" />
 
       <section className="lodging-hero">
         <div className="lodging-hero-overlay" />
 
-        <div className="lodging-hero-content reveal-group">
+        <div className="lodging-hero-content">
           <p className="lodging-eyebrow lodging-eyebrow-light">Lodging</p>
 
           <h1>
-            Stay at <span>Toah Nipi.</span>
+            Retreat lodging at <span>Toah Nipi</span>
           </h1>
 
           <p>
-            Comfortable lodging spaces for retreats, families, churches, and
-            groups gathering together in a peaceful camp setting.
+            Retreat lodges, a guest house, and seasonal cottages for groups in
+            Rindge, NH.
           </p>
 
           <a
@@ -945,6 +949,8 @@ export default function Lodging() {
         </Fragment>
       ))}
 
+      <LodgingFaq />
+
       <section className="lake-section">
         <div className="lake-content">
           <div className="lake-heading-box">
@@ -967,7 +973,6 @@ export default function Lodging() {
         </div>
       </section>
 
-      <SiteFooter />
     </main>
   );
 }

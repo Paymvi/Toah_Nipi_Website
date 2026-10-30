@@ -1,6 +1,21 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "toah-nipi.vercel.app"
+        }
+      ],
+      "destination": "https://toahnipi.org/",
+      "permanent": true
+    },
     {
       "source": "/:path*",
       "has": [
@@ -11,12 +26,26 @@
       ],
       "destination": "https://toahnipi.org/:path*",
       "permanent": true
-    }
-  ],
-  "rewrites": [
+    },
+    { "source": "/partner", "destination": "/support", "permanent": true },
+    { "source": "/partners", "destination": "/support", "permanent": true },
+    { "source": "/give", "destination": "/support", "permanent": true },
+    { "source": "/home", "destination": "/", "permanent": true },
+    { "source": "/rooms", "destination": "/lodging", "permanent": true },
+    { "source": "/connect", "destination": "/contact", "permanent": true },
+    { "source": "/staff", "destination": "/our-story#our-team", "permanent": true },
+    { "source": "/jobs", "destination": "/contact#join-our-team", "permanent": true },
+    { "source": "/serve", "destination": "/support#serve-with-us", "permanent": true },
+    { "source": "/ministries", "destination": "/events", "permanent": true },
+    { "source": "/notes", "destination": "/new", "permanent": true },
+    { "source": "/timeline", "destination": "/our-story#history", "permanent": true },
+    { "source": "/timeline/1990s", "destination": "/our-story#history", "permanent": true },
+    { "source": "/timeline/1993", "destination": "/our-story#history", "permanent": true },
+    { "source": "/timeline/2024", "destination": "/our-story#history", "permanent": true },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "source": "/s/RTC-Application-Blank-1.pdf",
+      "destination": "/documents/staff-application.pdf",
+      "permanent": true
     }
   ],
   "headers": [
@@ -42,6 +71,15 @@
         {
           "key": "Permissions-Policy",
           "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
         }
       ]
     }

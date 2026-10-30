@@ -7,7 +7,6 @@ import {
 
 
 import SEO from "../components/SEO";
-import SiteFooter from "../components/SiteFooter";
 
 
 import "../styles/gallery.css";
@@ -54,7 +53,7 @@ const galleryImages = [
 
   {
     src: "/optimized/Gallery/Apr-2026-Beach.webp",
-    alt: "Toah Nipi lake area",
+    alt: "Toah Nipi pond area",
     category: "Campus",
     title: "Beach at Toah Nipi",
   },
@@ -72,9 +71,9 @@ const galleryImages = [
   },
   {
     src: "/optimized/Gallery/May-2024-Canoe.webp",
-    alt: "Lake with canoes",
+    alt: "Pond with canoes",
     category: "Campus",
-    title: "Canoes on the Lake",
+    title: "Canoes on the Pond",
   },
   {
     src: "/optimized/Gallery/Fall-Pic.webp",
@@ -141,9 +140,9 @@ const galleryImages = [
   },
   {
     src: "/optimized/Gallery/May-2024-Austin-Lake-2.webp",
-    alt: "Austin Lake at Toah Nipi",
+    alt: "Canoeing on Pecker Pond at Toah Nipi",
     category: "Camp Life",
-    title: "Lake Life",
+    title: "Life on the Pond",
   },
   {
     src: "/optimized/Gallery/Volleyball.webp",
@@ -419,11 +418,7 @@ export default function Gallery() {
 
   return (
     <main className="gallery-page">
-      <SEO
-        title="Gallery"
-        description="Explore photos from Toah Nipi Christian Retreat Center, including our campus, camp life, food, lodging, and activities."
-        path="/gallery"
-      />
+      <SEO path="/gallery" />
 
 
 
@@ -517,9 +512,10 @@ export default function Gallery() {
                       </span>
 
 
-                      <h3>
+                      {/* Not a heading: headings aren't allowed inside a button */}
+                      <strong className="gallery-card__title">
                         {image.title}
-                      </h3>
+                      </strong>
                     </div>
 
 
@@ -593,7 +589,6 @@ export default function Gallery() {
       )}
 
 
-      <SiteFooter />
     </main>
   );
 }

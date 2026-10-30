@@ -5302,3 +5302,10 @@ a.relationship-directory-card:hover {
   font-size: clamp(0.96rem, 1.1vw, 1rem);
   line-height: 1.6;
 }
+
+/* Phone-sized hero image (see scripts/generate-seo-images.py) */
+@media (max-width: 480px) {
+  .partner-hero {
+    background-image: url("/optimized/mobile/Dothan-Porch.webp");
+  }
+}

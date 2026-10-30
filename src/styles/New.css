@@ -26,7 +26,7 @@
 
   overflow: hidden;
 
-  background-image: url("/Stairs-Sunset.jpg");
+  background-image: url("/optimized/Stairs-Sunset.webp");
   background-size: cover;
   background-position: center 58%;
   background-repeat: no-repeat;
@@ -125,7 +125,7 @@
 .news-section-heading > p {
   margin: 0 0 10px;
 
-  color: rgba(60, 61, 31, 0.6);
+  color: rgba(60, 61, 31, 0.78);
 
   font-size: 0.7rem;
   font-weight: 700;
@@ -215,7 +215,7 @@
   padding: clamp(28px, 3.5vw, 42px);
 }
 
-.news-featured-content h3 {
+.news-featured-content h2 {
   margin: 16px 0 14px;
 
   color: #26300f;
@@ -251,7 +251,7 @@
 
   gap: 9px;
 
-  color: rgba(60, 61, 31, 0.56);
+  color: rgba(60, 61, 31, 0.78);
 
   font-size: 0.72rem;
   font-weight: 600;
@@ -394,7 +394,7 @@
   padding: 24px 24px 26px;
 }
 
-.news-card-content h3 {
+.news-card-content h2 {
   margin: 16px 0 10px;
 
   color: #26300f;
@@ -582,7 +582,7 @@
     height: 215px;
   }
 
-  .news-card-content h3 {
+  .news-card-content h2 {
     font-size: 1.45rem;
   }
 
@@ -881,5 +881,75 @@
   .news-story-title {
     margin-top: 20px;
     font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+}
+
+/* =========================================================
+   STORY PAGES (/new/<slug>)
+   Same card as the old pop-up reader, placed on the page.
+========================================================= */
+
+.news-story-page {
+  padding: 124px 20px 96px;
+}
+
+.news-story-sheet,
+.news-story-sheet * {
+  box-sizing: border-box;
+}
+
+.news-story-sheet {
+  width: min(880px, 100%);
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(38, 48, 15, 0.16);
+  border-radius: 18px;
+
+  background: #fffdf8;
+  color: #303614;
+
+  box-shadow: 0 24px 60px rgba(49, 51, 25, 0.12);
+}
+
+.news-story-page .news-story-toolbar {
+  position: static;
+}
+
+.news-story-pdf-header {
+  padding-bottom: clamp(18px, 3vw, 28px);
+}
+
+.news-story-pdf-header .news-story-title {
+  margin-bottom: 0;
+}
+
+.news-story-sheet--pdf .pdf-pages {
+  background: #7a5a41;
+}
+
+.news-story-pdf-footer .news-story-footer {
+  margin-top: 26px;
+}
+
+@media (max-width: 650px) {
+  .news-story-page {
+    padding: 104px 10px 64px;
+  }
+
+  .news-story-sheet {
+    border-radius: 12px;
+  }
+
+  .news-story-page .news-story-toolbar {
+    padding: 14px 22px;
+  }
+}
+
+/* Phone-sized hero image (see scripts/generate-seo-images.py) */
+@media (max-width: 480px) {
+  .news-hero {
+    background-image: url("/optimized/mobile/Stairs-Sunset.webp");
   }
 }

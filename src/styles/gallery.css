@@ -261,7 +261,8 @@
   color: rgba(255, 255, 255, 0.72);
 }
 
-.gallery-card__text h3 {
+.gallery-card__title {
+  display: block;
   margin: 0;
 
   font-size: 1.2rem;
@@ -564,5 +565,11 @@
   .gallery-filter,
   .gallery-lightbox__close {
     transition: none;
+  }
+}
+/* Phone-sized hero image (see scripts/generate-seo-images.py) */
+@media (max-width: 480px) {
+  .gallery-hero {
+    background-image: url("/optimized/mobile/Stairs-Sunset.webp");
   }
 }

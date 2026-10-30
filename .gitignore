@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# SEO planning documents (kept local, not committed)
+/SEO/

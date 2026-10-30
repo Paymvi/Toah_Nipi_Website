@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaMapMarkerAlt, FaRegEnvelope, FaPhoneAlt } from "react-icons/fa";
-import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
 const retreatTypes = [
@@ -10,6 +9,7 @@ const retreatTypes = [
   "Family Retreat",
   "Personal Retreat",
   "Leadership Retreat",
+  "Christian School Retreat",
   "Day Visit",
   "Conference",
   "Other",
@@ -238,14 +238,10 @@ export default function Contact() {
 
   return (
     <main className="contact-page">
-      <SEO
-        title="Contact Toah Nipi"
-        description="Contact Toah Nipi Christian Retreat Center to plan a retreat, ask about availability, or get directions to Rindge, New Hampshire."
-        path="/contact"
-      />
+      <SEO path="/contact" />
       <section className="contact-hero">
         <div className="contact-hero-overlay" />
-        <div className="contact-hero-content reveal-group">
+        <div className="contact-hero-content">
           <p className="contact-eyebrow contact-eyebrow-light">Contact Us</p>
           <h1>
             Let’s start planning your time at{" "}
@@ -316,8 +312,12 @@ export default function Contact() {
 
           <div className="contact-image-card">
             <img
-              src="/optimized/Toah-Nipi-Map.webp"
+              src="/optimized/Toah-Nipi-Map-1000.webp"
               alt="Map showing Toah Nipi's location in New England"
+              width="1000"
+              height="1000"
+              loading="lazy"
+              decoding="async"
             />
             <div className="contact-image-note">
               {/* <span>Planning a retreat?</span> */}
@@ -618,7 +618,7 @@ export default function Contact() {
               Download the application, fill it out, and email it back to our team
             </p>
             <a
-              href="https://static1.squarespace.com/static/655e2edd0f7abd1c10a73d3b/t/667af7bbcee58e137d601f55/1719334843850/RTC+Application+Blank+%281%29.pdf"
+              href="/documents/staff-application.pdf"
               target="_blank"
               rel="noreferrer"
               className="contact-join-team-button"
@@ -651,7 +651,6 @@ export default function Contact() {
         </div>
       </section>
 
-      <SiteFooter />
     </main>
   );
 }

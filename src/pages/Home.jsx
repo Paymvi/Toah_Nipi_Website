@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import QuickLinks from "../components/QuickLinks";
 import EventCarousel from "../components/EventCarousel";
-import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
 export default function Home() {
@@ -83,17 +82,13 @@ export default function Home() {
   return (
     <main className="page">
 
-      <SEO
-        title="Toah Nipi"
-        description="Toah Nipi is a year-round Christian retreat center in Rindge, New Hampshire offering lakeside lodging, Family Camp, group retreats, and personal getaways."
-        path="/"
-      />
+      <SEO path="/" />
 
       <section className="hero-sticky-wrap">
         <section className="home-hero">
           <div className="hero-content">
 
-            <div className="hero-title-strip reveal-group">
+            <div className="hero-title-strip">
               <p className="eyebrow">Welcome to</p>
               {/* <h1>Toah Nipi</h1> */}
 
@@ -102,13 +97,15 @@ export default function Home() {
               </h1>
 
               <img
-                src="/toah-nipi-logo-2.png"
+                src="/optimized/toah-nipi-logo-2.webp"
+                width="680"
+                height="161"
                 alt="Toah Nipi"
                 className="hero-logo"
               />
 
               <p>
-                Experience lakeside lodging, meaningful events, and a peaceful place
+                Experience pond-side lodging, meaningful events, and a peaceful place
                 to reconnect with God, creation, and community.
               </p>
 
@@ -136,8 +133,8 @@ export default function Home() {
 
           <div className="intro-copy">
             <p>
-              Toah Nipi welcomes churches, campus ministries, families, retreat
-              groups, and individuals for overnight stays, day events, meals, meeting spaces, and time
+              Toah Nipi welcomes churches, campus ministries, Christian schools,
+              families, retreat groups, and individuals for overnight stays, day events, meals, meeting spaces, and time
               set apart for{" "}
               <span className="bold-text">connection, and renewal</span>.
             </p>
@@ -309,7 +306,7 @@ export default function Home() {
         </div>
       </section> */}
 
-      <section className="newsletter-section">
+      <section className="newsletter-section" id="newsletter">
         <div className="newsletter-copy reveal-group">
           <p className="newsletter-eyebrow">Newsletter</p>
 
@@ -414,7 +411,6 @@ export default function Home() {
         </form>
       </section>
 
-      <SiteFooter />
 
     </main>
   );

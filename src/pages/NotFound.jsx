@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
 import SEO from "../components/SEO";
+import { notFoundPage } from "../seo/pages";
 
 export default function NotFound() {
   return (
     <main className="page">
-      <SEO
-        title="Page Not Found"
-        description="The page you were looking for could not be found."
-        noindex
-      />
+      <SEO route={notFoundPage} />
 
       <section className="placeholder-page">
         <p className="eyebrow">Page not found</p>

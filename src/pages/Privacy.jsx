@@ -1,15 +1,10 @@
 import { Link } from "react-router-dom";
-import SiteFooter from "../components/SiteFooter";
 import SEO from "../components/SEO";
 
 export default function Privacy() {
   return (
     <main className="policy-page">
-      <SEO
-        title="Privacy Notice"
-        description="How the Toah Nipi Christian Retreat Center website collects, uses, and shares information."
-        path="/privacy"
-      />
+      <SEO path="/privacy" />
 
       <article className="policy-content">
         <header className="policy-header">
@@ -185,7 +180,6 @@ export default function Privacy() {
         </section>
       </article>
 
-      <SiteFooter />
     </main>
   );
 }

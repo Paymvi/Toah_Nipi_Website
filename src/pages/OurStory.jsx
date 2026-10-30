@@ -2,7 +2,6 @@ import StoryTimeline from "../components/StoryTimeline";
 import StatementOfFaith from "../components/StatementOfFaith";
 import CoreValues from "../components/CoreValues";
 import OurTeam from "../components/OurTeam";
-import SiteFooter from "../components/SiteFooter";
 import { FaHistory } from "react-icons/fa";
 import { LuWaypoints } from "react-icons/lu";
 import SEO from "../components/SEO";
@@ -12,21 +11,19 @@ export default function OurStory() {
   return (
     <main className="our-story-page">
 
-      <SEO
-        title="Our Story, Values, and Statement of Faith"
-        description="Learn the story, core values, team, and statement of faith behind Toah Nipi Christian Retreat Center in Rindge, New Hampshire."
-        path="/our-story"
-      />
+      <SEO path="/our-story" />
 
       <section
         className="our-story-hero"
         style={{
           "--our-story-hero-image": "url('/optimized/Winter-Orange.webp')",
+          "--our-story-hero-image-mobile":
+            "url('/optimized/mobile/Winter-Orange.webp')",
         }}
       >
         <div className="our-story-hero-overlay" />
 
-        <div className="our-story-hero-content reveal-group">
+        <div className="our-story-hero-content">
           <p className="our-story-eyebrow">Our Story</p>
 
           <h1>
@@ -46,7 +43,6 @@ export default function OurStory() {
       <MissionVision />
       <OurTeam />
 
-      <SiteFooter/>
 
     </main>
 

@@ -1,38 +1,33 @@
 import { Helmet } from "react-helmet-async";
+import { getRoute } from "../seo/pages";
+import { getHeadTags, getStructuredData } from "../seo/head";
 
-const SITE_NAME = "Toah Nipi Christian Retreat Center";
-const SITE_URL = "https://toahnipi.org";
-const DEFAULT_IMAGE = "https://toahnipi.org/camp-background-2.jpg";
+// Page titles, descriptions, and preview images live in src/seo/pages.js.
+// Pass `path` for a listed page, or a full `route` object (e.g. Not Found).
+export default function SEO({ path, route }) {
+  const page = route || getRoute(path);
 
-export default function SEO({
-  title,
-  description,
-  path = "",
-  image = DEFAULT_IMAGE,
-  noindex = false,
-}) {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : SITE_NAME;
-  const canonicalUrl = `${SITE_URL}${path}`;
+  if (!page) {
+    throw new Error(`No SEO entry for "${path}". Add it to src/seo/pages.js.`);
+  }
+
+  const structuredData = getStructuredData(page);
 
   return (
     <Helmet>
-      <title>{fullTitle}</title>
-      <meta name="description" content={description} />
-      {!noindex && <link rel="canonical" href={canonicalUrl} />}
+      {getHeadTags(page).map(({ tag: Tag, attrs, text }, index) =>
+        text === undefined ? (
+          <Tag key={index} {...attrs} />
+        ) : (
+          <Tag key={index}>{text}</Tag>
+        )
+      )}
 
-      {noindex && <meta name="robots" content="noindex" />}
-
-      <meta property="og:type" content="website" />
-      <meta property="og:title" content={fullTitle} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content={SITE_NAME} />
-
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={fullTitle} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
+      {structuredData && (
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      )}
     </Helmet>
   );
 }
