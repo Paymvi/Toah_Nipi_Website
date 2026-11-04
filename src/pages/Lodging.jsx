@@ -67,6 +67,18 @@ const lodgingBuildings = [
         src: "/optimized/Hebron-Bathroom.webp",
         alt: "Bathroom with a shower inside Hebron Lodge",
       },
+      {
+        src: "/optimized/Hebron-Bunks-1.webp",
+        alt: "Rows of wooden bunk beds along a carpeted aisle in a Hebron Lodge dormitory",
+      },
+      {
+        src: "/optimized/Hebron-Bunks-2.webp",
+        alt: "Wooden bunk beds with blue pillows beside a door in a Hebron Lodge dormitory",
+      },
+      {
+        src: "/optimized/Hebron-Bunks-3.webp",
+        alt: "Wooden bunk beds with maroon sheets near an exit door in a Hebron Lodge dormitory",
+      },
     ],
     facts: [
       { label: "Sleeps", value: "66 guests" },
