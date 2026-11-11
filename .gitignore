@@ -25,3 +25,6 @@ dist-ssr
 
 # SEO planning documents (kept local, not committed)
 /SEO/
+
+# Website review reports (kept local, not committed)
+/docs/reviews/
