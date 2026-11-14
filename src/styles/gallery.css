@@ -22,7 +22,7 @@
 
   overflow: hidden;
 
-  background-image: url("/optimized/Stairs-Sunset.webp");
+  background-image: url("/images/campus/stairs-sunset.webp");
   background-size: cover;
   background-position: center 58%;
   background-repeat: no-repeat;
@@ -570,6 +570,6 @@
 /* Phone-sized hero image (see scripts/generate-seo-images.py) */
 @media (max-width: 480px) {
   .gallery-hero {
-    background-image: url("/optimized/mobile/Stairs-Sunset.webp");
+    background-image: url("/images/campus/stairs-sunset-mobile.webp");
   }
 }

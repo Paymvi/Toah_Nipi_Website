@@ -10,73 +10,73 @@ const activities = [
     title: "30 Acre Spring Fed Pond",
     description:
       "Our pond has a mini beach and is a great place to cool off and relax.",
-    image: "/optimized/card/SunsetLake.webp",
+    image: "/images/campus/sunset-lake-card.webp",
   },
   {
     title: "Woodland Hiking Trails",
     description:
       "Explore quiet trails surrounded by trees, fresh air, and peaceful views.",
-    image: "/optimized/Trails.webp",
+    image: "/images/activities/trails.webp",
   },
   {
     title: "Firepits & Fireplaces",
     description:
       "Gather around the fire for conversation, warmth, worship, and late-night laughs.",
-    image: "/optimized/Fireplace2.webp",
+    image: "/images/activities/fireplace-2.webp",
   },
   {
     title: "Sports Areas",
     description:
       "Basketball Court, volleyball court, large field. Suitable for tons of fun!",
-    image: "/optimized/Sports2.webp",
+    image: "/images/activities/sports-2.webp",
   },
   {
     title: "Lake Activities",
     description:
       "Spend time near the water with relaxing views and outdoor adventure.",
-    image: "/optimized/Canoe.webp",
+    image: "/images/activities/canoe.webp",
   },
   {
     title: "Eating & Community",
     description:
       "Share meals, conversations, and time together around the table.",
-    image: "/optimized/Eating.webp",
+    image: "/images/activities/eating.webp",
   },
   {
     title: "Stone Prayer Garden",
     description:
       "Find space to slow down, pray, journal, and reconnect with God.",
-    image: "/optimized/card/May-2025-PrayerGarden.webp",
+    image: "/images/campus/may-2025-prayer-garden-card.webp",
   },
   {
     title: "Broomball",
     description:
       "During the winter, our pond freezes over and becomes the perfect place for a fun game of broomball.",
-    image: "/optimized/Broomball2.webp",
+    image: "/images/activities/broomball-2.webp",
   },
   {
     title: "Tubing",
     description:
       "Enjoy snowy tubing hills, friendly races, and plenty of winter fun around camp.",
-    image: "/optimized/Tubing.webp",
+    image: "/images/activities/tubing.webp",
   },
   {
     title: "Rock Climbing Wall",
     description:
       "Challenge yourself, build confidence, and enjoy a fun climb.",
-    image: "/optimized/RockClimbing.webp",
+    image: "/images/activities/rock-climbing.webp",
   },
   {
     title: "Snowshoeing",
     description:
       "Explore winter trails with snowshoes available courtesy of Toah Nipi.",
-    image: "/optimized/Snow.webp",
+    image: "/images/activities/snow.webp",
   },
   {
     title: "Indoor Games",
     description:
       "Enjoy board games, group activities, and cozy indoor fun with friends.",
-    image: "/optimized/Jun-2026-Fuzball.webp",
+    image: "/images/activities/jun-2026-foosball.webp",
   },
 ];
 
@@ -180,7 +180,7 @@ export default function Home() {
               </h1>
 
               <img
-                src="/optimized/toah-nipi-logo-2.webp"
+                src="/images/brand/toah-nipi-logo-2.webp"
                 width="680"
                 height="161"
                 alt="Toah Nipi"

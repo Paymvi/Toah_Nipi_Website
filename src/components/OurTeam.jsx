@@ -64,7 +64,7 @@ const staff = [
     role: "CEO",
     detail: "",
     location: "",
-    image: "/Staff/Staff-Abby-Stroven.webp",
+    image: "/images/staff/abby-stroven.webp",
     photoPosition: "center 20%",
   },
   {
@@ -72,7 +72,7 @@ const staff = [
     role: "Executive Director",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Greg-ToahNipi26-Sep-0926-479-DGreco.webp",
+    image: "/images/staff/greg-hodgson.webp",
     photoPosition: "center 26%",
   },
   {
@@ -80,7 +80,7 @@ const staff = [
     role: "Associate Director",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Eli-ToahNipi26-Sep-0926-617-DGreco.webp",
+    image: "/images/staff/elisha-hodgson.webp",
     photoPosition: "center 22%",
   },
   {
@@ -88,7 +88,7 @@ const staff = [
     role: "Executive Chef",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Arianne-ToahNipi26-Sep-0926-451-DGreco.webp",
+    image: "/images/staff/arianne-miller.webp",
     photoPosition: "center 20%",
   },
   {
@@ -96,7 +96,7 @@ const staff = [
     role: "Office Administrator",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Elizabeth-ToahNipi26-Sep-0926-307-DGreco.webp",
+    image: "/images/staff/elizabeth-brown.webp",
     photoPosition: "center 8%",
   },
   {
@@ -104,7 +104,7 @@ const staff = [
     role: "Office Administrator",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Anita-ToahNipi26-Sep-0926-047-DGreco.webp",
+    image: "/images/staff/anita-cunha.webp",
     photoPosition: "center 8%",
   },
   {
@@ -112,7 +112,7 @@ const staff = [
     role: "Kitchen Coordinator",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Mindy-ToahNipi26-Sep-0926-220-DGreco.webp",
+    image: "/images/staff/mindy-niemela.webp",
     photoPosition: "center 1%",
   },
   {
@@ -120,7 +120,7 @@ const staff = [
     role: "Housekeeping",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Crystal-ToahNipi26-Sep-0926-760-DGreco.webp",
+    image: "/images/staff/crystal-baldwin.webp",
     photoPosition: "center 5%",
   },
   {
@@ -128,7 +128,7 @@ const staff = [
     role: "Facilities Coordinator",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Bill-ToahNipi26-Sep-0926-131-DGreco.webp",
+    image: "/images/staff/bill-burt.webp",
     photoPosition: "center -10%",
   },
   {
@@ -136,7 +136,7 @@ const staff = [
     role: "Forest Stewardship Coordinator",
     detail: "",
     location: "",
-    image: "/optimized/Staff-New/Aahnix-ToahNipi26-Sep-0926-706-DGreco.webp",
+    image: "/images/staff/aahnix-bathurst.webp",
     photoPosition: "center 4%",
   },
 ];

@@ -23,7 +23,7 @@
    padding: 170px clamp(24px, 7vw, 96px) 105px;
    display: flex;
    align-items: center;
-   background-image: url("/optimized/Stairs-Sunset.webp");
+   background-image: url("/images/campus/stairs-sunset.webp");
    background-size: cover;
    background-position: center 58%;
    background-repeat: no-repeat;
@@ -799,7 +799,7 @@
    content: "";
    position: absolute;
    inset: 0;
-   background-image: url("/optimized/Lake-Fall.webp");
+   background-image: url("/images/campus/lake-fall.webp");
    background-size: cover;
    background-position: center 73%;
    background-repeat: no-repeat;
@@ -1154,7 +1154,7 @@
 /* Phone-sized hero image (see scripts/generate-seo-images.py) */
 @media (max-width: 480px) {
    .lodging-hero {
-      background-image: url("/optimized/mobile/Stairs-Sunset.webp");
+      background-image: url("/images/campus/stairs-sunset-mobile.webp");
    }
 }
 

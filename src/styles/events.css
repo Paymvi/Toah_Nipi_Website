@@ -23,7 +23,7 @@
   padding: 170px clamp(24px, 7vw, 96px) 105px;
   display: flex;
   align-items: center;
-  background-image: url("/optimized/Dandy-Sunset.webp");
+  background-image: url("/images/campus/dandy-sunset.webp");
   background-size: cover;
   background-position: center 58%;
   background-repeat: no-repeat;
@@ -1398,6 +1398,6 @@
 /* Phone-sized hero image (see scripts/generate-seo-images.py) */
 @media (max-width: 480px) {
   .events-hero {
-    background-image: url("/optimized/mobile/Dandy-Sunset.webp");
+    background-image: url("/images/campus/dandy-sunset-mobile.webp");
   }
 }

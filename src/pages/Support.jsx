@@ -23,35 +23,35 @@ const givingProjects = [
     title: "Christmas Light Walk",
     description:
       "A fully lighted Christmas walk through snowy New England woods, with scenes depicting the story of Jesus’ birth and the hope of creating a meaningful local tradition for generations to come.",
-    image: "/optimized/card/Hebron-Night-Lights.webp",
+    image: "/images/lodging/hebron/hebron-night-lights-card.webp",
   },
   {
     label: "Trails",
     title: "Woodland Trail Around the Pond",
     description:
       "Help transform the current woodland trails into well-maintained, easy-to-navigate pathways for peaceful walks around the pond.",
-    image: "/optimized/card/May-2025-Lake+Nature-2.webp",
+    image: "/images/campus/may-2025-lake-nature-2-card.webp",
   },
   {
     label: "Gathering Space",
     title: "Outdoor Amphitheatre",
     description:
       "Support a new outdoor amphitheatre between the office and the pond, creating a cost-effective space for conferences, meetings, worship, and teaching in a beautiful natural setting.",
-    image: "/optimized/card/Outdoor-Theatre.webp",
+    image: "/images/campus/outdoor-theatre-card.webp",
   },
   {
     label: "Rest & Reflection",
     title: "Trex Swings",
     description:
       "Help place durable Trex swings throughout Toah Nipi as an invitation to pause, connect with friends, and enjoy the beauty of creation.",
-    image: "/optimized/card/Trex-Swings.webp",
+    image: "/images/campus/trex-swings-card.webp",
   },
   {
     label: "Ongoing Support",
     title: "General Fund",
     description:
       "Help us continue to build, maintain, and care for Toah Nipi so future generations can come meet with God and one another.",
-    image: "/optimized/card/SunsetLake.webp",
+    image: "/images/campus/sunset-lake-card.webp",
   },
 ];
 
@@ -130,7 +130,7 @@ const featureSections = [
       "Landscaping / Gardening",
       "Hosting",
     ],
-    image: "/optimized/May-2024-Volunteer.webp",
+    image: "/images/community/may-2024-volunteer.webp",
     imageAlt: "Volunteers serving at Toah Nipi",
     imagePosition: "40% center",
     imageZoom: 1.08,
@@ -157,7 +157,7 @@ const featureSections = [
         we may have the privilege to pray for you as well.
       </>
     ),
-    image: "/optimized/May-2025-PrayerGarden.webp",
+    image: "/images/campus/may-2025-prayer-garden.webp",
     imageAlt: "Prayer garden at Toah Nipi",
     imagePosition: "40% center",
     imageZoom: 1.08,
@@ -179,7 +179,7 @@ const featureSections = [
         God.
       </>
     ),
-    image: "/optimized/Oct-2024-Fire.webp",
+    image: "/images/community/oct-2024-fire.webp",
     imageAlt: "People gathered around a fire at Toah Nipi",
     imagePosition: "10% center",
     imageZoom: 1.23,
@@ -194,7 +194,7 @@ const projectImpacts = [
     title: "Christmas Light Walk",
     category: "Future Experience",
     status: "In Development",
-    image: "/optimized/Hebron-Night-Lights.webp",
+    image: "/images/lodging/hebron/hebron-night-lights.webp",
     description:
       "A fully lighted Christmas walk experience designed to become a meaningful local tradition, sharing the story of Jesus’ birth through outdoor scenes, lights, and Scripture.",
   },
@@ -203,7 +203,7 @@ const projectImpacts = [
     title: "Woodland Trail Around the Pond",
     category: "Land Stewardship",
     status: "In Progress",
-    image: "/optimized/May-2025-Lake+Nature-2.webp",
+    image: "/images/campus/may-2025-lake-nature-2.webp",
     description:
       "Improvements to the woodland trails around the pond will create peaceful, accessible pathways for prayer, reflection, walking, and time outdoors.",
   },
@@ -212,7 +212,7 @@ const projectImpacts = [
     title: "Outdoor Amphitheatre",
     category: "Gathering Space",
     status: "Planned",
-    image: "/optimized/Outdoor-Theatre.webp",
+    image: "/images/campus/outdoor-theatre.webp",
     description:
       "A new outdoor amphitheatre near the pond will provide a flexible space for worship, teaching, camp gatherings, concerts, and group events.",
   },
@@ -221,7 +221,7 @@ const projectImpacts = [
     title: "Trex Swings",
     category: "Outdoor Seating",
     status: "Planned",
-    image: "/optimized/Trex-Swings.webp",
+    image: "/images/campus/trex-swings.webp",
     description:
       "New Trex swings will create a peaceful place for guests to sit, rest, and enjoy the beauty of Toah Nipi’s outdoor spaces. These durable swings will offer a welcoming spot for conversation, reflection, and quiet moments near camp.",
   },
@@ -689,7 +689,7 @@ function Partner() {
       <section className="partner-recognition-section">
         <div className="partner-recognition-image">
           <img
-            src="/optimized/Dothan-Porch.webp"
+            src="/images/lodging/dothan/dothan-porch.webp"
             alt="A welcoming porch at Toah Nipi"
             loading="lazy"
             decoding="async"

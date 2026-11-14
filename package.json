@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/build-seo-pages.mjs && npm run check:seo && npm run lint",
+    "build": "npm run check:images && vite build && node scripts/build-seo-pages.mjs && npm run check:seo && npm run lint",
+    "check:images": "node scripts/check-image-paths.mjs",
     "check:seo": "node scripts/check-seo-build.mjs",
     "lint": "eslint .",
     "preview": "vite preview"

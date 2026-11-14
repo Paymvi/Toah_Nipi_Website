@@ -19,7 +19,7 @@ const stories = [
     date: "September 24, 2026",
     dateTime: "2026-09-24",
     category: "Camp Update",
-    image: "/optimized/Blog/Carina_apples.webp",
+    image: "/images/stories/carina-apples.webp",
     imageAlt: "Our First Batch of Homemade Apple Cider!",
     socialImage: {
       src: "/social/story-apple-cider-2026.jpg",
@@ -42,7 +42,7 @@ const stories = [
     date: "August 15, 2026",
     dateTime: "2026-08-15",
     category: "Family Camp",
-    image: "/optimized/Blog/Zoey+Raph.webp",
+    image: "/images/stories/zoey-raph.webp",
     imageAlt: "Looking Back on Family Camp 2026",
     socialImage: {
       src: "/social/story-family-camp-2026.jpg",
@@ -67,7 +67,7 @@ const stories = [
     date: "July 20, 2026",
     dateTime: "2026-07-20",
     category: "Projects",
-    image: "/optimized/Blog/Ichthus_Trail_Update.webp",
+    image: "/images/stories/ichthus-trail-update.webp",
     imageAlt: "What’s New Around Camp",
     socialImage: {
       src: "/social/story-whats-new-around-camp.jpg",

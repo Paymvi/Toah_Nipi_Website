@@ -13,37 +13,41 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 PUBLIC = ROOT / "public"
 
+# Paths below are relative to the repository root. Full-size originals live in
+# image-sources/ (not deployed); web images live in public/images/.
+
 # Link-preview images (Open Graph / Twitter), 1200x630 unless the source is
 # narrower, in which case the crop keeps the source width (no upscaling).
 # focus_y: 0 = keep the top of the photo, 0.5 = centre, 1 = keep the bottom.
 SOCIAL_IMAGES = [
-    ("camp-background-2.jpg", "social/default.jpg", 0.55),
-    ("optimized/Bethel.webp", "social/lodging.jpg", 0.5),
-    ("optimized/FamilyCamp-New/Carina_Outside.webp", "social/events.jpg", 0.3),
-    ("optimized/Gallery/May-2024-Canoe.webp", "social/gallery.jpg", 0.5),
-    ("Blog/Carina_apples.jpg", "social/story-apple-cider-2026.jpg", 0.45),
-    ("Blog/Zoey+Raph.png", "social/story-family-camp-2026.jpg", 0.4),
-    ("Blog/Ichthus_Trail_Update.png", "social/story-whats-new-around-camp.jpg", 0.45),
+    ("image-sources/campus/camp-background-2.jpg", "public/social/default.jpg", 0.55),
+    ("public/images/lodging/bethel/bethel.webp", "public/social/lodging.jpg", 0.5),
+    ("public/images/events/family-camp/carina-outside.webp", "public/social/events.jpg", 0.3),
+    ("public/images/gallery/may-2024-canoe.webp", "public/social/gallery.jpg", 0.5),
+    ("image-sources/stories/carina-apples.jpg", "public/social/story-apple-cider-2026.jpg", 0.45),
+    ("image-sources/stories/zoey-raph.png", "public/social/story-family-camp-2026.jpg", 0.4),
+    ("image-sources/stories/ichthus-trail-update.png", "public/social/story-whats-new-around-camp.jpg", 0.45),
 ]
 
 # Phone-sized hero backgrounds: a square, horizontally centred crop at full
 # height. Phone heroes are taller than they are wide, so `background-size:
 # cover` scales by height and shows exactly the same part of the photo.
+# Each is saved next to its source with a "-mobile" suffix.
 HERO_IMAGES = [
-    "camp-background-2.webp",
-    "Stairs-Sunset.webp",
-    "Dandy-Sunset.webp",
-    "Lake-Fall.webp",
-    "Winter-Orange.webp",
-    "Dothan-Porch.webp",
+    "public/images/campus/camp-background-2.webp",
+    "public/images/campus/stairs-sunset.webp",
+    "public/images/campus/dandy-sunset.webp",
+    "public/images/campus/lake-fall.webp",
+    "public/images/campus/winter-orange.webp",
+    "public/images/lodging/dothan/dothan-porch.webp",
 ]
 
 # Oversized images shown much smaller than their pixel size.
 RESIZED_IMAGES = [
     # (source, output, max width, format, quality)
-    ("toah-nipi-logo-2.png", "optimized/toah-nipi-logo-2.webp", 680, "WEBP", 90),
-    ("optimized/Toah-Nipi-Map.webp", "optimized/Toah-Nipi-Map-1000.webp", 1000, "WEBP", 78),
-    ("optimized/SnowBridge.webp", "optimized/SnowBridge-1600.webp", 1600, "WEBP", 68),
+    ("image-sources/brand/toah-nipi-logo-2.png", "public/images/brand/toah-nipi-logo-2.webp", 680, "WEBP", 90),
+    ("image-sources/maps/location-map-1500.webp", "public/images/maps/location-map-1000.webp", 1000, "WEBP", 78),
+    ("image-sources/campus/snow-bridge.webp", "public/images/campus/snow-bridge-1600.webp", 1600, "WEBP", 68),
 ]
 
 
@@ -61,33 +65,32 @@ def crop_to_ratio(image, ratio, focus_y):
 
 
 def make_social(source, output, focus_y):
-    image = Image.open(PUBLIC / source).convert("RGB")
+    image = Image.open(ROOT / source).convert("RGB")
     image = crop_to_ratio(image, 1200 / 630, focus_y)
 
     if image.width > 1200:
         image = image.resize((1200, 630), Image.LANCZOS)
 
-    target = PUBLIC / output
+    target = ROOT / output
     target.parent.mkdir(parents=True, exist_ok=True)
     image.save(target, "JPEG", quality=80, optimize=True, progressive=True)
     return image.size
 
 
-def make_mobile_hero(name):
-    image = Image.open(PUBLIC / "optimized" / name).convert("RGB")
+def make_mobile_hero(source):
+    image = Image.open(ROOT / source).convert("RGB")
     image = crop_to_ratio(image, 1, 0.5)
 
     if image.width > 1200:
         image = image.resize((1200, 1200), Image.LANCZOS)
 
-    target = PUBLIC / "optimized" / "mobile" / name
-    target.parent.mkdir(parents=True, exist_ok=True)
+    target = ROOT / source.replace(".webp", "-mobile.webp")
     image.save(target, "WEBP", quality=70, method=6)
     return image.size
 
 
 def make_resized(source, output, max_width, fmt, quality):
-    image = Image.open(PUBLIC / source)
+    image = Image.open(ROOT / source)
 
     if fmt != "WEBP" or image.mode not in ("RGB", "RGBA"):
         image = image.convert("RGBA" if "A" in image.mode else "RGB")
@@ -96,13 +99,13 @@ def make_resized(source, output, max_width, fmt, quality):
         height = round(image.height * max_width / image.width)
         image = image.resize((max_width, height), Image.LANCZOS)
 
-    target = PUBLIC / output
+    target = ROOT / output
     image.save(target, fmt, quality=quality, method=6)
     return image.size
 
 
 def make_icons():
-    logo = Image.open(PUBLIC / "optimized" / "Secondary-Logo-3-256.png").convert("RGBA")
+    logo = Image.open(PUBLIC / "images" / "brand" / "secondary-logo-3-256.png").convert("RGBA")
     logo.save(PUBLIC / "favicon.ico", sizes=[(16, 16), (32, 32), (48, 48)])
 
     # iOS shows transparent icon areas as black, so use a white tile.

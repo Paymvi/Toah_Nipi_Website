@@ -25,7 +25,7 @@ export default function SiteFooter() {
       <div className="site-footer-brand">
         <Link to="/" className="site-footer-logo-link">
           <img
-            src="/optimized/toah-nipi-logo-2.webp"
+            src="/images/brand/toah-nipi-logo-2.webp"
             width="680"
             height="161"
             alt="Toah Nipi Christian Retreat Center"
@@ -98,7 +98,7 @@ export default function SiteFooter() {
 
         <div className="site-footer-bottom">
           <img
-            src="/Secondary-Logo.png"
+            src="/images/brand/secondary-logo.png"
             alt=""
             aria-hidden="true"
             className="site-footer-logo-secondary"

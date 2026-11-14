@@ -4,87 +4,87 @@ import SEO from "../components/SEO";
 const familyCampPhotos = [
   {
     title: "Adult Canoe",
-    image: "/optimized/FamilyCamp/FC-AdultCanoe.webp",
+    image: "/images/events/family-camp/adult-canoe.webp",
   },
   {
     title: "Carpet Ball",
-    image: "/optimized/FamilyCamp/FC-CarpetBall.webp",
+    image: "/images/events/family-camp/carpet-ball.webp",
   },
   {
     title: "Face Painting",
-    image: "/optimized/FamilyCamp/FC-FacePaint.webp",
+    image: "/images/events/family-camp/face-paint.webp",
   },
   {
     title: "Field Fun",
-    image: "/optimized/FamilyCamp/FC-FieldFun.webp",
+    image: "/images/events/family-camp/field-fun.webp",
   },
   {
     title: "Hayride",
-    image: "/optimized/FamilyCamp/FC-Hayride.webp",
+    image: "/images/events/family-camp/hayride.webp",
   },
   {
     title: "Indoor Fun",
-    image: "/optimized/FamilyCamp/FC-IndoorFun.webp",
+    image: "/images/events/family-camp/indoor-fun.webp",
   },
   {
     title: "Kids Canoe",
-    image: "/optimized/FamilyCamp/FC-KidsCanoe.webp",
+    image: "/images/events/family-camp/kids-canoe.webp",
   },
   {
     title: "Kids in the Field",
-    image: "/optimized/FamilyCamp/FC-KidsInField.webp",
+    image: "/images/events/family-camp/kids-in-field.webp",
   },
   {
     title: "Kids Trail",
-    image: "/optimized/FamilyCamp/FC-KidsTrail.webp",
+    image: "/images/events/family-camp/kids-trail.webp",
   },
   {
     title: "Kite Flying",
-    image: "/optimized/FamilyCamp/FC-Kite.webp",
+    image: "/images/events/family-camp/kite.webp",
   },
   {
     title: "Pond Fun",
-    image: "/optimized/FamilyCamp/FC-LakeFun.webp",
+    image: "/images/events/family-camp/lake-fun.webp",
   },
   {
     title: "Pond Fun",
-    image: "/optimized/FamilyCamp/FC-LakeFun2.webp",
+    image: "/images/events/family-camp/lake-fun-2.webp",
   },
   {
     title: "Pond Fun",
-    image: "/optimized/FamilyCamp/FC-LakeFun3.webp",
+    image: "/images/events/family-camp/lake-fun-3.webp",
   },
   {
     title: "Potato Sack Race",
-    image: "/optimized/FamilyCamp/FC-PotatoSack.webp",
+    image: "/images/events/family-camp/potato-sack.webp",
   },
   {
     title: "Potato Sack Race",
-    image: "/optimized/FamilyCamp/FC-PotatoSack2.webp",
+    image: "/images/events/family-camp/potato-sack-2.webp",
   },
   {
     title: "Soccer",
-    image: "/optimized/FamilyCamp/FC-Soccer.webp",
+    image: "/images/events/family-camp/soccer.webp",
   },
   {
     title: "Soccer",
-    image: "/optimized/FamilyCamp/FC-Soccer2.webp",
+    image: "/images/events/family-camp/soccer-2.webp",
   },
   {
     title: "Tiger Face Paint",
-    image: "/optimized/FamilyCamp/FC-Tiger.webp",
+    image: "/images/events/family-camp/tiger.webp",
   },
   {
     title: "Tipping Canoe",
-    image: "/optimized/FamilyCamp/FC-TippingCanoe.webp",
+    image: "/images/events/family-camp/tipping-canoe.webp",
   },
   {
     title: "Women’s Gathering",
-    image: "/optimized/FamilyCamp/FC-Women.webp",
+    image: "/images/events/family-camp/women.webp",
   },
   {
     title: "Carnival",
-    image: "/optimized/Carina_Carnival.webp",
+    image: "/images/events/family-camp/carina-carnival.webp",
   },
 ];
 
@@ -168,7 +168,7 @@ export default function Events() {
       <section className="family-camp-section" id="family-camp">
         <div className="family-camp-image-wrap">
           <img
-            src="/optimized/FamilyCamp-New/Carina_Outside.webp"
+            src="/images/events/family-camp/carina-outside.webp"
             alt="A young woman and two children waving on a wooden boardwalk trail in the woods"
             className="family-camp-image"
             loading="lazy"
@@ -283,7 +283,7 @@ export default function Events() {
       <section className="thanksgiving-section" id="thanksgiving">
         <div className="thanksgiving-image-wrap">
           <img
-            src="/optimized/TN-Thankgiving-Clear.webp"
+            src="/images/events/thanksgiving-dinner.webp"
             alt="Guests gathered around tables during Thanksgiving House Party"
             className="thanksgiving-image"
             loading="lazy"
@@ -345,7 +345,7 @@ export default function Events() {
 
             <div className="custom-gathering-item-image-wrap">
               <img
-                src="/optimized/card/camp-background-2.webp"
+                src="/images/campus/camp-background-2-card.webp"
                 alt="Toah Nipi lodging and meeting space"
                 className="custom-gathering-item-image"
                 loading="lazy"
@@ -369,7 +369,7 @@ export default function Events() {
 
             <div className="custom-gathering-item-image-wrap">
               <img
-                src="/optimized/card/TN-Thankgiving-Clear.webp"
+                src="/images/events/thanksgiving-dinner-card.webp"
                 alt="Guests sharing a meal at Toah Nipi"
                 className="custom-gathering-item-image"
                 loading="lazy"
@@ -393,7 +393,7 @@ export default function Events() {
 
             <div className="custom-gathering-item-image-wrap">
               <img
-                src="/optimized/card/Lake-Fall.webp"
+                src="/images/campus/lake-fall-card.webp"
                 alt="Pond and outdoor space at Toah Nipi"
                 className="custom-gathering-item-image"
                 loading="lazy"
@@ -413,7 +413,7 @@ export default function Events() {
         <div className="personal-retreat-inner reveal-group">
           <div className="personal-retreat-image-card">
             <img
-              src="/optimized/Field-Sunset.webp"
+              src="/images/campus/field-sunset.webp"
               alt="Sunset over a building and lawn at Toah Nipi"
               className="personal-retreat-image"
               loading="lazy"

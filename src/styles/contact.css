@@ -17,7 +17,7 @@
   padding: 170px clamp(24px, 7vw, 96px) 105px;
   display: flex;
   align-items: center;
-  background-image: url("/optimized/Lake-Fall.webp");
+  background-image: url("/images/campus/lake-fall.webp");
   background-size: cover;
   background-position: center 62%;
   background-repeat: no-repeat;
@@ -731,7 +731,7 @@
   padding: 96px clamp(24px, 7vw, 96px);
   background:
     linear-gradient(rgba(20, 24, 12, 0.64), rgba(20, 24, 12, 0.64)),
-    url("/optimized/camp-background-2.webp");
+    url("/images/campus/camp-background-2.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1031,7 +1031,7 @@
   padding: 96px clamp(24px, 7vw, 96px);
   background:
     linear-gradient(rgba(20, 24, 12, 0.64), rgba(20, 24, 12, 0.64)),
-    url("/optimized/camp-background-2.webp");
+    url("/images/campus/camp-background-2.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1144,7 +1144,7 @@
       rgba(247, 241, 223, 0.46),
       rgba(247, 241, 223, 0.46)
     ),
-    url("/optimized/Apr-2026-Beach.webp");
+    url("/images/campus/apr-2026-beach.webp");
   background-size: cover;
   background-position: center 58%;
   background-repeat: no-repeat;
@@ -1308,7 +1308,7 @@
     ),
     /* url("/Apr-2026-Beach.jpg"); */
 
-    url("/optimized/Empty-Lake.webp");
+    url("/images/campus/empty-lake.webp");
   background-size: cover;
   background-position: center 58%;
   background-repeat: no-repeat;
@@ -1452,7 +1452,7 @@
       rgba(247, 241, 223, 0.25),
       rgba(247, 241, 223, 0.25)
     ),
-    url("/optimized/Empty-Lake.webp");
+    url("/images/campus/empty-lake.webp");
   background-size: cover;
   background-position: center 56%;
   background-repeat: no-repeat;
@@ -1560,7 +1560,7 @@
       rgba(12, 15, 8, 0.5),
       rgba(12, 15, 8, 0.5)
     ),
-    url("/optimized/camp-background-2.webp");
+    url("/images/campus/camp-background-2.webp");
   background-size: cover;
   background-position: center;
   color: #f4f1dd;
@@ -1666,6 +1666,6 @@
 /* Phone-sized hero image (see scripts/generate-seo-images.py) */
 @media (max-width: 480px) {
   .contact-hero {
-    background-image: url("/optimized/mobile/Lake-Fall.webp");
+    background-image: url("/images/campus/lake-fall-mobile.webp");
   }
 }

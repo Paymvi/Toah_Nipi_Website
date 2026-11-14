@@ -209,7 +209,7 @@ Most content is kept in plainly labeled lists near the top of each file. You can
 | **Lodging descriptions, facts, and photos** | The `lodgingBuildings` list in [Lodging.jsx](src/pages/Lodging.jsx) |
 | **Lodging comparison table** | The `lodgingOptions` list in [LodgingComparison.jsx](src/components/LodgingComparison.jsx). Keep it in step with Lodging.jsx. |
 | **Lodging FAQ** | [lodgingFaq.js](src/data/lodgingFaq.js). The section stays hidden while this list is empty. |
-| **Camp map download** | Replace [public/Paper-Map.png](public/Paper-Map.png) |
+| **Camp map download** | Replace [public/images/maps/camp-map.png](public/images/maps/camp-map.png) |
 | **Family Camp dates, registration links, prices, discounts** | The `familyCampWeeks`, `prices`, and `discounts` lists in [Events.jsx](src/pages/Events.jsx) |
 | **Other event sections** (Thanksgiving, group, and personal retreats) | The text in [Events.jsx](src/pages/Events.jsx) |
 | **Homepage "What's waiting for you" cards** | The `activities` list in [Home.jsx](src/pages/Home.jsx) |
@@ -217,7 +217,7 @@ Most content is kept in plainly labeled lists near the top of each file. You can
 | **Gallery photos** | The `galleryImages` list in [Gallery.jsx](src/pages/Gallery.jsx) |
 | **Give / donation link** (every Give button) | `DONATION_URL` in [donation.js](src/data/donation.js) |
 | **Giving projects and project details** | `givingProjects` and `projectImpacts` in [Support.jsx](src/pages/Support.jsx) |
-| **Community Directory** | [relationships.js](src/data/relationships.js). Put logos in [public/partner-logos/](public/partner-logos/). |
+| **Community Directory** | [relationships.js](src/data/relationships.js). Put logos in [public/images/partners/](public/images/partners/). |
 | **History timeline** | [StoryTimeline.jsx](src/components/StoryTimeline.jsx) |
 | **Statement of Faith / Core Values** | [StatementOfFaith.jsx](src/components/StatementOfFaith.jsx) / [CoreValues.jsx](src/components/CoreValues.jsx) |
 | **Mission and Vision** | [MissionVision.jsx](src/components/MissionVision.jsx) |
@@ -227,37 +227,91 @@ Most content is kept in plainly labeled lists near the top of each file. You can
 | **Staff application form** | Replace [public/documents/staff-application.pdf](public/documents/staff-application.pdf) |
 | **Page titles and search descriptions** | [pages.js](src/seo/pages.js). Use only approved wording. |
 | **Old web addresses that should redirect** | `redirects` in [vercel.json](vercel.json) |
+| **Any photo or logo** | See [Where images go](#where-images-go) |
+
+### Where images go
+
+Every image the website shows is in [public/images/](public/images/), in one folder per kind of content:
+
+| Folder | What goes there |
+| --- | --- |
+| `brand/` | Logos and brand graphics |
+| `campus/` | Photos of the grounds used as page backgrounds or on more than one page |
+| `activities/` | Home page "What's waiting for you" cards |
+| `community/` | People and gatherings (Support page) |
+| `events/` | Event photos. Family Camp photos go in `events/family-camp/`. |
+| `lodging/<building>/` | One folder per building: `hebron`, `bethel`, `dothan`, `guest-house`, `ajalon`, `capernaum` |
+| `gallery/` | Gallery page photos |
+| `stories/` | Main images for stories on the New! page |
+| `staff/` | Team portraits |
+| `timeline/` | History timeline photos |
+| `partners/` | Community Directory logos |
+| `maps/` | The downloadable camp map and the New England location map |
+
+If a photo only belongs to one building, event, or page, put it in that folder. If it's a general campus photo used in several places, put it in `campus/`.
+
+**Full-size originals** go in [image-sources/](image-sources/), in the same folder as the web copy and with the same name. Examples are camera photos and PNG exports that the WebP copies were made from. Unused alternates are kept there too. This folder isn't published, so nothing in it can appear on the website. To use one of these images, save a web-sized copy in `public/images/`.
+
+A few files stay where they are, because outside services or old links expect them there:
+
+- `favicon.ico`, `apple-touch-icon.png`, and `TN-Logo.png` (the logo search engines show) in `public/`
+- link-preview images in `public/social/`
+- story PDFs in `public/Blog/`, and the staff application in `public/documents/`
+
+**File names:**
+
+- Use lowercase letters, numbers, and hyphens only, such as `hebron-dining.webp`. The live site treats `Photo.webp` and `photo.webp` as different files.
+- Describe what's in the photo. For lodging, start with the building name. Dated photos follow the existing pattern, such as `may-2025-prayer-garden.webp`.
+- Different sizes of the same photo share its name, add a suffix, and are saved next to it:
+
+| File | Used for |
+| --- | --- |
+| `name.webp` | The main copy, about 1600 px on the long edge |
+| `name-md.webp` | Gallery grid tiles, about 1024 px |
+| `name-thumb.webp` | Gallery grid tiles (about 640 px) or lodging thumbnails (320 px) |
+| `name-card.webp` | Smaller copy for a card, about 800 px |
+| `name-mobile.webp` | Square background for phones (made by the image script) |
+| `name-1600.webp` | A copy resized to that width |
+
+**In the code**, write the path from `public/` onward, starting with `/images/`, for example `src: "/images/lodging/hebron/hebron-dining.webp"`. Copy the file name exactly, including capital letters.
+
+**Checking paths:** `npm run check:images` runs as part of `npm run build`. It fails if a path in the code doesn't match a file exactly, if a gallery or lodging photo is missing its `-md` or `-thumb` copy, or if a file name in `public/images/` doesn't follow the rules above.
+
+**Moving or renaming a published image:** update every reference, then add a redirect from the old address to the new one in [vercel.json](vercel.json). In November 2026, the old `/optimized/...` addresses were redirected this way when the images were reorganized.
+
+The 2026 staff portraits were taken by D. Greco, and the originals in `image-sources/staff/` are © D. Greco.
 
 ### Adding a story
 
-1. Put the story's main image in `public/optimized/Blog/` as a `.webp` file. If the story is a designed PDF, put the PDF in `public/Blog/`.
+1. Put the story's main image in `public/images/stories/` as a `.webp` file. If the story is a designed PDF, put the PDF in `public/Blog/`.
 2. In [stories.js](src/data/stories.js), copy an existing entry to the **top** of the list. The first story is featured. Give the copy a new, unique `slug`, such as `spring-retreat-2027`. The slug becomes the story's address, `/new/spring-retreat-2027`.
 3. If the story's wording isn't final, add `draft: true`. That keeps the story out of search results and the sitemap. Remove it when the story is ready.
 
 ### Adding a gallery photo
 
-Each gallery photo needs **three sizes**, all with the same file name:
+Each gallery photo needs **three sizes** in `public/images/gallery/`:
 
-| Folder | Used for | Typical size (long edge) |
+| File | Used for | Typical size (long edge) |
 | --- | --- | --- |
-| `public/optimized/Gallery/` | Full-screen viewer | about 1600 px |
-| `public/optimized/md/Gallery/` | Grid tiles. The browser picks this or the thumbnail, depending on tile size and screen. | about 1024 px |
-| `public/optimized/thumbs/Gallery/` | Grid tiles (smaller version) | about 640 px |
+| `name.webp` | Full-screen viewer | about 1600 px |
+| `name-md.webp` | Grid tiles. The browser picks this or the thumbnail, depending on tile size and screen. | about 1024 px |
+| `name-thumb.webp` | Grid tiles (smaller version) | about 640 px |
 
-Then add an entry to `galleryImages` in [Gallery.jsx](src/pages/Gallery.jsx). Each entry needs `src`, `alt` (a short description for people who can't see the image), `category` (Campus, Camp Life, or Food), and `title`.
+Then add an entry to `galleryImages` in [Gallery.jsx](src/pages/Gallery.jsx). The `src` is the main copy, such as `/images/gallery/name.webp`. The site finds the `-md` and `-thumb` copies itself. Each entry needs `src`, `alt` (a short description for people who can't see the image), `category` (Campus, Camp Life, or Food), and `title`.
 
 ### Preparing photos
 
 - **Use the WebP format** where you can, and make photos **about 1600 pixels on the long edge**. Most photos on the site follow that pattern.
-- **Lodging photos also need a 320-pixel thumbnail** in `public/optimized/thumbs/`, as in the most recent "Add Hebron bunks pictures" change.
+- **Lodging photos also need a 320-pixel thumbnail** saved next to the photo with `-thumb` added to the name, such as `hebron-dining-thumb.webp`.
 - **There's no script for the gallery and lodging sizes**, so make them with any image editor.
 - **[scripts/generate-seo-images.py](scripts/generate-seo-images.py) makes a few special images:**
   - link-preview images in `public/social/`
-  - square phone-sized hero backgrounds in `public/optimized/mobile/`
+  - square phone-sized hero backgrounds (`-mobile.webp`, saved next to the photo)
   - the favicons
   - a few resized images
 
   Run it only after changing one of the source images listed at the top of the script. See [Image and SEO scripts](#image-and-seo-scripts).
+- **Keep the full-size original** in `image-sources/`. See [Where images go](#where-images-go).
 - **Always write meaningful `alt` text.**
 
 ### Previewing a change before it goes live
@@ -290,12 +344,12 @@ The project uses plain JavaScript and JSX. It has no TypeScript, CSS framework, 
 ```text
 ├── index.html               Vite entry HTML (fonts, favicon)
 ├── vercel.json              Build command, redirects, and security headers
-├── public/                  Static files served as-is: photos, PDFs, fonts, robots.txt
-│   ├── optimized/           WebP photos used by the site (+ thumbs/, md/, mobile/, card/)
+├── public/                  Static files served as-is: images, PDFs, fonts, robots.txt
+│   ├── images/              Every image the site shows, by content (see "Where images go")
 │   ├── social/              Link-preview images (generated)
-│   ├── partner-logos/       Community Directory logos
-│   ├── Blog/                Story PDFs and source images
+│   ├── Blog/                Story PDFs
 │   └── documents/           Downloadable PDFs (staff application)
+├── image-sources/           Full-size originals and unused alternates (not published)
 ├── scripts/
 │   ├── build-seo-pages.mjs  Writes one HTML file per page plus sitemap.xml and 404.html
 │   ├── check-seo-build.mjs  Checks the built HTML for correct titles, tags, and links
@@ -325,12 +379,13 @@ The development server updates the page as you edit files. It serves the app she
 | Command | What it does |
 | --- | --- |
 | `npm run dev` | Starts the local development server |
-| `npm run build` | Runs the full production build: `vite build`, then `scripts/build-seo-pages.mjs`, then the SEO check, then ESLint. Any failure stops the build. |
+| `npm run build` | Runs the full production build: the image path check, `vite build`, then `scripts/build-seo-pages.mjs`, then the SEO check, then ESLint. Any failure stops the build. |
+| `npm run check:images` | Checks that every image path in the code matches a file in `public/` exactly. See [Where images go](#where-images-go). |
 | `npm run check:seo` | Rechecks an existing `dist/` folder. Run `npm run build` first. |
 | `npm run lint` | Runs ESLint on the whole project |
 | `npm run preview` | Serves the built `dist/` folder locally |
 
-**Tests:** The project has no unit or browser test suite. `npm run build` is the full check. It covers the SEO check of every generated page (title, description, canonical URL, link-preview tags, structured data, and sitemap) and lint.
+**Tests:** The project has no unit or browser test suite. `npm run build` is the full check. It covers the image path check, the SEO check of every generated page (title, description, canonical URL, link-preview tags, structured data, and sitemap) and lint.
 
 ### Environment variables
 
@@ -417,12 +472,12 @@ python scripts/generate-seo-images.py
 It rebuilds:
 
 - link-preview images in `public/social/`
-- mobile hero crops in `public/optimized/mobile/`
+- mobile hero crops (`-mobile.webp`, next to each hero photo)
 - a few resized images
 - `favicon.ico` and `apple-touch-icon.png`
 - the WOFF2 font
 
-The outputs are committed. Run the script again only when one of the source images in its lists changes, or when you add a new preview image.
+It reads originals from `image-sources/` and web copies from `public/images/`. The outputs are committed. Run the script again only when one of the source images in its lists changes, or when you add a new preview image.
 
 ### Troubleshooting
 
@@ -433,8 +488,9 @@ The outputs are committed. Run the script again only when one of the source imag
 | Build fails at `SEO check failed` | The message lists each problem, such as a missing description or a bad image path. Fix the entry in [pages.js](src/seo/pages.js) or [stories.js](src/data/stories.js). |
 | Build fails at `eslint .` | Run `npm run lint` and fix the reported lines. |
 | Vercel build fails with `eslint: not found` | The Vercel project may set `NODE_ENV=production`, which skips devDependencies. Remove that variable or make sure devDependencies are installed. |
-| A photo is missing in the grid but shows in the viewer, or the reverse | One of the image sizes is missing from `optimized/`, `md/`, or `thumbs/`. See [Adding a gallery photo](#adding-a-gallery-photo). |
-| A Community Directory logo shows a generic icon | Some entries use Google's site-icon service as a temporary logo. Add a local file to `public/partner-logos/` and point the entry at it. |
+| A photo is missing in the grid but shows in the viewer, or the reverse | One of the sizes (`name.webp`, `name-md.webp`, `name-thumb.webp`) is missing or misnamed. `npm run check:images` lists it. See [Adding a gallery photo](#adding-a-gallery-photo). |
+| A Community Directory logo shows a generic icon | Some entries use Google's site-icon service as a temporary logo. Add a local file to `public/images/partners/` and point the entry at it. |
+| Build fails at `Image check failed` | The message names each path that doesn't match a file. Fix the path or the file name. Capital letters count. See [Where images go](#where-images-go). |
 
 ### Updating these screenshots
 

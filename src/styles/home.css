@@ -25,7 +25,7 @@
    font-family: var(--font-cooper);
    background:
       linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-      url("/optimized/camp-background-2.webp");
+      url("/images/campus/camp-background-2.webp");
    background-size: cover;
    background-position: center 55%;
    background-repeat: no-repeat;
@@ -253,16 +253,16 @@
 }
 
 .quick-links-section .feature-card:nth-child(1) {
-   background-image: url("/optimized/Dotham2.webp");
+   background-image: url("/images/lodging/dothan/dothan-canoes-2.webp");
 }
 
 .quick-links-section .feature-card:nth-child(2) {
-   background-image: url("/optimized/Core-Values-2.webp");
+   background-image: url("/images/brand/core-values-2.webp");
    background-position: center 30%;
 }
 
 .quick-links-section .feature-card:nth-child(3) {
-   background-image: url("/optimized/stairs.webp");
+   background-image: url("/images/campus/stairs.webp");
 }
 
 .quick-links-section .feature-card::before {
@@ -530,7 +530,7 @@
 .split-image-one {
    background:
       linear-gradient(rgba(52, 56, 20, 0.18), rgba(52, 56, 20, 0.18)),
-      url("/optimized/Hero4.webp");
+      url("/images/campus/lakeside-sunset.webp");
    background-size: cover;
    background-position: center;
 }
@@ -796,7 +796,7 @@
    position: absolute;
    inset: 0;
    z-index: 0;
-   background-image: url("/optimized/SnowBridge-1600.webp");
+   background-image: url("/images/campus/snow-bridge-1600.webp");
    background-size: cover;
    background-position: center 73%;
    background-repeat: no-repeat;
@@ -1185,6 +1185,6 @@
    .home-hero {
       background-image:
          linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-         url("/optimized/mobile/camp-background-2.webp");
+         url("/images/campus/camp-background-2-mobile.webp");
    }
 }

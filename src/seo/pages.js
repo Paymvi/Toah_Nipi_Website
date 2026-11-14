@@ -44,10 +44,10 @@ const SOCIAL_IMAGES = {
 
 // Hero backgrounds to preload. The mobile versions are square crops used
 // below 481px wide (see the matching @media rules in the page stylesheets).
-function hero(file) {
+function hero(src) {
   return {
-    desktop: `/optimized/${file}`,
-    mobile: `/optimized/mobile/${file}`,
+    desktop: src,
+    mobile: src.replace(/\.webp$/, "-mobile.webp"),
   };
 }
 
@@ -64,7 +64,7 @@ export const pages = [
     fullTitle: "Toah Nipi Christian Retreat Center | Rindge, New Hampshire",
     description:
       "A year-round Christian retreat center in Rindge, NH, hosting church, campus ministry, and Christian school retreats, Family Camp, and personal retreats.",
-    hero: hero("camp-background-2.webp"),
+    hero: hero("/images/campus/camp-background-2.webp"),
     schema: "home",
   },
   {
@@ -73,7 +73,7 @@ export const pages = [
     description:
       "Retreat lodges, a guest house, and seasonal cottages in Rindge, NH for church groups, campus ministries, Christian schools, families, and ministry leaders.",
     image: SOCIAL_IMAGES.lodging,
-    hero: hero("Stairs-Sunset.webp"),
+    hero: hero("/images/campus/stairs-sunset.webp"),
   },
   {
     path: "/events",
@@ -81,28 +81,28 @@ export const pages = [
     description:
       "Family Camp, Thanksgiving House Party, custom group retreats, and personal retreats at Toah Nipi, a Christian retreat center in Rindge, New Hampshire.",
     image: SOCIAL_IMAGES.events,
-    hero: hero("Dandy-Sunset.webp"),
+    hero: hero("/images/campus/dandy-sunset.webp"),
   },
   {
     path: "/contact",
     title: "Plan a Retreat or Contact Us",
     description:
       "Plan a church, student, or family retreat at Toah Nipi in Rindge, NH. Send an inquiry, call 603-899-5464, or get directions to our campus.",
-    hero: hero("Lake-Fall.webp"),
+    hero: hero("/images/campus/lake-fall.webp"),
   },
   {
     path: "/our-story",
     title: "Our Story, Values, and Statement of Faith",
     description:
       "Learn the story, core values, team, and statement of faith behind Toah Nipi Christian Retreat Center in Rindge, New Hampshire.",
-    hero: hero("Winter-Orange.webp"),
+    hero: hero("/images/campus/winter-orange.webp"),
   },
   {
     path: "/support",
     title: "Give, Volunteer, and Pray",
     description:
       "Support Toah Nipi Christian Retreat Center through giving, volunteering, and prayer, and meet the churches and ministries in our community.",
-    hero: hero("Dothan-Porch.webp"),
+    hero: hero("/images/lodging/dothan/dothan-porch.webp"),
   },
   {
     path: "/gallery",
@@ -110,14 +110,14 @@ export const pages = [
     description:
       "Photos of Toah Nipi Christian Retreat Center in Rindge, NH: our lodges, Pecker Pond, Family Camp, shared meals, and life around camp.",
     image: SOCIAL_IMAGES.gallery,
-    hero: hero("Stairs-Sunset.webp"),
+    hero: hero("/images/campus/stairs-sunset.webp"),
   },
   {
     path: "/new",
     title: "What's New? Stories and Updates",
     description:
       "Updates, stories, projects, and moments from life around Toah Nipi, a Christian retreat center in Rindge, New Hampshire.",
-    hero: hero("Stairs-Sunset.webp"),
+    hero: hero("/images/campus/stairs-sunset.webp"),
   },
   {
     path: "/privacy",

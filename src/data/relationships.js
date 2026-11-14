@@ -15,7 +15,7 @@
    For organizations that do not yet have a local logo file,
    the logo field uses Google's site-icon service as a temporary
    remote brand image. These can be replaced later with local
-   PNG/SVG/WebP files in /public/partner-logos/.
+   PNG/SVG/WebP files in /public/images/partners/.
 ========================================================= */
 
 
@@ -83,7 +83,7 @@ export const relationships = [
     name: "InterVarsity",
     category: RELATIONSHIP_CATEGORY.MINISTRY,
     rank: 10,
-    logo: "/partner-logos/InterVarsity.webp",
+    logo: "/images/partners/intervarsity.webp",
     logoBackground: "#ffffff",
     website: "https://intervarsity.org/",
   },
@@ -92,7 +92,7 @@ export const relationships = [
     name: "A Rocha USA",
     category: RELATIONSHIP_CATEGORY.MINISTRY,
     rank: 1,
-    logo: "/partner-logos/A-Rocha-2.png",
+    logo: "/images/partners/a-rocha-2.png",
     logoBackground: "#ffffff",
     website: "https://arocha.org/en/",
   },
@@ -101,7 +101,7 @@ export const relationships = [
     name: "Sattler College",
     category: RELATIONSHIP_CATEGORY.MINISTRY,
     rank: 7,
-    logo: "/partner-logos/Sattler.png",
+    logo: "/images/partners/sattler.png",
     logoBackground: "#ffffff",
     website: "https://sattler.edu/",
   },
@@ -115,7 +115,7 @@ export const relationships = [
     name: "Antioch Church",
     category: RELATIONSHIP_CATEGORY.RETREAT,
     rank: 9,
-    logo: "/partner-logos/Antioch-Church-2.png",
+    logo: "/images/partners/antioch-church-2.png",
     logoBackground: "#ffffff",
     website: null,
   },

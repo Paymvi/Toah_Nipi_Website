@@ -17,11 +17,11 @@ import "../styles/gallery.css";
 
 // The grid shows smaller variants; the lightbox loads the full optimized image
 function toThumbnailSrc(src) {
-  return src.replace("/optimized/", "/optimized/thumbs/");
+  return src.replace(/\.webp$/, "-thumb.webp");
 }
 
 function toMediumSrc(src) {
-  return src.replace("/optimized/", "/optimized/md/");
+  return src.replace(/\.webp$/, "-md.webp");
 }
 
 // Matches the grid: 3 columns, 2 below 1050px, 1 below 600px; every 7th card spans 2
@@ -52,43 +52,43 @@ const galleryImages = [
   // ======================================================
 
   {
-    src: "/optimized/Gallery/Apr-2026-Beach.webp",
+    src: "/images/gallery/apr-2026-beach.webp",
     alt: "Toah Nipi pond area",
     category: "Campus",
     title: "Beach at Toah Nipi",
   },
   {
-    src: "/optimized/Gallery/Back-Hebron.webp",
+    src: "/images/gallery/back-hebron.webp",
     alt: "Back of Hebron",
     category: "Campus",
     title: "Back of Hebron",
   },
   {
-    src: "/optimized/Gallery/Hebron-Sunset.webp",
+    src: "/images/gallery/hebron-sunset.webp",
     alt: "Sunset over Toah Nipi",
     category: "Campus",
     title: "Hebron Sunset",
   },
   {
-    src: "/optimized/Gallery/May-2024-Canoe.webp",
+    src: "/images/gallery/may-2024-canoe.webp",
     alt: "Pond with canoes",
     category: "Campus",
     title: "Canoes on the Pond",
   },
   {
-    src: "/optimized/Gallery/Fall-Pic.webp",
+    src: "/images/gallery/fall-pic.webp",
     alt: "Scenery around Toah Nipi",
     category: "Campus",
     title: "Fall at Toah Nipi",
   },
   {
-    src: "/optimized/Gallery/Sunset-ish.webp",
+    src: "/images/gallery/sunset-ish.webp",
     alt: "Sunset at Toah Nipi",
     category: "Campus",
     title: "Sunset at Toah Nipi",
   },
   {
-    src: "/optimized/Gallery/Jun-2026-Sunny-Deck.webp",
+    src: "/images/gallery/jun-2026-sunny-deck.webp",
     alt: "Sunny deck at Toah Nipi",
     category: "Camp Life",
     title: "Sunny Deck",
@@ -109,98 +109,98 @@ const galleryImages = [
   // ======================================================
 
   {
-    src: "/optimized/Gallery/Raph-Group-1.webp",
+    src: "/images/gallery/raph-group-1.webp",
     alt: "Guests spending time together at Toah Nipi",
     category: "Camp Life",
     title: "Camp Group Photo",
   },
   {
-    src: "/optimized/Gallery/Pre-Carnival.webp",
+    src: "/images/gallery/pre-carnival.webp",
     alt: "Group gathering before the carnival",
     category: "Camp Life",
     title: "Before the Carnival",
   },
   {
-    src: "/optimized/Gallery/Fire-Gathering.webp",
+    src: "/images/gallery/fire-gathering.webp",
     alt: "Guests gathered around a fire",
     category: "Camp Life",
     title: "Fire Gathering",
   },
   {
-    src: "/optimized/Gallery/May-2024-Dorm.webp",
+    src: "/images/gallery/may-2024-dorm.webp",
     alt: "Dorm Room",
     category: "Camp Life",
     title: "Bethel Room",
   },
   {
-    src: "/optimized/Gallery/Haystack.webp",
+    src: "/images/gallery/haystack.webp",
     alt: "Haystack at Toah Nipi",
     category: "Camp Life",
     title: "Haystack",
   },
   {
-    src: "/optimized/Gallery/May-2024-Austin-Lake-2.webp",
+    src: "/images/gallery/may-2024-austin-lake-2.webp",
     alt: "Canoeing on Pecker Pond at Toah Nipi",
     category: "Camp Life",
     title: "Life on the Pond",
   },
   {
-    src: "/optimized/Gallery/Volleyball.webp",
+    src: "/images/gallery/volleyball.webp",
     alt: "Guests playing volleyball",
     category: "Camp Life",
     title: "Volleyball",
   },
   {
-    src: "/optimized/Gallery/Aahnix-Lesson.webp",
+    src: "/images/gallery/aahnix-lesson.webp",
     alt: "Aahnix lesson at Toah Nipi",
     category: "Camp Life",
     title: "Outdoor Classroom",
   },
   {
-    src: "/optimized/Gallery/Teen-Cards.webp",
+    src: "/images/gallery/teen-cards.webp",
     alt: "Teens playing cards",
     category: "Camp Life",
     title: "Card Games",
   },
   {
-    src: "/optimized/Gallery/Carnival-Gathering.webp",
+    src: "/images/gallery/carnival-gathering.webp",
     alt: "Guests gathering at the carnival",
     category: "Camp Life",
     title: "Carnival Gathering",
   },
   {
-    src: "/optimized/Gallery/Aahnix-seeds.webp",
+    src: "/images/gallery/aahnix-seeds.webp",
     alt: "Aahnix seed activity at Toah Nipi",
     category: "Camp Life",
     title: "Seed Activity",
   },
   {
-    src: "/optimized/Gallery/Asian-Karaoke.webp",
+    src: "/images/gallery/asian-karaoke.webp",
     alt: "People doing karaoke in the meeting space",
     category: "Camp Life",
     title: "Karaoke",
   },
 
   {
-    src: "/optimized/Gallery/Tie-Dye-Boy.webp",
+    src: "/images/gallery/tie-dye-boy.webp",
     alt: "Boy doing a tie-dye activity",
     category: "Camp Life",
     title: "Tie-Dye",
   },
   {
-    src: "/optimized/Gallery/Carina-Carnival.webp",
+    src: "/images/gallery/carina-carnival.webp",
     alt: "Carina at the carnival",
     category: "Camp Life",
     title: "Carnival",
   },
   {
-    src: "/optimized/Gallery/Human-Pyramid.webp",
+    src: "/images/gallery/human-pyramid.webp",
     alt: "Guests making a human pyramid",
     category: "Camp Life",
     title: "Human Pyramid",
   },
   {
-    src: "/optimized/Gallery/May-2024-Abi-Pose.webp",
+    src: "/images/gallery/may-2024-abi-pose.webp",
     alt: "Abi posing at Toah Nipi",
     category: "Camp Life",
     title: "Basketball",
@@ -212,13 +212,13 @@ const galleryImages = [
   //   title: "Outdoor Adventures",
   // },
   {
-    src: "/optimized/Gallery/Leaf-Activity.webp",
+    src: "/images/gallery/leaf-activity.webp",
     alt: "Leaf activity at Toah Nipi",
     category: "Activities",
     title: "Leaf Activity",
   },
   {
-    src: "/optimized/Gallery/Ollie-Drawing.webp",
+    src: "/images/gallery/ollie-drawing.webp",
     alt: "Volunteer drawing on Chalkboard",
     category: "Activities",
     title: "Chalkboard Drawing",
@@ -233,49 +233,49 @@ const galleryImages = [
   // ======================================================
 
   {
-    src: "/optimized/Gallery/C+A-Apple-Cider.webp",
+    src: "/images/gallery/c-a-apple-cider.webp",
     alt: "Apple Cider making",
     category: "Food",
     title: "Making Apple Cider",
   },
   {
-    src: "/optimized/Gallery/Kitchen.webp",
+    src: "/images/gallery/kitchen.webp",
     alt: "Kitchen",
     category: "Food",
     title: "The Kitchen",
   },
   {
-    src: "/optimized/Gallery/Char-Board-1.webp",
+    src: "/images/gallery/char-board-1.webp",
     alt: "Charcuterie board",
     category: "Food",
     title: "Charcuterie Board",
   },
   {
-    src: "/optimized/Gallery/Breakfast-Bar.webp",
+    src: "/images/gallery/breakfast-bar.webp",
     alt: "Breakfast bar",
     category: "Food",
     title: "Breakfast Bar",
   },
   {
-    src: "/optimized/Gallery/Beef-Bowl.webp",
+    src: "/images/gallery/beef-bowl.webp",
     alt: "Beef bowl",
     category: "Food",
     title: "Beef Bowl",
   },
   {
-    src: "/optimized/Gallery/Abi-Apple-Cider.webp",
+    src: "/images/gallery/abi-apple-cider.webp",
     alt: "Staff member with finished Apple Cider",
     category: "Food",
     title: "Finished Apple Cider",
   },
   {
-    src: "/optimized/Gallery/Meal-Ham-Bread-Corn.webp",
+    src: "/images/gallery/meal-ham-bread-corn.webp",
     alt: "Meal with ham, bread, and corn",
     category: "Food",
     title: "Ham, Potatoes, Bread, Corn, and Gravy",
   },
   {
-    src: "/optimized/Gallery/Grilling.webp",
+    src: "/images/gallery/grilling.webp",
     alt: "Food being grilled",
     category: "Food",
     title: "The Grill",

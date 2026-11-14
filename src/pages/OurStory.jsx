@@ -14,9 +14,9 @@ export default function OurStory() {
       <section
         className="our-story-hero"
         style={{
-          "--our-story-hero-image": "url('/optimized/Winter-Orange.webp')",
+          "--our-story-hero-image": "url('/images/campus/winter-orange.webp')",
           "--our-story-hero-image-mobile":
-            "url('/optimized/mobile/Winter-Orange.webp')",
+            "url('/images/campus/winter-orange-mobile.webp')",
         }}
       >
         <div className="our-story-hero-overlay" />

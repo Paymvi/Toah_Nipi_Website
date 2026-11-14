@@ -28,3 +28,6 @@ dist-ssr
 
 # Website review reports (kept local, not committed)
 /docs/reviews/
+
+# Software proposals (kept local, not committed)
+/docs/proposals/

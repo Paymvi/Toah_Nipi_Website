@@ -178,7 +178,7 @@ export default function NavBar() {
       }}
     >
       <Link to="/" className="nav-logo" onClick={closeMenu}>
-        <img src="/optimized/Secondary-Logo-3-256.png" alt="Toah Nipi logo" />
+        <img src="/images/brand/secondary-logo-3-256.png" alt="Toah Nipi logo" />
       </Link>
 
       <button
