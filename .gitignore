@@ -31,3 +31,6 @@ dist-ssr
 
 # Software proposals (kept local, not committed)
 /docs/proposals/
+
+# Code audit reports (kept local, not committed)
+/audits/

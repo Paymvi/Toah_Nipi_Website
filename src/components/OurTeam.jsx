@@ -36,13 +36,6 @@ const trustees = [
     image: null,
   },
   {
-    name: "Matt Mascioli",
-    role: "Board Trustee",
-    detail: "Co-Founder & Principal, Fiat Lux Partners; Previously InterVarsity staff",
-    location: "",
-    image: null,
-  },
-  {
     name: "Paul Griffiths",
     role: "Board Trustee",
     detail: "Principal at Sannasig & Angel Investor at SeaAhead",
