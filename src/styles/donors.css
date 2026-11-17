@@ -59,7 +59,7 @@
   color: rgba(60, 61, 31, 0.66);
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  font-size: 0.72rem;
+  font-size: 0.702rem;
   font-weight: 800;
 }
 
@@ -89,7 +89,7 @@
   margin: 28px 0 0;
 
   color: rgba(247, 241, 223, 0.92);
-  font-size: clamp(1rem, 1.35vw, 1.1rem);
+  font-size: clamp(0.975rem, 1.316vw, 1.073rem);
   line-height: 1.68;
 
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
@@ -137,7 +137,7 @@
   margin: 0;
 
   color: rgba(58, 59, 31, 0.88);
-  font-size: clamp(0.98rem, 1.2vw, 1rem);
+  font-size: clamp(0.956rem, 1.17vw, 0.975rem);
   line-height: 1.72;
 }
 
@@ -172,7 +172,7 @@
 
 .donors-stat-card span {
   color: rgba(66, 67, 35, 0.74);
-  font-size: 0.82rem;
+  font-size: 0.799rem;
   line-height: 1.35;
   font-weight: 800;
   text-transform: uppercase;
@@ -205,7 +205,7 @@
   margin: 0;
 
   color: rgba(58, 59, 31, 0.84);
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  font-size: clamp(0.956rem, 1.17vw, 1.053rem);
   line-height: 1.72;
 }
 
@@ -263,7 +263,7 @@
 
   color: inherit;
   opacity: 0.7;
-  font-size: 0.68rem;
+  font-size: 0.663rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -330,7 +330,7 @@
   backdrop-filter: blur(10px);
 
   color: #f7f1df;
-  font-size: 0.72rem;
+  font-size: 0.702rem;
   font-weight: 800;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -344,7 +344,7 @@
   margin: 0 0 18px;
 
   color: #7c6f3d;
-  font-size: 0.72rem;
+  font-size: 0.702rem;
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -365,7 +365,7 @@
   margin: 24px 0 0;
 
   color: rgba(58, 59, 31, 0.88);
-  font-size: clamp(0.98rem, 1.1vw, 1.06rem);
+  font-size: clamp(0.956rem, 1.073vw, 1.034rem);
   line-height: 1.7;
 }
 
@@ -383,7 +383,7 @@
   margin-bottom: 10px;
 
   color: rgba(52, 56, 20, 0.66);
-  font-size: 0.72rem;
+  font-size: 0.702rem;
   font-weight: 800;
   letter-spacing: 0.11em;
   text-transform: uppercase;
@@ -393,7 +393,7 @@
   margin: 0;
 
   color: rgba(58, 59, 31, 0.84);
-  font-size: 0.96rem;
+  font-size: 0.936rem;
   line-height: 1.62;
 }
 
@@ -417,7 +417,7 @@
   background: rgba(247, 242, 216, 0.7);
   color: rgba(52, 56, 20, 0.82);
 
-  font-size: 0.88rem;
+  font-size: 0.858rem;
   font-weight: 700;
 }
 
@@ -444,7 +444,7 @@
   margin: 24px auto 0;
 
   color: rgba(58, 59, 31, 0.84);
-  font-size: 1.04rem;
+  font-size: 1.014rem;
   line-height: 1.7;
 }
 
@@ -509,7 +509,7 @@
   margin: 0;
 
   color: rgba(66, 67, 35, 0.78);
-  font-size: 0.95rem;
+  font-size: 0.926rem;
   line-height: 1.6;
 }
 
@@ -530,7 +530,7 @@
   background: rgba(255, 252, 232, 0.62);
   color: rgba(52, 56, 20, 0.82);
 
-  font-size: 0.88rem;
+  font-size: 0.858rem;
   font-weight: 700;
 }
 
@@ -559,7 +559,7 @@
   margin: 0;
 
   color: #ded8ba;
-  font-size: clamp(1rem, 1.2vw, 1.12rem);
+  font-size: clamp(0.975rem, 1.17vw, 1.092rem);
   line-height: 1.7;
 }
 
@@ -624,7 +624,7 @@
   margin: 26px 0 0;
 
   color: rgba(58, 59, 31, 0.88);
-  font-size: clamp(0.98rem, 1.2vw, 1.08rem);
+  font-size: clamp(0.956rem, 1.17vw, 1.053rem);
   line-height: 1.72;
 }
 
@@ -662,7 +662,7 @@
 
   color: rgba(61, 62, 32, 0.72);
   font-family: var(--font-cooper);
-  font-size: 0.95rem;
+  font-size: 0.926rem;
   line-height: 1;
 }
 
@@ -681,7 +681,7 @@
   margin: 0;
 
   color: rgba(66, 67, 35, 0.82);
-  font-size: 0.95rem;
+  font-size: 0.926rem;
   line-height: 1.58;
 }
 
@@ -757,7 +757,7 @@
   margin: 22px 0 0;
 
   color: rgba(58, 59, 31, 0.84);
-  font-size: clamp(0.98rem, 1.2vw, 1.06rem);
+  font-size: clamp(0.956rem, 1.17vw, 1.034rem);
   line-height: 1.72;
 }
 
@@ -863,7 +863,7 @@
   margin: 0;
 
   color: rgba(66, 67, 35, 0.78);
-  font-size: 0.93rem;
+  font-size: 0.907rem;
   line-height: 1.6;
 }
 
@@ -950,7 +950,7 @@
   color: #f7f1df;
 
   font-family: var(--font-cooper);
-  font-size: 0.95rem;
+  font-size: 0.926rem;
   line-height: 1;
   font-weight: 400;
 }
@@ -959,7 +959,7 @@
   margin: 0;
 
   color: rgba(52, 56, 20, 0.86);
-  font-size: 0.9rem;
+  font-size: 0.877rem;
   font-weight: 600;
   line-height: 1.25;
 }
@@ -1034,7 +1034,7 @@
   margin: 24px auto 0;
 
   color: #ded8ba;
-  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.975rem, 1.17vw, 1.073rem);
   line-height: 1.7;
 }
 

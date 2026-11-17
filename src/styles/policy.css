@@ -24,7 +24,7 @@
 .policy-eyebrow {
   margin: 0 0 12px;
   color: var(--tn-green-soft);
-  font-size: 0.78rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -42,7 +42,7 @@
 .policy-updated {
   margin: 0 0 18px;
   color: var(--tn-text-soft);
-  font-size: 0.9rem;
+  font-size: 0.877rem;
 }
 
 .policy-content section {
@@ -61,14 +61,14 @@
 .policy-content h3 {
   margin: 20px 0 8px;
   color: var(--tn-text-deep);
-  font-size: 1.02rem;
+  font-size: 0.994rem;
   font-weight: 700;
 }
 
 .policy-content p,
 .policy-content li {
   color: var(--tn-text);
-  font-size: 1rem;
+  font-size: 0.975rem;
 }
 
 .policy-content ul {

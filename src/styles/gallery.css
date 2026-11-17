@@ -62,7 +62,7 @@
   text-transform: uppercase;
   letter-spacing: 0.14em;
 
-  font-size: 0.72rem;
+  font-size: 0.702rem;
   font-weight: 800;
 }
 
@@ -86,7 +86,7 @@
 
   color: rgba(247, 241, 223, 0.92);
 
-  font-size: clamp(1rem, 1.35vw, 1.1rem);
+  font-size: clamp(0.975rem, 1.316vw, 1.073rem);
   line-height: 1.68;
 
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
@@ -134,7 +134,7 @@
   color: #55583b;
 
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.877rem;
   font-weight: 600;
 
   cursor: pointer;
@@ -253,7 +253,7 @@
 
   margin-bottom: 5px;
 
-  font-size: 0.68rem;
+  font-size: 0.663rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -265,7 +265,7 @@
   display: block;
   margin: 0;
 
-  font-size: 1.2rem;
+  font-size: 1.17rem;
   font-weight: 600;
 
   color: #ffffff;
@@ -399,7 +399,7 @@
 
   margin-bottom: 4px;
 
-  font-size: 0.68rem;
+  font-size: 0.663rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -485,7 +485,7 @@
 
   .gallery-filter {
     padding: 9px 16px;
-    font-size: 0.84rem;
+    font-size: 0.819rem;
   }
 
   .gallery-card__overlay {
@@ -502,7 +502,7 @@
 
   .gallery-hero__eyebrow {
     margin-bottom: 14px;
-    font-size: 0.68rem;
+    font-size: 0.663rem;
   }
 
   .gallery-hero h1 {
@@ -513,7 +513,7 @@
     max-width: 520px;
     margin-top: 20px;
 
-    font-size: 0.96rem;
+    font-size: 0.936rem;
     line-height: 1.58;
   }
 
