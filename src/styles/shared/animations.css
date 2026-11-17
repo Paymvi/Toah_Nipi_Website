@@ -1,5 +1,7 @@
 /* =========================================================
-   ANIMATIONS.CSS
+   SCROLL REVEAL
+   States toggled by components/RevealOnScroll.jsx. Loaded last so
+   the hidden/visible states win over page styles.
 ========================================================= */
 
 /* Fancy scroll fade-in animation */
@@ -69,4 +71,3 @@
     transition: none;
   }
 }
-

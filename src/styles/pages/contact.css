@@ -1,20 +1,20 @@
 /* =========================================================
-   CONTACT.CSS
+   CONTACT PAGE (pages/Contact.jsx)
+   Also holds .contact-directions-button, shared with Home.
 ========================================================= */
 
 .contact-page {
   min-height: 100vh;
-  background: #e8e5cf;
+  background: var(--tn-paper-soft);
   color: #3c3d1f;
   overflow: hidden;
 }
 
 /* HERO */
-
 .contact-hero {
   position: relative;
   min-height: 690px;
-  padding: 170px clamp(24px, 7vw, 96px) 105px;
+  padding: 170px var(--tn-section-x) 105px;
   display: flex;
   align-items: center;
   background-image: url("/images/campus/lake-fall.webp");
@@ -27,8 +27,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       90deg,
       rgba(20, 24, 12, 0.72) 0%,
       rgba(20, 24, 12, 0.46) 48%,
@@ -46,7 +45,7 @@
   position: relative;
   z-index: 2;
   max-width: 820px;
-  color: #f7f1df;
+  color: var(--tn-paper);
 }
 
 .contact-eyebrow {
@@ -59,12 +58,12 @@
 }
 
 .contact-eyebrow-light {
-  color: #ded8ba;
+  color: var(--tn-light-muted);
 }
 
 .contact-hero h1 {
   margin: 0;
-  color: #f7f1df;
+  color: var(--tn-paper);
   font-family: var(--font-cooper);
   font-size: clamp(3rem, 7.4vw, 4.6em);
   line-height: 0.88;
@@ -74,7 +73,7 @@
 }
 
 .contact-hero h1 span {
-  color: #f0ecd2;
+  color: var(--tn-cream);
 }
 
 .contact-hero-content > p:not(.contact-eyebrow) {
@@ -87,14 +86,13 @@
 }
 
 /* MAIN CONTACT LAYOUT */
-
 .contact-main-section {
   position: relative;
   z-index: 2;
-  padding: 105px clamp(24px, 7vw, 96px);
+  padding: 105px var(--tn-section-x);
   background:
     radial-gradient(circle at top left, rgba(255, 249, 215, 0.5), transparent 34%),
-    #e8e5cf;
+    var(--tn-paper-soft);
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 580px);
   gap: clamp(40px, 5vw, 72px);
@@ -106,22 +104,17 @@
   max-width: 540px;
 }
 
-/* send us message */
-
-.contact-form-header h2,
-.contact-directions-card h2 {
+.contact-form-header h2 {
   margin: 0;
-  color: #343518;
+  color: var(--tn-text);
   font-family: var(--font-cooper);
-  font-size: clamp(2.7rem, 5.2vw, 3rem);
-  line-height: 0.9;
   letter-spacing: -0.045em;
   font-weight: 400;
 }
 
 .contact-info-heading h2 {
   margin: 0;
-  color: #343518;
+  color: var(--tn-text);
   font-family: var(--font-cooper);
   font-size: clamp(2.15rem, 3.6vw, 2.55rem);
   line-height: 0.96;
@@ -169,7 +162,7 @@
   left: 20px;
   right: 20px;
   height: 3px;
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: rgba(61, 62, 32, 0.22);
 }
 
@@ -180,7 +173,7 @@
   align-items: center;
   justify-content: center;
   border: 1.5px solid rgba(61, 62, 32, 0.42);
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   color: rgba(61, 62, 32, 0.72);
   font-family: var(--font-cooper);
   font-size: 0.799rem;
@@ -188,7 +181,6 @@
 }
 
 /* physical address, mailing address, contact */
-
 .contact-info-card h3 {
   margin: 0 0 7px;
   color: #37381b;
@@ -217,7 +209,7 @@
   align-items: center;
   padding: 8px 11px;
   border: 1px solid rgba(60, 61, 31, 0.16);
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: rgba(255, 252, 232, 0.62);
   color: #3d3e20;
   text-decoration: none;
@@ -231,12 +223,11 @@
 
 .contact-link-row a:hover {
   transform: translateY(-2px);
-  background: #343814;
-  color: #f7f1df;
+  background: var(--tn-green);
+  color: var(--tn-paper);
 }
 
 /* IMAGE CARD */
-
 .contact-image-card {
   position: relative;
   min-height: 320px;
@@ -262,8 +253,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
+  background: linear-gradient(
       180deg,
       rgba(20, 24, 12, 0.04),
       rgba(20, 24, 12, 0.5)
@@ -282,13 +272,13 @@
   border-radius: 14px;
   background: rgba(20, 24, 12, 0.48);
   backdrop-filter: blur(10px);
-  color: #f7f1df;
+  color: var(--tn-paper);
 }
 
 .contact-image-note span {
   display: block;
   margin-bottom: 8px;
-  color: #ded8ba;
+  color: var(--tn-light-muted);
   font-size: 0.702rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -303,7 +293,6 @@
 }
 
 /* FORM */
-
 .contact-form-card {
   position: relative;
   overflow: hidden;
@@ -324,7 +313,7 @@
   left: 24px;
   right: 24px;
   height: 4px;
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: rgba(61, 62, 32, 0.24);
 }
 
@@ -333,7 +322,6 @@
 }
 
 /* Keep the form heading a little smaller than the left-side heading. */
-
 .contact-form-header h2 {
   font-size: clamp(1.85rem, 2.7vw, 2.2rem);
   line-height: 0.98;
@@ -346,7 +334,6 @@
 }
 
 /* form */
-
 .contact-form-card label {
   display: grid;
   gap: 5px;
@@ -368,7 +355,7 @@
   border: 1px solid rgba(60, 61, 31, 0.18);
   border-radius: 9px;
   background: #fbf8df;
-  color: #343814;
+  color: var(--tn-green);
   padding: 0 11px;
   font: inherit;
   font-size: 0.858rem;
@@ -466,9 +453,9 @@
   min-height: 42px;
   margin-top: 16px;
   border: none;
-  border-radius: 999px;
-  background: #343814;
-  color: #f7f1df;
+  border-radius: var(--tn-radius-pill);
+  background: var(--tn-green);
+  color: var(--tn-paper);
   font: inherit;
   font-size: 0.741rem;
   font-weight: 800;
@@ -562,7 +549,7 @@
   border: 1px solid rgba(60, 61, 31, 0.14);
   border-radius: 18px;
   background: #f7f2d8;
-  color: #343814;
+  color: var(--tn-green);
   box-shadow: 0 28px 80px rgba(20, 24, 12, 0.34);
 }
 
@@ -576,7 +563,7 @@
 
 .contact-review-header h2 {
   margin: 0;
-  color: #343518;
+  color: var(--tn-text);
   font-family: var(--font-cooper);
   font-size: clamp(1.85rem, 4vw, 2.55rem);
   line-height: 0.98;
@@ -615,7 +602,7 @@
 .contact-review-email-row span {
   min-width: 0;
   overflow-wrap: anywhere;
-  color: #343814;
+  color: var(--tn-green);
 }
 
 .contact-review-divider {
@@ -640,7 +627,7 @@
 
 .contact-review-body strong,
 .contact-review-message > strong {
-  color: #343814;
+  color: var(--tn-green);
 }
 
 .contact-review-message {
@@ -673,9 +660,9 @@
 .contact-review-edit-button {
   min-height: 42px;
   border: 1px solid rgba(60, 61, 31, 0.2);
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: transparent;
-  color: #343814;
+  color: var(--tn-green);
   font: inherit;
   font-size: 0.741rem;
   font-weight: 800;
@@ -720,71 +707,9 @@
   .contact-review-actions {
     grid-template-columns: 1fr;
   }
-
-}
-
-/* DIRECTIONS */
-
-.contact-directions-section {
-  position: relative;
-  z-index: 2;
-  padding: 96px clamp(24px, 7vw, 96px);
-  background:
-    linear-gradient(rgba(20, 24, 12, 0.64), rgba(20, 24, 12, 0.64)),
-    url("/images/campus/camp-background-2.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.contact-directions-card {
-  max-width: 850px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-directions-card h2 {
-  color: #f7f1df;
-}
-
-.contact-directions-card p:not(.contact-eyebrow) {
-  max-width: 620px;
-  margin: 24px auto 0;
-  color: #ded8ba;
-  font-size: clamp(0.975rem, 1.17vw, 1.092rem);
-  line-height: 1.7;
-}
-
-.contact-directions-button {
-  margin-top: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  min-height: 50px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: #f0ecd2;
-  color: #343814;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 0.819rem;
-  font-weight: 800;
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.contact-directions-button:hover {
-  transform: translateY(-2px);
-  background: #fff9dd;
-  box-shadow: 0 16px 34px rgba(20, 24, 12, 0.24);
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 1050px) {
   .contact-main-section {
     grid-template-columns: 1fr;
@@ -798,7 +723,6 @@
     max-width: 680px;
     justify-self: start;
   }
-
 }
 
 @media (max-width: 720px) {
@@ -811,8 +735,7 @@
     font-size: clamp(3.2rem, 15vw, 4.8rem);
   }
 
-  .contact-main-section,
-  .contact-directions-section {
+  .contact-main-section {
     padding: 80px 24px;
   }
 
@@ -824,7 +747,6 @@
   .contact-image-card img {
     min-height: 330px;
   }
-
 }
 
 @media (max-width: 430px) {
@@ -832,8 +754,7 @@
     padding-inline: 18px;
   }
 
-  .contact-main-section,
-  .contact-directions-section {
+  .contact-main-section {
     padding-inline: 18px;
   }
 
@@ -846,19 +767,17 @@
     width: 100%;
     justify-content: center;
   }
-
 }
 
 /* JOIN OUR TEAM */
-
 .contact-join-team-section {
   position: relative;
   z-index: 2;
-  padding: 72px clamp(24px, 7vw, 96px);
+  padding: 72px var(--tn-section-x);
   background:
     radial-gradient(circle at top left, rgba(255, 249, 215, 0.46), transparent 34%),
     #d9deca;
-  color: #343814;
+  color: var(--tn-green);
 }
 
 .contact-join-team-inner {
@@ -886,7 +805,7 @@
 .contact-join-team-copy h2 {
   margin: 0;
   max-width: 620px;
-  color: #343518;
+  color: var(--tn-text);
   font-family: var(--font-cooper);
   font-size: clamp(2.15rem, 4vw, 3.15rem);
   line-height: 0.96;
@@ -915,7 +834,7 @@
   min-height: 32px;
   padding: 7px 12px;
   border: 1px solid rgba(60, 61, 31, 0.15);
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: rgba(247, 242, 216, 0.52);
   color: rgba(52, 56, 20, 0.78);
   font-size: 0.741rem;
@@ -939,7 +858,7 @@
   left: 30px;
   right: 30px;
   height: 4px;
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: rgba(61, 62, 32, 0.24);
 }
 
@@ -977,9 +896,9 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  border-radius: 999px;
-  background: #343814;
-  color: #f7f1df;
+  border-radius: var(--tn-radius-pill);
+  background: var(--tn-green);
+  color: var(--tn-paper);
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -1023,529 +942,22 @@
   }
 }
 
-/* DIRECTIONS */
-
-.contact-directions-section {
-  position: relative;
-  z-index: 2;
-  padding: 96px clamp(24px, 7vw, 96px);
-  background:
-    linear-gradient(rgba(20, 24, 12, 0.64), rgba(20, 24, 12, 0.64)),
-    url("/images/campus/camp-background-2.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.contact-directions-card {
-  max-width: 850px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.contact-directions-card h2 {
-  margin: 0;
-  color: #f7f1df;
-  font-family: var(--font-cooper);
-  font-size: clamp(2.7rem, 5.2vw, 3rem);
-  line-height: 0.9;
-  letter-spacing: -0.045em;
-  font-weight: 400;
-}
-
-.contact-directions-card p:not(.contact-eyebrow) {
-  max-width: 620px;
-  margin: 24px auto 0;
-  color: #ded8ba;
-  font-size: clamp(0.975rem, 1.17vw, 1.092rem);
-  line-height: 1.7;
-}
-
-.contact-directions-button {
-  margin-top: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  min-height: 50px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: #f0ecd2;
-  color: #343814;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 0.819rem;
-  font-weight: 800;
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.contact-directions-button:hover {
-  transform: translateY(-2px);
-  background: #fff9dd;
-  box-shadow: 0 16px 34px rgba(20, 24, 12, 0.24);
-}
-
-@media (max-width: 720px) {
-  .contact-directions-section {
-    padding: 80px 24px;
-  }
-
-}
-
-@media (max-width: 430px) {
-  .contact-directions-section {
-    padding-inline: 18px;
-  }
-
-  .contact-directions-button {
-    width: 100%;
-    justify-content: center;
-  }
-
-}
-
-.contact-directions-card strong {
-  color: #fff9dd;
-  font-weight: 900;
-}
-
-.contact-directions-highlight {
-  color: #fff9dd;
-  font-weight: 900;
-  background: linear-gradient(
-    to top,
-    rgba(240, 236, 210, 0.22) 42%,
-    transparent 42%
-  );
-  padding: 0 0.08em;
-}
-
-/* ============================= */
-
-/* Updated Contact Directions */
-
-/* ============================= */
-
-.contact-directions-section {
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  min-height: 560px;
-  padding: 120px clamp(24px, 7vw, 96px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(
-      rgba(247, 241, 223, 0.46),
-      rgba(247, 241, 223, 0.46)
-    ),
-    url("/images/campus/apr-2026-beach.webp");
-  background-size: cover;
-  background-position: center 58%;
-  background-repeat: no-repeat;
-  color: #343814;
-}
-
-/* Soft light rectangle behind the text */
-
-.contact-directions-text-strip {
-  width: min(980px, 100%);
-  margin: 0 auto;
-  padding: clamp(34px, 5vw, 58px) clamp(24px, 6vw, 72px);
-  text-align: center;
-  background: rgba(247, 241, 223, 0.82);
-  border: 1px solid rgba(52, 56, 20, 0.12);
-  border-radius: 22px;
-  backdrop-filter: blur(8px);
-  box-shadow:
-    0 24px 70px rgba(52, 56, 20, 0.16),
-    inset 0 1px 0 rgba(255, 252, 232, 0.8);
-}
-
-.contact-directions-card {
-  width: 100%;
-  max-width: 1060px;
-  margin: 0 auto;
-}
-
-.contact-directions-card .contact-eyebrow {
-  margin: 0 0 18px;
-  color: rgba(52, 56, 20, 0.68);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.702rem;
-  font-weight: 900;
-}
-
-.contact-directions-card h2 {
-  margin: 0;
-  color: #343518;
-  font-family: var(--font-cooper);
-  font-size: clamp(2.65rem, 5.2vw, 4.2rem);
-  line-height: 0.9;
-  letter-spacing: -0.045em;
-  font-weight: 400;
-}
-
-.contact-directions-card p:not(.contact-eyebrow) {
-  max-width: 680px;
-  margin: 26px auto 0;
-  color: rgba(52, 56, 20, 0.84);
-  font-size: clamp(0.975rem, 1.219vw, 1.111rem);
-  line-height: 1.75;
-}
-
-.contact-directions-highlight {
-  color: #252916;
-  font-weight: 900;
-  background: linear-gradient(
-    to top,
-    rgba(150, 154, 84, 0.28) 42%,
-    transparent 42%
-  );
-  padding: 0 0.08em;
-}
-
-.contact-directions-button {
-  margin-top: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  min-height: 52px;
-  padding: 15px 28px;
-  border-radius: 999px;
-  background: #343814;
-  color: #f7f1df;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.819rem;
-  font-weight: 800;
-  box-shadow: 0 16px 34px rgba(52, 56, 20, 0.18);
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.contact-directions-button:hover {
-  transform: translateY(-2px);
-  background: #4b5220;
-  box-shadow: 0 20px 42px rgba(52, 56, 20, 0.24);
-}
-
 .contact-directions-button span {
-  font-size: 0.975rem;
   line-height: 1;
-}
-
-/* Mobile */
-
-@media (max-width: 720px) {
-  .contact-directions-section {
-    min-height: auto;
-    padding: 86px 24px;
-    background-position: center;
-  }
-
-  .contact-directions-text-strip {
-    padding: 34px 24px;
-    border-radius: 18px;
-  }
-
-  .contact-directions-card h2 {
-    font-size: clamp(2.6rem, 13vw, 3.7rem);
-  }
-
+  font-size: 1.024rem;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 430px) {
-  .contact-directions-section {
-    padding-inline: 18px;
-  }
-
   .contact-directions-button {
     width: 100%;
   }
-
-}
-
-/* Smaller Directions heading */
-
-.contact-directions-card h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-/* ============================= */
-
-/* Directions light strip version */
-
-/* ============================= */
-
-.contact-directions-section {
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  min-height: 560px;
-  padding: 120px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(
-      rgba(247, 241, 223, 0.28),
-      rgba(247, 241, 223, 0.28)
-    ),
-    /* url("/Apr-2026-Beach.jpg"); */
-
-    url("/images/campus/empty-lake.webp");
-  background-size: cover;
-  background-position: center 58%;
-  background-repeat: no-repeat;
-  color: #343814;
-}
-
-.contact-directions-card {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  text-align: center;
-}
-
-/* The full-width light strip */
-
-/* .contact-directions-text-strip {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-  padding: 48px clamp(24px, 8vw, 170px);
-  background: rgba(247, 241, 223, 0.82);
-  backdrop-filter: blur(6px);
-  border-top: 1px solid rgba(52, 56, 20, 0.12);
-  border-bottom: 1px solid rgba(52, 56, 20, 0.12);
-  box-shadow:
-    0 20px 60px rgba(52, 56, 20, 0.14),
-    inset 0 1px 0 rgba(255, 252, 232, 0.7);
-} */
-
-.contact-directions-card .contact-eyebrow {
-  max-width: 900px;
-  margin: 0 auto 18px;
-  color: rgba(52, 56, 20, 0.68);
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
-  font-size: 0.702rem;
-  font-weight: 900;
-}
-
-.contact-directions-card h2 {
-  max-width: 820px;
-  margin: 0 auto;
-  color: #343518;
-  font-family: var(--font-cooper);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-  font-weight: 400;
-}
-
-.contact-directions-card p:not(.contact-eyebrow) {
-  max-width: 680px;
-  margin: 24px auto 0;
-  color: rgba(52, 56, 20, 0.84);
-  font-size: clamp(0.975rem, 1.17vw, 1.092rem);
-  line-height: 1.7;
-}
-
-.contact-directions-highlight {
-  color: #252916;
-  font-weight: 900;
-  background: linear-gradient(
-    to top,
-    rgba(150, 154, 84, 0.28) 42%,
-    transparent 42%
-  );
-  padding: 0 0.08em;
-}
-
-.contact-directions-button {
-  margin-top: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  min-height: 52px;
-  padding: 15px 28px;
-  border-radius: 999px;
-  background: #343814;
-  color: #f7f1df;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.819rem;
-  font-weight: 800;
-  box-shadow: 0 16px 34px rgba(52, 56, 20, 0.18);
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    box-shadow 180ms ease;
-}
-
-.contact-directions-button:hover {
-  transform: translateY(-2px);
-  background: #4b5220;
-  box-shadow: 0 20px 42px rgba(52, 56, 20, 0.24);
 }
 
 @media (max-width: 720px) {
-  .contact-directions-section {
-    min-height: auto;
-    padding: 86px 0;
-    background-position: center;
-  }
-
-  .contact-directions-text-strip {
-    padding: 38px 24px;
-  }
-
-  .contact-directions-card h2 {
-    font-size: clamp(2rem, 10vw, 3rem);
-  }
-
-}
-
-@media (max-width: 430px) {
-  .contact-directions-text-strip {
-    padding-inline: 18px;
-  }
-
   .contact-directions-button {
     width: 100%;
   }
-
-}
-
-/* ============================= */
-
-/* Compact Directions Section */
-
-/* ============================= */
-
-.contact-directions-section {
-  min-height: 390px;
-  padding: 58px clamp(20px, 5vw, 70px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background:
-    linear-gradient(
-      rgba(247, 241, 223, 0.25),
-      rgba(247, 241, 223, 0.25)
-    ),
-    url("/images/campus/empty-lake.webp");
-  background-size: cover;
-  background-position: center 56%;
-  background-repeat: no-repeat;
-}
-
-.contact-directions-card {
-  width: 100%;
-  max-width: 980px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-/* Smaller readable box/strip */
-
-.contact-directions-text-strip {
-  width: 100%;
-  max-width: 920px;
-  margin: 0 auto;
-  padding: 34px clamp(24px, 5vw, 56px);
-  background: rgba(247, 241, 223, 0.84);
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(52, 56, 20, 0.12);
-  border-radius: 18px;
-  box-shadow:
-    0 18px 48px rgba(52, 56, 20, 0.13),
-    inset 0 1px 0 rgba(255, 252, 232, 0.72);
-}
-
-.contact-directions-card .contact-eyebrow {
-  margin: 0 0 12px;
-  color: rgba(52, 56, 20, 0.66);
-  letter-spacing: 0.16em;
-  font-size: 0.663rem;
-  font-weight: 900;
-}
-
-.contact-directions-card h2 {
-  max-width: 760px;
-  margin: 0 auto;
-  color: #343518;
-  font-family: var(--font-cooper);
-  font-size: clamp(1.85rem, 3.5vw, 2.7rem);
-  line-height: 0.95;
-  letter-spacing: -0.035em;
-  font-weight: 400;
-}
-
-.contact-directions-card p:not(.contact-eyebrow) {
-  max-width: 620px;
-  margin: 18px auto 0;
-  color: rgba(52, 56, 20, 0.82);
-  font-size: clamp(0.926rem, 1.024vw, 0.994rem);
-  line-height: 1.55;
-}
-
-.contact-directions-button {
-  margin-top: 26px;
-  min-height: 46px;
-  padding: 12px 24px;
-  border-radius: 999px;
-  background: #343814;
-  color: #f7f1df;
-  font-size: 0.76rem;
-  font-weight: 800;
-  letter-spacing: 0.05em;
-}
-
-/* Mobile compact version */
-
-@media (max-width: 720px) {
-  .contact-directions-section {
-    min-height: auto;
-    padding: 54px 20px;
-  }
-
-  .contact-directions-text-strip {
-    padding: 30px 22px;
-    border-radius: 16px;
-  }
-
-  .contact-directions-card h2 {
-    font-size: clamp(1.9rem, 9vw, 2.7rem);
-  }
-
-  .contact-directions-card p:not(.contact-eyebrow) {
-    margin-top: 16px;
-  }
-
-  .contact-directions-button {
-    margin-top: 24px;
-    width: 100%;
-  }
-
 }
 
 .contact-directions-hero {
@@ -1555,8 +967,7 @@
   place-items: center;
   overflow: hidden;
   padding: 8rem 1.5rem;
-  background-image:
-    linear-gradient(
+  background-image: linear-gradient(
       rgba(12, 15, 8, 0.5),
       rgba(12, 15, 8, 0.5)
     ),
@@ -1570,8 +981,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(
+  background: radial-gradient(
       circle at center,
       rgba(255, 246, 202, 0.08),
       transparent 46%
@@ -1637,7 +1047,7 @@
   margin-top: 2.35rem;
   min-height: 62px;
   padding: 0 2.15rem;
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: #f4f1dd;
   color: #303715;
   font-size: 0.799rem;
@@ -1656,11 +1066,6 @@
   transform: translateY(-3px);
   background: #fff9df;
   box-shadow: 0 28px 70px rgba(0, 0, 0, 0.42);
-}
-
-.contact-directions-button span {
-  font-size: 1.024rem;
-  transform: translateY(-1px);
 }
 
 /* Phone-sized hero image (see scripts/generate-seo-images.py) */

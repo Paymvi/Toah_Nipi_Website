@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import "./NavBar.css";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 import { DONATION_URL } from "../data/donation";
 
-// Matches the breakpoint in NavBar.css where the menu collapses.
+// Matches the breakpoint in src/styles/components/navbar.css where the menu collapses.
 const mobileMenuQuery = "(max-width: 1180px)";
 
 const socialLinks = [

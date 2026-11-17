@@ -1,0 +1,33 @@
+/* =========================================================
+   STYLESHEET ENTRY POINT
+   The only stylesheet imported from JavaScript (src/main.jsx).
+   Order matters: later files win ties, so keep the layers in
+   this order. See docs/CSS_GUIDE.md.
+========================================================= */
+
+/* 1. Foundations: fonts, tokens, reset, document defaults */
+@import "./foundations/tokens.css";
+@import "./foundations/base.css";
+
+/* 2. Shared patterns used on more than one page */
+@import "./shared/components.css";
+
+/* 3. Site-wide components */
+@import "./components/navbar.css";
+@import "./components/footer.css";
+@import "./components/core-values.css";
+@import "./components/event-carousel.css";
+
+/* 4. Pages (each scoped to its own classes) */
+@import "./pages/home.css";
+@import "./pages/lodging.css";
+@import "./pages/events.css";
+@import "./pages/support.css";
+@import "./pages/our-story.css";
+@import "./pages/contact.css";
+@import "./pages/gallery.css";
+@import "./pages/news.css";
+@import "./pages/policy.css";
+
+/* 5. Scroll-reveal states; last so they win over page styles */
+@import "./shared/animations.css";

@@ -1,5 +1,4 @@
 import { useId, useState } from "react";
-import "../styles/CoreValues.css";
 
 const coreValues = [
   {

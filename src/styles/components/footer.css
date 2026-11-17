@@ -5,15 +5,14 @@
 .site-footer-section {
   position: relative;
   z-index: 2;
-  padding: 72px clamp(24px, 7vw, 96px) 28px;
-  background:
-    radial-gradient(
+  padding: 72px var(--tn-section-x) 28px;
+  background: radial-gradient(
       circle at top left,
       rgba(247, 241, 223, 0.07),
       transparent 34%
     ),
-    #343814;
-  color: #f7f1df;
+    var(--tn-green);
+  color: var(--tn-paper);
   display: grid;
   grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.35fr);
   gap: clamp(56px, 7vw, 110px);
@@ -65,7 +64,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   text-decoration: none;
   font-size: 0.702rem;
   font-weight: 700;
@@ -80,14 +79,14 @@
 }
 
 .site-footer-primary-link {
-  background: #f0ecd2;
-  color: #343814;
-  border: 1.5px solid #f0ecd2;
+  background: var(--tn-cream);
+  color: var(--tn-green);
+  border: 1.5px solid var(--tn-cream);
 }
 
 .site-footer-secondary-link {
   background: transparent;
-  color: #f7f1df;
+  color: var(--tn-paper);
   border: 1.5px solid rgba(247, 241, 223, 0.34);
 }
 
@@ -127,7 +126,7 @@
 
 .site-footer-column h2 {
   margin: 0 0 16px;
-  color: #ded8ba;
+  color: var(--tn-light-muted);
   font-size: 0.663rem;
   font-weight: 800;
   text-transform: uppercase;
@@ -169,12 +168,12 @@
 .site-footer-contact strong {
   display: inline-block;
   margin-bottom: 2px;
-  color: #f7f1df;
+  color: var(--tn-paper);
   font-weight: 700;
 }
 
 .site-footer-contact > a {
-  color: #f7f1df;
+  color: var(--tn-paper);
   font-size: 0.848rem;
   font-weight: 500;
   border-bottom: 1px solid rgba(247, 241, 223, 0.28);
@@ -230,7 +229,7 @@
 }
 
 .site-footer-legal-links a:hover {
-  color: #f7f1df;
+  color: var(--tn-paper);
 }
 
 .site-footer-socials {
@@ -247,7 +246,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(247, 241, 223, 0.18);
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   color: rgba(247, 241, 223, 0.9);
   text-decoration: none;
   transition:
@@ -259,9 +258,9 @@
 
 .site-footer-socials a:hover {
   transform: translateY(-2px);
-  background: #f7f1df;
-  color: #343814;
-  border-color: #f7f1df;
+  background: var(--tn-paper);
+  color: var(--tn-green);
+  border-color: var(--tn-paper);
 }
 
 .site-footer-socials svg {
@@ -369,6 +368,7 @@
     justify-content: flex-start;
   }
 }
+
 /* Roomier tap targets for touch screens and narrow layouts */
 @media (max-width: 720px), (pointer: coarse) {
   .site-footer-column a,

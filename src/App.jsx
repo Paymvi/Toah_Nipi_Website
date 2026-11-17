@@ -28,20 +28,6 @@ import SiteFooter from "./components/SiteFooter";
 
 import { pages } from "./seo/pages";
 
-import "./styles/base.css";
-import "./styles/components.css";
-import "./styles/home.css";
-import "./styles/lodging.css";
-import "./styles/events.css";
-import "./styles/support.css";
-import "./styles/our-story.css";
-import "./styles/donors.css";
-import "./styles/contact.css";
-import "./styles/footer.css";
-import "./styles/animations.css";
-import "./styles/policy.css";
-import "./App.css";
-import "./styles/New.css";
 
 
 // Each page listed in src/seo/pages.js needs a component here. Old

@@ -360,7 +360,7 @@ The project uses plain JavaScript and JSX. It has no TypeScript, CSS framework, 
     ├── components/          Header, footer, and page sections
     ├── data/                Stories, donation link, directory, lodging FAQ
     ├── seo/                 Page list, titles and descriptions, structured data
-    └── styles/              One stylesheet per page or area
+    └── styles/              index.css plus foundations/, shared/, components/, pages/ (see docs/CSS_GUIDE.md)
 ```
 
 ### Run it on your computer
@@ -386,6 +386,10 @@ The development server updates the page as you edit files. It serves the app she
 | `npm run preview` | Serves the built `dist/` folder locally |
 
 **Tests:** The project has no unit or browser test suite. `npm run build` is the full check. It covers the image path check, the SEO check of every generated page (title, description, canonical URL, link-preview tags, structured data, and sitemap) and lint.
+
+### Styles
+
+All CSS is plain, global, and bundled into one stylesheet. [src/styles/index.css](src/styles/index.css) is the only stylesheet that JavaScript imports, and it sets the load order: tokens, base, shared patterns, site-wide components, pages, then scroll-reveal animations. Page rules live in `src/styles/pages/` and start with a page-specific class. See [docs/CSS_GUIDE.md](docs/CSS_GUIDE.md) for where new styles go, the design tokens, naming, and breakpoints.
 
 ### Environment variables
 

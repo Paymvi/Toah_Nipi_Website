@@ -1,52 +1,8 @@
 /* =========================================================
-   BASE.CSS
-   Global reset, theme tokens, and site-wide defaults only.
+   BASE
+   Reset, document defaults, accessibility helpers, and the
+   global reduced-motion rule. Tokens live in tokens.css.
 ========================================================= */
-
-/* -----------------------------
-   Design tokens
------------------------------ */
-
-:root {
-  /* Colors */
-  --tn-green: #343814;
-  --tn-green-dark: #252b10;
-  --tn-green-soft: #4e5430;
-
-  --tn-paper: #f7f1df;
-  --tn-paper-soft: #e8e5cf;
-  --tn-cream: #f0ecd2;
-  --tn-gold-muted: #7c6f3d;
-
-  --tn-text: #343518;
-  --tn-text-deep: #252916;
-  --tn-text-soft: rgba(58, 59, 31, 0.84);
-
-  --tn-light-text: #f7f1df;
-  --tn-light-muted: #ded8ba;
-
-  /* Layout */
-  --tn-max-width: 1220px;
-  --tn-wide-width: 1440px;
-  --tn-section-x: clamp(24px, 7vw, 96px);
-  --tn-section-y: clamp(80px, 8vw, 110px);
-
-  /* Shape */
-  --tn-radius-sm: 10px;
-  --tn-radius-md: 16px;
-  --tn-radius-lg: 22px;
-  --tn-radius-xl: 28px;
-  --tn-radius-pill: 999px;
-
-  /* Shadows */
-  --tn-shadow-soft: 0 18px 45px rgba(49, 51, 25, 0.08);
-  --tn-shadow-card: 0 24px 60px rgba(49, 51, 25, 0.12);
-  --tn-shadow-dark: 0 24px 60px rgba(0, 0, 0, 0.25);
-
-  /* Typography */
-  --tn-font-body: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --tn-font-display: var(--font-cooper);
-}
 
 /* -----------------------------
    Reset / document defaults
@@ -58,13 +14,19 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
   background: var(--tn-paper-soft);
 }
 
 body {
-  margin: 0;
   min-width: 320px;
 
   font-family: var(--tn-font-body);
@@ -211,6 +173,7 @@ main[tabindex="-1"]:focus {
   }
 }
 
+/* Visually hidden, still announced by screen readers */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -218,6 +181,7 @@ main[tabindex="-1"]:focus {
   padding: 0;
   margin: -1px;
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   white-space: nowrap;
   border: 0;

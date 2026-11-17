@@ -1,3 +1,8 @@
+/* =========================================================
+   SITE HEADER / NAVIGATION (components/NavBar.jsx)
+   The menu collapses at 1180px; NavBar.jsx matches that breakpoint.
+========================================================= */
+
 .site-header {
   position: fixed;
   top: 0;
@@ -27,7 +32,6 @@
 }
 
 /* Logo */
-
 .nav-logo {
   display: inline-flex;
   align-items: center;
@@ -43,7 +47,6 @@
 }
 
 /* Center nav */
-
 .nav-menu {
   justify-self: center;
   width: 100%;
@@ -112,7 +115,7 @@
   height: 2px;
 
   background: #f5f0d7;
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
 
   transform: translateX(-50%) scaleX(0);
   transform-origin: center;
@@ -126,7 +129,6 @@
 }
 
 /* Dropdown */
-
 .dropdown {
   position: absolute;
   top: 84px;
@@ -170,7 +172,7 @@
 .dropdown a {
   display: block;
 
-  color: #343814;
+  color: var(--tn-green);
   text-decoration: none;
 
   padding: 10px 12px;
@@ -195,7 +197,6 @@
 }
 
 /* Right actions */
-
 .nav-actions {
   justify-self: end;
 
@@ -207,7 +208,6 @@
 }
 
 /* Scoped so App.css social styles do not mess this up */
-
 .site-header .social-links {
   display: flex;
   align-items: center;
@@ -249,7 +249,6 @@
 }
 
 /* Give */
-
 .give-link {
   position: relative;
 
@@ -285,7 +284,7 @@
   height: 3px;
 
   background: #f5f0d7;
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
 
   transform: translateX(-50%);
 }
@@ -296,7 +295,6 @@
 }
 
 /* Mobile toggle */
-
 .nav-toggle {
   display: none;
   justify-self: end;
@@ -319,7 +317,7 @@
   width: 28px;
   height: 3px;
 
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
   background: #f5f0d7;
 
   transition:
@@ -346,7 +344,6 @@
 }
 
 /* Tablet / mobile */
-
 @media (max-width: 1180px) {
   .site-header {
     height: 88px;
@@ -378,7 +375,7 @@
     /* Keep links in the closed menu out of the tab order */
     visibility: hidden;
 
-    background: #343814;
+    background: var(--tn-green);
     box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
 
     transition:
@@ -445,7 +442,7 @@
     padding: 0;
 
     border: 0;
-    border-radius: 999px;
+    border-radius: var(--tn-radius-pill);
     background: transparent;
     color: #f5f0d7;
   }
@@ -514,9 +511,9 @@
     min-height: 48px;
     padding: 0 28px;
 
-    border-radius: 999px;
+    border-radius: var(--tn-radius-pill);
     background: #f5f0d7;
-    color: #343814;
+    color: var(--tn-green);
     text-decoration: none;
 
     font-weight: 700;
@@ -572,13 +569,7 @@
   }
 }
 
-
-
-
-
-
 /* Dropdown (desktop) */
-
 @media (min-width: 1181px) {
   .site-header .dropdown {
     position: absolute;
@@ -629,7 +620,7 @@
     min-height: 34px;
     padding: 0 11px;
 
-    color: #343814;
+    color: var(--tn-green);
     text-decoration: none;
 
     border-radius: 8px;
@@ -661,8 +652,7 @@
 
   font-weight: 700;
 
-  background:
-    linear-gradient(
+  background: linear-gradient(
       110deg,
       #ffffff 0%,
       #f8f5e7 30%,
@@ -682,10 +672,8 @@
 
   animation: new-nav-sheen 4.5s ease-in-out infinite;
 
-  text-shadow:
-    0 0 8px rgba(255, 255, 255, 0.08);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.08);
 }
-
 
 @keyframes new-nav-sheen {
   0%,
@@ -702,10 +690,8 @@
   }
 }
 
-
 .nav-link--new:hover {
   opacity: 1;
 
-  text-shadow:
-    0 0 10px rgba(255, 255, 255, 0.22);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.22);
 }

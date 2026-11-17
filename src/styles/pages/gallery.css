@@ -4,9 +4,8 @@
 
 .gallery-page {
   background: #f4f1e8;
-  color: #343814;
+  color: var(--tn-green);
 }
-
 
 /* =========================================================
    HERO
@@ -15,7 +14,7 @@
 .gallery-hero {
   position: relative;
   min-height: 500px;
-  padding: 125px clamp(24px, 7vw, 96px) 64px;
+  padding: 125px var(--tn-section-x) 64px;
 
   display: flex;
   align-items: center;
@@ -34,8 +33,7 @@
 
   pointer-events: none;
 
-  background:
-    linear-gradient(
+  background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.6) 0%,
       rgba(0, 0, 0, 0.4) 48%,
@@ -51,13 +49,13 @@
   width: 100%;
   max-width: 820px;
 
-  color: #f7f1df;
+  color: var(--tn-paper);
 }
 
 .gallery-hero__eyebrow {
   margin: 0 0 18px;
 
-  color: #ded8ba;
+  color: var(--tn-light-muted);
 
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -69,7 +67,7 @@
 .gallery-hero h1 {
   margin: 0;
 
-  color: #f7f1df;
+  color: var(--tn-paper);
 
   font-family: var(--font-cooper);
   font-size: clamp(3.4rem, 7.5vw, 5rem);
@@ -92,7 +90,6 @@
   text-shadow: 0 3px 14px rgba(0, 0, 0, 0.28);
 }
 
-
 /* =========================================================
    MAIN GALLERY SECTION
 ========================================================= */
@@ -105,7 +102,6 @@
   width: min(1500px, 100%);
   margin: 0 auto;
 }
-
 
 /* =========================================================
    FILTERS
@@ -128,7 +124,7 @@
   padding: 10px 20px;
 
   border: 1px solid rgba(52, 56, 20, 0.25);
-  border-radius: 999px;
+  border-radius: var(--tn-radius-pill);
 
   background: transparent;
   color: #55583b;
@@ -149,20 +145,19 @@
 .gallery-filter:hover {
   transform: translateY(-1px);
 
-  border-color: #343814;
-  color: #343814;
+  border-color: var(--tn-green);
+  color: var(--tn-green);
 }
 
 .gallery-filter--active {
-  border-color: #343814;
-  background: #343814;
+  border-color: var(--tn-green);
+  background: var(--tn-green);
   color: #ffffff;
 }
 
 .gallery-filter--active:hover {
   color: #ffffff;
 }
-
 
 /* =========================================================
    IMAGE GRID
@@ -210,8 +205,7 @@
 
   object-fit: cover;
 
-  transition:
-    transform 650ms
+  transition: transform 650ms
     cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
@@ -226,8 +220,7 @@
 
   padding: 24px;
 
-  background:
-    linear-gradient(
+  background: linear-gradient(
       180deg,
       rgba(0, 0, 0, 0) 35%,
       rgba(0, 0, 0, 0.72) 100%
@@ -291,10 +284,9 @@
 }
 
 .gallery-card:focus-visible {
-  outline: 3px solid #343814;
+  outline: 3px solid var(--tn-green);
   outline-offset: 4px;
 }
-
 
 /* =========================================================
    LIGHTBOX
@@ -416,7 +408,6 @@
   color: #ffffff;
 }
 
-
 /* =========================================================
    ANIMATIONS
 ========================================================= */
@@ -442,7 +433,6 @@
     opacity: 1;
   }
 }
-
 
 /* =========================================================
    RESPONSIVE
@@ -567,6 +557,7 @@
     transition: none;
   }
 }
+
 /* Phone-sized hero image (see scripts/generate-seo-images.py) */
 @media (max-width: 480px) {
   .gallery-hero {

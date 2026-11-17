@@ -9,7 +9,6 @@ import {
 import SEO from "../components/SEO";
 
 
-import "../styles/gallery.css";
 
 
 

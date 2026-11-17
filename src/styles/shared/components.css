@@ -1,6 +1,7 @@
 /* =========================================================
-   COMPONENTS.CSS
-   Small reusable UI pieces shared across multiple pages.
+   SHARED COMPONENTS
+   Small patterns used on more than one page: eyebrows, buttons,
+   text links, text emphasis, and social icon links.
 ========================================================= */
 
 /* -----------------------------
@@ -102,66 +103,16 @@
   font-weight: 700;
 }
 
-.underline-text {
-  text-decoration: underline;
-}
-
 .highlight-text {
   color: #1f2313;
 
   background: linear-gradient(
-    to top,
-    rgba(143, 145, 84, 0.28) 38%,
-    transparent 38%
-  );
+      to top,
+      rgba(143, 145, 84, 0.28) 38%,
+      transparent 38%
+    );
 
   padding: 0 0.04em;
-}
-
-.wow-highlight {
-  position: relative;
-  z-index: 1;
-
-  display: inline-block;
-
-  color: var(--tn-text-deep);
-  font-style: italic;
-
-  text-shadow:
-    2px 2px 0 rgba(150, 154, 84, 0.22),
-    5px 8px 22px rgba(60, 61, 31, 0.14);
-}
-
-.wow-highlight::before {
-  content: "";
-  position: absolute;
-  left: -0.08em;
-  right: -0.08em;
-  bottom: 0.08em;
-  z-index: -1;
-
-  height: 0.32em;
-
-  border-radius: var(--tn-radius-pill);
-  background: rgba(150, 154, 84, 0.34);
-
-  transform: rotate(-1.2deg);
-}
-
-.wow-highlight::after {
-  content: "";
-  position: absolute;
-  left: 0.04em;
-  right: 0.1em;
-  bottom: 0.02em;
-  z-index: -1;
-
-  height: 0.12em;
-
-  border-radius: var(--tn-radius-pill);
-  background: rgba(91, 96, 45, 0.26);
-
-  transform: rotate(0.8deg);
 }
 
 /* -----------------------------
@@ -247,6 +198,7 @@
   font-size: 1.073rem;
   line-height: 1.7;
 }
+
 /* -----------------------------
    Touch targets for text-style CTAs
    These links stay visually small, but an invisible 44px-tall hit area
