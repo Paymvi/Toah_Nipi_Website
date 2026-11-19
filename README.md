@@ -283,6 +283,8 @@ The 2026 staff portraits were taken by D. Greco, and the originals in `image-sou
 
 ### Adding a story
 
+**Staff can publish PDF blog posts without editing code** at `/staff/blog` (the small "Staff" link in the footer). Setup, sign-in, and the security model are in [BLOG_ADMIN_SETUP.md](BLOG_ADMIN_SETUP.md). The steps below are for stories built into the code, which also get their own page and link preview.
+
 1. Put the story's main image in `public/images/stories/` as a `.webp` file. If the story is a designed PDF, put the PDF in `public/Blog/`.
 2. In [stories.js](src/data/stories.js), copy an existing entry to the **top** of the list. The first story is featured. Give the copy a new, unique `slug`, such as `spring-retreat-2027`. The slug becomes the story's address, `/new/spring-retreat-2027`.
 3. If the story's wording isn't final, add `draft: true`. That keeps the story out of search results and the sitemap. Remove it when the story is ready.

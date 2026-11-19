@@ -113,6 +113,8 @@ export default function SiteFooter() {
             <nav className="site-footer-legal-links" aria-label="Legal">
               <Link to="/privacy">Privacy</Link>
               <Link to="/accessibility">Accessibility</Link>
+              {/* Full page load so the staff page's stricter headers apply. */}
+              <a href="/staff/blog">Staff</a>
             </nav>
           </div>
 

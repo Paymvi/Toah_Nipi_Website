@@ -28,6 +28,7 @@
 @import "./pages/gallery.css";
 @import "./pages/news.css";
 @import "./pages/policy.css";
+@import "./pages/staff-blog.css";
 
 /* 5. Scroll-reveal states; last so they win over page styles */
 @import "./shared/animations.css";

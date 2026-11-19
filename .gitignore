@@ -34,3 +34,8 @@ dist-ssr
 
 # Code audit reports (kept local, not committed)
 /audits/
+
+# Environment secrets (see .env.example)
+.env
+.env.*
+!.env.example

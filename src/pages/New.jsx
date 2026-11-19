@@ -2,13 +2,34 @@ import { useEffect, useRef, useState } from "react";
 import PdfPages from "../components/PdfPages";
 import SEO from "../components/SEO";
 import stories from "../data/stories";
+import { fetchPublishedPosts, getPdfUrl } from "../data/publishedPosts";
 
 // Story details live in src/data/stories.js. Each story also has its own
 // page at /new/<slug> (src/pages/Story.jsx) for search results and shared
 // links; on this page, "Read Story" opens it in the pop-up reader.
+// Posts published by staff at /staff/blog are merged in by date; they open
+// in the pop-up reader only.
 export default function News() {
-  const featuredPost = stories[0];
-  const remainingPosts = stories.slice(1);
+  const [publishedPosts, setPublishedPosts] = useState([]);
+
+  useEffect(() => {
+    let active = true;
+
+    fetchPublishedPosts().then(
+      (posts) => active && setPublishedPosts(posts),
+      (error) => console.error("Could not load staff posts:", error.message)
+    );
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const allPosts = [...publishedPosts, ...stories].sort((a, b) =>
+    b.dateTime.localeCompare(a.dateTime)
+  );
+  const featuredPost = allPosts[0];
+  const remainingPosts = allPosts.slice(1);
 
   const [selectedPost, setSelectedPost] = useState(null);
   const dialogRef = useRef(null);
@@ -65,9 +86,25 @@ export default function News() {
     };
   }, [selectedPost]);
 
-  const openStory = (post, event) => {
+  const openStory = async (post, event) => {
     triggerRef.current = event.currentTarget;
-    setSelectedPost(post);
+
+    if (!post.pdfFile) {
+      setSelectedPost(post);
+      return;
+    }
+
+    try {
+      setSelectedPost({ ...post, pdf: await getPdfUrl(post.pdfFile) });
+    } catch {
+      setSelectedPost({
+        ...post,
+        content: [
+          post.excerpt,
+          "Sorry, this story isn’t available right now. Please try again later.",
+        ].filter(Boolean),
+      });
+    }
   };
 
   const closeStory = () => {

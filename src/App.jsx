@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import NavBar from "./components/NavBar";
 
 import {
@@ -19,6 +20,9 @@ import Story from "./pages/Story";
 import Privacy from "./pages/Privacy";
 import Accessibility from "./pages/Accessibility";
 import NotFound from "./pages/NotFound";
+
+// Staff-only page; loaded on demand so visitors never download the sign-in code.
+const StaffBlog = lazy(() => import("./pages/StaffBlog"));
 
 import { Analytics } from "@vercel/analytics/react";
 
@@ -106,6 +110,15 @@ export default function App() {
           })}
 
           <Route path="/new/:slug" element={<Story />} />
+
+          <Route
+            path="/staff/blog"
+            element={
+              <Suspense fallback={null}>
+                <StaffBlog />
+              </Suspense>
+            }
+          />
         </Route>
 
         <Route path="*" element={<NotFound />} />

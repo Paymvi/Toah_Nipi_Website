@@ -18,4 +18,10 @@ export default defineConfig([
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
   },
+  {
+    // Server code: the Vercel upload function, tests, and the dev server config.
+    files: ['api/**/*.js', 'tests/**/*.mjs', 'vite.config.js'],
+    extends: [js.configs.recommended],
+    languageOptions: { globals: globals.node },
+  },
 ])

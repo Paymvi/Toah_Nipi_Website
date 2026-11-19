@@ -9,9 +9,12 @@
     "check:images": "node scripts/check-image-paths.mjs",
     "check:seo": "node scripts/check-seo-build.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test tests/pdf-check.test.mjs",
+    "test:blog-security": "node --test tests/blog-security.test.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.119.2",
     "@vercel/analytics": "^2.0.1",
     "pdfjs-dist": "^4.10.38",
     "react": "^19.2.6",

@@ -4,6 +4,12 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/blog-process-upload.js": { "maxDuration": 60 }
+  },
+  "rewrites": [
+    { "source": "/staff/blog", "destination": "/" }
+  ],
   "redirects": [
     {
       "source": "/",
@@ -388,6 +394,25 @@
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
         }
+      ]
+    },
+    {
+      "source": "/staff/(.*)",
+      "headers": [
+        { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; object-src 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store" },
+        { "key": "X-Robots-Tag", "value": "noindex" }
       ]
     }
   ]
