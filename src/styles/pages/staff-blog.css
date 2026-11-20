@@ -27,15 +27,6 @@
   border-bottom: 1px solid rgba(52, 56, 20, 0.16);
 }
 
-.staff-eyebrow {
-  margin: 0 0 10px;
-  color: var(--tn-green-soft);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 .staff-content h1,
 .staff-content h2 {
   margin: 0;

@@ -45,19 +45,6 @@
   color: var(--tn-paper);
 }
 
-.lodging-eyebrow {
-  margin: 0 0 18px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.722rem;
-  font-weight: 800;
-}
-
-.lodging-eyebrow-light {
-  color: var(--tn-light-muted);
-}
-
 .lodging-hero h1 {
   margin: 0;
   color: var(--tn-paper);
@@ -128,15 +115,6 @@
   margin: 0 auto 34px;
   display: block;
   text-align: left;
-}
-
-.lodging-comparison-eyebrow {
-  margin: 0 0 14px;
-  color: rgba(60, 61, 31, 0.78);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.663rem;
-  font-weight: 650;
 }
 
 .lodging-comparison-header h2 {
@@ -830,15 +808,6 @@
 
 .lake-heading-inner {
   max-width: 820px;
-}
-
-.lake-eyebrow {
-  margin: 0 0 12px;
-  color: var(--tn-cream);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.722rem;
-  font-weight: 700;
 }
 
 .lake-content h2 {

@@ -258,7 +258,6 @@ export default function Contact() {
       <section className="contact-main-section" id="contact-form">
         <div className="contact-info-column reveal-group">
           <div className="contact-info-heading">
-            <p className="contact-eyebrow">Toah Nipi Christian Retreat Center</p>
             <h2>Here to help you plan</h2>
             <p>
               Send us a note with your group details and desired dates. Someone
@@ -598,7 +597,6 @@ export default function Contact() {
       <section className="contact-join-team-section" id="join-our-team">
         <div className="contact-join-team-inner reveal-group">
           <div className="contact-join-team-copy">
-            <p className="contact-join-team-eyebrow">Serve with us</p>
             <h2>Interested in joining our team?</h2>
             <p className="contact-join-team-text">
               Toah Nipi relies on summer crew, volunteers, full-time staff, and
@@ -631,7 +629,6 @@ export default function Contact() {
 
       <section className="contact-directions-hero" id="directions">
         <div className="contact-directions-content reveal-group">
-          <p className="contact-directions-eyebrow">Directions</p>
           <h2>Find us in Rindge, New Hampshire.</h2>
           <p className="contact-directions-copy">
             Toah Nipi Christian Retreat Center is located at

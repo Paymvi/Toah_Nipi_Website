@@ -57,15 +57,7 @@
 }
 
 .news-eyebrow {
-  margin: 0 0 18px;
-
-  color: var(--tn-light-muted);
-
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-
-  font-size: 0.702rem;
-  font-weight: 800;
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
 }
 
 .news-hero h1 {
@@ -497,12 +489,6 @@
   .news-hero {
     min-height: 380px;
     padding: 105px 20px 44px;
-  }
-
-  .news-eyebrow {
-    margin-bottom: 14px;
-
-    font-size: 0.663rem;
   }
 
   .news-hero h1 {

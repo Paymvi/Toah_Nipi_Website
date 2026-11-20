@@ -53,15 +53,7 @@
 }
 
 .gallery-hero__eyebrow {
-  margin: 0 0 18px;
-
-  color: var(--tn-light-muted);
-
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-
-  font-size: 0.702rem;
-  font-weight: 800;
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
 }
 
 .gallery-hero h1 {
@@ -488,11 +480,6 @@
   .gallery-hero {
     min-height: 390px;
     padding: 108px 20px 46px;
-  }
-
-  .gallery-hero__eyebrow {
-    margin-bottom: 14px;
-    font-size: 0.663rem;
   }
 
   .gallery-hero h1 {

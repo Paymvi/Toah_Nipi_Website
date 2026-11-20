@@ -8,14 +8,35 @@
    Eyebrows / labels
 ----------------------------- */
 
-.eyebrow {
-  margin: 0 0 12px;
+/* One look for every eyebrow (.eyebrow, .contact-eyebrow, ...): a small serif
+   kicker led by a little leaf sprig, so it pairs with the Cooper headings instead of
+   looking like the uppercase button/form labels. The doubled attribute outranks
+   page rules like `.hero-content p`. On dark backgrounds, pages set
+   `--tn-eyebrow: var(--tn-eyebrow-on-dark)`. */
+p[class*="eyebrow"][class*="eyebrow"] {
+  margin-top: 0;
+  margin-bottom: 14px;
+  color: var(--tn-eyebrow);
+  font-family: var(--tn-font-display);
+  font-size: 1.05rem;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
 
-  color: inherit;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.585rem;
-  font-weight: 700;
+/* Leaf sprig drawn as a mask so it takes the eyebrow's color */
+p[class*="eyebrow"][class*="eyebrow"]::before {
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 17px;
+  margin-right: 12px;
+  vertical-align: -0.2em;
+  background: currentColor;
+  opacity: 0.85;
+  -webkit-mask: var(--tn-eyebrow-sprig) no-repeat center / contain;
+  mask: var(--tn-eyebrow-sprig) no-repeat center / contain;
 }
 
 /* -----------------------------

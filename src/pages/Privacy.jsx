@@ -8,7 +8,6 @@ export default function Privacy() {
 
       <article className="policy-content">
         <header className="policy-header">
-          <p className="policy-eyebrow">Toah Nipi Christian Retreat Center</p>
           <h1>Privacy Notice</h1>
           <p className="policy-updated">Last updated: October 2026</p>
           <p>

@@ -106,7 +106,6 @@ const partnerWays = [
 const featureSections = [
   {
     id: "serve-with-us",
-    eyebrow: "Serve",
     title: "Volunteer with us.",
     text: (
       <>
@@ -140,7 +139,6 @@ const featureSections = [
   },
   {
     id: "pray-with-us",
-    eyebrow: "Pray",
     title: "Pray with us.",
     text: (
       <>
@@ -167,7 +165,6 @@ const featureSections = [
   },
   {
     id: "spread-the-word",
-    eyebrow: "Advocacy",
     title: "Spread the word about Toah Nipi.",
     text: (
       <>
@@ -342,10 +339,6 @@ function Partner() {
       <section className="partner-ways-section" id="partner-ways">
         <div className="partner-section-heading reveal-group">
           <div>
-            <p className="partner-eyebrow">
-              Join the Mission
-            </p>
-
             <h2>
               Help Toah Nipi thrive.
             </h2>
@@ -400,10 +393,6 @@ function Partner() {
 
       <section className="partner-impact-band reveal-group">
         <div>
-          <p className="partner-eyebrow partner-eyebrow-light">
-            Why It Matters
-          </p>
-
           <h2>
             Generosity creates room for ministry.
           </h2>
@@ -446,10 +435,6 @@ function Partner() {
       >
         <div className="partner-project-header">
           <div>
-            <p className="partner-eyebrow">
-              Projects Made Possible
-            </p>
-
             <h2>
               See what partnership is helping build.
             </h2>
@@ -488,10 +473,6 @@ function Partner() {
             </div>
 
             <div className="partner-feature-copy reveal-group">
-              <p className="partner-eyebrow">
-                {section.eyebrow}
-              </p>
-
               <h2>{section.title}</h2>
 
               <p>{section.text}</p>
@@ -543,10 +524,6 @@ function Partner() {
         </div>
 
         <div className="partner-recognition-copy reveal-group">
-          <p className="partner-eyebrow">
-            Recognition Notes
-          </p>
-
           <h2>
             Want to honor a donor, family, church, or loved one?
           </h2>
@@ -809,10 +786,6 @@ function Partner() {
 
       <section className="donors-final-cta">
         <div className="donors-final-card reveal-group">
-          <p className="donors-eyebrow donors-eyebrow-light">
-            Thank You
-          </p>
-
           <h2>
             To every partner, and friend
             <br />

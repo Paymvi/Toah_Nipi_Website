@@ -26,6 +26,12 @@
   --tn-cream: #f0ecd2;
   --tn-gold-muted: #7c6f3d;
 
+  /* Eyebrow accent; dark sections set --tn-eyebrow to the on-dark value */
+  --tn-eyebrow: #6b6033;
+  --tn-eyebrow-on-dark: #e3d5a6;
+  /* Small olive sprig shown before eyebrows (used as a CSS mask) */
+  --tn-eyebrow-sprig: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 42 18'%3E%3Cpath d='M1 12.5C12 12.5 26 10.8 37 6.4' fill='none' stroke='black' stroke-width='1.1' stroke-linecap='round'/%3E%3Cg%3E%3Cpath transform='translate(11.5 9) rotate(-38)' d='M-4.4 0Q0-3 4.4 0Q0 3-4.4 0Z'/%3E%3Cpath transform='translate(17.5 14.6) rotate(26)' d='M-4.4 0Q0-3 4.4 0Q0 3-4.4 0Z'/%3E%3Cpath transform='translate(24 7.2) rotate(-42)' d='M-4.4 0Q0-3 4.4 0Q0 3-4.4 0Z'/%3E%3Cpath transform='translate(30.5 12) rotate(20)' d='M-4.2 0Q0-2.9 4.2 0Q0 2.9-4.2 0Z'/%3E%3Cpath transform='translate(38.2 4.4) rotate(-30)' d='M-3.6 0Q0-2.7 3.6 0Q0 2.7-3.6 0Z'/%3E%3C/g%3E%3C/svg%3E");
+
   --tn-text: #343518;
   --tn-text-deep: #252916;
   --tn-text-soft: rgba(58, 59, 31, 0.84);

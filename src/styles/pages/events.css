@@ -52,12 +52,7 @@
 }
 
 .events-hero-eyebrow {
-  margin: 0 0 18px;
-  color: var(--tn-light-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.722rem;
-  font-weight: 800;
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
 }
 
 .events-hero h1 {
@@ -224,15 +219,6 @@
 .family-camp-inner {
   width: 100%;
   max-width: 760px;
-}
-
-.events-eyebrow {
-  margin: 0 0 14px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.722rem;
-  font-weight: 800;
 }
 
 .family-camp-inner .family-camp-title {
@@ -543,15 +529,6 @@
   max-width: 560px;
 }
 
-.custom-gathering-eyebrow {
-  margin: 0 0 28px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.722rem;
-  font-weight: 700;
-}
-
 .custom-gathering-copy h2 {
   margin: 0;
   color: var(--tn-text);
@@ -819,15 +796,6 @@
 
 .personal-retreat-copy {
   max-width: 620px;
-}
-
-.personal-retreat-eyebrow {
-  margin: 0 0 28px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: 0.722rem;
-  font-weight: 700;
 }
 
 .personal-retreat-copy h2 {
@@ -1164,12 +1132,8 @@
 
 .events-page .events-preview-section .events-header .eyebrow {
   max-width: 1180px;
-  margin: 0 auto 18px;
-  color: rgba(240, 236, 210, 0.76);
-  font-size: 0.722rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  margin-inline: auto;
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
 }
 
 .events-page .events-preview-section .events-header h2 {

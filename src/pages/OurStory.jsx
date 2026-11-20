@@ -22,7 +22,6 @@ export default function OurStory() {
         <div className="our-story-hero-overlay" />
 
         <div className="our-story-hero-content">
-          <p className="our-story-eyebrow">Our Story</p>
 
           <h1>
             The Toah Nipi Story

@@ -33,12 +33,8 @@
 
 .events-preview-section .events-header .eyebrow {
   max-width: 1180px;
-  margin: 0 auto 18px;
-  color: rgba(240, 236, 210, 0.76);
-  font-size: 0.722rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  margin-inline: auto;
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
 }
 
 .events-preview-section .events-header h2 {

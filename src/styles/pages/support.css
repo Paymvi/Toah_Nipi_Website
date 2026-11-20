@@ -59,17 +59,8 @@
   color: var(--tn-paper);
 }
 
-.partner-eyebrow {
-  margin: 0 0 18px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: 0.722rem;
-  font-weight: 700;
-}
-
 .partner-eyebrow-light {
-  color: var(--tn-light-muted);
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
 }
 
 .partner-hero h1 {
@@ -2294,19 +2285,6 @@ a.relationship-directory-card:hover {
    CLOSING THANK-YOU BANNER (.donors-final-cta)
    The "donors-" prefix is left over from the retired Donors page.
 ========================================================= */
-
-.donors-eyebrow {
-  margin: 0 0 18px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.702rem;
-  font-weight: 800;
-}
-
-.donors-eyebrow-light {
-  color: var(--tn-light-muted);
-}
 
 .donors-final-cta {
   position: relative;

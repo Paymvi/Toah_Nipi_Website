@@ -268,7 +268,6 @@ export default function Home() {
       <section className="contact-directions-section" id="directions">
         <div className="contact-directions-card">
           <div className="contact-directions-text-strip">
-            <p className="contact-eyebrow">Directions</p>
 
             <h2>Find us in Rindge, New Hampshire.</h2>
 
@@ -324,7 +323,6 @@ export default function Home() {
 
       <section className="friends-cta-section">
         <div className="friends-cta-content">
-          <p className="friends-cta-eyebrow">Ready to learn more?</p>
 
           <h2>Start planning your visit.</h2>
 

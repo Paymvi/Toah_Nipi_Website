@@ -53,15 +53,6 @@
   color: var(--tn-paper);
 }
 
-.our-story-eyebrow {
-  margin: 0 0 18px;
-  color: var(--tn-light-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.702rem;
-  font-weight: 800;
-}
-
 .our-story-hero h1 {
   margin: 0;
   color: var(--tn-paper);
@@ -164,15 +155,6 @@
     radial-gradient(circle at 88% 18%, rgba(72, 80, 33, 0.1), transparent 28%),
     radial-gradient(circle at 12% 82%, rgba(255, 249, 215, 0.42), transparent 30%);
   z-index: -1;
-}
-
-.story-timeline-eyebrow {
-  margin: 0 0 14px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 0.682rem;
-  letter-spacing: 0.11em;
 }
 
 .story-timeline-highlight {
@@ -503,16 +485,6 @@
   max-width: 900px;
 }
 
-.statement-faith-eyebrow {
-  margin: 0 0 10px;
-  line-height: 1;
-  text-transform: uppercase;
-  color: rgba(247, 241, 223, 0.68);
-  font-size: 0.643rem;
-  font-weight: 700;
-  letter-spacing: 0.07em;
-}
-
 .statement-faith-header h2 {
   margin: 0;
   color: var(--tn-paper);
@@ -663,15 +635,6 @@
   gap: clamp(42px, 7vw, 96px);
   align-items: end;
   margin-bottom: 58px;
-}
-
-.our-team-eyebrow {
-  margin: 0 0 22px;
-  color: rgba(60, 61, 31, 0.66);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.702rem;
-  font-weight: 800;
 }
 
 .our-team-header h2 {
@@ -1002,15 +965,6 @@
   border-bottom: 1px solid rgba(247, 241, 223, 0.32);
 }
 
-.mission-vision-eyebrow {
-  margin: 0 0 16px;
-  color: rgba(247, 241, 223, 0.72);
-  font-size: 0.682rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
 .mission-vision-header h2 {
   margin: 0;
   display: flex;
@@ -1338,10 +1292,6 @@
 
   .statement-faith-header {
     margin-bottom: 20px;
-  }
-
-  .statement-faith-eyebrow {
-    margin-bottom: 9px;
   }
 
   .statement-faith-header h2 {

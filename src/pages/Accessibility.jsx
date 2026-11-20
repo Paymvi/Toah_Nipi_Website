@@ -8,7 +8,6 @@ export default function Accessibility() {
 
       <article className="policy-content">
         <header className="policy-header">
-          <p className="policy-eyebrow">Toah Nipi Christian Retreat Center</p>
           <h1>Accessibility Statement</h1>
           <p className="policy-updated">Last updated: October 2026</p>
           <p>

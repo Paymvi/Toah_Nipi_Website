@@ -18,10 +18,6 @@ export default function StatementOfFaith() {
       <div className="statement-faith-inner reveal-group">
 
         <header className="statement-faith-header">
-          <p className="statement-faith-eyebrow">
-            What We Believe
-          </p>
-
           <h2>
             Our Statement of Faith
           </h2>

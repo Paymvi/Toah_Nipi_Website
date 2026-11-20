@@ -906,7 +906,6 @@ export default function Lodging() {
         <div className="lodging-hero-overlay" />
 
         <div className="lodging-hero-content">
-          <p className="lodging-eyebrow lodging-eyebrow-light">Lodging</p>
 
           <h1>
             Retreat lodging at <span>Toah Nipi</span>
@@ -950,7 +949,6 @@ export default function Lodging() {
         <div className="lake-content">
           <div className="lake-heading-box">
             <div className="lake-heading-inner">
-              <p className="lake-eyebrow">Ready to learn more?</p>
 
               <h2>We love hosting student groups, churches, and families.</h2>
             </div>

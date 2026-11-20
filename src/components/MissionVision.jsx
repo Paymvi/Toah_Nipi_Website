@@ -5,7 +5,6 @@ export default function MissionVision() {
 
         <header className="mission-vision-header">
           <div>
-            <p className="mission-vision-eyebrow">What Guides Us</p>
 
             <h2>
               Mission <span>&amp; Vision</span>

@@ -21,15 +21,6 @@
   border-bottom: 1px solid rgba(52, 56, 20, 0.16);
 }
 
-.policy-eyebrow {
-  margin: 0 0 12px;
-  color: var(--tn-green-soft);
-  font-size: 0.76rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
 .policy-content h1 {
   margin: 0 0 10px;
   color: var(--tn-green);

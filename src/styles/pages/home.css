@@ -82,6 +82,29 @@
   margin: 0 auto 14px;
 }
 
+.hero-content .eyebrow {
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
+}
+
+/* Hero keeps plain lines on both sides instead of the leaf sprig */
+.hero-content p.eyebrow.eyebrow::before,
+.hero-content p.eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 1px;
+  margin: 0 12px 0 0;
+  vertical-align: 0.3em;
+  background: currentColor;
+  opacity: 0.6;
+  -webkit-mask: none;
+  mask: none;
+}
+
+.hero-content p.eyebrow::after {
+  margin: 0 0 0 12px;
+}
+
 .hero-content p:not(.eyebrow) {
   margin: 0 auto;
   line-height: 1.35;
@@ -460,7 +483,7 @@
 .experience-copy h2,
 .experience-copy p,
 .experience-copy .eyebrow {
-  color: var(--tn-paper);
+  --tn-eyebrow: var(--tn-eyebrow-on-dark);
 }
 
 .experience-copy p {
@@ -575,16 +598,6 @@
     inset 0 1px 0 rgba(255, 252, 232, 0.72);
 }
 
-.contact-directions-card .contact-eyebrow {
-  max-width: 900px;
-  text-transform: uppercase;
-  margin: 0 0 12px;
-  color: rgba(52, 56, 20, 0.66);
-  letter-spacing: 0.16em;
-  font-size: 0.663rem;
-  font-weight: 900;
-}
-
 .contact-directions-card h2 {
   max-width: 760px;
   margin: 0 auto;
@@ -685,15 +698,6 @@
   align-items: center;
 }
 
-.friends-cta-eyebrow {
-  margin: 0 0 18px;
-  color: var(--tn-cream);
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 0.722rem;
-  font-weight: 700;
-}
-
 .friends-cta-content h2 {
   margin: 0;
   color: var(--tn-paper);
@@ -758,15 +762,6 @@
 
 .newsletter-copy {
   max-width: 620px;
-}
-
-.newsletter-eyebrow {
-  margin: 0 0 16px;
-  color: var(--tn-gold-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  font-size: 0.722rem;
-  font-weight: 700;
 }
 
 .newsletter-copy h2 {
@@ -913,10 +908,6 @@
 .cta-section p {
   max-width: 620px;
   margin: 24px auto 0;
-}
-
-.cta-section .eyebrow {
-  color: #6f7442;
 }
 
 .cta-section .primary-button {
