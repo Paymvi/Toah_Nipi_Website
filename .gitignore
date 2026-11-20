@@ -39,3 +39,6 @@ dist-ssr
 .env
 .env.*
 !.env.example
+
+# Local design audit
+WEBSITE_DESIGN_AUDIT.md

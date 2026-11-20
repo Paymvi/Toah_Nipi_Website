@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import EventCarousel from "../components/EventCarousel";
+import ProjectBook from "../components/ProjectBook";
 import SEO from "../components/SEO";
 
 import {
@@ -195,6 +196,7 @@ const projectImpacts = [
     category: "Future Experience",
     status: "In Development",
     image: "/images/lodging/hebron/hebron-night-lights.webp",
+    imageSmall: "/images/lodging/hebron/hebron-night-lights-card.webp",
     description:
       "A fully lighted Christmas walk experience designed to become a meaningful local tradition, sharing the story of Jesus’ birth through outdoor scenes, lights, and Scripture.",
   },
@@ -204,6 +206,7 @@ const projectImpacts = [
     category: "Land Stewardship",
     status: "In Progress",
     image: "/images/campus/may-2025-lake-nature-2.webp",
+    imageSmall: "/images/campus/may-2025-lake-nature-2-card.webp",
     description:
       "Improvements to the woodland trails around the pond will create peaceful, accessible pathways for prayer, reflection, walking, and time outdoors.",
   },
@@ -213,6 +216,7 @@ const projectImpacts = [
     category: "Gathering Space",
     status: "Planned",
     image: "/images/campus/outdoor-theatre.webp",
+    imageSmall: "/images/campus/outdoor-theatre-card.webp",
     description:
       "A new outdoor amphitheatre near the pond will provide a flexible space for worship, teaching, camp gatherings, concerts, and group events.",
   },
@@ -222,6 +226,7 @@ const projectImpacts = [
     category: "Outdoor Seating",
     status: "Planned",
     image: "/images/campus/trex-swings.webp",
+    imageSmall: "/images/campus/trex-swings-card.webp",
     description:
       "New Trex swings will create a peaceful place for guests to sit, rest, and enjoy the beauty of Toah Nipi’s outdoor spaces. These durable swings will offer a welcoming spot for conversation, reflection, and quiet moments near camp.",
   },
@@ -248,58 +253,11 @@ const relationshipCategoryLabels =
     return labels;
   }, {});
 
-function ProjectBookPage({ project, index }) {
-  const nextIndex = (index + 1) % projectImpacts.length;
-  const nextProject = projectImpacts[nextIndex];
-
-  return (
-    <div className="partner-project-page-content">
-      <div className="partner-project-page-body">
-        <p className="partner-project-category">
-          {project.category}
-        </p>
-
-        <h3>{project.title}</h3>
-
-        <p>{project.description}</p>
-      </div>
-
-      <div className="partner-project-page-footer">
-        <span className="partner-project-page-number">
-          {String(index + 1).padStart(2, "0")} /{" "}
-          {String(projectImpacts.length).padStart(2, "0")}
-        </span>
-
-        <span className="partner-project-next-label">
-          Next: {nextProject.title}
-          <strong aria-hidden="true">›</strong>
-        </span>
-      </div>
-    </div>
-  );
-}
-
 function Partner() {
-  const [activeProject, setActiveProject] = useState(0);
-  const [turningTo, setTurningTo] = useState(null);
-
   const [directoryRelationshipCategory, setDirectoryRelationshipCategory] =
     useState("all");
 
   const [relationshipSearch, setRelationshipSearch] = useState("");
-
-  const selectedProject = projectImpacts[activeProject];
-
-  const nextProjectIndex =
-    (activeProject + 1) % projectImpacts.length;
-
-  const isPageTurning = turningTo !== null;
-
-  const revealedProjectIndex =
-    turningTo ?? nextProjectIndex;
-
-  const revealedProject =
-    projectImpacts[revealedProjectIndex];
 
   const normalizedRelationshipSearch =
     relationshipSearch.trim().toLowerCase();
@@ -334,25 +292,6 @@ function Partner() {
 
       window.history.pushState(null, "", href);
     }
-  };
-
-  const startPageTurn = (targetIndex) => {
-    if (isPageTurning) return;
-    if (targetIndex === activeProject) return;
-
-    setTurningTo(targetIndex);
-  };
-
-  const turnToNextPage = () => {
-    startPageTurn(nextProjectIndex);
-  };
-
-  const finishPageTurn = (event) => {
-    if (event.target !== event.currentTarget) return;
-    if (turningTo === null) return;
-
-    setActiveProject(turningTo);
-    setTurningTo(null);
   };
 
   return (
@@ -523,100 +462,7 @@ function Partner() {
           </p>
         </div>
 
-        <div className="partner-project-layout">
-          <div className="partner-project-tabs">
-            {projectImpacts.map((project, index) => (
-              <button
-                type="button"
-                key={project.id}
-                className={activeProject === index ? "is-active" : ""}
-                onClick={() => startPageTurn(index)}
-                disabled={isPageTurning}
-              >
-                <span>{project.category}</span>
-                {project.title}
-              </button>
-            ))}
-          </div>
-
-          <article
-            className={`partner-project-book ${
-              isPageTurning ? "is-turning" : ""
-            }`}
-          >
-            <div className="partner-project-photo-page">
-              {isPageTurning && (
-                <img
-                  className="partner-project-photo partner-project-photo-next"
-                  src={revealedProject.image}
-                  alt=""
-                  aria-hidden="true"
-                />
-              )}
-
-              <img
-                className="partner-project-photo partner-project-photo-current"
-                src={selectedProject.image}
-                alt={selectedProject.title}
-              />
-
-              {isPageTurning && (
-                <div className="partner-project-status partner-project-status-next">
-                  {revealedProject.status}
-                </div>
-              )}
-
-              <div className="partner-project-status partner-project-status-current">
-                {selectedProject.status}
-              </div>
-            </div>
-
-            <div className="partner-project-right-page">
-              <div
-                className="partner-project-page-under"
-                aria-hidden={!isPageTurning}
-              >
-                <ProjectBookPage
-                  project={revealedProject}
-                  index={revealedProjectIndex}
-                />
-              </div>
-
-              <div
-                className={`partner-project-turning-page ${
-                  isPageTurning ? "is-turning" : ""
-                }`}
-                role="button"
-                tabIndex={isPageTurning ? -1 : 0}
-                aria-label={`Turn page to ${
-                  projectImpacts[nextProjectIndex].title
-                }`}
-                onClick={turnToNextPage}
-                onKeyDown={(event) => {
-                  if (event.key === "Enter" || event.key === " ") {
-                    event.preventDefault();
-                    turnToNextPage();
-                  }
-                }}
-                onAnimationEnd={finishPageTurn}
-              >
-                <div className="partner-project-page-face partner-project-page-front">
-                  <ProjectBookPage
-                    project={selectedProject}
-                    index={activeProject}
-                  />
-                </div>
-
-                <div
-                  className="partner-project-page-face partner-project-page-back"
-                  aria-hidden="true"
-                >
-                  <div className="partner-project-paper-back" />
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
+        <ProjectBook projects={projectImpacts} />
       </section>
 
       <section className="partner-feature-stack">
