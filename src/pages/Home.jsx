@@ -219,7 +219,7 @@ export default function Home() {
               Toah Nipi welcomes churches, campus ministries, Christian schools,
               families, retreat groups, and individuals for overnight stays, day events, meals, meeting spaces, and time
               set apart for{" "}
-              <span className="bold-text">connection, and renewal</span>.
+              <span className="bold-text">rest, connection, and renewal</span>.
             </p>
 
             <div className="intro-buttons">
@@ -331,7 +331,7 @@ export default function Home() {
           </p>
 
           <Link to="/contact" className="friends-cta-button">
-            Plan Your Stay
+            Plan Your Stay <span aria-hidden="true">→</span>
           </Link>
         </div>
       </section>
@@ -430,6 +430,7 @@ export default function Home() {
                 type="text"
                 name="firstName"
                 autoComplete="given-name"
+                placeholder="Jane"
                 required
               />
             </label>
@@ -440,6 +441,7 @@ export default function Home() {
                 type="text"
                 name="lastName"
                 autoComplete="family-name"
+                placeholder="Smith"
                 required
               />
             </label>
@@ -451,6 +453,7 @@ export default function Home() {
               type="email"
               name="email"
               autoComplete="email"
+              placeholder="you@example.com"
               required
             />
           </label>

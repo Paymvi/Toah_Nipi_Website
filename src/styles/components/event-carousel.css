@@ -8,7 +8,7 @@
   position: relative;
   z-index: 2;
   overflow: hidden;
-  padding: 72px clamp(24px, 6vw, 96px) 52px;
+  padding: 0 clamp(24px, 6vw, 96px) 40px;
   background:
     radial-gradient(circle at 12% 8%, rgba(247, 241, 223, 0.12), transparent 30%),
     radial-gradient(circle at 88% 20%, rgba(215, 219, 196, 0.08), transparent 34%),
@@ -23,7 +23,7 @@
   max-width: none;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
-  margin-bottom: 34px;
+  margin-bottom: 24px;
   padding: 46px clamp(24px, 8vw, 170px);
   background: rgba(0, 0, 0, 0.34);
   backdrop-filter: blur(3px);
@@ -44,7 +44,7 @@
   font-family: var(--font-cooper);
   font-size: clamp(2.2rem, 4.4vw, 3.4rem);
   line-height: 0.92;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   font-weight: 400;
 }
 
@@ -61,13 +61,22 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-  padding: 28px 14px 36px;
+  padding: 28px 40px 60px;
 
   /* Matches the side padding so the resting position is already a snap
       point; otherwise the browser snap-scrolls on load, which stops
       Chrome from recording Largest Contentful Paint for the page. */
-  scroll-padding-inline: 14px;
+  scroll-padding-inline: 40px;
   scrollbar-width: none;
+
+  /* Fade cards (and their shadows) out at the edges instead of a hard cut */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 40px,
+    #000 calc(100% - 40px),
+    transparent 100%
+  );
 }
 
 .event-carousel::-webkit-scrollbar {
@@ -164,17 +173,19 @@
   color: #303614;
   font-family: var(--font-cooper);
   font-size: clamp(1.16rem, 1.75vw, 1.47rem);
-  line-height: 0.96;
-  letter-spacing: -0.045em;
+  line-height: 1;
+  letter-spacing: -0.02em;
   font-weight: 400;
+  text-wrap: balance;
 }
 
 .event-card-content p {
   max-width: 260px;
   margin: 0 auto;
   color: rgba(52, 56, 20, 0.72);
-  font-size: 0.829rem;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .carousel-btn {
@@ -224,9 +235,20 @@
   transform: translateY(-50%) scale(1.06);
 }
 
+/* With room beside the carousel, keep the arrows off the photos */
+@media (min-width: 1320px) {
+  .carousel-btn-left {
+    left: -72px;
+  }
+
+  .carousel-btn-right {
+    right: -72px;
+  }
+}
+
 @media (max-width: 768px) {
   .events-preview-section {
-    padding: 78px 20px 86px;
+    padding: 0 20px 56px;
   }
 
   .events-preview-section .events-header {
@@ -236,17 +258,21 @@
 
   .events-preview-section .events-header h2 {
     font-size: clamp(2.45rem, 11vw, 3.75rem);
+    text-wrap: balance;
   }
 
   .event-carousel {
     gap: 22px;
     padding: 22px 8px 42px;
     scroll-padding-inline: 8px;
+    mask-image: none;
   }
 
   .events-preview-section .event-card {
     flex-basis: 82vw;
     transform: rotate(0deg);
+    /* Tighter shadow so the narrow track doesn't clip it into a visible box */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   }
 
   .event-card-image {

@@ -1165,6 +1165,7 @@
   /* See .event-carousel in home.css */
   scroll-padding-inline: 14px;
   scrollbar-width: none;
+  mask-image: none;
 }
 
 .events-page .event-carousel::-webkit-scrollbar {
