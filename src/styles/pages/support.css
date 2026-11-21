@@ -285,20 +285,27 @@
   transform: translateX(3px);
 }
 
-/* IMPACT BAND */
-.partner-impact-band {
+/* GREEN BANDS (impact + community share one look) */
+.partner-impact-band,
+.partner-community-band {
   position: relative;
   z-index: 2;
-  padding: 100px var(--tn-section-x);
-  background: var(--tn-green);
+  overflow: hidden;
+  padding: clamp(84px, 8vw, 112px) max(var(--tn-section-x), calc((100% - 1220px) / 2));
+  background:
+    radial-gradient(ellipse 60% 120% at 100% 0%, rgba(227, 213, 166, 0.11), transparent 60%),
+    radial-gradient(ellipse 50% 90% at 0% 100%, rgba(0, 0, 0, 0.18), transparent 60%),
+    var(--tn-green);
   color: var(--tn-paper);
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(42px, 7vw, 96px);
-  align-items: center;
+  align-items: end;
 }
 
-.partner-impact-band h2 {
+.partner-impact-band h2,
+.partner-community-band h2 {
+  max-width: 620px;
   margin: 0;
   color: var(--tn-paper);
   font-family: var(--font-cooper);
@@ -306,14 +313,18 @@
   line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 400;
+  text-wrap: balance;
 }
 
-.partner-impact-band p:last-child {
-  max-width: 680px;
+.partner-impact-band > p,
+.partner-community-band > p {
+  max-width: 560px;
   margin: 0;
+  padding: 4px 0 4px clamp(24px, 3vw, 40px);
+  border-left: 1px solid rgba(227, 213, 166, 0.32);
   color: var(--tn-light-muted);
-  font-size: clamp(0.936rem, 1.073vw, 0.975rem);
-  line-height: 1.6;
+  font-size: clamp(0.975rem, 1.15vw, 1.05rem);
+  line-height: 1.7;
 }
 
 /* FEATURE SECTIONS */
@@ -662,6 +673,7 @@
 /* RESPONSIVE */
 @media (max-width: 1050px) {
   .partner-impact-band,
+  .partner-community-band,
   .partner-feature,
   .partner-feature-reverse,
   .partner-projects-header {
@@ -670,6 +682,18 @@
 
   .partner-feature-reverse .partner-feature-image-wrap {
     order: initial;
+  }
+
+  .partner-impact-band,
+  .partner-community-band {
+    gap: 28px;
+  }
+
+  .partner-impact-band > p,
+  .partner-community-band > p {
+    padding: 28px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(227, 213, 166, 0.32);
   }
 
   .partner-ways-grid {
@@ -694,7 +718,8 @@
 
   .partner-feature-stack,
   .partner-projects-section,
-  .partner-impact-band {
+  .partner-impact-band,
+  .partner-community-band {
     padding: 80px 24px;
   }
 
@@ -749,6 +774,11 @@
 
   .partner-way-card {
     padding: 26px 24px;
+  }
+
+  .partner-impact-band,
+  .partner-community-band {
+    padding-inline: 18px;
   }
 }
 
@@ -1298,38 +1328,6 @@ a.relationship-directory-card:hover {
    PARTNERS.CSS
 ========================================================= */
 
-/* Story band */
-.partner-community-band {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: clamp(42px, 7vw, 96px);
-  align-items: center;
-  padding: 92px var(--tn-section-x);
-  background: var(--tn-green);
-  color: var(--tn-paper);
-}
-
-.partner-community-band h2 {
-  max-width: 680px;
-  margin: 0;
-  color: var(--tn-paper);
-  font-family: var(--font-cooper);
-  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  font-weight: 400;
-}
-
-.partner-community-band > p {
-  max-width: 680px;
-  margin: 0;
-  color: var(--tn-light-muted);
-  font-size: clamp(0.936rem, 1.073vw, 0.975rem);
-  line-height: 1.6;
-}
-
 /* =========================================================
    Shared eyebrow styling used by the Partners hero
 ========================================================= */
@@ -1339,25 +1337,6 @@ a.relationship-directory-card:hover {
 #returning-retreat-groups,
 #community-affiliations {
   scroll-margin-top: 125px;
-}
-
-/* Responsive */
-@media (max-width: 1050px) {
-  .partner-community-band {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 760px) {
-  .partner-community-band {
-    padding: 80px 24px;
-  }
-}
-
-@media (max-width: 430px) {
-  .partner-community-band {
-    padding-inline: 18px;
-  }
 }
 
 /* =========================================================
@@ -1436,29 +1415,46 @@ a.relationship-directory-card:hover {
 
 .partner-project-header {
   width: min(1220px, 100%);
-  margin: 0 auto 42px;
+  margin: 0 auto clamp(44px, 5vw, 64px);
   display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
+  grid-template-columns: 1fr 1fr;
   gap: clamp(44px, 7vw, 96px);
   align-items: end;
 }
 
 .partner-project-header h2 {
+  max-width: 600px;
   margin: 0;
   color: var(--tn-green);
   font-family: var(--font-cooper);
   font-size: clamp(2.05rem, 4.6vw, 3.05rem);
-  line-height: 0.9;
+  line-height: 0.95;
   letter-spacing: -0.04em;
   font-weight: 400;
+  text-wrap: balance;
 }
 
+/* Same hairline-led paragraph as the green bands */
 .partner-project-header > p {
-  max-width: 560px;
+  max-width: 520px;
   margin: 0;
+  padding: 4px 0 4px clamp(24px, 3vw, 40px);
+  border-left: 1px solid rgba(52, 56, 20, 0.22);
   color: var(--tn-green-soft);
-  font-size: clamp(0.936rem, 1.073vw, 0.975rem);
-  line-height: 1.6;
+  font-size: clamp(0.975rem, 1.15vw, 1.05rem);
+  line-height: 1.7;
+}
+
+@media (max-width: 1050px) {
+  .partner-project-header {
+    gap: 28px;
+  }
+
+  .partner-project-header > p {
+    padding: 28px 0 0;
+    border-left: 0;
+    border-top: 1px solid rgba(52, 56, 20, 0.22);
+  }
 }
 
 /* ---------------------------------------------------------
@@ -1480,67 +1476,82 @@ a.relationship-directory-card:hover {
   --book-radius: 14px;
 }
 
-/* Table of contents */
+/* Table of contents: a quiet tray; the current project is raised as a
+   sheet of the book's paper. */
 .partner-project-tabs {
-  margin-bottom: 22px;
+  margin-bottom: clamp(20px, 2.2vw, 28px);
+  padding: 4px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
+  gap: 4px;
+  border-radius: 14px;
+  background: rgba(52, 56, 20, 0.06);
 }
 
 .partner-project-tabs button {
-  min-height: 74px;
-  padding: 14px 16px;
-  border: 1px solid rgba(60, 61, 31, 0.14);
-  border-radius: 12px;
-  background: rgba(255, 252, 232, 0.56);
-  color: var(--tn-text);
+  position: relative;
+  padding: 11px 14px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--tn-green-soft);
   text-align: left;
   cursor: pointer;
-  font: inherit;
-  font-size: 0.819rem;
-  font-weight: 700;
-  line-height: 1.3;
-  transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    box-shadow 180ms ease;
+  font-family: var(--tn-font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  transition: background-color 220ms ease, box-shadow 220ms ease, color 220ms ease;
 }
 
 .partner-project-tabs button span {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 5px;
   color: rgba(60, 61, 31, 0.6);
-  font-size: 0.566rem;
-  font-weight: 800;
+  font-family: var(--tn-font-body);
+  font-size: 0.56rem;
+  font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: color 180ms ease;
+  letter-spacing: 0.12em;
+}
+
+/* Divider between options; hidden next to a raised or hovered tab */
+.partner-project-tabs button + button::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  bottom: 12px;
+  left: -3px;
+  width: 1px;
+  background: rgba(52, 56, 20, 0.16);
+  transition: opacity 220ms ease;
+}
+
+.partner-project-tabs button[aria-current="true"]::before,
+.partner-project-tabs button[aria-current="true"] + button::before,
+.partner-project-tabs button:hover::before,
+.partner-project-tabs button:hover + button::before {
+  opacity: 0;
 }
 
 .partner-project-tabs button:hover {
-  transform: translateY(-2px);
-  border-color: rgba(60, 61, 31, 0.26);
-  background: rgba(255, 252, 232, 0.9);
-  box-shadow: 0 10px 22px rgba(49, 51, 25, 0.07);
-}
-
-.partner-project-tabs button:active {
-  transform: translateY(0);
-  box-shadow: none;
+  background: rgba(255, 252, 232, 0.45);
+  color: var(--tn-green);
 }
 
 .partner-project-tabs button[aria-current="true"] {
-  border-color: var(--tn-green);
-  background: var(--tn-green);
-  color: var(--tn-paper);
+  background: var(--book-paper);
+  color: var(--tn-green);
+  box-shadow: 0 1px 3px rgba(37, 43, 16, 0.1);
+  cursor: default;
 }
 
-.partner-project-tabs button[aria-current="true"] span {
-  color: var(--tn-light-muted);
+@media (prefers-reduced-motion: reduce) {
+  .partner-project-tabs button {
+    transition: none;
+  }
 }
 
 .partner-project-tabs button:focus-visible,
@@ -2004,6 +2015,11 @@ a.relationship-directory-card:hover {
 @media (max-width: 1050px) {
   .partner-project-tabs {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Two per row: no divider at the start of a row */
+  .partner-project-tabs button:nth-child(odd)::before {
+    display: none;
   }
 }
 
