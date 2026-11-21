@@ -1,9 +1,5 @@
 import { Link } from "react-router-dom";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const visitLinks = [
   { label: "Lodging", href: "/lodging" },
@@ -90,62 +86,58 @@ export default function SiteFooter() {
             </p>
 
             <a href="tel:16038995464">603-899-5464</a>
-            <a href="mailto:contactus@toahnipi.org">
-              contactus@toahnipi.org
-            </a>
+            <a href="mailto:contactus@toahnipi.org">contactus@toahnipi.org</a>
           </div>
         </div>
+      </div>
 
-        <div className="site-footer-bottom">
-          <img
-            src="/images/brand/secondary-logo.png"
-            alt=""
-            aria-hidden="true"
-            className="site-footer-logo-secondary"
-          />
+      <div className="site-footer-bottom">
+        <img
+          src="/images/brand/secondary-logo.png"
+          alt=""
+          aria-hidden="true"
+          className="site-footer-logo-secondary"
+        />
 
-          <div className="site-footer-legal">
-            <p>
-              © {new Date().getFullYear()} Toah Nipi Christian Retreat Center.
-              <br/>All rights reserved.
-            </p>
+        <p>
+          © {new Date().getFullYear()} Toah Nipi Christian Retreat Center. All
+          rights reserved.
+        </p>
 
-            <nav className="site-footer-legal-links" aria-label="Legal">
-              <Link to="/privacy">Privacy</Link>
-              <Link to="/accessibility">Accessibility</Link>
-              {/* Full page load so the staff page's stricter headers apply. */}
-              <a href="/staff/blog">Staff</a>
-            </nav>
-          </div>
+        <nav className="site-footer-legal-links" aria-label="Legal">
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/accessibility">Accessibility</Link>
+          {/* Full page load so the staff page's stricter headers apply. */}
+          <a href="/staff/blog">Staff</a>
+        </nav>
 
-          <div className="site-footer-socials" aria-label="Social media links">
-            <a
-              href="https://www.facebook.com/ToahNipiRetreatCenter/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-            >
-              <FaFacebookF />
-            </a>
+        <div className="site-footer-socials" aria-label="Social media links">
+          <a
+            href="https://www.facebook.com/ToahNipiRetreatCenter/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Facebook"
+          >
+            <FaFacebookF />
+          </a>
 
-            <a
-              href="https://www.instagram.com/toah_nipi/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-            >
-              <FaInstagram />
-            </a>
+          <a
+            href="https://www.instagram.com/toah_nipi/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Instagram"
+          >
+            <FaInstagram />
+          </a>
 
-            <a
-              href="https://www.linkedin.com/company/91656401/"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn />
-            </a>
-          </div>
+          <a
+            href="https://www.linkedin.com/company/91656401/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedinIn />
+          </a>
         </div>
       </div>
     </footer>
