@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { FaInstagram, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiHeart } from "react-icons/fi";
 import { DONATION_URL } from "../data/donation";
 
 // Matches the breakpoint in src/styles/components/navbar.css where the menu collapses.
@@ -295,6 +295,7 @@ export default function NavBar() {
         </div>
 
         <a href={DONATION_URL} className="give-link">
+          <FiHeart aria-hidden="true" />
           GIVE
         </a>
       </div>

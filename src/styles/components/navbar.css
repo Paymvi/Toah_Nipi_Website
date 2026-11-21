@@ -13,7 +13,9 @@
   z-index: 1000;
 
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr) max-content;
+  /* Equal side columns keep the links centered on the page; on narrow
+     desktops the logo side gives way first so nothing overlaps */
+  grid-template-columns: minmax(120px, 1fr) auto minmax(max-content, 1fr);
   align-items: center;
   column-gap: clamp(18px, 3vw, 42px);
 
@@ -250,48 +252,45 @@
 
 /* Give */
 .give-link {
-  position: relative;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  min-height: 44px;
-  padding: 0 6px;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 18px;
 
   color: #f5f0d7;
+  background: transparent;
+  border: 1px solid rgba(245, 240, 215, 0.55);
+  border-radius: var(--tn-radius-pill);
   text-decoration: none;
 
-  font-size: 0.975rem;
+  font-size: 0.95rem;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.08em;
 
   white-space: nowrap;
 
   transition:
-    opacity 180ms ease,
-    transform 180ms ease;
+    background-color 180ms ease,
+    border-color 180ms ease;
 }
 
-.give-link::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 3px;
-
-  width: 76px;
-  height: 3px;
-
-  background: #f5f0d7;
-  border-radius: var(--tn-radius-pill);
-
-  transform: translateX(-50%);
+.give-link svg {
+  width: 15px;
+  height: 15px;
 }
 
 .give-link:hover {
-  opacity: 0.85;
-  transform: translateY(-1px);
+  background: rgba(245, 240, 215, 0.12);
+  border-color: #f5f0d7;
+}
+
+.give-link:focus-visible {
+  outline: 2px solid #f5f0d7;
+  outline-offset: 3px;
 }
 
 /* Mobile toggle */
