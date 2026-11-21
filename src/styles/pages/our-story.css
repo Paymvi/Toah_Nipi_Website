@@ -932,13 +932,19 @@
 .mission-vision-section {
   position: relative;
   z-index: 2;
-  padding: 96px var(--tn-section-x) 105px;
-  background: radial-gradient(
-       circle at 88% 10%,
-       rgba(247, 241, 223, 0.09),
-       transparent 28%
+  padding: 120px var(--tn-section-x) 128px;
+  /* Lakeside sunset under an olive wash; the left side stays
+     darker so the heading and cards keep their contrast. */
+  background:
+    linear-gradient(
+      100deg,
+      rgba(30, 35, 14, 0.84) 0%,
+      rgba(38, 43, 18, 0.58) 50%,
+      rgba(52, 56, 20, 0.22) 100%
     ),
-    #7d8263;
+    linear-gradient(180deg, rgba(30, 35, 14, 0.2), rgba(30, 35, 14, 0.55)),
+    url("/images/campus/lakeside-sunset.webp") center 40% / cover no-repeat,
+    #3f4520;
   color: var(--tn-paper);
   overflow: hidden;
 }
@@ -960,9 +966,9 @@
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.75fr);
   gap: clamp(50px, 7vw, 100px);
   align-items: end;
-  padding-bottom: 38px;
-  margin-bottom: 34px;
-  border-bottom: 1px solid rgba(247, 241, 223, 0.32);
+  padding-bottom: 40px;
+  margin-bottom: 44px;
+  border-bottom: 1px solid rgba(247, 241, 223, 0.22);
 }
 
 .mission-vision-header h2 {
@@ -973,7 +979,7 @@
   flex-wrap: nowrap;
   color: var(--tn-paper);
   font-family: var(--font-cooper);
-  font-size: clamp(2.05rem, 4.6vw, 3.05rem);
+  font-size: clamp(2.3rem, 5vw, 3.6rem);
   line-height: 1;
   font-weight: 400;
   letter-spacing: -0.045em;
@@ -981,13 +987,14 @@
 
 .mission-vision-header h2 span {
   display: inline;
-  color: rgba(247, 241, 223, 0.7);
+  color: var(--tn-eyebrow-on-dark);
+  font-style: italic;
 }
 
 .mission-vision-intro {
   max-width: 510px;
   margin: 0 0 3px;
-  color: rgba(247, 241, 223, 0.82);
+  color: rgba(247, 241, 223, 0.86);
   font-size: clamp(0.926rem, 1.073vw, 1.024rem);
   line-height: 1.7;
 }
@@ -1002,8 +1009,8 @@
   display: grid;
 
   /* Mission gets more room, but Vision is no longer cramped */
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.85fr);
-  gap: 18px;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  gap: 22px;
 }
 
 /* =========================================================
@@ -1018,10 +1025,11 @@
   overflow: hidden;
 
   /* min-height: 300px; */
-  padding: clamp(30px, 3.3vw, 42px);
+  min-height: 340px;
+  padding: clamp(32px, 3.6vw, 48px);
   display: flex;
   flex-direction: column;
-  border-radius: 18px;
+  border-radius: 20px;
 }
 
 /* =========================================================
@@ -1033,8 +1041,8 @@
 .mission-statement {
   background: #f4efdc;
   color: var(--tn-text);
-  border: 1px solid rgba(60, 61, 31, 0.08);
-  box-shadow: 0 18px 44px rgba(40, 43, 20, 0.12);
+  border: 1px solid rgba(247, 241, 223, 0.5);
+  box-shadow: 0 26px 60px rgba(15, 18, 6, 0.35);
 }
 
 /* =========================================================
@@ -1045,13 +1053,17 @@
 
 .vision-statement {
   color: var(--tn-paper);
-  border: 1px solid rgba(247, 241, 223, 0.2);
+  border: 1px solid rgba(247, 241, 223, 0.24);
+  /* Frosted glass so the sunset shows through */
   background: linear-gradient(
-       145deg,
-       rgba(57, 62, 29, 0.84),
-       rgba(72, 77, 42, 0.72)
-    );
-  box-shadow: 0 18px 44px rgba(40, 43, 20, 0.1);
+       150deg,
+       rgba(247, 241, 223, 0.14),
+       rgba(247, 241, 223, 0.05)
+    ),
+    rgba(30, 35, 14, 0.32);
+  -webkit-backdrop-filter: blur(14px) saturate(1.1);
+  backdrop-filter: blur(14px) saturate(1.1);
+  box-shadow: 0 26px 60px rgba(15, 18, 6, 0.3);
 }
 
 /* =========================================================
@@ -1127,7 +1139,7 @@
 .mission-statement .statement-copy {
   max-width: 760px;
   color: #3a3b1e;
-  font-size: clamp(1.15rem, 1.45vw, 1.45rem);
+  font-size: clamp(1.2rem, 1.6vw, 1.62rem);
   line-height: 1.38;
 }
 
@@ -1135,33 +1147,8 @@
 .vision-statement .statement-copy {
   max-width: 500px;
   color: var(--tn-paper);
-  font-size: clamp(1.12rem, 1.4vw, 1.4rem);
-  line-height: 1.4;
-}
-
-/* =========================================================
-
-     SUBTLE ACCENT
-
-========================================================= */
-
-.mission-statement::before,
-.vision-statement::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 42px;
-  width: 72px;
-  height: 3px;
-  border-radius: var(--tn-radius-pill);
-}
-
-.mission-statement::before {
-  background: rgba(60, 61, 31, 0.25);
-}
-
-.vision-statement::before {
-  background: rgba(247, 241, 223, 0.32);
+  font-size: clamp(1.2rem, 1.6vw, 1.62rem);
+  line-height: 1.38;
 }
 
 /* =========================================================
@@ -1190,7 +1177,7 @@
 
   .mission-statement,
   .vision-statement {
-    min-height: 250px;
+    min-height: 260px;
   }
 
   .mission-statement .statement-copy,
@@ -1208,6 +1195,7 @@
 @media (max-width: 560px) {
   .mission-vision-section {
     padding: 72px 20px 78px;
+    background-position: center, center, 30% 40%;
   }
 
   .mission-vision-header {
