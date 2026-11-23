@@ -528,13 +528,12 @@
   border-bottom: 1px solid #666f4b;
 }
 
-.core-values-story-number {
-  padding-top: 3px;
+.core-values-story-icon {
+  width: 22px;
+  height: 22px;
+  margin-top: 4px;
   color: #bcc7a4;
-  font-size: 0.702rem;
-  font-weight: 600;
-  line-height: 1.4;
-  letter-spacing: 0.08em;
+  stroke-width: 1.5;
 }
 
 .core-values-story-item h4 {

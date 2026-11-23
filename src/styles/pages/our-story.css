@@ -333,12 +333,13 @@
 
 /* Text content */
 .story-timeline-year {
-  margin: 0 0 9px;
+  margin: 0 0 10px;
   color: var(--tn-gold-muted);
-  font-weight: 900;
-  text-transform: uppercase;
-  font-size: 0.682rem;
-  letter-spacing: 0.11em;
+  font-family: var(--font-cooper);
+  font-weight: 400;
+  font-size: 1.75rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
 }
 
 .story-timeline-card-content h3 {
@@ -511,7 +512,7 @@
 
 .statement-faith-block {
   position: relative;
-  padding: 26px 34px 24px;
+  padding: 30px 40px 26px;
   border: 1px solid rgba(247, 241, 223, 0.18);
   border-radius: 16px;
   background: linear-gradient(180deg, #f6f1e3 0%, #f1ecdc 100%);
@@ -520,16 +521,6 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.55);
 }
 
-.statement-faith-block::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  height: 3px;
-  border-radius: var(--tn-radius-pill);
-  left: 34px;
-  width: 64px;
-  background: rgba(151, 151, 112, 0.82);
-}
 
 /* =========================================================
 
@@ -538,7 +529,7 @@
 ========================================================= */
 
 .statement-faith-intro {
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   font-weight: 700;
   line-height: 1;
   text-transform: uppercase;
@@ -556,26 +547,22 @@
 .statement-faith-item {
   display: grid;
   margin: 0;
-  grid-template-columns: 30px minmax(0, 1fr);
-  gap: 12px;
-  padding: 9px 0;
-  color: rgba(67, 70, 45, 0.88);
-  font-size: clamp(0.819rem, 0.877vw, 0.897rem);
-  line-height: 1.48;
-}
-
-.statement-faith-item + .statement-faith-item {
-  border-top: 1px solid rgba(60, 61, 31, 0.09);
-  border-top-color: rgba(73, 76, 48, 0.11);
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 10px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(73, 76, 48, 0.12);
+  color: rgba(55, 58, 35, 0.9);
+  font-size: clamp(0.839rem, 0.9vw, 0.916rem);
+  line-height: 1.6;
 }
 
 .statement-faith-number {
-  font-weight: 700;
-  line-height: 1;
-  padding-top: 2px;
-  color: rgba(116, 119, 78, 0.72);
-  font-size: 0.585rem;
-  letter-spacing: 0.07em;
+  color: var(--tn-gold-muted);
+  font-family: var(--font-cooper);
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 /* =========================================================
@@ -587,11 +574,8 @@
 .statement-faith-closing {
   display: flex;
   align-items: center;
-  border-top: 1px solid rgba(60, 61, 31, 0.16);
   gap: 12px;
-  margin-top: 14px;
-  padding-top: 15px;
-  border-top-color: rgba(73, 76, 48, 0.15);
+  padding-top: 20px;
 }
 
 .statement-faith-closing > span {
@@ -1241,6 +1225,15 @@
 
 .statement-faith-text {
   max-width: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 48px;
+}
+
+@media (max-width: 900px) {
+  .statement-faith-text {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================================
@@ -1262,9 +1255,6 @@
     padding: 24px 28px 22px;
   }
 
-  .statement-faith-block::before {
-    left: 28px;
-  }
 }
 
 /* =========================================================
@@ -1295,22 +1285,17 @@
     border-radius: 14px;
   }
 
-  .statement-faith-block::before {
-    left: 20px;
-    width: 50px;
-  }
 
   .statement-faith-item {
-    grid-template-columns: 25px minmax(0, 1fr);
+    grid-template-columns: 30px minmax(0, 1fr);
     gap: 8px;
-    padding: 8px 0;
+    padding: 12px 0;
     font-size: 0.799rem;
     line-height: 1.46;
   }
 
   .statement-faith-closing {
-    margin-top: 12px;
-    padding-top: 13px;
+    padding-top: 16px;
   }
 
   .statement-faith-closing p {
@@ -1424,6 +1409,7 @@
 
   .story-timeline-year {
     margin-bottom: 8px;
+    font-size: 1.5rem;
   }
 
   .story-timeline-card-content h3 {

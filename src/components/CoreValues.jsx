@@ -1,4 +1,12 @@
 import { useId, useState } from "react";
+import {
+  LuCross,
+  LuDoorOpen,
+  LuHeartHandshake,
+  LuSprout,
+  LuFeather,
+  LuSunrise,
+} from "react-icons/lu";
 
 const coreValues = [
   {
@@ -19,6 +27,7 @@ const coreValues = [
       "I am the vine; you are the branches. If you remain in me and I in you, you will bear much fruit; apart from me you can do nothing.",
     reference: "John 15:5 (NIV)",
     progression: "Why we exist.",
+    icon: LuCross,
   },
 
   {
@@ -43,6 +52,7 @@ const coreValues = [
       "Be joyful in hope, patient in trouble, and persistent in prayer. Supply the needs of the saints. Extend hospitality to strangers.",
     reference: "Romans 12:12–13",
     progression: "How we host people.",
+    icon: LuDoorOpen,
   },
 
   {
@@ -67,6 +77,7 @@ const coreValues = [
       "Jesus stopped and called them. “What do you want me to do for you?” he asked.",
     reference: "Matthew 20:32 (NIV)",
     progression: "How we relate to people.",
+    icon: LuHeartHandshake,
   },
 
   {
@@ -91,6 +102,7 @@ const coreValues = [
       "Now it is required that those who have been given a trust must prove faithful.",
     reference: "1 Corinthians 4:2 (NIV)",
     progression: "How we care for God’s resources.",
+    icon: LuSprout,
   },
 
   {
@@ -114,6 +126,7 @@ const coreValues = [
       "Come to me, all you who are weary and burdened, and I will give you rest. Take my yoke upon you and learn from me, for I am gentle and humble in heart, and you will find rest for your souls. For my yoke is easy and my burden is light.",
     reference: "Matthew 11:28–30 (NIV)",
     progression: "How we shape the environment.",
+    icon: LuFeather,
   },
 
   {
@@ -138,6 +151,7 @@ const coreValues = [
       "Now to him who is able to do immeasurably more than all we ask or imagine...",
     reference: "Ephesians 3:20 (NIV)",
     progression: "What we believe God will do.",
+    icon: LuSunrise,
   },
 ];
 
@@ -298,9 +312,7 @@ export default function CoreValues() {
           <div className="core-values-story-list">
             {coreValues.map((value) => (
               <div className="core-values-story-item" key={value.number}>
-                <span className="core-values-story-number">
-                  {value.number}
-                </span>
+                <value.icon className="core-values-story-icon" aria-hidden="true" />
                 <div>
                   <h4>{value.title}</h4>
                   <p>{value.progression}</p>

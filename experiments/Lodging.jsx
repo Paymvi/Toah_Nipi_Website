@@ -1,0 +1,968 @@
+import {
+  Fragment,
+  useState,
+} from "react";
+
+import { Link } from "react-router-dom";
+import LodgingComparison from "../components/LodgingComparison";
+import LodgingFaq from "../components/LodgingFaq";
+import SEO from "../components/SEO";
+
+const lodgingBuildings = [
+  {
+    id: "hebron",
+    title: "Hebron: The Main Lodge",
+    description:
+      "Hebron is our main lodge for larger retreats, with dorm-style lodging, private rooms, and a central meeting space for group gatherings.",
+    images: [
+      {
+        src: "/images/campus/camp-background-2.webp",
+        alt: "Exterior view of Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/may-2025-hebron.webp",
+        alt: "Front exterior view of Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-back.webp",
+        alt: "Back exterior view of Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-dining.webp",
+        alt: "Dining space inside Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-tables-room-1.webp",
+        alt: "Meeting room inside Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-tables-room-2.webp",
+        alt: "Large table room inside Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-session-room.webp",
+        alt: "Session room inside Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-inside-front.webp",
+        alt: "Interior entrance of Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-bedroom.webp",
+        alt: "Bedroom inside Hebron Lodge with two twin beds",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-bedroom-2.webp",
+        alt: "Bedroom inside Hebron Lodge with a bunk bed and a larger bed",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-meeting-space.webp",
+        alt: "Open meeting space inside Hebron Lodge with chairs along the wall",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-couches.webp",
+        alt: "Lounge with couches inside Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-bathroom.webp",
+        alt: "Bathroom with a shower inside Hebron Lodge",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-bunks-1.webp",
+        alt: "Rows of wooden bunk beds along a carpeted aisle in a Hebron Lodge dormitory",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-bunks-2.webp",
+        alt: "Wooden bunk beds with blue pillows beside a door in a Hebron Lodge dormitory",
+      },
+      {
+        src: "/images/lodging/hebron/hebron-bunks-3.webp",
+        alt: "Wooden bunk beds with maroon sheets near an exit door in a Hebron Lodge dormitory",
+      },
+    ],
+    facts: [
+      { label: "Sleeps", value: "66 guests" },
+      { label: "Rooms", value: "2 dormitories + 5 private rooms" },
+      { label: "Bathrooms", value: "Dorm and private bathrooms" },
+      { label: "Meeting Space", value: "Up to 200 guests" },
+    ],
+    details: [
+      {
+        id: "layout",
+        title: "Layout",
+        content: (
+          <>
+            <p>
+              Hebron is a three-story lodge designed for larger overnight
+              retreats and shared gathering space.
+            </p>
+
+            <p>
+              The bottom level includes bunk-style dormitories, the second level
+              offers a large meeting area, and the top level includes five
+              private rooms.
+            </p>
+          </>
+        ),
+      },
+      {
+        id: "guests",
+        title: "Number of Guests",
+        content: (
+          <>
+            <p>Hebron can host 66 overnight guests.</p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>2</span>
+                <p>
+                  26-person bunk-style dormitories, each with bathrooms and
+                  showers
+                </p>
+              </div>
+
+              <div>
+                <span>5</span>
+                <p>Private rooms on the top level, each with its own bathroom</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+      {
+        id: "meeting",
+        title: "Meeting Space",
+        content: (
+          <>
+            <p>
+              The second level includes a spacious meeting area for teaching,
+              worship, meals, games, and group sessions.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+
+  {
+    id: "bethel",
+    title: "Bethel: Family Style",
+    description:
+      "Bethel is a three-level lodge with family-style bedrooms, private bathrooms, pond views, meeting rooms, a kitchenette, and an open fireplace.",
+    images: [
+      {
+        src: "/images/lodging/bethel/bethel.webp",
+        alt: "Exterior view of Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-2.webp",
+        alt: "Exterior view of Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-back-2.webp",
+        alt: "Exterior view of Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-common-room.webp",
+        alt: "Common room inside Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-top.webp",
+        alt: "Pond view from Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-room.webp",
+        alt: "Bedroom inside Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-room-2.webp",
+        alt: "Bedroom inside Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-wood-room.webp",
+        alt: "Bedroom inside Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-hallway.webp",
+        alt: "Hallway inside Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-mystery-room.webp",
+        alt: "Bedroom inside Bethel Lodge",
+      },
+      {
+        src: "/images/lodging/bethel/bethel-bathroom.webp",
+        alt: "Bathroom inside Bethel Lodge",
+      },
+    ],
+    facts: [
+      { label: "Sleeps", value: "70 guests" },
+      { label: "Rooms", value: "10 family-style bedrooms" },
+      { label: "Bathrooms", value: "Private bathrooms" },
+      { label: "Features", value: "Pond views, kitchenette, fireplace" },
+    ],
+    details: [
+      {
+        id: "layout",
+        title: "Layout",
+        content: (
+          <>
+            <p>
+              Bethel is a three-story lodge suited for families, large groups,
+              and retreats that benefit from private bathrooms.
+            </p>
+
+            <p>
+              The building includes family-style bedrooms, several meeting rooms,
+              a kitchenette, and a shared fireplace area.
+            </p>
+          </>
+        ),
+      },
+      {
+        id: "guests",
+        title: "Number of Guests",
+        content: (
+          <>
+            <p>Bethel can host 70 overnight guests.</p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>10</span>
+                <p>Family-style bedrooms, each with a private bathroom</p>
+              </div>
+
+              <div>
+                <span>3</span>
+                <p>Three levels of lodging and gathering space</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+      {
+        id: "features",
+        title: "Features",
+        content: (
+          <>
+            <p>
+              Bethel includes pond views, expansive windows, several meeting
+              rooms, a kitchenette, and an open fireplace.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+
+  {
+    id: "dothan",
+    title: "Dothan: Small Groups",
+    description:
+      "Dothan is a pond-side lodge for smaller groups, with six bedrooms, shared common space, and a lower-level meeting room.",
+    images: [
+      {
+        src: "/images/lodging/dothan/dothan.webp",
+        alt: "Exterior view of Dothan",
+      },
+      {
+        src: "/images/lodging/dothan/dothan-porch.webp",
+        alt: "Porch at Dothan",
+      },
+      {
+        src: "/images/lodging/dothan/dothan-bedroom-top.webp",
+        alt: "Bedroom inside Dothan",
+      },
+      {
+        src: "/images/lodging/dothan/dothan-bedroom-top-2.webp",
+        alt: "Bedroom inside Dothan",
+      },
+      {
+        src: "/images/lodging/dothan/dothan-couches-top.webp",
+        alt: "Sitting room inside Dothan",
+      },
+      {
+        src: "/images/lodging/dothan/dothan-couches-middle.webp",
+        alt: "Common space inside Dothan",
+      },
+      {
+        src: "/images/lodging/dothan/dothan-room-bottom.webp",
+        alt: "Meeting room inside Dothan",
+      },
+      {
+        src: "/images/lodging/dothan/dothan-bathroom.webp",
+        alt: "Bathroom inside Dothan",
+      },
+    ],
+    facts: [
+      { label: "Sleeps", value: "22 guests" },
+      { label: "Rooms", value: "6 bedrooms" },
+      { label: "Bathrooms", value: "2 common bathrooms" },
+      { label: "Meeting Space", value: "20–30 people" },
+    ],
+    details: [
+      {
+        id: "layout",
+        title: "Layout",
+        content: (
+          <>
+            <p>
+              Dothan is a three-story building beside the pond, ideal for smaller
+              groups and quieter retreats.
+            </p>
+
+            <p>
+              The top level includes two bedrooms and a sitting room. The middle
+              level includes four bunk-style bedrooms, two common bathrooms, and
+              shared common space. The bottom level includes meeting space.
+              Dothan also has a kitchenette.
+            </p>
+          </>
+        ),
+      },
+      {
+        id: "guests",
+        title: "Number of Guests",
+        content: (
+          <>
+            <p>Dothan can host 22 overnight guests.</p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>2</span>
+                <p>Two bedrooms with queen-sized beds</p>
+              </div>
+
+              <div>
+                <span>4</span>
+                <p>Four bunk-style bedrooms on the middle level</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+      {
+        id: "meeting",
+        title: "Meeting Space",
+        content: (
+          <>
+            <p>
+              The bottom level includes meeting space for approximately 20–30
+              people.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+
+  {
+    id: "guest-house",
+    title: "The Guest House",
+    description:
+      "The Guest House is a more private lodging option with a kitchen, dining room, living room, meeting spaces, and a library.",
+    images: [
+      {
+        src: "/images/lodging/guest-house/guest-house.webp",
+        alt: "Exterior view of the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-back.webp",
+        alt: "Back exterior view of the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-kitchen.webp",
+        alt: "Kitchen inside the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-livingroom.webp",
+        alt: "Living room inside the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-master-bedroom.webp",
+        alt: "Bedroom inside the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-couches.webp",
+        alt: "Seating area inside the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-bunks.webp",
+        alt: "Bunk room inside the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-beds.webp",
+        alt: "Bedroom inside the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-bathroom.webp",
+        alt: "Bathroom inside the Guest House",
+      },
+      {
+        src: "/images/lodging/guest-house/guest-house-mystery-room.webp",
+        alt: "Room inside the Guest House",
+      },
+    ],
+    facts: [
+      { label: "Sleeps", value: "Up to 12 guests" },
+      { label: "Kitchen", value: "Full kitchen" },
+      { label: "Common Space", value: "Dining room and living room" },
+      { label: "Features", value: "Library and meeting spaces" },
+    ],
+    details: [
+      {
+        id: "layout",
+        title: "Layout",
+        content: (
+          <>
+            <p>
+              The Guest House is set apart from the main camp and includes a
+              kitchen, dining room, living room, meeting spaces, and a library.
+            </p>
+
+            <p>
+              Guests may choose to eat in the Hebron dining room or prepare their
+              own meals in the Guest House kitchen.
+            </p>
+          </>
+        ),
+      },
+      {
+        id: "guests",
+        title: "Number of Guests",
+        content: (
+          <>
+            <p>The Guest House can host up to 12 overnight guests.</p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>1</span>
+                <p>Queen bed</p>
+              </div>
+
+              <div>
+                <span>2</span>
+                <p>Twin beds</p>
+              </div>
+
+              <div>
+                <span>2</span>
+                <p>Queen futon beds</p>
+              </div>
+
+              <div>
+                <span>2</span>
+                <p>Bunk beds</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+      {
+        id: "features",
+        title: "Features",
+        content: (
+          <>
+            <p>
+              The Guest House is a good fit for sabbaticals, furloughs, church
+              leader retreats, planning retreats, and other small gatherings.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+
+  {
+    id: "ajalon",
+
+    title: "Ajalon",
+
+    seasonalAvailability: "May–October",
+
+    description:
+      "Ajalon is a quiet rustic cottage offering a simple, private place to stay away from the larger lodge buildings. It is a comfortable option for families, small groups, and guests looking for a quieter retreat setting.",
+
+    images: [
+      {
+        src: "/images/lodging/ajalon/ajalon-fall-2.webp",
+        alt: "Exterior view of Ajalon cottage",
+      },
+      {
+        src: "/images/lodging/ajalon/ajalon.webp",
+        alt: "Exterior view of Ajalon cottage",
+      },
+      {
+        src: "/images/lodging/ajalon/ajalon-inside.webp",
+        alt: "Interior of Ajalon cottage with a sleeping loft",
+      },
+    ],
+
+    facts: [
+      {
+        label: "Sleeps",
+        value: "Up to 8 guests",
+      },
+
+      {
+        label: "Style",
+        value: "Rustic cottage",
+      },
+
+      {
+        label: "Setting",
+        value: "Private and quiet",
+      },
+
+      {
+        label: "Best For",
+        value: "Families and small groups",
+      },
+    ],
+
+    details: [
+      {
+        id: "layout",
+
+        title: "Layout",
+
+        content: (
+          <>
+            <p>
+              Ajalon is an independent cottage set apart from the larger lodge
+              buildings.
+            </p>
+
+            <p>Ajalon has a kitchenette and one bathroom.</p>
+
+            <p>
+              Its smaller scale creates a more private atmosphere for families,
+              small groups, and guests looking for a simple retreat experience.
+            </p>
+          </>
+        ),
+      },
+
+      {
+        id: "guests",
+
+        title: "Number of Guests",
+
+        content: (
+          <>
+            <p>
+              Ajalon can accommodate up to 8 overnight guests.
+            </p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>8</span>
+
+                <p>Overnight guests</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+
+      {
+        id: "features",
+
+        title: "Features",
+
+        content: (
+          <>
+            <p>
+              Ajalon is especially well-suited for families, small retreats,
+              prayer, solitude, and guests who prefer a quieter lodging option.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+
+  {
+    id: "capernaum",
+
+    title: "Capernaum",
+
+    seasonalAvailability: "May–October",
+
+    description:
+      "Capernaum is a small rustic cottage near the pond, offering a simple and private place for personal retreats, couples, families, and small groups.",
+
+    images: [
+      {
+        src: "/images/lodging/capernaum/capernaum.webp",
+        alt: "Exterior view of Capernaum cottage",
+      },
+
+      {
+        src: "/images/lodging/capernaum/capernaum-inside-2.webp",
+        alt: "Interior view of Capernaum",
+      },
+
+      {
+        src: "/images/lodging/capernaum/capernaum-inside-1.webp",
+        alt: "Interior view of Capernaum",
+      },
+    ],
+
+    facts: [
+      {
+        label: "Sleeps",
+        value: "Up to 8 guests",
+      },
+
+      {
+        label: "Style",
+        value: "Rustic cottage",
+      },
+
+      {
+        label: "Setting",
+        value: "Quiet and secluded",
+      },
+
+      {
+        label: "Best For",
+        value: "Personal retreats and small groups",
+      },
+    ],
+
+    details: [
+      {
+        id: "layout",
+        title: "Layout",
+        content: (
+          <>
+            <p>
+              Capernaum is an independent cottage tucked away from the larger
+              lodge buildings.
+            </p>
+
+            <p>
+              Capernaum has one bathroom but no kitchen, so guests bring their
+              own food or join camp meals.
+            </p>
+
+            <p>
+              Its smaller layout makes it a comfortable option for individuals,
+              couples, families, and small groups looking for a quieter stay.
+            </p>
+          </>
+        ),
+      },
+
+      {
+        id: "guests",
+
+        title: "Number of Guests",
+
+        content: (
+          <>
+            <p>
+              Capernaum can accommodate up to 8 overnight guests.
+            </p>
+
+            <div className="lodging-spec-list">
+              <div>
+                <span>8</span>
+
+                <p>Overnight guests</p>
+              </div>
+            </div>
+          </>
+        ),
+      },
+
+      {
+        id: "features",
+
+        title: "Features",
+
+        content: (
+          <>
+            <p>
+              Capernaum is especially well-suited for personal retreats,
+              prayer, couples, families, and guests looking for a simple and
+              private lodging experience.
+            </p>
+          </>
+        ),
+      },
+    ],
+  },
+];
+
+function LodgingSectionDivider({
+  id,
+  title,
+}) {
+  return (
+    <div
+      className="lodging-section-divider"
+      id={id}
+    >
+      <span
+        className="lodging-section-divider-line"
+        aria-hidden="true"
+      />
+
+      <p>
+        {title}
+      </p>
+
+      <span
+        className="lodging-section-divider-line"
+        aria-hidden="true"
+      />
+    </div>
+  );
+}
+
+// Each photo has a small "-thumb" copy saved next to it
+function toThumbnailSrc(src) {
+  return src.replace(/\.webp$/, "-thumb.webp");
+}
+
+function LodgeSection({ building }) {
+  const [activeImage, setActiveImage] = useState(0);
+  const [detailsOpen, setDetailsOpen] = useState(false);
+
+  const detailsPanelId = `${building.id}-details-panel`;
+
+  const goToPreviousImage = () => {
+    setActiveImage((current) =>
+      current === 0 ? building.images.length - 1 : current - 1
+    );
+  };
+
+  const goToNextImage = () => {
+    setActiveImage((current) =>
+      current === building.images.length - 1 ? 0 : current + 1
+    );
+  };
+
+  return (
+    <section className="lodge-feature-section" id={building.id}>
+      <div className="lodge-gallery reveal-image">
+        <div
+          className={`lodge-main-image-wrap ${
+            building.id === "ajalon" && activeImage === 1
+              ? "lodge-main-image-wrap-portrait"
+              : ""
+          }`}
+        >
+          <img
+            src={building.images[activeImage].src}
+            alt={building.images[activeImage].alt}
+            loading="lazy"
+            decoding="async"
+            className={`lodge-main-image ${
+              building.id === "ajalon" && activeImage === 1
+                ? "lodge-main-image-portrait"
+                : ""
+            }`}
+          />
+
+          {building.images.length > 1 && (
+            <>
+              <button
+                className="gallery-arrow gallery-arrow-left"
+                type="button"
+                onClick={goToPreviousImage}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+
+              <button
+                className="gallery-arrow gallery-arrow-right"
+                type="button"
+                onClick={goToNextImage}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+            </>
+          )}
+
+        </div>
+
+        {building.images.length > 1 && (
+          <div className="lodge-thumbnail-row">
+            {building.images.map((image, index) => (
+              <button
+                className={`lodge-thumbnail ${
+                  activeImage === index ? "lodge-thumbnail-active" : ""
+                }`}
+                type="button"
+                key={`${building.id}-${image.src}-${index}`}
+                onClick={() => setActiveImage(index)}
+                aria-label={`View ${building.title} image ${index + 1}`}
+              >
+                <img
+                  src={toThumbnailSrc(image.src)}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
+            ))}
+          </div>
+        )}
+
+      </div>
+
+      <div className="lodge-info">
+        <div className="lodge-copy">
+          <p className="lodge-section-label">Lodging Option</p>
+
+          <h2>{building.title}</h2>
+
+          {building.seasonalAvailability && (
+            <div className="lodge-seasonal-notice">
+              <svg
+                className="lodge-seasonal-notice-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <rect x="3" y="5" width="18" height="16" rx="2" />
+                <path d="M16 3v4M8 3v4M3 11h18" />
+                <path d="M8 15h2M14 15h2M8 18h2" />
+              </svg>
+
+              <div className="lodge-seasonal-notice-copy">
+                <span>Seasonal lodging only</span>
+                <strong>Available {building.seasonalAvailability}</strong>
+              </div>
+            </div>
+          )}
+
+          <p>{building.description}</p>
+
+          <div className="lodge-quick-facts">
+            {building.facts.map((fact) => (
+              <article className="lodge-quick-fact" key={fact.label}>
+                <span>{fact.label}</span>
+                <strong>{fact.value}</strong>
+              </article>
+            ))}
+          </div>
+
+          <div
+            className={`lodge-more-details ${
+              detailsOpen ? "lodge-more-details-open" : ""
+            }`}
+          >
+            <button
+              className="lodge-more-details-trigger"
+              type="button"
+              onClick={() => setDetailsOpen((current) => !current)}
+              aria-expanded={detailsOpen}
+              aria-controls={detailsPanelId}
+            >
+              <span>More details</span>
+              <span className="lodge-more-details-icon" aria-hidden="true">
+                {detailsOpen ? "−" : "+"}
+              </span>
+            </button>
+
+            <div className="lodge-more-details-panel" id={detailsPanelId}>
+              <div className="lodge-more-details-inner">
+                {building.details.map((item) => (
+                  <article className="lodge-more-details-block" key={item.id}>
+                    <h3>{item.title}</h3>
+                    <div>{item.content}</div>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <Link to="/contact" className="lodge-inquiry-link">
+            Ask about this space <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default function Lodging() {
+  return (
+    <main className="lodging-page">
+      <SEO path="/lodging" />
+
+      <section className="lodging-hero">
+        <div className="lodging-hero-overlay" />
+
+        <div className="lodging-hero-content">
+
+          <h1>
+            Retreat lodging at <span>Toah Nipi</span>
+          </h1>
+
+          <p>
+            Retreat lodges, a guest house, and seasonal cottages for groups in
+            Rindge, NH.
+          </p>
+
+          <a
+            href="/images/maps/camp-map.png"
+            download="Toah-Nipi-Camp-Map.png"
+            className="lodging-map-button"
+          >
+            Download Camp Map
+          </a>
+        </div>
+      </section>
+
+      <LodgingComparison />
+
+      {lodgingBuildings.map((building) => (
+        <Fragment key={building.id}>
+          {building.id === "ajalon" && (
+            <LodgingSectionDivider
+              id="rustic-cottages"
+              title="Rustic Cottages"
+            />
+          )}
+
+          <LodgeSection
+            building={building}
+          />
+        </Fragment>
+      ))}
+
+      <LodgingFaq />
+
+      <section className="lake-section">
+        <div className="lake-content">
+          <div className="lake-heading-inner">
+            <h2>We love hosting student groups, churches, and families.</h2>
+          </div>
+
+          <p className="lake-text">
+            We are committed to accommodating the{" "}
+            <span className="bold-text">unique needs</span> and{" "}
+            <span className="bold-text">special requests</span> of each group.
+          </p>
+
+          <Link to="/contact" className="lake-button">
+            Connect with us
+          </Link>
+        </div>
+      </section>
+
+    </main>
+  );
+}
