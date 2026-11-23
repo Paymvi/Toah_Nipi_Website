@@ -643,6 +643,7 @@ export default function Contact() {
             target="_blank"
             rel="noreferrer"
           >
+            <FaMapMarkerAlt aria-hidden="true" />
             Open in Google Maps <span aria-hidden="true">→</span>
           </a>
         </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 import QuickLinks from "../components/QuickLinks";
 import EventCarousel from "../components/EventCarousel";
@@ -288,7 +289,8 @@ export default function Home() {
               rel="noreferrer"
               className="contact-directions-button"
             >
-              Open in Google Maps <span>→</span>
+              <FaMapMarkerAlt aria-hidden="true" />
+              Open in Google Maps <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>

@@ -938,6 +938,11 @@
   }
 }
 
+.contact-directions-button svg {
+  flex-shrink: 0;
+  font-size: 1rem;
+}
+
 .contact-directions-button span {
   line-height: 1;
   font-size: 1.024rem;
@@ -1001,7 +1006,7 @@
 .contact-directions-content h2 {
   margin: 0 auto;
   font-family: var(--font-cooper);
-  font-size: clamp(2.0rem, 4.4vw, 4.0rem);
+  font-size: clamp(1.8rem, 3.5vw, 3.1rem);
   line-height: 1;
   font-weight: 400;
   color: #f4f1dd;
@@ -1011,7 +1016,7 @@
 .contact-directions-copy {
   max-width: 680px;
   margin: 1.35rem auto 0;
-  font-size: clamp(0.956rem, 1.219vw, 1.092rem);
+  font-size: clamp(0.9rem, 1.05vw, 0.98rem);
   line-height: 1.6;
   font-weight: 500;
   color: rgba(244, 241, 221, 0.86);
