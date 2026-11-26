@@ -10,6 +10,13 @@ import {
   FiHeart,
   FiShare2,
 } from "react-icons/fi";
+import {
+  LuTreePine,
+  LuAxe,
+  LuPaintRoller,
+  LuFlower2,
+  LuCoffee,
+} from "react-icons/lu";
 
 import {
   relationships,
@@ -124,11 +131,11 @@ const featureSections = [
       </>
     ),
     needs: [
-      "Trail Work",
-      "Wood Splitting",
-      "Building Beautification",
-      "Landscaping / Gardening",
-      "Hosting",
+      { label: "Trail Work", icon: LuTreePine },
+      { label: "Wood Splitting", icon: LuAxe },
+      { label: "Building Beautification", icon: LuPaintRoller },
+      { label: "Landscaping / Gardening", icon: LuFlower2 },
+      { label: "Hosting", icon: LuCoffee },
     ],
     image: "/images/community/may-2024-volunteer.webp",
     imageAlt: "Volunteers serving at Toah Nipi",
@@ -488,9 +495,10 @@ function Partner() {
                   </p>
 
                   <div className="volunteer-needs-grid">
-                    {section.needs.map((need) => (
-                      <span key={need}>
-                        {need}
+                    {section.needs.map(({ label, icon: Icon }) => (
+                      <span key={label}>
+                        <Icon aria-hidden="true" />
+                        {label}
                       </span>
                     ))}
                   </div>

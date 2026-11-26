@@ -1,3 +1,5 @@
+import { LuCompass, LuEye } from "react-icons/lu";
+
 export default function MissionVision() {
   return (
     <section className="mission-vision-section" id="mission-vision">
@@ -21,7 +23,7 @@ export default function MissionVision() {
 
           <article className="mission-statement">
             <div className="statement-label">
-              <span>01</span>
+              <span aria-hidden="true"><LuCompass size={22} /></span>
               <p>Our Mission</p>
             </div>
 
@@ -35,7 +37,7 @@ export default function MissionVision() {
 
           <article className="vision-statement">
             <div className="statement-label">
-              <span>02</span>
+              <span aria-hidden="true"><LuEye size={22} /></span>
               <p>Our Vision</p>
             </div>
 
