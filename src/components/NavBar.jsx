@@ -52,7 +52,7 @@ const navItems = [
     dropdown: [
       { label: "Make a Gift", path: "/support#giving-projects" },
       { label: "Projects Made Possible", path: "/support#project-impact" },
-      { label: "Serve With Us", path: "/support#serve-with-us" },
+      { label: "Volunteer", path: "/support#serve-with-us" },
       { label: "Pray", path: "/support#pray-with-us" },
       { label: "Spread the Word", path: "/support#spread-the-word" },
       { label: "Community Directory", path: "/support#relationship-directory" },
